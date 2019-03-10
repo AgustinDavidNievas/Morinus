@@ -40,7 +40,7 @@ class MundaneFrame(wx.Frame):
 		self.positionsmenu = self.selmenu.Append(self.ID_Positions, mtexts.txts['Positions'], '', wx.ITEM_RADIO)
 #		self.squaremenu = self.selmenu.Append(self.ID_Square, mtexts.txts['Square'], '', wx.ITEM_RADIO)
 
-		self.pmenu.AppendMenu(self.ID_Selection, mtexts.txts['Windows'], self.selmenu)
+		self.pmenu.Append(self.ID_Selection, mtexts.txts['Windows'], self.selmenu)
 
 		self.pmenu.Append(self.ID_SaveAsBitmap, mtexts.txts['SaveAsBmp'], mtexts.txts['SaveChart'])
 		self.mbw = self.pmenu.Append(self.ID_BlackAndWhite, mtexts.txts['BlackAndWhite'], mtexts.txts['ChartBW'], wx.ITEM_CHECK)

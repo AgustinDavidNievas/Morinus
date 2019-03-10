@@ -35,9 +35,9 @@ class ProfectionStepperDlg(wx.Dialog):
 		sbsizer = wx.StaticBoxSizer(sb, wx.VERTICAL)
 
 		if self.zodprofs or self.usezodprojs:
-			gsizer = wx.FlexGridSizer(3, 2)
+			gsizer = wx.FlexGridSizer(3, gap=wx.Size(0,0))
 		else:
-			gsizer = wx.FlexGridSizer(2, 2)
+			gsizer = wx.FlexGridSizer(2, gap=wx.Size(0,0))
 
 		self.yeartxt = wx.TextCtrl(self, -1, '', size=(50,-1), style=wx.TE_READONLY)
 		self.yeartxt.SetValue(str(self.y))
@@ -71,7 +71,7 @@ class ProfectionStepperDlg(wx.Dialog):
 			gsizer.Add(hsizer, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2)
 
 		sbsizer.Add(gsizer, 0, wx.ALIGN_CENTER|wx.ALL, 5)
-    
+
 		mvsizer.Add(sbsizer, 0, wx.ALIGN_CENTER)
 
 		btnsizer = wx.StdDialogButtonSizer()
@@ -114,7 +114,7 @@ class ProfectionStepperDlg(wx.Dialog):
 		y, self.m = util.incrMonth(self.y+self.cnt, self.m)
 		if y != self.y+self.cnt:
 			self.cnt +=1
-		
+
 		self.show(self.y, self.m, self.d, self.t, self.cnt)
 
 
@@ -181,9 +181,3 @@ class ProfectionStepperDlg(wx.Dialog):
 
 	def onClose(self, event):
 		self.Close()
-
-
-
-
-
-

@@ -71,7 +71,7 @@ class SymbolsDlg(wx.Dialog):
 
 		suranus = wx.StaticBox(self, label='')
 		uranussizer = wx.StaticBoxSizer(suranus, wx.VERTICAL)
-		fgsizer = wx.FlexGridSizer(2, 2)
+		fgsizer = wx.FlexGridSizer(2, gap=wx.Size(0,0))
 		self.uranus1 = wx.RadioButton(self, -1, "", style=wx.RB_GROUP)
 		fgsizer.Add(self.uranus1, 0, wx.ALIGN_LEFT|wx.ALL, 5)
 		sbmpuranus1 = wx.StaticBitmap(self, -1, bmpuranus[0])
@@ -112,7 +112,7 @@ class SymbolsDlg(wx.Dialog):
 
 		ssigns = wx.StaticBox(self, label='')
 		signssizer = wx.StaticBoxSizer(ssigns, wx.VERTICAL)
-		fgsizer = wx.FlexGridSizer(2, 2)
+		fgsizer = wx.FlexGridSizer(2, gap=wx.Size(0,0))
 		self.signs1 = wx.RadioButton(self, -1, "", style=wx.RB_GROUP)
 		fgsizer.Add(self.signs1, 0, wx.ALIGN_LEFT|wx.ALL, 5)
 
@@ -173,7 +173,7 @@ class SymbolsDlg(wx.Dialog):
 		if options.signs:
 			self.signs1.SetValue(True)
 		else:
-			self.signs2.SetValue(True)		
+			self.signs2.SetValue(True)
 
 
 	def check(self, options):
@@ -202,5 +202,3 @@ class SymbolsDlg(wx.Dialog):
 			changed = True
 
 		return changed
-
-

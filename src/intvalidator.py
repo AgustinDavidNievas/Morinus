@@ -3,9 +3,9 @@ import string
 import mtexts
 
 
-class IntValidator(wx.PyValidator):
+class IntValidator(wx.Validator):
 	def __init__(self, minim=None, maxim=None):
-		wx.PyValidator.__init__(self)
+		wx.Validator.__init__(self)
 		self.minim = minim
 		self.maxim = maxim
 		self.Bind(wx.EVT_CHAR, self.OnChar)
@@ -25,7 +25,7 @@ class IntValidator(wx.PyValidator):
 
 		if (val == ''):
 			dlgm = wx.MessageDialog(None, mtexts.txts['NumFieldsCannotBeEmpty'], mtexts.txts['Error'], wx.OK|wx.ICON_EXCLAMATION)
-			dlgm.ShowModal()		
+			dlgm.ShowModal()
 			dlgm.Destroy()
 			return False
 
@@ -33,7 +33,7 @@ class IntValidator(wx.PyValidator):
 			dlgm = wx.MessageDialog(None, mtexts.txts['RangeError'], mtexts.txts['Error'], wx.OK|wx.ICON_EXCLAMATION)
 			dlgm.ShowModal()
 			dlgm.Destroy()
-			return False	
+			return False
 
 		return True
 
@@ -53,5 +53,3 @@ class IntValidator(wx.PyValidator):
 
 		if not wx.Validator_IsSilent():
 			wx.Bell()
-
-

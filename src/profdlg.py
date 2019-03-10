@@ -18,7 +18,7 @@ wx.HelpProvider.Set(provider)
 class ProfDlg(wx.Dialog):
 
 	def __init__(self, parent, radixjd, radixplace):
-
+		super(ProfDlg, self).__init__()
 		self.radixjd = radixjd
 		self.radixplace = radixplace
 
@@ -26,14 +26,18 @@ class ProfDlg(wx.Dialog):
         # so we can set an extra style that must be set before
         # creation, and then we create the GUI object using the Create
         # method.
-		pre = wx.Dialog()
-		pre.SetExtraStyle(wx.DIALOG_EX_CONTEXTHELP)
-		pre.Create(parent, -1, mtexts.txts['Profections'], pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
+		#pre = wx.Dialog()
+		#pre.SetExtraStyle(wx.DIALOG_EX_CONTEXTHELP)
+		#pre.Create(parent, -1, mtexts.txts['Profections'], pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
+
+		wx.Dialog.__init__(self)
+		self.SetExtraStyle(wx.DIALOG_EX_CONTEXTHELP)
+		self.Create(parent, -1, mtexts.txts['Profections'], pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
 
         # This next step is the most important, it turns this Python
         # object into the real wrapper of the dialog (instead of pre)
         # as far as the wxPython extension is concerned.
-		self.PostCreate(pre)
+		#self.PostCreate(pre)
 
 		#main vertical sizer
 		mvsizer = wx.BoxSizer(wx.VERTICAL)
@@ -51,7 +55,7 @@ class ProfDlg(wx.Dialog):
 #		self.dateckb = wx.CheckBox(self, -1, mtexts.txts['BC'])
 #		vsizer.Add(self.dateckb, 0, wx.ALIGN_LEFT|wx.LEFT|wx.RIGHT|wx.TOP, 5)
 
-		fgsizer = wx.FlexGridSizer(1, 3)
+		fgsizer = wx.FlexGridSizer(1, gap=wx.Size(0,0))
 		self.yeartxt = wx.StaticText(self, -1, mtexts.txts['Year']+':')
 		vsizer.Add(self.yeartxt, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.LEFT, 0)
 		self.year = wx.TextCtrl(self, -1, '', validator=intvalidator.IntValidator(0, rnge), size=(50,-1))
@@ -86,7 +90,7 @@ class ProfDlg(wx.Dialog):
 		#time
 		self.stime = wx.StaticBox(self, label='')
 		timesizer = wx.StaticBoxSizer(self.stime, wx.VERTICAL)
-		fgsizer = wx.FlexGridSizer(1, 3)
+		fgsizer = wx.FlexGridSizer(1, gap=wx.Size(0,0))
 
 		vsizer = wx.BoxSizer(wx.VERTICAL)
 		self.hourtxt = wx.StaticText(self, -1, mtexts.txts['Hour']+':')
@@ -125,7 +129,7 @@ class ProfDlg(wx.Dialog):
 		if wx.Platform != '__WXMSW__':
 			btn = wx.ContextHelpButton(self)
 			btnsizer.AddButton(btn)
-        
+
 		btnOk = wx.Button(self, wx.ID_OK, mtexts.txts['Ok'])
 		btnOk.SetHelpText(mtexts.txts['HelpOk'])
 		btnOk.SetDefault()
@@ -159,7 +163,7 @@ class ProfDlg(wx.Dialog):
 
 				if self.radixjd >= tim.jd:
 					dlgm = wx.MessageDialog(None, mtexts.txts['TimeSmallerThanBirthTime'], mtexts.txts['Error'], wx.OK|wx.ICON_EXCLAMATION)
-					dlgm.ShowModal()		
+					dlgm.ShowModal()
 					dlgm.Destroy()
 					return False
 
@@ -167,7 +171,7 @@ class ProfDlg(wx.Dialog):
 				self.SetReturnCode(wx.ID_OK)
 			else:
 				dlgm = wx.MessageDialog(None, mtexts.txts['InvalidDate']+' ('+self.year.GetValue()+'.'+self.month.GetValue()+'.'+self.day.GetValue()+'.)', mtexts.txts['Error'], wx.OK|wx.ICON_EXCLAMATION)
-				dlgm.ShowModal()		
+				dlgm.ShowModal()
 				dlgm.Destroy()
 
 
@@ -179,7 +183,3 @@ class ProfDlg(wx.Dialog):
 		self.hour.SetValue(str(h))
 		self.minute.SetValue(str(mi))
 		self.second.SetValue(str(s))
-
-
-
-

@@ -31,7 +31,7 @@ class ElectionStepperDlg(wx.Dialog):
 		sb = wx.StaticBox(self, label='')
 		sbsizer = wx.StaticBoxSizer(sb, wx.VERTICAL)
 
-		gsizer = wx.FlexGridSizer(6, 2)
+		gsizer = wx.FlexGridSizer(6, gap=wx.Size(0,0))
 
 		label = wx.StaticText(self, -1, mtexts.txts['Year'])
 		gsizer.Add(label, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2)
@@ -88,7 +88,7 @@ class ElectionStepperDlg(wx.Dialog):
 		gsizer.Add(hsizer, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2)
 
 		sbsizer.Add(gsizer, 0, wx.ALIGN_CENTER|wx.ALL, 5)
-    
+
 		mvsizer.Add(sbsizer, 0, wx.ALIGN_CENTER)
 
 		btnsizer = wx.StdDialogButtonSizer()
@@ -190,9 +190,3 @@ class ElectionStepperDlg(wx.Dialog):
 
 	def onClose(self, event):
 		self.Close()
-
-
-
-
-
-

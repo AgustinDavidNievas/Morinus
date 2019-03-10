@@ -219,7 +219,7 @@ F_Ref401634330	SWEP/doc/swephprg.htm	/^<h3><a name="F_Ref401634330"><\/a><a name
 FixStars	fixstars.py	/^class FixStars:$/;"	c
 FixStarsFrame	fixstarsframe.py	/^class FixStarsFrame(wx.Frame):$/;"	c
 FixStarsWnd	fixstarswnd.py	/^class FixStarsWnd(commonwnd.CommonWnd):$/;"	c
-FloatValidator	orbisdlg.py	/^class FloatValidator(wx.PyValidator):$/;"	c
+FloatValidator	orbisdlg.py	/^class FloatValidator(wx.Validator):$/;"	c
 GEOGCONST	SWEP/src/sweph.h	255;"	d
 GREG_CAL	SWEP/src/swepcalc.h	253;"	d
 GetListCtrl	placesdlg.py	/^	def GetListCtrl(self):$/;"	m	class:PlaceListCtrl
@@ -252,15 +252,15 @@ InSignsFrame	insignsframe.py	/^class InSignsFrame(wx.Frame):$/;"	c
 InSignsWnd	insignswnd.py	/^class InSignsWnd(tablebasewnd.TableBaseWnd):$/;"	c
 InpHouseNr	SWEP/src/swepcalc.c	/^int InpHouseNr (struct houses *hsp, CSEC pp, CSEC *coff)$/;"	f
 InpHouseNr2	SWEP/src/swepcalc.c	/^int InpHouseNr2 (struct houses *hsp, CSEC pp, CSEC *coff)$/;"	f
-IntValidator	personaldatadlg.py	/^class IntValidator(wx.PyValidator):$/;"	c
-IntValidator	placesdlg.py	/^class IntValidator(wx.PyValidator):$/;"	c
-IntValidator	pointsdlg.py	/^class IntValidator(wx.PyValidator):$/;"	c
-IntValidator	primarykeysdlg.py	/^class IntValidator(wx.PyValidator):$/;"	c
-IntValidator	revolutionsdlg.py	/^class IntValidator(wx.PyValidator):$/;"	c
-IntValidator	secdirdlg.py	/^class IntValidator(wx.PyValidator):$/;"	c
-IntValidator	suntransitsdlg.py	/^class IntValidator(wx.PyValidator):$/;"	c
-IntValidator	timespacedlg.py	/^class IntValidator(wx.PyValidator):$/;"	c
-IntValidator	transitmdlg.py	/^class IntValidator(wx.PyValidator):$/;"	c
+IntValidator	personaldatadlg.py	/^class IntValidator(wx.Validator):$/;"	c
+IntValidator	placesdlg.py	/^class IntValidator(wx.Validator):$/;"	c
+IntValidator	pointsdlg.py	/^class IntValidator(wx.Validator):$/;"	c
+IntValidator	primarykeysdlg.py	/^class IntValidator(wx.Validator):$/;"	c
+IntValidator	revolutionsdlg.py	/^class IntValidator(wx.Validator):$/;"	c
+IntValidator	secdirdlg.py	/^class IntValidator(wx.Validator):$/;"	c
+IntValidator	suntransitsdlg.py	/^class IntValidator(wx.Validator):$/;"	c
+IntValidator	timespacedlg.py	/^class IntValidator(wx.Validator):$/;"	c
+IntValidator	transitmdlg.py	/^class IntValidator(wx.Validator):$/;"	c
 J1900	SWEP/src/sweph.h	53;"	d
 J1950	SWEP/src/swepcalc.h	249;"	d
 J2000	SWEP/src/swepcalc.h	248;"	d
@@ -841,8 +841,8 @@ TransitMonthFrame	transitmframe.py	/^class TransitMonthFrame(wx.Frame):$/;"	c
 TransitMonthWnd	transitmwnd.py	/^class TransitMonthWnd(commonwnd.CommonWnd):$/;"	c
 TransitWnd	transitwnd.py	/^class TransitWnd(wx.Window):$/;"	c
 Transits	transits.py	/^class Transits:$/;"	c
-TxtValidator	personaldatadlg.py	/^class TxtValidator(wx.PyValidator):$/;"	c
-TxtValidator	placesdlg.py	/^class TxtValidator(wx.PyValidator):$/;"	c
+TxtValidator	personaldatadlg.py	/^class TxtValidator(wx.Validator):$/;"	c
+TxtValidator	placesdlg.py	/^class TxtValidator(wx.Validator):$/;"	c
 UCHAR	SWEP/src/sweodef.h	/^typedef unsigned char UCHAR;$/;"	t
 UCHAR	SWEP/src/sweodef.h	219;"	d
 UCP	SWEP/src/sweodef.h	224;"	d
@@ -916,13 +916,13 @@ _Hlk477832844	SWEP/doc/swephprg.htm	/^<p class=MsoNormal><span lang=EN-US>A <a n
 _Hlk477833149	SWEP/doc/swephprg.htm	/^_Hlk477321511'><span lang=EN-US>True or mean <a name="_Hlk477833149"><\/a><a$/;"	a
 _Hlk477833574	SWEP/doc/swephprg.htm	/^is Swiss Ephemeris. If you have <a name="_Hlk477833574">not specified<\/a> an$/;"	a
 _Hlk477833734	SWEP/doc/swephprg.htm	/^<a name="_Hlk477833734"><\/a><a name="_Hlt477860843"><\/a><span style='mso-bookmark:$/;"	a
-_Hlk477833826	SWEP/doc/swephprg.htm	/^style='mso-tab-count:1'>            <\/span>returns <a name="_Hlk477833826">x,$/;"	a
+_Hlk477833826	SWEP/doc/swephprg.htm	/^style='mso-tab-count:1'>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ <\/span>returns <a name="_Hlk477833826">x,$/;"	a
 _Hlk477833841	SWEP/doc/swephprg.htm	/^position in <a name="_Hlk477833841">radians, not degrees<\/a>.<\/span><\/p>$/;"	a
 _Hlk477833975	SWEP/doc/swephprg.htm	/^<p class=Textkrper-Einzug><span lang=EN-US>To compute <a name="_Hlk477833975">topocentric$/;"	a
 _Hlk477834622	SWEP/doc/swephprg.htm	/^to <\/a><a name="_Hlk477834622"><span style='mso-bookmark:_Hlt477860111'>find a$/;"	a
 _Hlk477835149	SWEP/doc/swephprg.htm	/^<\/span>parameter <\/span><a name="_Hlk477835149"><span class=VarName><span$/;"	a
 _Hlk477836016	SWEP/doc/swephprg.htm	/^planetary <\/a><a name="_Hlk477836016"><\/a><a name="_Hlt477865462"><\/a><span$/;"	a
-_Hlk477836732	SWEP/doc/swephprg.htm	/^style="mso-spacerun: yes">  <\/span><a name="_Hlk477836732"><\/a><a$/;"	a
+_Hlk477836732	SWEP/doc/swephprg.htm	/^style="mso-spacerun: yes">ï¿½ <\/span><a name="_Hlk477836732"><\/a><a$/;"	a
 _Hlk477837220	SWEP/doc/swephprg.htm	/^the <\/a><a name="_Hlk477837220"><\/a><a name="_Hlt477837274"><\/a><span$/;"	a
 _Hlk477837444	SWEP/doc/swephprg.htm	/^and southern limits of the <a name="_Hlk477837444"><\/a><a name="_Hlt477858947"><\/a><span$/;"	a
 _Hlk477837573	SWEP/doc/swephprg.htm	/^the <\/a><a name="_Hlk477837573"><span style='mso-bookmark:_Hlt477857503'>attributes$/;"	a
@@ -954,7 +954,7 @@ _Hlk477862421	SWEP/doc/swephprg.htm	/^lang=EN-US>. Therefore, if you want to <a 
 _Hlk477862529	SWEP/doc/swephprg.htm	/^<p class=SourceText><a name="_Hlk477862529"><span lang=EN-US>cusps[0]<\/span><\/a><span$/;"	a
 _Hlk477862569	SWEP/doc/swephprg.htm	/^<p class=SourceText><a name="_Hlk477862569"><span lang=EN-US>ascmc[0]<\/span><\/a><span$/;"	a
 _Hlk477862955	SWEP/doc/swephprg.htm	/^<p class=SourceText><span lang=EN-US>double <a name="_Hlk477862955"><b>swe_house_pos<\/b><\/a><b>(<\/b><\/span><\/p>$/;"	a
-_Hlk477863570	SWEP/doc/swephprg.htm	/^style="mso-spacerun: yes"> <\/span>not all <a name="_Hlk477863570">asteroids<\/a>$/;"	a
+_Hlk477863570	SWEP/doc/swephprg.htm	/^style="mso-spacerun: yes">ï¿½<\/span>not all <a name="_Hlk477863570">asteroids<\/a>$/;"	a
 _Hlk477863706	SWEP/doc/swephprg.htm	/^not compute <a name="_Hlk477863706">speeds<\/a><\/span><\/b><span$/;"	a
 _Hlk477863958	SWEP/doc/swephprg.htm	/^I<a name="_Hlk477863958">f you want to make sure that your program overrides$/;"	a
 _Hlk477864058	SWEP/doc/swephprg.htm	/^<p class=Textkrper-Einzug><a name="_Hlk477864058"><span lang=EN-US>If the path<\/span><\/a><span$/;"	a
@@ -1024,7 +1024,7 @@ _Hlt477859095	SWEP/doc/swephprg.htm	/^  name="_Hlt477484931"><\/a><a name="_Hlt4
 _Hlt477859146	SWEP/doc/swephprg.htm	/^  name="_Hlt477327592"><\/a><a name="_Hlt477859146"><\/a><a name="_Hlt477860834"><\/a><![endif]><o:p><\/o:p><\/span><\/span><\/p>$/;"	a
 _Hlt477859149	SWEP/doc/swephprg.htm	/^name="_Hlk477321473"><\/a><a name="_Hlt477859149"><\/a><span style='mso-bookmark:$/;"	a
 _Hlt477859603	SWEP/doc/swephprg.htm	/^lang=EN-US>. It <a name="_Hlt477859603">computes either ecliptical or$/;"	a
-_Hlt477859878	SWEP/doc/swephprg.htm	/^yes">  <\/span>DE200<a name="_Hlt477859878"><\/a>, you may wish the tidal$/;"	a
+_Hlt477859878	SWEP/doc/swephprg.htm	/^yes">ï¿½ <\/span>DE200<a name="_Hlt477859878"><\/a>, you may wish the tidal$/;"	a
 _Hlt477860082	SWEP/doc/swephprg.htm	/^lang=DA> <\/span><\/i><a name="_Hlt477860082"><span lang=EN-US>computes fixed$/;"	a
 _Hlt477860111	SWEP/doc/swephprg.htm	/^<p class=Textkrper-Einzug><span lang=EN-US>This function <a name="_Hlt477860111">allows$/;"	a
 _Hlt477860200	SWEP/doc/swephprg.htm	/^limited to the period 1620 - ~1997. To <a name="_Hlt477860200">change the tidal$/;"	a
@@ -1851,7 +1851,7 @@ _Toc487089311	SWEP/doc/swisseph.htm	/^<h4><a name="_Toc487089311"><\/a><a name="
 _Toc487089312	SWEP/doc/swisseph.htm	/^<h4><a name="_Toc487089312"><\/a><a name="_Toc493998319"><\/a><a$/;"	a
 _Toc487089313	SWEP/doc/swisseph.htm	/^<h4><a name="_Toc487089313"><\/a><a name="_Toc493998320"><\/a><a$/;"	a
 _Toc487089314	SWEP/doc/swisseph.htm	/^<h4><a name="_Toc487089314"><\/a><a name="_Toc493998321"><\/a><a$/;"	a
-_Toc487089315	SWEP/doc/swisseph.htm	/^style='mso-tab-count:1'>      <\/span><\/span><\/font><\/i><a name="_Toc487089315"><\/a><a$/;"	a
+_Toc487089315	SWEP/doc/swisseph.htm	/^style='mso-tab-count:1'>ï¿½ï¿½ï¿½ï¿½ï¿½ <\/span><\/span><\/font><\/i><a name="_Toc487089315"><\/a><a$/;"	a
 _Toc487089316	SWEP/doc/swisseph.htm	/^<h3><a name="_Toc487089316"><\/a><a name="_Toc493998323"><\/a><a$/;"	a
 _Toc487089317	SWEP/doc/swisseph.htm	/^<h2><a name="_Toc487089317"><\/a><a name="_Toc493998324"><\/a><a$/;"	a
 _Toc487089318	SWEP/doc/swisseph.htm	/^<h1><a name="_Toc487089318"><\/a><a name="_Toc493998325"><\/a><a$/;"	a

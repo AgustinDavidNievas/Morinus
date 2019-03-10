@@ -199,7 +199,7 @@ class MFrame(mrclasses.MrTopFrame):
 		self.talmutens.Append(self.ID_AlmutenZodiacal, mtexts.menutxts['TMAlmutenZodiacal'], mtexts.menutxts['TMAlmutenZodiacalDoc'])
 		self.talmutens.Append(self.ID_AlmutenChart, mtexts.menutxts['TMAlmutenChart'], mtexts.menutxts['TMAlmutenChartDoc'])
 		self.talmutens.Append(self.ID_AlmutenTopical, mtexts.menutxts['TMAlmutenTopical'], mtexts.menutxts['TMAlmutenTopicalDoc'])
-		self.mtable.AppendMenu(self.ID_TAlmutens, mtexts.menutxts['TMAlmutens'], self.talmutens)
+		self.mtable.Append(self.ID_TAlmutens, mtexts.menutxts['TMAlmutens'], self.talmutens)
 
 		self.mtable.Append(self.ID_Misc, mtexts.menutxts['TMMisc'], mtexts.menutxts['TMMiscDoc'])
 		self.mtable.Append(self.ID_MunPos, mtexts.menutxts['TMMunPos'], mtexts.menutxts['TMMunPosDoc'])
@@ -255,17 +255,17 @@ class MFrame(mrclasses.MrTopFrame):
 		self.mdignities.Append(self.ID_Terms, mtexts.menutxts['OMTerms'], mtexts.menutxts['OMTermsDoc'])
 		self.mdignities.Append(self.ID_Decans, mtexts.menutxts['OMDecans'], mtexts.menutxts['OMDecansDoc'])
 
-		self.moptions.AppendMenu(self.ID_MinorDignities, mtexts.menutxts['OMMinorDignities'], self.mdignities)
+		self.moptions.Append(self.ID_MinorDignities, mtexts.menutxts['OMMinorDignities'], self.mdignities)
 
 		self.malmutens = wx.Menu()
 		self.malmutens.Append(self.ID_ChartAlmuten, mtexts.menutxts['OMChartAlmuten'], mtexts.menutxts['OMChartAlmutenDoc'])
 		self.malmutens.Append(self.ID_Topical, mtexts.menutxts['OMTopical'], mtexts.menutxts['OMTopicalDoc'])
 
-		self.moptions.AppendMenu(self.ID_Almutens, mtexts.menutxts['OMAlmutens'], self.malmutens)
+		self.moptions.Append(self.ID_Almutens, mtexts.menutxts['OMAlmutens'], self.malmutens)
 		self.moptions.Append(self.ID_Ayanamsha, mtexts.menutxts['OMAyanamsha'], mtexts.menutxts['OMAyanamshaDoc'])
 		self.moptions.Append(self.ID_Colors, mtexts.menutxts['OMColors'], mtexts.menutxts['OMColorsDoc'])
 
-		self.moptions.AppendMenu(self.ID_HouseSystem, mtexts.menutxts['OMHouseSystem'], self.mhousesystem)
+		self.moptions.Append(self.ID_HouseSystem, mtexts.menutxts['OMHouseSystem'], self.mhousesystem)
 
 		self.setHouse()
 
@@ -273,7 +273,7 @@ class MFrame(mrclasses.MrTopFrame):
 		self.meanitem = self.mnodes.Append(self.ID_NodeMean, mtexts.menutxts['OMNMean'], '', wx.ITEM_RADIO)
 		self.trueitem = self.mnodes.Append(self.ID_NodeTrue, mtexts.menutxts['OMNTrue'], '', wx.ITEM_RADIO)
 
-		self.moptions.AppendMenu(self.ID_Nodes, mtexts.menutxts['OMNodes'], self.mnodes)
+		self.moptions.Append(self.ID_Nodes, mtexts.menutxts['OMNodes'], self.mnodes)
 
 		self.setNode()
 
@@ -285,7 +285,7 @@ class MFrame(mrclasses.MrTopFrame):
 		self.mpdsinchartopts.Append(self.ID_PDsInChartOptZod, mtexts.menutxts['OMPDsInChartOptZod'], mtexts.menutxts['OMPDsInChartOptZodDoc'])
 		self.mpdsinchartopts.Append(self.ID_PDsInChartOptMun, mtexts.menutxts['OMPDsInChartOptMun'], mtexts.menutxts['OMPDsInChartOptMunDoc'])
 
-		self.moptions.AppendMenu(self.ID_PDsInChartOpt, mtexts.menutxts['OMPDsInChartOpt'], self.mpdsinchartopts)
+		self.moptions.Append(self.ID_PDsInChartOpt, mtexts.menutxts['OMPDsInChartOpt'], self.mpdsinchartopts)
 		self.moptions.Append(self.ID_LotOfFortune, mtexts.menutxts['OMLotFortune'], mtexts.menutxts['OMLotFortuneDoc'])
 		self.moptions.Append(self.ID_ArabicParts, mtexts.menutxts['OMArabicParts'], mtexts.menutxts['OMArabicPartsDoc'])
 		self.moptions.Append(self.ID_Syzygy, mtexts.menutxts['OMSyzygy'], mtexts.menutxts['OMSyzygyDoc'])
