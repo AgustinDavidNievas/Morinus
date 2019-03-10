@@ -19,18 +19,24 @@ class PrimaryKeysDlg(wx.Dialog):
 	SEC = 2
 
 	def __init__(self, parent, options):
+		super(PrimaryKeysDlg, self).__init__()
         # Instead of calling wx.Dialog.__init__ we precreate the dialog
         # so we can set an extra style that must be set before
         # creation, and then we create the GUI object using the Create
         # method.
-		pre = wx.Dialog()
-		pre.SetExtraStyle(wx.DIALOG_EX_CONTEXTHELP)
-		pre.Create(parent, -1, mtexts.txts['PrimaryKeys'], pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
+
+		#pre = wx.Dialog()
+		#pre.SetExtraStyle(wx.DIALOG_EX_CONTEXTHELP)
+		#pre.Create(parent, -1, mtexts.txts['PrimaryKeys'], pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
+
+		wx.Dialog.__init__(self)
+		self.SetExtraStyle(wx.DIALOG_EX_CONTEXTHELP)
+		self.Create(parent, -1, mtexts.txts['PrimaryKeys'], pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
 
         # This next step is the most important, it turns this Python
         # object into the real wrapper of the dialog (instead of pre)
         # as far as the wxPython extension is concerned.
-		self.PostCreate(pre)
+		#self.PostCreate(pre)
 
 		self.dynsel = options.pdkeyd
 		self.statsel = options.pdkeys
@@ -39,7 +45,7 @@ class PrimaryKeysDlg(wx.Dialog):
 		mvsizer = wx.BoxSizer(wx.VERTICAL)
 
 		#Type
-		self.stype =wx.StaticBox(self, label=mtexts.txts['Keys'])
+		self.stype = wx.StaticBox(self, label=mtexts.txts['Keys'])
 		typesizer = wx.StaticBoxSizer(self.stype, wx.VERTICAL)
 		hsizer = wx.BoxSizer(wx.HORIZONTAL)
 		self.dynamicrb = wx.RadioButton(self, -1, mtexts.txts['Dynamic'], style=wx.RB_GROUP)
@@ -51,7 +57,7 @@ class PrimaryKeysDlg(wx.Dialog):
 		mvsizer.Add(typesizer, 0, wx.GROW|wx.ALIGN_LEFT|wx.LEFT|wx.RIGHT, 5)
 
 		#Selections
-		self.svalues =wx.StaticBox(self, label='')
+		self.svalues = wx.StaticBox(self, label='')
 		valuessizer = wx.StaticBoxSizer(self.svalues, wx.VERTICAL)
 		typeList = mtexts.typeListDyn
 		self.dyn = True
@@ -118,7 +124,7 @@ class PrimaryKeysDlg(wx.Dialog):
 		if wx.Platform != '__WXMSW__':
 			btn = wx.ContextHelpButton(self)
 			btnsizer.AddButton(btn)
-        
+
 		btnOk = wx.Button(self, wx.ID_OK, mtexts.txts['Ok'])
 		btnOk.SetHelpText(mtexts.txts['HelpOk'])
 		btnOk.SetDefault()
@@ -194,7 +200,7 @@ class PrimaryKeysDlg(wx.Dialog):
 				deg = self.custom[PrimaryKeysDlg.DEG]
 				minu = self.custom[PrimaryKeysDlg.MIN]
 				sec = self.custom[PrimaryKeysDlg.SEC]
-				val = (deg+minu/60.0+sec/3600.0) 
+				val = (deg+minu/60.0+sec/3600.0)
 				if val != 0.0:
 					coeff = 1.0/val
 				else:
@@ -234,7 +240,7 @@ class PrimaryKeysDlg(wx.Dialog):
 				deg = self.custom[PrimaryKeysDlg.DEG]
 				minu = self.custom[PrimaryKeysDlg.MIN]
 				sec = self.custom[PrimaryKeysDlg.SEC]
-				val = (deg+minu/60.0+sec/3600.0) 
+				val = (deg+minu/60.0+sec/3600.0)
 				if val != 0.0:
 					coeff = 1.0/val
 				else:
@@ -337,7 +343,7 @@ class PrimaryKeysDlg(wx.Dialog):
 				deg = options.pdkeydeg
 				minu = options.pdkeymin
 				sec = options.pdkeysec
-				val = (deg+minu/60.0+sec/3600.0) 
+				val = (deg+minu/60.0+sec/3600.0)
 				if val != 0.0:
 					coeff = 1.0/val
 				else:
@@ -390,5 +396,3 @@ class PrimaryKeysDlg(wx.Dialog):
 			changed = True
 
 		return changed
-
-

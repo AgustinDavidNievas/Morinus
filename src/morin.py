@@ -2580,7 +2580,7 @@ class MFrame(mrclasses.MrTopFrame):
 		if wx.Platform == '__WXMSW__' and not self.splash:
 			self.handleStatusBar(True)
 
-		info = wx.AboutDialogInfo()
+		info = wx.adv.AboutDialogInfo()#TODO supuestamente se movio a adv pero sigue diciendo que no existe :S
 		info.Name = mtexts.txts['Morinus']
 		info.Version = '6.2'
 		info.Copyright = mtexts.txts['FreeSoft']

@@ -56,7 +56,7 @@ class AlmutenChartDlg(wx.Dialog):
 
 		self.sscores = wx.StaticBox(self, label=mtexts.txts['RulershipScores'])
 		scoressizer = wx.StaticBoxSizer(self.sscores, wx.VERTICAL)
-		gsizer = wx.GridSizer(5, 2)
+		gsizer = wx.GridSizer(5, gap=wx.Size(0,0))
 		label = wx.StaticText(self, -1, mtexts.txts['Domicil']+':')
 		gsizer.Add(label, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2)
 		self.domicil = wx.TextCtrl(self, -1, '', validator=intvalidator.IntValidator(0, 5), size=(40, -1))
@@ -227,7 +227,7 @@ class AlmutenChartDlg(wx.Dialog):
 		dayhoursizer = wx.StaticBoxSizer(self.sdayhour, wx.HORIZONTAL)
 
 		self.dayhourlabels = []
-		gsizer = wx.GridSizer(2, 2)
+		gsizer = wx.GridSizer(2, gap=wx.Size(0,0))
 		self.dayhourlabels.append(wx.StaticText(self, -1, mtexts.txts['Day']+':'))
 		gsizer.Add(self.dayhourlabels[0], 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2)
 		self.dayruler = wx.TextCtrl(self, -1, '', validator=intvalidator.IntValidator(0, 10), size=(40, -1))

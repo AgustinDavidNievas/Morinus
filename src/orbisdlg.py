@@ -41,9 +41,9 @@ class OrbisDlg(wx.Dialog):
 		self.ID_Uranus = wx.NewId()
 		self.ID_Neptune = wx.NewId()
 		self.ID_Pluto = wx.NewId()
-		self.ID_Nodes = wx.NewId()		
-		self.ID_AscMC = wx.NewId()		
-		self.ID_Houses = wx.NewId()		
+		self.ID_Nodes = wx.NewId()
+		self.ID_AscMC = wx.NewId()
+		self.ID_Houses = wx.NewId()
 
 		self.fixstars = self.options.fixstars.copy()
 
@@ -88,7 +88,7 @@ class OrbisDlg(wx.Dialog):
 		#Cusps
 		self.scusps = wx.StaticBox(self, label='')
 		scuspssizer = wx.StaticBoxSizer(self.scusps, wx.VERTICAL)
-		gsizer = wx.GridSizer(2, 2)
+		gsizer = wx.GridSizer(2, gap=wx.Size(0,0))
 		label = wx.StaticText(self, -1, mtexts.txts['AscMC2']+':')
 		gsizer.Add(label, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2)
 		self.cuspascmc = wx.TextCtrl(self, -1, '', validator=floatvalidator.FloatValidator(0.0, 10.0), size=(50, -1))
@@ -106,7 +106,7 @@ class OrbisDlg(wx.Dialog):
 		#Exact
 		self.sexact =wx.StaticBox(self, label='')
 		sexactsizer = wx.StaticBoxSizer(self.sexact, wx.VERTICAL)
-		gsizer = wx.GridSizer(1, 2)
+		gsizer = wx.GridSizer(1, gap=wx.Size(0,0))
 		label = wx.StaticText(self, -1, mtexts.txts['Exact']+':')
 		gsizer.Add(label, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5)
 		self.exact = wx.TextCtrl(self, -1, '',
@@ -121,7 +121,7 @@ class OrbisDlg(wx.Dialog):
 		#Aspects
 		self.saspects =wx.StaticBox(self, label=mtexts.txts['Aspects'])
 		saspectssizer = wx.StaticBoxSizer(self.saspects, wx.VERTICAL)
-		gsizer = wx.GridSizer(13, 2)
+		gsizer = wx.GridSizer(13, gap=wx.Size(0,0))
 		label = wx.StaticText(self, -1, mtexts.txts['Conjunctio']+':')
 		gsizer.Add(label, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2)
 		self.conjunctio = wx.TextCtrl(self, -1, '',
@@ -219,7 +219,7 @@ class OrbisDlg(wx.Dialog):
 		vsizer.Add(saspectssizer, 1, wx.GROW|wx.TOP, 0)
 
 		self.sfixstars =wx.StaticBox(self, label='')
-		sfixstarssizer = wx.StaticBoxSizer(self.sfixstars, wx.VERTICAL)	
+		sfixstarssizer = wx.StaticBoxSizer(self.sfixstars, wx.VERTICAL)
 		ID_FixStars = wx.NewId()
 		btnFixStars = wx.Button(self, ID_FixStars, mtexts.txts['FixStars'])
 		self.Bind(wx.EVT_BUTTON, self.onFixStars, id=ID_FixStars)
@@ -259,7 +259,7 @@ class OrbisDlg(wx.Dialog):
 		self.nodes.Bind(wx.EVT_RADIOBUTTON, self.onBtn)
 		self.ascmc.Bind(wx.EVT_RADIOBUTTON, self.onBtn)
 		self.houses.Bind(wx.EVT_RADIOBUTTON, self.onBtn)
-	
+
 		self.arasps = [self.conjunctio, self.semisextil, self.semiquadrat,
 		               self.sextil, self.quintile, self.quadrat, self.trigon,
 		               self.sesquiquadrat, self.biquintile, self.quinqunx,
@@ -272,7 +272,7 @@ class OrbisDlg(wx.Dialog):
 		self.cuspinter.SetValue(str(self.options.orbiscuspH))
 
 		self.exact.SetValue(str(self.options.exact))
-		
+
 		for i in range(chart.Chart.ASPECT_NUM):
 			self.arasps[i].SetValue(str(self.orbis[self.currid][i]))
 
@@ -292,7 +292,7 @@ class OrbisDlg(wx.Dialog):
 
 	def onBtn(self, event):
 		rid = event.GetId()-self.baseid
-		
+
 		if rid == self.currid:
 			return
 
@@ -343,7 +343,7 @@ class OrbisDlg(wx.Dialog):
 			self.orbisparAscMC[1] = float(self.contraparallel.GetValue())
 		else:
 			for i in range(chart.Chart.ASPECT_NUM):
-				self.orbisH[i] = float(self.arasps[i].GetValue())			
+				self.orbisH[i] = float(self.arasps[i].GetValue())
 			self.orbisparH[0] = float(self.parallel.GetValue())
 			self.orbisparH[1] = float(self.contraparallel.GetValue())
 
@@ -356,13 +356,13 @@ class OrbisDlg(wx.Dialog):
 			dlgm = wx.MessageDialog(self, mtexts.txts['NoSelFixStars'], '', wx.OK|wx.ICON_INFORMATION)
 			dlgm.ShowModal()
 			dlgm.Destroy()
-			return	
+			return
 
 		dlg = fixstarsorbdlg.FixStarsOrbDlg(self, self.fixstars)
 		dlg.CenterOnParent()
 
 		val = dlg.ShowModal()
-		if val == wx.ID_OK:	
+		if val == wx.ID_OK:
 			self.fixstars = dlg.getFixstars()
 			# and check it in OK-btn
 

@@ -13,18 +13,23 @@ wx.HelpProvider.Set(provider)
 
 class Appearance2Dlg(wx.Dialog):
 	def __init__(self, parent):
+		super(Appearance2Dlg, self).__init__()
         # Instead of calling wx.Dialog.__init__ we precreate the dialog
         # so we can set an extra style that must be set before
         # creation, and then we create the GUI object using the Create
         # method.
-		pre = wx.Dialog()
-		pre.SetExtraStyle(wx.DIALOG_EX_CONTEXTHELP)
-		pre.Create(parent, -1, mtexts.txts['Appearance2'], pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
+		#pre = wx.Dialog()
+		#pre.SetExtraStyle(wx.DIALOG_EX_CONTEXTHELP)
+		#pre.Create(parent, -1, mtexts.txts['Appearance2'], pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
+
+		wx.Dialog.__init__(self)
+		self.SetExtraStyle(wx.DIALOG_EX_CONTEXTHELP)
+		self.Create(parent, -1, mtexts.txts['Appearance2'], pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
 
         # This next step is the most important, it turns this Python
         # object into the real wrapper of the dialog (instead of pre)
         # as far as the wxPython extension is concerned.
-		self.PostCreate(pre)
+		#self.PostCreate(pre)
 
 		#main vertical sizer
 		mvsizer = wx.BoxSizer(wx.VERTICAL)
@@ -138,35 +143,35 @@ class Appearance2Dlg(wx.Dialog):
 
 
 	def fill(self, options):
-		self.longckb.SetValue(options.speculums[chart.Chart.PLACIDIAN][planets.Planet.LONG]) 
-		self.latckb.SetValue(options.speculums[chart.Chart.PLACIDIAN][planets.Planet.LAT])  
-		self.rectascckb.SetValue(options.speculums[chart.Chart.PLACIDIAN][planets.Planet.RA])  
+		self.longckb.SetValue(options.speculums[chart.Chart.PLACIDIAN][planets.Planet.LONG])
+		self.latckb.SetValue(options.speculums[chart.Chart.PLACIDIAN][planets.Planet.LAT])
+		self.rectascckb.SetValue(options.speculums[chart.Chart.PLACIDIAN][planets.Planet.RA])
 		self.declckb.SetValue(options.speculums[chart.Chart.PLACIDIAN][planets.Planet.DECL])
-		self.ascdifflatckb.SetValue(options.speculums[chart.Chart.PLACIDIAN][planets.Planet.ADLAT])  
+		self.ascdifflatckb.SetValue(options.speculums[chart.Chart.PLACIDIAN][planets.Planet.ADLAT])
 		self.semiarcusckb.SetValue(options.speculums[chart.Chart.PLACIDIAN][planets.Planet.SA])
-		self.meridiandistckb.SetValue(options.speculums[chart.Chart.PLACIDIAN][planets.Planet.MD])  
-		self.horizondistckb.SetValue(options.speculums[chart.Chart.PLACIDIAN][planets.Planet.HD])  
-		self.temporalhourckb.SetValue(options.speculums[chart.Chart.PLACIDIAN][planets.Planet.TH])  
-		self.hourlydistckb.SetValue(options.speculums[chart.Chart.PLACIDIAN][planets.Planet.HOD])  
-		self.pmpckb.SetValue(options.speculums[chart.Chart.PLACIDIAN][planets.Planet.PMP])  
-		self.ascdiffpoleckb.SetValue(options.speculums[chart.Chart.PLACIDIAN][planets.Planet.ADPH])  
-		self.poleheightckb.SetValue(options.speculums[chart.Chart.PLACIDIAN][planets.Planet.POH])  
+		self.meridiandistckb.SetValue(options.speculums[chart.Chart.PLACIDIAN][planets.Planet.MD])
+		self.horizondistckb.SetValue(options.speculums[chart.Chart.PLACIDIAN][planets.Planet.HD])
+		self.temporalhourckb.SetValue(options.speculums[chart.Chart.PLACIDIAN][planets.Planet.TH])
+		self.hourlydistckb.SetValue(options.speculums[chart.Chart.PLACIDIAN][planets.Planet.HOD])
+		self.pmpckb.SetValue(options.speculums[chart.Chart.PLACIDIAN][planets.Planet.PMP])
+		self.ascdiffpoleckb.SetValue(options.speculums[chart.Chart.PLACIDIAN][planets.Planet.ADPH])
+		self.poleheightckb.SetValue(options.speculums[chart.Chart.PLACIDIAN][planets.Planet.POH])
 		self.ascdescoblckb.SetValue(options.speculums[chart.Chart.PLACIDIAN][planets.Planet.AODO])
 
-		self.reglongckb.SetValue(options.speculums[chart.Chart.REGIOMONTAN][planets.Planet.LONG]) 
-		self.reglatckb.SetValue(options.speculums[chart.Chart.REGIOMONTAN][planets.Planet.LAT])  
-		self.regrectascckb.SetValue(options.speculums[chart.Chart.REGIOMONTAN][planets.Planet.RA])  
+		self.reglongckb.SetValue(options.speculums[chart.Chart.REGIOMONTAN][planets.Planet.LONG])
+		self.reglatckb.SetValue(options.speculums[chart.Chart.REGIOMONTAN][planets.Planet.LAT])
+		self.regrectascckb.SetValue(options.speculums[chart.Chart.REGIOMONTAN][planets.Planet.RA])
 		self.regdeclckb.SetValue(options.speculums[chart.Chart.REGIOMONTAN][planets.Planet.DECL])
 		self.regmeridiandistckb.SetValue(options.speculums[chart.Chart.REGIOMONTAN][planets.Planet.RMD])
 		self.reghorizondistckb.SetValue(options.speculums[chart.Chart.REGIOMONTAN][planets.Planet.RHD])
-		self.regzdckb.SetValue(options.speculums[chart.Chart.REGIOMONTAN][planets.Planet.ZD])  
+		self.regzdckb.SetValue(options.speculums[chart.Chart.REGIOMONTAN][planets.Planet.ZD])
 		self.regpoleckb.SetValue(options.speculums[chart.Chart.REGIOMONTAN][planets.Planet.POLE])
-		self.regqckb.SetValue(options.speculums[chart.Chart.REGIOMONTAN][planets.Planet.Q])  
-		self.regwckb.SetValue(options.speculums[chart.Chart.REGIOMONTAN][planets.Planet.W])   
+		self.regqckb.SetValue(options.speculums[chart.Chart.REGIOMONTAN][planets.Planet.Q])
+		self.regwckb.SetValue(options.speculums[chart.Chart.REGIOMONTAN][planets.Planet.W])
 		self.cmpckb.SetValue(options.speculums[chart.Chart.REGIOMONTAN][planets.Planet.CMP])
 		self.rmpckb.SetValue(options.speculums[chart.Chart.REGIOMONTAN][planets.Planet.RMP])
 
-		self.intimeckb.SetValue(options.intime)  
+		self.intimeckb.SetValue(options.intime)
 
 
 	def check(self, options):
@@ -256,8 +261,7 @@ class Appearance2Dlg(wx.Dialog):
 			changed = True
 
 		if options.intime != self.intimeckb.GetValue():
-			options.intime = self.intimeckb.GetValue()  
+			options.intime = self.intimeckb.GetValue()
 			changed = True
 
 		return changed
-

@@ -25,12 +25,12 @@ class FixStars:
 			self.nomname = nomname
 			self.lon = lon
 			self.lat = lat
-		
+
 	COMMENT = '#'
 
 	def __init__(self, ephepath):
 		self.ephepath = ephepath
-		self.jd = astrology.swe_julday(1950, 1, 1, 0.0, astrology.SE_GREG_CAL)	
+		self.jd = astrology.swe_julday(1950, 1, 1, 0.0, astrology.SE_GREG_CAL)
 		self.data = []
 
 		self.fname = os.path.join(self.ephepath, 'fixstars.cat')
@@ -72,7 +72,7 @@ class FixStars:
 					snam = nam.split(DELIMITER)
 					nam = snam[0].strip()
 					nomnam = snam[1].strip()
-					
+
 				self.data.append(FixStars.FixStar(nam, nomnam, lontxt, lattxt))
 
 		except IOError:
@@ -131,7 +131,7 @@ class FixStarListCtrl(wx.ListCtrl, limchecklistctrlmixin.LimCheckListCtrlMixin):
 
 					self.CheckItem(k-1)
 					nset.add(nomname)
-					
+
 		wx.EndBusyCursor()
 		self.initchecking = False
 
@@ -199,18 +199,23 @@ class FixStarListCtrl(wx.ListCtrl, limchecklistctrlmixin.LimCheckListCtrlMixin):
 
 class FixStarsDlg(wx.Dialog):
 	def __init__(self, parent, names, ephepath):#, inittxt):
+		super(FixStarsDlg, self).__init__()
         # Instead of calling wx.Dialog.__init__ we precreate the dialog
         # so we can set an extra style that must be set before
         # creation, and then we create the GUI object using the Create
         # method.
-		pre = wx.Dialog()
-		pre.SetExtraStyle(wx.DIALOG_EX_CONTEXTHELP)
-		pre.Create(parent, -1, mtexts.txts['FixStars'], pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
+		#pre = wx.Dialog()
+		#pre.SetExtraStyle(wx.DIALOG_EX_CONTEXTHELP)
+		#pre.Create(parent, -1, mtexts.txts['FixStars'], pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
+
+		wx.Dialog.__init__(self)
+		self.SetExtraStyle(wx.DIALOG_EX_CONTEXTHELP)
+		self.Create(parent, -1, mtexts.txts['FixStars'], pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
 
         # This next step is the most important, it turns this Python
         # object into the real wrapper of the dialog (instead of pre)
         # as far as the wxPython extension is concerned.
-		self.PostCreate(pre)
+		#self.PostCreate(pre)
 
 		#main vertical sizer
 		mvsizer = wx.BoxSizer(wx.VERTICAL)
@@ -373,9 +378,3 @@ class FixStarsDlg(wx.Dialog):
 				names[self.selnames[i]] = chart.Chart.def_fixstarsorb
 
 		return changed
-
-
-
-
-
-

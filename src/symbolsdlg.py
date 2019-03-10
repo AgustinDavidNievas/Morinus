@@ -87,7 +87,7 @@ class SymbolsDlg(wx.Dialog):
 
 		spluto = wx.StaticBox(self, label='')
 		plutosizer = wx.StaticBoxSizer(spluto, wx.VERTICAL)
-		fgsizer = wx.FlexGridSizer(4, 2)
+		fgsizer = wx.FlexGridSizer(4, gap=wx.Size(0,0))
 		self.pluto1 = wx.RadioButton(self, -1, "", style=wx.RB_GROUP)
 		fgsizer.Add(self.pluto1, 0, wx.ALIGN_LEFT|wx.ALL, 5)
 		sbmppluto1 = wx.StaticBitmap(self, -1, bmppluto[0])
@@ -116,7 +116,7 @@ class SymbolsDlg(wx.Dialog):
 		self.signs1 = wx.RadioButton(self, -1, "", style=wx.RB_GROUP)
 		fgsizer.Add(self.signs1, 0, wx.ALIGN_LEFT|wx.ALL, 5)
 
-		subfgsizer = wx.FlexGridSizer(3, 4)
+		subfgsizer = wx.FlexGridSizer(3, gap=wx.Size(0,0))
 		for i in range(len(txt[0])):
 			bmp = wx.StaticBitmap(self, -1, bmpsigns[0][i])
 			subfgsizer.Add(bmp, 0, wx.ALIGN_LEFT)
@@ -126,7 +126,7 @@ class SymbolsDlg(wx.Dialog):
 		self.signs2 = wx.RadioButton(self, -1, "")
 		fgsizer.Add(self.signs2, 0, wx.ALIGN_LEFT|wx.ALL, 5)
 
-		subfgsizer = wx.FlexGridSizer(3, 4)
+		subfgsizer = wx.FlexGridSizer(3, gap=wx.Size(0,0))
 		for i in range(len(txt[1])):
 			bmp = wx.StaticBitmap(self, -1, bmpsigns[1][i])
 			subfgsizer.Add(bmp, 0, wx.ALIGN_LEFT)

@@ -16,18 +16,23 @@ wx.HelpProvider.Set(provider)
 
 class PrimDirsDlg(wx.Dialog):
 	def __init__(self, parent, options, ephepath):
+		super(PrimDirsDlg, self).__init__()
         # Instead of calling wx.Dialog.__init__ we precreate the dialog
         # so we can set an extra style that must be set before
         # creation, and then we create the GUI object using the Create
         # method.
-		pre = wx.Dialog()
-		pre.SetExtraStyle(wx.DIALOG_EX_CONTEXTHELP)
-		pre.Create(parent, -1, mtexts.txts['PrimaryDirs'], pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
+		#pre = wx.Dialog()
+		#pre.SetExtraStyle(wx.DIALOG_EX_CONTEXTHELP)
+		#pre.Create(parent, -1, mtexts.txts['PrimaryDirs'], pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
+
+		wx.Dialog.__init__(self)
+		self.SetExtraStyle(wx.DIALOG_EX_CONTEXTHELP)
+		self.Create(parent, -1, mtexts.txts['PrimaryDirs'], pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
 
         # This next step is the most important, it turns this Python
         # object into the real wrapper of the dialog (instead of pre)
         # as far as the wxPython extension is concerned.
-		self.PostCreate(pre)
+		#self.PostCreate(pre)
 
 		self.parent = parent
 		self.options = options
@@ -344,7 +349,7 @@ class PrimDirsDlg(wx.Dialog):
 		if wx.Platform != '__WXMSW__':
 			btn = wx.ContextHelpButton(self)
 			btnsizer.AddButton(btn)
-        
+
 		btnOk = wx.Button(self, wx.ID_OK, mtexts.txts['Ok'])
 		btnsizer.AddButton(btnOk)
 		btnOk.SetHelpText(mtexts.txts['HelpOk'])
@@ -527,13 +532,13 @@ class PrimDirsDlg(wx.Dialog):
 			dlgm = wx.MessageDialog(self, mtexts.txts['NoSelFixStars'], '', wx.OK|wx.ICON_INFORMATION)
 			dlgm.ShowModal()
 			dlgm.Destroy()
-			return	
+			return
 
 		dlg = fixstarspddlg.FixStarsPDDlg(self, self.options, self.fsselections, self.ephepath)
 		dlg.CenterOnParent()
 
 		val = dlg.ShowModal()
-		if val == wx.ID_OK:	
+		if val == wx.ID_OK:
 			sels = dlg.getSelections()
 			self.fsselections = sels[:]
 			# and check it in OK-btn
@@ -551,7 +556,7 @@ class PrimDirsDlg(wx.Dialog):
 		dlg.initialize(self.cpdlons, self.cpdlats, self.southern)
 
 		val = dlg.ShowModal()
-		if val == wx.ID_OK:	
+		if val == wx.ID_OK:
 			if dlg.check(self.cpdlons, self.cpdlats, self.southern):
 				self.cpdlons[0] = int(dlg.londeg.GetValue())
 				self.cpdlons[1] = int(dlg.lonmin.GetValue())
@@ -574,7 +579,7 @@ class PrimDirsDlg(wx.Dialog):
 		dlg.initialize(self.cpd2lons, self.cpd2lats, self.southern2)
 
 		val = dlg.ShowModal()
-		if val == wx.ID_OK:	
+		if val == wx.ID_OK:
 			if dlg.check(self.cpd2lons, self.cpd2lats, self.southern2):
 				self.cpd2lons[0] = int(dlg.londeg.GetValue())
 				self.cpd2lons[1] = int(dlg.lonmin.GetValue())
@@ -949,7 +954,3 @@ class PrimDirsDlg(wx.Dialog):
 			changedU2 = True
 
 		return changed, changedU1, changedU2
-
-
-
-

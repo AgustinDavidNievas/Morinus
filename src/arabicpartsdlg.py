@@ -178,7 +178,7 @@ class PartsListCtrl(wx.ListCtrl):
 
 			if opts.arabicparts != None:
 				del opts.arabicparts
-	
+
 			parts = []
 			for i in range(self.GetItemCount()):
 				name = self.getColumnText(i, PartsListCtrl.NAME)
@@ -190,7 +190,7 @@ class PartsListCtrl(wx.ListCtrl):
 				diur = True
 				if diurnal == '':
 					diur = False
-				
+
 				parts.append((name, (f1, f2, f3), diur))
 
 			#copy to options
@@ -217,25 +217,29 @@ class PartsListCtrl(wx.ListCtrl):
 		f = f.strip()
 
 		return mtexts.conv[f]
-			
+
 
 
 class ArabicPartsDlg(wx.Dialog):
 
 	def __init__(self, parent, options):#, inittxt):
-
+		super(ArabicPartsDlg, self).__init__()
         # Instead of calling wx.Dialog.__init__ we precreate the dialog
         # so we can set an extra style that must be set before
         # creation, and then we create the GUI object using the Create
         # method.
-		pre = wx.Dialog()
-		pre.SetExtraStyle(wx.DIALOG_EX_CONTEXTHELP)
-		pre.Create(parent, -1, mtexts.txts['ArabicParts'], pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
+		#pre = wx.Dialog()
+		#pre.SetExtraStyle(wx.DIALOG_EX_CONTEXTHELP)
+		#pre.Create(parent, -1, mtexts.txts['ArabicParts'], pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
+
+		wx.Dialog.__init__(self)
+		self.SetExtraStyle(wx.DIALOG_EX_CONTEXTHELP)
+		self.Create(parent, -1, mtexts.txts['ArabicParts'], pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
 
         # This next step is the most important, it turns this Python
         # object into the real wrapper of the dialog (instead of pre)
         # as far as the wxPython extension is concerned.
-		self.PostCreate(pre)
+		#self.PostCreate(pre)
 
 		#main vertical sizer
 		mvsizer = wx.BoxSizer(wx.VERTICAL)
@@ -413,8 +417,3 @@ class ArabicPartsDlg(wx.Dialog):
 				removed = True
 
 		return changed, removed
-
-
-
-
-

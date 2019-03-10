@@ -146,7 +146,7 @@ class PlaceListCtrl(wx.ListCtrl):
 	def save(self):
 		if self.changed:
 			pdb = placedb.PlaceDB()
-	
+
 			for i in range(self.GetItemCount()):
 				pdb.add(self.getColumnText(i, PlaceListCtrl.PLACE), self.getColumnText(i, PlaceListCtrl.LON), self.getColumnText(i, PlaceListCtrl.LAT), self.getColumnText(i, PlaceListCtrl.ZONE), self.getColumnText(i, PlaceListCtrl.ALT))
 
@@ -160,18 +160,23 @@ class PlacesDlg(wx.Dialog):
 
 	PLUSCHOICES = (u'+', u'-')
 	def __init__(self, parent, langid):#, inittxt):
+		super(PlacesDlg, self).__init__()
         # Instead of calling wx.Dialog.__init__ we precreate the dialog
         # so we can set an extra style that must be set before
         # creation, and then we create the GUI object using the Create
         # method.
-		pre = wx.Dialog()
-		pre.SetExtraStyle(wx.DIALOG_EX_CONTEXTHELP)
-		pre.Create(parent, -1, mtexts.txts['Places'], pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
+		#pre = wx.Dialog()
+		#pre.SetExtraStyle(wx.DIALOG_EX_CONTEXTHELP)
+		#pre.Create(parent, -1, mtexts.txts['Places'], pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
+
+		wx.Dialog.__init__(self)
+		self.SetExtraStyle(wx.DIALOG_EX_CONTEXTHELP)
+		self.Create(parent, -1, mtexts.txts['Places'], pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
 
         # This next step is the most important, it turns this Python
         # object into the real wrapper of the dialog (instead of pre)
         # as far as the wxPython extension is concerned.
-		self.PostCreate(pre)
+		#self.PostCreate(pre)
 
 		self.langid = langid
 
@@ -425,7 +430,7 @@ class PlacesDlg(wx.Dialog):
 		if lon < 0.0:
 			east = False
 			lon *= -1
-			
+
 		d, m, s = util.decToDeg(lon)
 		self.londeg.SetValue(str(d))
 		self.lonmin.SetValue(str(m))
@@ -440,7 +445,7 @@ class PlacesDlg(wx.Dialog):
 		if lat < 0.0:
 			north = False
 			lat *= -1
-			
+
 		d, m, s = util.decToDeg(lat)
 		self.latdeg.SetValue(str(d))
 		self.latmin.SetValue(str(m))
@@ -461,7 +466,7 @@ class PlacesDlg(wx.Dialog):
 
 		self.zhour.SetValue(str(gmtoffshour))
 		self.zminute.SetValue(str(gmtoffsmin))
-		
+
 		val = 0
 		if not plus:
 			val = 1
@@ -525,7 +530,3 @@ class PlacesDlg(wx.Dialog):
 
 		self.Close()
 		self.SetReturnCode(wx.ID_OK)
-
-
-
-

@@ -18,7 +18,7 @@ class ColorsDlg(wx.Dialog):
 		#In Chart
 		schart = wx.StaticBox(self, label=mtexts.txts["Chart"])
 		chartsizer = wx.StaticBoxSizer(schart, wx.VERTICAL)
-		gsizer = wx.GridSizer(5, 2)
+		gsizer = wx.GridSizer(5, gap=wx.Size(0,0))
 		ID_BTN_Frame = wx.NewId()
 		self.baseid = ID_BTN_Frame
 		label = wx.StaticText(self, -1, mtexts.txts['Frame']+':')
@@ -58,7 +58,7 @@ class ColorsDlg(wx.Dialog):
 		#Dignities
 		dignities = wx.StaticBox(self, label=mtexts.txts["Dignities"])
 		digsizer = wx.StaticBoxSizer(dignities, wx.VERTICAL)
-		gsizer = wx.GridSizer(5, 2)
+		gsizer = wx.GridSizer(5, gap=wx.Size(0,0))
 
 		self.digtxts = []
 
@@ -99,7 +99,7 @@ class ColorsDlg(wx.Dialog):
 		#Individuals
 		planetsbox = wx.StaticBox(self, label=mtexts.txts["Individual"])
 		planetssizer = wx.StaticBoxSizer(planetsbox, wx.VERTICAL)
-		gsizer = wx.GridSizer(10, 2)
+		gsizer = wx.GridSizer(10, gap=wx.Size(0,0))
 
 		self.pltxts = []
 
@@ -183,7 +183,7 @@ class ColorsDlg(wx.Dialog):
 		#Aspects
 		aspects = wx.StaticBox(self, label=mtexts.txts["Aspects"])
 		aspectsizer = wx.StaticBoxSizer(aspects, wx.VERTICAL)
-		gsizer = wx.GridSizer(11, 2)
+		gsizer = wx.GridSizer(11, gap=wx.Size(0,0))
 		ID_BTN_Conjunctio = wx.NewId()
 		label = wx.StaticText(self, -1, mtexts.txts['Conjunctio']+':')
 		gsizer.Add(label, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2)
@@ -554,4 +554,3 @@ class ColorsDlg(wx.Dialog):
 			changed = True
 
 		return changed
-
