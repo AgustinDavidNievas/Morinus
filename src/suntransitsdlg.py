@@ -16,18 +16,23 @@ wx.HelpProvider.Set(provider)
 
 class SunTransitsDlg(wx.Dialog):
 	def __init__(self, parent):
+		super(SunTransitsDlg, self).__init__()
         # Instead of calling wx.Dialog.__init__ we precreate the dialog
         # so we can set an extra style that must be set before
         # creation, and then we create the GUI object using the Create
         # method.
-		pre = wx.Dialog()
-		pre.SetExtraStyle(wx.DIALOG_EX_CONTEXTHELP)
-		pre.Create(parent, -1, mtexts.txts['SunTransits'], pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
+		#pre = wx.Dialog()
+		#pre.SetExtraStyle(wx.DIALOG_EX_CONTEXTHELP)
+		#pre.Create(parent, -1, mtexts.txts['SunTransits'], pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
+
+		wx.Dialog.__init__(self)
+		self.SetExtraStyle(wx.DIALOG_EX_CONTEXTHELP)
+		self.Create(parent, -1, mtexts.txts['SunTransits'], pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
 
         # This next step is the most important, it turns this Python
         # object into the real wrapper of the dialog (instead of pre)
         # as far as the wxPython extension is concerned.
-		self.PostCreate(pre)
+		#self.PostCreate(pre)
 
 		#main vertical sizer
 		mvsizer = wx.BoxSizer(wx.VERTICAL)
@@ -116,7 +121,7 @@ class SunTransitsDlg(wx.Dialog):
 		if wx.Platform != '__WXMSW__':
 			btn = wx.ContextHelpButton(self)
 			btnsizer.AddButton(btn)
-        
+
 		btnOk = wx.Button(self, wx.ID_OK, mtexts.txts['Ok'])
 		btnsizer.AddButton(btnOk)
 		btnOk.SetHelpText(mtexts.txts['HelpOk'])
@@ -143,7 +148,7 @@ class SunTransitsDlg(wx.Dialog):
 				self.SetReturnCode(wx.ID_OK)
 			else:
 				dlgm = wx.MessageDialog(None, mtexts.txts['InvalidDate']+' ('+self.year.GetValue()+'.'+self.month.GetValue()+'.'+self.day.GetValue()+'.)', mtexts.txts['Error'], wx.OK|wx.ICON_EXCLAMATION)
-				dlgm.ShowModal()		
+				dlgm.ShowModal()
 				dlgm.Destroy()
 
 
@@ -158,10 +163,3 @@ class SunTransitsDlg(wx.Dialog):
 		self.year.SetValue(str(year))
 		self.month.SetValue(str(month))
 		self.day.SetValue(str(day))
-
-
-
-
-
-
-
