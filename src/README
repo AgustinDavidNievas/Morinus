@@ -1,0 +1,78 @@
+Readme file to Mac OSX version of Morinus Python program.
+
+Morinus is an easy to use astrology software under GPLv3 license. It uses the swiss ephemeris so it's very accurate (5000BC - 5000AD). 
+It runs on every Operating System where Python and wxPython are available (Linux, Unix, Windows, MacOS).
+
+This Mac OSX version is based on Morinus 6.2 for MS Windows. This version has been tested on Mac OSX Lion (version 10.7.4 and 10.6.x), there is no guarantee that program will run on other Mac OSX versions (10.5.x and earlier). I have no machine with these operating system versions :-(
+
+
+Installation on Mac OSX
+
+	- download the latest dmg file from http://code.google.com/p/morinus-astro/downloads/list
+	- delete previous Morinus version, move it into Trash and empty (many thanks to Pankaj Dubey)
+	- double click installed dmg file, new volume is mounted (name = morinus)
+	- double click volume "morinus", volume is opened in Finder
+	- drag and drop "Morinus" application bundle into your favorite destination ( Desktop, Application folder, ...), avoid to use ~/Documents folder for installation.
+
+Package content
+
+  * Morinus - application bundle, Mac OSX
+  * README - this file
+  
+Used files on Mac
+
+  * TODO: options path !!!
+  
+Author and contributors
+	
+Author - Robert Nagy, robert.pluto@gmail.com (programming and astrology)
+
+Developers
+  * Philippe Epaud(France); philipeau@free.fr (french translation)
+  * Margherita Fiorello (Italy); margherita.fiorello@gmail.com (astrology, italian translation)
+  * Martin Gansten (Sweden); http://www.martingansten.com/ (astrology)
+  * Jaime Chica Londoño(Colombia); aulavirtual@astrochart.org (spanish translation)
+  * Roberto Luporini (Italy); roberto.luporini@tiscali.it (Astrological astronomy)
+  * Petr Radek (Czech Rep.); petr_radek@raz-dva.cz (astrology)
+  * Endre Csaba Simon (Finland); secsaba@gmail.com (programming and astrology)
+  * Denis Steinhoff (Israel); denis@steindan.com (astrology, russian translation)
+
+Maintainer Mac OSX - Vaclav Spirhanzl (Czech Republic), vjs.morinus@gmail.com
+
+Program's Website - https://sites.google.com/site/pymorinus/
+Download site - http://code.google.com/p/morinus-astro/downloads/list
+Blog site - http://astro-morinus.blogspot.com/
+
+Releases
+
+6.2.0r05 - 2012 September 6
+- added GUI functionality - closing window with Ctrl+W, standard Mac OSX behavior
+- added Swiss ephemeris compiled library into source code zip archive.
+Library sweastrology.so has following structure:
+sweastrology.so: Mach-O universal binary with 2 architectures
+sweastrology.so (for architecture i386):	Mach-O bundle i386
+sweastrology.so (for architecture x86_64):	Mach-O 64-bit bundle x86_64
+
+6.2.0r04 - 2012 August 19
+- added Swiss ephemeris files
+- created two dmg packages, one with Swiss ephemeris data files and one without
+- created zip archive with source code
+
+6.2.0r03 - 2012 August 1
+- fixed - problem with displaying of Synastry result
+
+6.2.0r02 - 2012 July 23
+- added standard Mac behavior in About menu and Quit menu
+- fixed - the bug in about menu (Mac OSX)
+- fixed - the bug in Colors picker dialog - replacing Std. Button with GenButton from wx.lib.buttons (limitation of wx framework on all platforms - see. https://groups.google.com/forum/?fromgroups#!msg/wxpython-users/cF6TSH-ywRI/exkF76HzYKwJ)
+
+6.2.0r01 - 2012 July 22
+- fix - Charts functions enabled (Transits, Revolutions, Sun-transits, Secondary directions, Elections, Square, Profections)
+- stil open
+-- Chart function Mundane disabled
+-- Synastry disabled
+
+6.2.0r00
+- first Mac OSX release as standalone application
+- following program functions are disabled (Synastry and all Charts), the reason is bug in program Mac OSX version, on MS Windows runs everything without problems
+- there are no swiss ephemeris data files in application bundle

@@ -1,0 +1,1570 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ABS4	sweodef.h	198;"	d
+ABS4	sweodef.h	210;"	d
+AC	swepcalc.h	207;"	d
+ADATE	swepcalc.h	292;"	d
+AFL_AC	swepcalc.h	244;"	d
+AFL_CER	swepcalc.h	248;"	d
+AFL_CHI	swepcalc.h	242;"	d
+AFL_HOUSE	swepcalc.h	258;"	d
+AFL_JUN	swepcalc.h	250;"	d
+AFL_JUP	swepcalc.h	237;"	d
+AFL_LIL	swepcalc.h	243;"	d
+AFL_MAR	swepcalc.h	236;"	d
+AFL_MC	swepcalc.h	245;"	d
+AFL_MER	swepcalc.h	234;"	d
+AFL_MNODE	swepcalc.h	247;"	d
+AFL_MON	swepcalc.h	233;"	d
+AFL_NEP	swepcalc.h	240;"	d
+AFL_PAL	swepcalc.h	249;"	d
+AFL_PLU	swepcalc.h	241;"	d
+AFL_SAT	swepcalc.h	238;"	d
+AFL_SIDT	swepcalc.h	256;"	d
+AFL_SUN	swepcalc.h	232;"	d
+AFL_TNODE	swepcalc.h	246;"	d
+AFL_URA	swepcalc.h	239;"	d
+AFL_VEN	swepcalc.h	235;"	d
+AFL_VES	swepcalc.h	251;"	d
+AFL_WDAY	swepcalc.h	257;"	d
+ALLEPH_END	sweph.h	239;"	d
+ALLEPH_START	sweph.h	238;"	d
+ALL_ASP_BITS	swepcalc.h	373;"	d
+ASC	swepcalc.h	208;"	d
+ASP_0	swepcalc.h	333;"	d
+ASP_120	swepcalc.h	339;"	d
+ASP_135	swepcalc.h	349;"	d
+ASP_144	swepcalc.h	353;"	d
+ASP_150	swepcalc.h	345;"	d
+ASP_180	swepcalc.h	335;"	d
+ASP_30	swepcalc.h	343;"	d
+ASP_45	swepcalc.h	347;"	d
+ASP_60	swepcalc.h	341;"	d
+ASP_72	swepcalc.h	351;"	d
+ASP_90	swepcalc.h	337;"	d
+ASP_ANGLES	swepcalc.h	393;"	d
+ASP_BQIN	swepcalc.h	352;"	d
+ASP_CONJ	swepcalc.h	332;"	d
+ASP_OPPO	swepcalc.h	334;"	d
+ASP_QCNX	swepcalc.h	344;"	d
+ASP_QINT	swepcalc.h	350;"	d
+ASP_SEXT	swepcalc.h	340;"	d
+ASP_SMSQ	swepcalc.h	346;"	d
+ASP_SMSX	swepcalc.h	342;"	d
+ASP_SQSQ	swepcalc.h	348;"	d
+ASP_SQUA	swepcalc.h	336;"	d
+ASP_TRIN	swepcalc.h	338;"	d
+AS_BOOL	sweodef.h	/^  typedef int     AS_BOOL;$/;"	t
+AS_MAXCH	sweodef.h	266;"	d
+AUNIT	sweph.h	266;"	d
+Airmass	swehel.c	/^static double Airmass(double AppAltO, double Press)$/;"	f	file:
+Amplitude	swehel.c	106;"	d	file:
+Angle	swepcalc.h	/^	centisec *Angle;	\/* pointer to Angle[0..NrOfAspects] of the$/;"	m	struct:AspectType
+AppAltfromTopoAlt	swehel.c	/^static double AppAltfromTopoAlt(double TopoAlt, double TempE, double PresE, int32 helflag)$/;"	f	file:
+Asc1	swehouse.c	/^static double Asc1 (double x1, double f, double sine, double cose) $/;"	f	file:
+Asc2	swehouse.c	/^static double Asc2 (double x, double f, double sine, double cose) $/;"	f	file:
+Asp	swepcalc.h	/^		Asp [MAXPLANETS] [MAXPLANETS];$/;"	m	struct:AspectType	typeref:struct:AspectType::aspRec
+AspectType	swepcalc.h	/^struct  AspectType { $/;"	s
+Average	swehel.c	104;"	d	file:
+AvgRadiusMoon	swehel.c	110;"	d	file:
+B	swemmoon.c	/^static double B;		\/* Ecliptic latitude *\/$/;"	v	file:
+B1950	sweph.h	69;"	d
+BEG_YEAR	sweph.h	240;"	d
+BEYOND_EPH_LIMITS	sweph.h	251;"	d
+BFILE_A_ACCESS	sweodef.h	298;"	d
+BFILE_A_ACCESS	sweodef.h	311;"	d
+BFILE_RW_ACCESS	sweodef.h	296;"	d
+BFILE_RW_ACCESS	sweodef.h	309;"	d
+BFILE_R_ACCESS	sweodef.h	295;"	d
+BFILE_R_ACCESS	sweodef.h	308;"	d
+BFILE_W_CREATE	sweodef.h	297;"	d
+BFILE_W_CREATE	sweodef.h	310;"	d
+BIT_ROUND_MIN	swetest.c	481;"	d	file:
+BIT_ROUND_SEC	swetest.c	480;"	d	file:
+BIT_ZODIAC	swetest.c	482;"	d	file:
+BNIGHT	swehel.c	75;"	d	file:
+BNIGHT_FACTOR	swehel.c	76;"	d	file:
+BQIN	swepcalc.h	365;"	d
+BT	swemmoon.c	/^static short FAR BT[5*NBT] = {$/;"	v	file:
+BT2	swemmoon.c	/^static short FAR BT2[5*NBT2] = {$/;"	v	file:
+Bcity	swehel.c	/^static double Bcity(double Value, double Press)$/;"	f	file:
+Bday	swehel.c	/^static double Bday(double AltO, double AziO, double AltS, double AziS, double sunra, double Lat, double HeightEye, double *datm, int32 helflag, char *serr)$/;"	f	file:
+Bm	swehel.c	/^static double Bm(double AltO, double AziO, double AltM, double AziM, double AltS, double AziS, double sunra, double Lat, double HeightEye, double *datm, int32 helflag, char *serr)$/;"	f	file:
+Bn	swehel.c	/^static double Bn(double AltO, double JDNDayUT, double AltS, double sunra, double Lat, double HeightEye, double *datm, int32 helflag, char *serr)$/;"	f	file:
+Bsky	swehel.c	/^static double Bsky(double AltO, double AziO, double AltM, double AziM, double JDNDaysUT, double AltS, double AziS, double sunra, double Lat, double HeightEye, double *datm, int32 helflag, char *serr)$/;"	f	file:
+Btwi	swehel.c	/^static double Btwi(double AltO, double AziO, double AltS, double AziS, double sunra, double Lat, double HeightEye, double *datm, int32 helflag, char *serr)$/;"	f	file:
+C2K	swehel.c	129;"	d	file:
+CALC_ALL_PLANET_BITS	swepcalc.h	220;"	d
+CALC_BIT_BETA	swepcalc.h	280;"	d
+CALC_BIT_EPHE	swepcalc.h	278;"	d
+CALC_BIT_HELIO	swepcalc.h	275;"	d
+CALC_BIT_MAY_USE_EPHE	swepcalc.h	284;"	d
+CALC_BIT_MUST_USE_EPHE	swepcalc.h	283;"	d
+CALC_BIT_NOAPP	swepcalc.h	276;"	d
+CALC_BIT_NONUT	swepcalc.h	277;"	d
+CALC_BIT_RAU	swepcalc.h	282;"	d
+CALC_BIT_RGEO	swepcalc.h	281;"	d
+CALC_BIT_SPEED	swepcalc.h	279;"	d
+CALC_N	swepcalc.h	189;"	d
+CALC_N_MC	swepcalc.h	210;"	d
+CALC_ONLY_ECL_NUT	swepcalc.h	172;"	d
+CALLOC	swephexp.h	408;"	d
+CALLOC	swephexp.h	417;"	d
+CALLOC	swephexp.h	421;"	d
+CC	Makefile	/^CC=cc	#for Linux$/;"	m
+CERES	swepcalc.h	191;"	d
+CFLAGS	Makefile	/^CFLAGS = -g -O9 -Wall -pedantic 	# for Linux and other gcc systems$/;"	m
+CHARSET_ISO_LATIN_1	sweodef.h	243;"	d
+CHIRON	swepcalc.h	187;"	d
+CHIRON_END	sweph.h	212;"	d
+CHIRON_START	sweph.h	211;"	d
+CLIGHT	sweph.h	267;"	d
+CONJ	swepcalc.h	355;"	d
+CRC32_POLY	swephlib.c	2115;"	d	file:
+CS	sweodef.h	272;"	d
+CS2DEG	sweodef.h	291;"	d
+CSEC	sweodef.h	273;"	d
+CSTORAD	sweodef.h	288;"	d
+CVA	swehel.c	/^static double CVA(double B, double SN)$/;"	f	file:
+CalcH	swehouse.c	/^static int CalcH($/;"	f	file:
+CalcHouses	swepcalc.c	/^void CalcHouses(CSEC th, CSEC fi, CSEC mekl, char hsy, int iteration_count,$/;"	f
+D	swemmoon.c	/^static double D;$/;"	v	file:
+D2H	swehel.c	88;"	d	file:
+D2S	swehel.c	90;"	d	file:
+D2Y	swehel.c	87;"	d	file:
+DEARTH	swecl.c	83;"	d	file:
+DEBUG	swehel.c	79;"	d	file:
+DEBUG_DO_SHOW	swejpl.c	75;"	d	file:
+DEFL_SPEED_INTV	sweph.h	296;"	d
+DEG	sweodef.h	275;"	d
+DEG120	sweodef.h	282;"	d
+DEG15	sweodef.h	277;"	d
+DEG150	sweodef.h	283;"	d
+DEG180	sweodef.h	284;"	d
+DEG24	sweodef.h	278;"	d
+DEG270	sweodef.h	285;"	d
+DEG30	sweodef.h	279;"	d
+DEG360	sweodef.h	286;"	d
+DEG60	sweodef.h	280;"	d
+DEG7_30	sweodef.h	276;"	d
+DEG90	sweodef.h	281;"	d
+DEGTORAD	sweodef.h	268;"	d
+DELTA	swehel.c	130;"	d	file:
+DELTAT_STEPHENSON_2004	swephlib.c	1541;"	d	file:
+DEMO	swephlib.c	1582;"	d	file:
+DIFF_DIFF	swetest.c	488;"	d	file:
+DIFF_MIDP	swetest.c	489;"	d	file:
+DIR_GLUE	sweodef.h	305;"	d
+DIR_GLUE	sweodef.h	319;"	d
+DIR_GLUE	sweodef.h	327;"	d
+DMOON	swecl.c	82;"	d	file:
+DONE	swehel.c	80;"	d	file:
+DO_SAVE	sweph.c	76;"	d	file:
+DSUN	swecl.c	80;"	d	file:
+DeltaT	swehel.c	/^static double DeltaT(double JDNDays, int COD)$/;"	f	file:
+DeltaTSE	swehel.c	/^static double DeltaTSE(double JDNDays, int COD)$/;"	f	file:
+DeltaTVR	swehel.c	/^static double DeltaTVR(double JDNDays, int COD)$/;"	f	file:
+Deltam	swehel.c	/^static double Deltam(double AltO, double AltS, double sunra, double Lat, double HeightEye, double *datm, int32 helflag, char *serr)$/;"	f	file:
+DeterObject	swehel.c	/^static int32 DeterObject(char *ObjectName)$/;"	f	file:
+DeterTAV	swehel.c	/^static int32 DeterTAV(double *dobs, double JDNDaysUT, double *dgeo, double *datm, char *ObjectName, int32 helflag, double *dret, char *serr)$/;"	f	file:
+DistanceAngle	swehel.c	/^static double DistanceAngle(double LatA, double LongA, double LatB, double LongB)$/;"	f	file:
+DllImport	swedll.h	75;"	d
+DllImport	swedll.h	78;"	d
+DllImport	swedll.h	80;"	d
+EARTH	swepcalc.h	174;"	d
+EARTH_MOON_MRAT	sweph.h	262;"	d
+EARTH_OBLATENESS	sweph.h	277;"	d
+EARTH_RADIUS	sweph.h	275;"	d
+EARTH_ROT_SPEED	sweph.h	278;"	d
+ECL_LUN_PARTIAL	swetest.c	555;"	d	file:
+ECL_LUN_PENUMBRAL	swetest.c	554;"	d	file:
+ECL_LUN_TOTAL	swetest.c	556;"	d	file:
+ECL_SOL_ANNULAR	swetest.c	558;"	d	file:
+ECL_SOL_PARTIAL	swetest.c	557;"	d	file:
+ECL_SOL_TOTAL	swetest.c	559;"	d	file:
+ENDMARK	sweph.h	139;"	d
+END_YEAR	sweph.h	241;"	d
+ERR	sweodef.h	229;"	d
+ERR	sweph.h	249;"	d
+EULER	swecl.c	2833;"	d	file:
+EXP16	swephexp.h	436;"	d
+EXP16	swephexp.h	441;"	d
+EXP16	swephexp.h	446;"	d
+EXP32	swephexp.h	437;"	d
+EXP32	swephexp.h	442;"	d
+EXP32	swephexp.h	447;"	d
+Ea	swemmoon.c	/^static double Ea;$/;"	v	file:
+FALSE	sweodef.h	224;"	d
+FAR	swephexp.h	405;"	d
+FAR	swephexp.h	412;"	d
+FICT_GEO	swemplan.c	72;"	d	file:
+FILE_A_ACCESS	sweodef.h	302;"	d
+FILE_A_ACCESS	sweodef.h	318;"	d
+FILE_A_ACCESS	sweodef.h	324;"	d
+FILE_RW_ACCESS	sweodef.h	300;"	d
+FILE_RW_ACCESS	sweodef.h	316;"	d
+FILE_RW_ACCESS	sweodef.h	322;"	d
+FILE_R_ACCESS	sweodef.h	299;"	d
+FILE_R_ACCESS	sweodef.h	315;"	d
+FILE_R_ACCESS	sweodef.h	321;"	d
+FILE_W_CREATE	sweodef.h	301;"	d
+FILE_W_CREATE	sweodef.h	317;"	d
+FILE_W_CREATE	sweodef.h	323;"	d
+FIRST_HSNR	swepcalc.h	212;"	d
+FREE	swephexp.h	409;"	d
+FREE	swephexp.h	418;"	d
+FREE	swephexp.h	422;"	d
+FormAstroRefrac	swehel.c	99;"	d	file:
+GBinocular	swehel.c	150;"	d	file:
+GCR	swehel.c	135;"	d	file:
+GEOGCONST	sweph.h	272;"	d
+GOpticDia	swehel.c	151;"	d	file:
+GOpticMag	swehel.c	148;"	d	file:
+GOpticTrans	swehel.c	149;"	d	file:
+GREG_CAL	swepcalc.h	268;"	d
+GravitySource	swehel.c	100;"	d	file:
+H2S	swehel.c	89;"	d	file:
+HARD_ASP_BITS	swepcalc.h	375;"	d
+HELGRAVCONST	sweph.h	271;"	d
+HOUSES	swehouse.h	73;"	d
+HOUSES	swepcalc.h	427;"	d
+HPUNIX	sweodef.h	133;"	d
+HPUNIX	sweodef.h	142;"	d
+HPUNIX	sweodef.h	147;"	d
+HUGE	sweodef.h	258;"	d
+HeliacalAngle	swehel.c	/^static int32 HeliacalAngle(double Magn, double *dobs, double AziO, double AltM, double AziM, double JDNDaysUT, double AziS, double *dgeo, double *datm, int32 helflag, double *dangret, char *serr)$/;"	f	file:
+HourAngle	swehel.c	/^static double HourAngle(double TopoAlt, double TopoDecl, double Lat)$/;"	f	file:
+HouseNr	swepcalc.c	/^int HouseNr(struct houses *hsp, CSEC pp)$/;"	f
+INT4	sweodef.h	/^  typedef int     INT4;   \/* signed integer with at least 32 bit precision *\/$/;"	t
+INT4	sweodef.h	/^  typedef long    INT4;   \/* signed integer with at least 32 bit precision *\/$/;"	t
+INTEL_BYTE_ORDER	sweodef.h	134;"	d
+INTEL_BYTE_ORDER	sweodef.h	183;"	d
+INT_16	sweodef.h	173;"	d
+IS_ANY_BODY	sweph.c	73;"	d	file:
+IS_MAIN_ASTEROID	sweph.c	74;"	d	file:
+IS_MOON	sweph.c	72;"	d	file:
+IS_PLANET	sweph.c	71;"	d	file:
+InpHouseNr	swepcalc.c	/^int InpHouseNr (struct houses *hsp, CSEC pp, CSEC *coff)$/;"	f
+InpHouseNr2	swepcalc.c	/^int InpHouseNr2 (struct houses *hsp, CSEC pp, CSEC *coff)$/;"	f
+J1900	sweph.h	70;"	d
+J1950	swepcalc.h	264;"	d
+J1972	swedate.c	262;"	d	file:
+J2000	swepcalc.h	263;"	d
+J2000	sweph.h	68;"	d
+J2000	swetest.c	476;"	d	file:
+J2000_TO_J	sweph.h	254;"	d
+JC2D	swehel.c	92;"	d	file:
+JPLEPH_END	sweph.h	235;"	d
+JPLEPH_START	sweph.h	234;"	d
+JUL_CAL	swepcalc.h	269;"	d
+JUL_OFFSET	swepcalc.h	265;"	d
+JUNO	swepcalc.h	193;"	d
+JUPITER	swepcalc.h	179;"	d
+J_EARTH	swejpl.h	72;"	d
+J_EMB	swejpl.h	82;"	d
+J_JUPITER	swejpl.h	74;"	d
+J_LIB	swejpl.h	84;"	d
+J_MARS	swejpl.h	73;"	d
+J_MERCURY	swejpl.h	70;"	d
+J_MOON	swejpl.h	79;"	d
+J_NEPTUNE	swejpl.h	77;"	d
+J_NUT	swejpl.h	83;"	d
+J_PLUTO	swejpl.h	78;"	d
+J_SATURN	swejpl.h	75;"	d
+J_SBARY	swejpl.h	81;"	d
+J_SUN	swejpl.h	80;"	d
+J_TO_J2000	sweph.h	253;"	d
+J_URANUS	swejpl.h	76;"	d
+J_VENUS	swejpl.h	71;"	d
+Ju	swemmoon.c	/^static double Ju;$/;"	v	file:
+KGAUSS	sweph.h	273;"	d
+KGAUSS_GEO	swemplan.c	73;"	d	file:
+KM_S_TO_AU_CTY	sweph.h	289;"	d
+Kelvin	swehel.c	/^static double Kelvin(double Temp)$/;"	f	file:
+LASTPLANET	swepcalc.h	184;"	d
+LAST_HSNR	swepcalc.h	213;"	d
+LIGHTTIME_AUNIT	sweph.h	280;"	d
+LILITH	swepcalc.h	188;"	d
+LONG_64	sweodef.h	176;"	d
+LR	swemmoon.c	/^static short FAR LR[8*NLR] = {$/;"	v	file:
+LRT	swemmoon.c	/^static short FAR LRT[8*NLRT] = {$/;"	v	file:
+LRT2	swemmoon.c	/^static short FAR LRT2[6*NLRT2] = {$/;"	v	file:
+LTERM_EQUATION_COEFF	swephlib.c	1548;"	d	file:
+LTERM_EQUATION_COEFF	swephlib.c	1565;"	d	file:
+LTERM_EQUATION_YSTART	swephlib.c	1547;"	d	file:
+LTERM_EQUATION_YSTART	swephlib.c	1564;"	d	file:
+LapseDA	swehel.c	137;"	d	file:
+LapseSA	swehel.c	136;"	d	file:
+LengthMoon	swehel.c	/^static double LengthMoon(double W, double Diamoon)$/;"	f	file:
+LocalMinStep	swehel.c	83;"	d	file:
+LowestAppAlt	swehel.c	140;"	d	file:
+M	swemmoon.c	/^static double M;$/;"	v	file:
+M2S	swehel.c	93;"	d	file:
+MACOS	sweodef.h	127;"	d
+MALLOC	swephexp.h	407;"	d
+MALLOC	swephexp.h	416;"	d
+MALLOC	swephexp.h	420;"	d
+MARS	swepcalc.h	178;"	d
+MAXASPECTS	swepcalc.h	367;"	d
+MAXORD	sweph.h	244;"	d
+MAXPLANETS	swepcalc.h	324;"	d
+MAXPL_NACALC	swepcalc.h	196;"	d
+MAX_COUNT_SYNPER	swehel.c	108;"	d	file:
+MAX_COUNT_SYNPER_MAX	swehel.c	109;"	d	file:
+MAX_PL_INDEX	swepcalc.h	215;"	d
+MB	swemmoon.c	/^static short FAR MB[6*NMB] = {$/;"	v	file:
+MC	swepcalc.h	209;"	d
+MD	swehel.c	133;"	d	file:
+MEAN_NODE	swepcalc.h	185;"	d
+MEAN_NODE_SPEED_INTV	sweph.h	292;"	d
+MERCURY	swepcalc.h	176;"	d
+MILLIARCSEC	swehouse.c	69;"	d	file:
+MODE_HOUSE	swetest.c	490;"	d	file:
+MODE_LABEL	swetest.c	491;"	d	file:
+MOON	swepcalc.h	175;"	d
+MOON_MEAN_DIST	sweph.h	257;"	d
+MOON_MEAN_ECC	sweph.h	259;"	d
+MOON_MEAN_INCL	sweph.h	258;"	d
+MOON_SPEED_INTV	sweph.h	290;"	d
+MOSHLUEPH_END	sweph.h	224;"	d
+MOSHLUEPH_START	sweph.h	223;"	d
+MOSHNDEPH_END	sweph.h	226;"	d
+MOSHNDEPH_START	sweph.h	225;"	d
+MOSHPLEPH_END	sweph.h	222;"	d
+MOSHPLEPH_START	sweph.h	221;"	d
+MP	swemmoon.c	/^static double MP;$/;"	v	file:
+MPC_CERES	sweph.h	72;"	d
+MPC_CHIRON	sweph.h	76;"	d
+MPC_JUNO	sweph.h	74;"	d
+MPC_PALLAS	sweph.h	73;"	d
+MPC_PHOLUS	sweph.h	77;"	d
+MPC_VESTA	sweph.h	75;"	d
+MSDOS	sweodef.h	100;"	d
+MSDOS	sweodef.h	101;"	d
+MSDOS	sweodef.h	106;"	d
+MSDOS	sweodef.h	113;"	d
+MSDOS	sweodef.h	120;"	d
+MSDOS	sweodef.h	128;"	d
+MSDOS	sweodef.h	146;"	d
+MSDOS	sweodef.h	80;"	d
+MSDOS	sweodef.h	81;"	d
+MSDOS	sweodef.h	96;"	d
+MS_C	sweodef.h	136;"	d
+MS_VC	sweodef.h	92;"	d
+MW	swehel.c	134;"	d	file:
+MYFAR	sweodef.h	138;"	d
+MYFAR	sweodef.h	143;"	d
+MYFAR	sweodef.h	151;"	d
+MY_FALSE	sweodef.h	76;"	d
+MY_TRUE	sweodef.h	75;"	d
+M_PI	sweodef.h	261;"	d
+Ma	swemmoon.c	/^static double Ma;$/;"	v	file:
+Magnitude	swehel.c	/^static int32 Magnitude(double JDNDaysUT, double *dgeo, char *ObjectName, int32 helflag, double *dmag, char *serr)$/;"	f	file:
+MaxTryHours	swehel.c	81;"	d	file:
+Maxorb	swepcalc.h	/^	centisec *Maxorb;	\/* pointer to an array [0..NrOfAspects] of$/;"	m	struct:AspectType
+Min2Deg	swehel.c	78;"	d	file:
+MoonDistance	swehel.c	120;"	d	file:
+MoonEventJDut	swehel.c	/^static int32 MoonEventJDut(double JDNDaysUTStart, double *dgeo, double *datm, double *dobs, int32 TypeEvent, int32 helflag, double *dret, char *serr)$/;"	f	file:
+MoonPhase	swehel.c	/^static double MoonPhase(double AltM, double AziM, double AziS)$/;"	f	file:
+MoonsBrightness	swehel.c	/^static double MoonsBrightness(double dist, double phasemoon)$/;"	f	file:
+NBT	swemmoon.c	644;"	d	file:
+NBT2	swemmoon.c	703;"	d	file:
+NCTIES	sweph.h	246;"	d
+NDIAM	sweph.h	306;"	d
+NEPTUNE	swepcalc.h	182;"	d
+NF	swemmoon.c	/^static double NF;$/;"	v	file:
+NLEAP_INIT	swedate.c	263;"	d	file:
+NLEAP_SECONDS	swedate.c	233;"	d	file:
+NLEAP_SECONDS_SPACE	swedate.c	234;"	d	file:
+NLR	swemmoon.c	319;"	d	file:
+NLRT	swemmoon.c	597;"	d	file:
+NLRT2	swemmoon.c	669;"	d	file:
+NLS	swenut2000a.h	66;"	d
+NLS_2000B	swenut2000a.h	67;"	d
+NMAG_ELEM	swecl.c	2834;"	d	file:
+NMB	swemmoon.c	447;"	d	file:
+NMB	swemmoon.c	511;"	d	file:
+NODE_CALC_INTV	sweph.h	293;"	d
+NODE_CALC_INTV_MOSH	sweph.h	294;"	d
+NOT_AVAILABLE	sweph.h	250;"	d
+NO_JPL	swephexp.h	384;"	d
+NO_OF_HOUSES	swepcalc.h	214;"	d
+NO_SAVE	sweph.c	77;"	d	file:
+NPL	swenut2000a.h	69;"	d
+NUT_CORR_1987	swephlib.h	65;"	d
+NUT_IAU_1980	swephlib.h	83;"	d
+NUT_IAU_2000A	swephlib.h	84;"	d
+NUT_IAU_2000B	swephlib.h	85;"	d
+NUT_SPEED_INTV	sweph.h	295;"	d
+NrOfAspects	swepcalc.h	/^	        NrOfAspects;$/;"	m	struct:AspectType
+NrOfPlanets	swepcalc.h	/^	int     NrOfPlanets,$/;"	m	struct:AspectType
+O1MAS2DEG	swenut2000a.h	64;"	d
+ODEGREE_CHAR	sweodef.h	246;"	d
+ODEGREE_CHAR	sweodef.h	249;"	d
+ODEGREE_CHAR	sweodef.h	251;"	d
+OK	sweodef.h	228;"	d
+OK	sweph.h	248;"	d
+OP	Makefile	/^OP=$(CFLAGS)  $/;"	m
+OPEN_MODE	sweodef.h	304;"	d
+OPEN_MODE	sweodef.h	313;"	d
+OPPO	swepcalc.h	356;"	d
+O_BINARY	sweodef.h	303;"	d
+ObjectLoc	swehel.c	/^static int32 ObjectLoc(double JDNDaysUT, double *dgeo, double *datm, char *ObjectName, int32 Angle, int32 helflag, double *dret, char *serr)$/;"	f	file:
+OpticFactor	swehel.c	/^static double OpticFactor(double Bback, double kX, double *dobs, double JDNDaysUT, char *ObjectName, int TypeFactor)$/;"	f	file:
+PALLAS	swepcalc.h	192;"	d
+PASCAL_CONV	swephexp.h	429;"	d
+PASCAL_CONV	swephexp.h	431;"	d
+PASCAL_CONV	swephexp.h	445;"	d
+PASP	swepcalc.h	388;"	d
+PATH_SEPARATOR	sweodef.h	306;"	d
+PATH_SEPARATOR	sweodef.h	312;"	d
+PHOLUS_START	sweph.h	219;"	d
+PI	swehel.c	77;"	d	file:
+PI	sweph.h	136;"	d
+PLAN_DATA	sweph.h	356;"	d
+PLAN_SPEED_INTV	sweph.h	291;"	d
+PLSEL_A	swetest.c	486;"	d	file:
+PLSEL_D	swetest.c	483;"	d	file:
+PLSEL_H	swetest.c	485;"	d	file:
+PLSEL_P	swetest.c	484;"	d	file:
+PLSV	swehel.c	73;"	d	file:
+PLUTO	swepcalc.h	183;"	d
+PNOINT2JPL	sweph.h	303;"	d
+PREC_BRETAGNON_2003	swephlib.h	73;"	d
+PREC_IAU_1976	swephlib.h	76;"	d
+PREC_IAU_1976_CTIES	swephlib.h	78;"	d
+PREC_IAU_2003	swephlib.h	77;"	d
+PREC_IAU_2003_CTIES	swephlib.h	80;"	d
+PREC_LASKAR_1986	swephlib.h	72;"	d
+PREC_SIMON_1994	swephlib.h	71;"	d
+PREC_WILLIAMS_1994	swephlib.h	70;"	d
+PROG_PLANET_OFFSET	swepcalc.h	197;"	d
+Periodicy	swehel.c	105;"	d	file:
+PlanetPos	swepcalc.h	/^	centisec *PlanetPos;	\/* pointer to an array of planet positions $/;"	m	struct:AspectType
+PresEfromPresS	swehel.c	/^static double PresEfromPresS(double TempS, double Press, double HeightEye)$/;"	f	file:
+PressRef	swehel.c	132;"	d	file:
+PupilDia	swehel.c	/^static double PupilDia(double Age, double B)$/;"	f	file:
+QCNX	swepcalc.h	361;"	d
+QINT	swepcalc.h	364;"	d
+RADTOCS	sweodef.h	289;"	d
+RADTODEG	sweodef.h	269;"	d
+REAL8	sweodef.h	/^  typedef double  REAL8;  \/* real with at least 64 bit precision *\/$/;"	t
+REARTH	swecl.c	86;"	d	file:
+REFR_BENNETTH	swehel.c	98;"	d	file:
+REFR_SINCLAIR	swehel.c	97;"	d	file:
+REarthSource	swehel.c	101;"	d	file:
+RMOON	swecl.c	85;"	d	file:
+RSUN	swecl.c	84;"	d	file:
+Ra	swehel.c	114;"	d	file:
+Rb	swehel.c	115;"	d	file:
+RecalcAspects	swepcalc.c	/^void RecalcAspects(struct AspectType *a)$/;"	f
+RiseSet	swehel.c	/^static int32 RiseSet(double JDNDaysUT, double *dgeo, double *datm, char *ObjectName, int32 RSEvent, int32 helflag, int32 Rim, double *tret, char *serr)$/;"	f	file:
+S2H	swehel.c	91;"	d	file:
+SATURN	swepcalc.h	180;"	d
+SCP	sweodef.h	241;"	d
+SEFLG_BARYCTR	swephexp.h	195;"	d
+SEFLG_DEFAULTEPH	swephexp.h	239;"	d
+SEFLG_EPHMASK	swecl.c	3141;"	d	file:
+SEFLG_EPHMASK	swecl.c	67;"	d	file:
+SEFLG_EPHMASK	sweph.c	79;"	d	file:
+SEFLG_EPHMASK	swetest.c	478;"	d	file:
+SEFLG_EQUATORIAL	swephexp.h	192;"	d
+SEFLG_HELCTR	swephexp.h	183;"	d
+SEFLG_ICRS	swephexp.h	198;"	d
+SEFLG_J2000	swephexp.h	185;"	d
+SEFLG_JPLEPH	swephexp.h	179;"	d
+SEFLG_MOSEPH	swephexp.h	181;"	d
+SEFLG_NOABERR	swephexp.h	191;"	d
+SEFLG_NOGDEFL	swephexp.h	190;"	d
+SEFLG_NONUT	swephexp.h	186;"	d
+SEFLG_RADIANS	swephexp.h	194;"	d
+SEFLG_SIDEREAL	swephexp.h	197;"	d
+SEFLG_SPEED	swephexp.h	189;"	d
+SEFLG_SPEED3	swephexp.h	187;"	d
+SEFLG_SWIEPH	swephexp.h	180;"	d
+SEFLG_TOPOCTR	swephexp.h	196;"	d
+SEFLG_TRUEPOS	swephexp.h	184;"	d
+SEFLG_XYZ	swephexp.h	193;"	d
+SEI_ANYBODY	sweph.h	156;"	d
+SEI_CERES	sweph.h	159;"	d
+SEI_CHIRON	sweph.h	157;"	d
+SEI_CURR_FPOS	sweph.h	204;"	d
+SEI_EARTH	sweph.h	144;"	d
+SEI_EMB	sweph.h	143;"	d
+SEI_EPSILON	sweph.h	141;"	d
+SEI_FILE_ANY_AST	sweph.h	186;"	d
+SEI_FILE_BIGENDIAN	sweph.h	193;"	d
+SEI_FILE_EFPOSBEGIN	sweph.h	199;"	d
+SEI_FILE_FIXSTAR	sweph.h	187;"	d
+SEI_FILE_LITENDIAN	sweph.h	195;"	d
+SEI_FILE_MAIN_AST	sweph.h	185;"	d
+SEI_FILE_MOON	sweph.h	184;"	d
+SEI_FILE_NMAXPLAN	sweph.h	198;"	d
+SEI_FILE_NOREORD	sweph.h	194;"	d
+SEI_FILE_PLANET	sweph.h	183;"	d
+SEI_FILE_REORD	sweph.h	196;"	d
+SEI_FILE_TEST_ENDIAN	sweph.h	192;"	d
+SEI_FLG_ELLIPSE	sweph.h	177;"	d
+SEI_FLG_EMBHEL	sweph.h	178;"	d
+SEI_FLG_HELIO	sweph.h	175;"	d
+SEI_FLG_ROTATE	sweph.h	176;"	d
+SEI_INTP_APOG	sweph.h	170;"	d
+SEI_INTP_PERG	sweph.h	171;"	d
+SEI_JUNO	sweph.h	161;"	d
+SEI_JUPITER	sweph.h	150;"	d
+SEI_MARS	sweph.h	149;"	d
+SEI_MEAN_APOG	sweph.h	168;"	d
+SEI_MEAN_NODE	sweph.h	166;"	d
+SEI_MERCURY	sweph.h	147;"	d
+SEI_MOON	sweph.h	146;"	d
+SEI_NEPHFILES	sweph.h	203;"	d
+SEI_NEPTUNE	sweph.h	153;"	d
+SEI_NNODE_ETC	sweph.h	173;"	d
+SEI_NPLANETS	sweph.h	164;"	d
+SEI_NUTATION	sweph.h	142;"	d
+SEI_OSCU_APOG	sweph.h	169;"	d
+SEI_PALLAS	sweph.h	160;"	d
+SEI_PHOLUS	sweph.h	158;"	d
+SEI_PLUTO	sweph.h	154;"	d
+SEI_SATURN	sweph.h	151;"	d
+SEI_SUN	sweph.h	145;"	d
+SEI_SUNBARY	sweph.h	155;"	d
+SEI_TRUE_NODE	sweph.h	167;"	d
+SEI_URANUS	sweph.h	152;"	d
+SEI_VENUS	sweph.h	148;"	d
+SEI_VESTA	sweph.h	162;"	d
+SEXT	swepcalc.h	359;"	d
+SE_ACRONYCHAL_RISING	swephexp.h	353;"	d
+SE_ACRONYCHAL_SETTING	swephexp.h	355;"	d
+SE_ADMETOS	swephexp.h	139;"	d
+SE_APOLLON	swephexp.h	138;"	d
+SE_APP_TO_TRUE	swephexp.h	291;"	d
+SE_ARMC	swephexp.h	159;"	d
+SE_ASC	swephexp.h	157;"	d
+SE_ASTNAMFILE	swephexp.h	305;"	d
+SE_AST_OFFSET	swephexp.h	121;"	d
+SE_BIT_ASTRO_TWILIGHT	swephexp.h	280;"	d
+SE_BIT_CIVIL_TWILIGHT	swephexp.h	278;"	d
+SE_BIT_DISC_CENTER	swephexp.h	273;"	d
+SE_BIT_NAUTIC_TWILIGHT	swephexp.h	279;"	d
+SE_BIT_NO_REFRACTION	swephexp.h	276;"	d
+SE_CALC_ITRANSIT	swephexp.h	272;"	d
+SE_CALC_MTRANSIT	swephexp.h	271;"	d
+SE_CALC_RISE	swephexp.h	269;"	d
+SE_CALC_SET	swephexp.h	270;"	d
+SE_CERES	swephexp.h	112;"	d
+SE_CHIRON	swephexp.h	110;"	d
+SE_COASC1	swephexp.h	162;"	d
+SE_COASC2	swephexp.h	163;"	d
+SE_COMET_OFFSET	swephexp.h	129;"	d
+SE_COSMICAL_SETTING	swephexp.h	354;"	d
+SE_CUPIDO	swephexp.h	134;"	d
+SE_DE_NUMBER	swephexp.h	297;"	d
+SE_EARTH	swephexp.h	109;"	d
+SE_ECL2HOR	swephexp.h	284;"	d
+SE_ECL_1ST_VISIBLE	swephexp.h	260;"	d
+SE_ECL_2ND_VISIBLE	swephexp.h	261;"	d
+SE_ECL_3RD_VISIBLE	swephexp.h	262;"	d
+SE_ECL_4TH_VISIBLE	swephexp.h	263;"	d
+SE_ECL_ALLTYPES_LUNAR	swephexp.h	257;"	d
+SE_ECL_ALLTYPES_SOLAR	swephexp.h	256;"	d
+SE_ECL_ANNULAR	swephexp.h	252;"	d
+SE_ECL_ANNULAR_TOTAL	swephexp.h	254;"	d
+SE_ECL_CENTRAL	swephexp.h	249;"	d
+SE_ECL_MAX_VISIBLE	swephexp.h	259;"	d
+SE_ECL_NONCENTRAL	swephexp.h	250;"	d
+SE_ECL_NUT	swephexp.h	93;"	d
+SE_ECL_ONE_TRY	swephexp.h	264;"	d
+SE_ECL_PARTIAL	swephexp.h	253;"	d
+SE_ECL_PENUMBRAL	swephexp.h	255;"	d
+SE_ECL_TOTAL	swephexp.h	251;"	d
+SE_ECL_VISIBLE	swephexp.h	258;"	d
+SE_EPHE_PATH	swephexp.h	318;"	d
+SE_EPHE_PATH	swephexp.h	320;"	d
+SE_EPHE_PATH	swephexp.h	324;"	d
+SE_EPHE_PATH	swephexp.h	326;"	d
+SE_EQU2HOR	swephexp.h	285;"	d
+SE_EQUASC	swephexp.h	161;"	d
+SE_EVENING_FIRST	swephexp.h	351;"	d
+SE_EVENING_LAST	swephexp.h	350;"	d
+SE_FICTFILE	swephexp.h	306;"	d
+SE_FICT_MAX	swephexp.h	126;"	d
+SE_FICT_OFFSET	swephexp.h	124;"	d
+SE_FICT_OFFSET_1	swephexp.h	125;"	d
+SE_FILE_SUFFIX	sweph.h	201;"	d
+SE_FIXSTAR	swephexp.h	155;"	d
+SE_FNAME_DE200	swephexp.h	298;"	d
+SE_FNAME_DE403	swephexp.h	299;"	d
+SE_FNAME_DE404	swephexp.h	300;"	d
+SE_FNAME_DE405	swephexp.h	301;"	d
+SE_FNAME_DE406	swephexp.h	302;"	d
+SE_FNAME_DFT	swephexp.h	303;"	d
+SE_GREG_CAL	swephexp.h	88;"	d
+SE_HADES	swephexp.h	135;"	d
+SE_HARRINGTON	swephexp.h	145;"	d
+SE_HELFLAG_AVKIND	swephexp.h	365;"	d
+SE_HELFLAG_AVKIND_MIN7	swephexp.h	363;"	d
+SE_HELFLAG_AVKIND_MIN9	swephexp.h	364;"	d
+SE_HELFLAG_AVKIND_PTO	swephexp.h	362;"	d
+SE_HELFLAG_AVKIND_VR	swephexp.h	361;"	d
+SE_HELFLAG_HIGH_PRECISION	swephexp.h	358;"	d
+SE_HELFLAG_LONG_SEARCH	swephexp.h	357;"	d
+SE_HELFLAG_NO_DETAILS	swephexp.h	360;"	d
+SE_HELFLAG_OPTICAL_PARAMS	swephexp.h	359;"	d
+SE_HELIACAL_RISING	swephexp.h	347;"	d
+SE_HELIACAL_SETTING	swephexp.h	348;"	d
+SE_HOR2ECL	swephexp.h	286;"	d
+SE_HOR2EQU	swephexp.h	287;"	d
+SE_INTP_APOG	swephexp.h	116;"	d
+SE_INTP_PERG	swephexp.h	117;"	d
+SE_ISIS	swephexp.h	143;"	d
+SE_JUL_CAL	swephexp.h	87;"	d
+SE_JUNO	swephexp.h	114;"	d
+SE_JUPITER	swephexp.h	100;"	d
+SE_KRONOS	swephexp.h	137;"	d
+SE_LAPSE_RATE	sweph.h	298;"	d
+SE_MARS	swephexp.h	99;"	d
+SE_MAX_STNAME	swephexp.h	241;"	d
+SE_MC	swephexp.h	158;"	d
+SE_MEAN_APOG	swephexp.h	107;"	d
+SE_MEAN_NODE	swephexp.h	105;"	d
+SE_MERCURY	swephexp.h	97;"	d
+SE_MIXEDOPIC_FLAG	swephexp.h	371;"	d
+SE_MOON	swephexp.h	96;"	d
+SE_MORNING_FIRST	swephexp.h	349;"	d
+SE_MORNING_LAST	swephexp.h	352;"	d
+SE_NALL_NAT_POINTS	swephexp.h	131;"	d
+SE_NAME_ADMETOS	sweph.h	109;"	d
+SE_NAME_APOLLON	sweph.h	108;"	d
+SE_NAME_CERES	sweph.h	96;"	d
+SE_NAME_CHIRON	sweph.h	100;"	d
+SE_NAME_CUPIDO	sweph.h	104;"	d
+SE_NAME_EARTH	sweph.h	95;"	d
+SE_NAME_HADES	sweph.h	105;"	d
+SE_NAME_HARRINGTON	sweph.h	114;"	d
+SE_NAME_INTP_APOG	sweph.h	93;"	d
+SE_NAME_INTP_PERG	sweph.h	94;"	d
+SE_NAME_ISIS	sweph.h	112;"	d
+SE_NAME_JUNO	sweph.h	98;"	d
+SE_NAME_JUPITER	sweph.h	84;"	d
+SE_NAME_KRONOS	sweph.h	107;"	d
+SE_NAME_MARS	sweph.h	83;"	d
+SE_NAME_MEAN_APOG	sweph.h	91;"	d
+SE_NAME_MEAN_NODE	sweph.h	89;"	d
+SE_NAME_MERCURY	sweph.h	81;"	d
+SE_NAME_MOON	sweph.h	80;"	d
+SE_NAME_NEPTUNE	sweph.h	87;"	d
+SE_NAME_NEPTUNE_ADAMS	sweph.h	116;"	d
+SE_NAME_NEPTUNE_LEVERRIER	sweph.h	115;"	d
+SE_NAME_NIBIRU	sweph.h	113;"	d
+SE_NAME_OSCU_APOG	sweph.h	92;"	d
+SE_NAME_PALLAS	sweph.h	97;"	d
+SE_NAME_PHOLUS	sweph.h	101;"	d
+SE_NAME_PLUTO	sweph.h	88;"	d
+SE_NAME_PLUTO_LOWELL	sweph.h	117;"	d
+SE_NAME_PLUTO_PICKERING	sweph.h	118;"	d
+SE_NAME_POSEIDON	sweph.h	111;"	d
+SE_NAME_SATURN	sweph.h	85;"	d
+SE_NAME_SUN	sweph.h	79;"	d
+SE_NAME_TRUE_NODE	sweph.h	90;"	d
+SE_NAME_URANUS	sweph.h	86;"	d
+SE_NAME_VENUS	sweph.h	82;"	d
+SE_NAME_VESTA	sweph.h	99;"	d
+SE_NAME_VULCAN	sweph.h	119;"	d
+SE_NAME_VULKANUS	sweph.h	110;"	d
+SE_NAME_WHITE_MOON	sweph.h	120;"	d
+SE_NAME_ZEUS	sweph.h	106;"	d
+SE_NASCMC	swephexp.h	165;"	d
+SE_NEELY	swemplan.c	505;"	d	file:
+SE_NEPTUNE	swephexp.h	103;"	d
+SE_NEPTUNE_ADAMS	swephexp.h	147;"	d
+SE_NEPTUNE_LEVERRIER	swephexp.h	146;"	d
+SE_NFICT_ELEM	swephexp.h	127;"	d
+SE_NIBIRU	swephexp.h	144;"	d
+SE_NODBIT_FOPOINT	swephexp.h	236;"	d
+SE_NODBIT_MEAN	swephexp.h	233;"	d
+SE_NODBIT_OSCU	swephexp.h	234;"	d
+SE_NODBIT_OSCU_BAR	swephexp.h	235;"	d
+SE_NPLANETS	swephexp.h	119;"	d
+SE_NSIDM_PREDEF	swephexp.h	230;"	d
+SE_OSCU_APOG	swephexp.h	108;"	d
+SE_PALLAS	swephexp.h	113;"	d
+SE_PHOLUS	swephexp.h	111;"	d
+SE_PHOTOPIC_FLAG	swephexp.h	369;"	d
+SE_PLUTO	swephexp.h	104;"	d
+SE_PLUTO_LOWELL	swephexp.h	148;"	d
+SE_PLUTO_PICKERING	swephexp.h	149;"	d
+SE_POLASC	swephexp.h	164;"	d
+SE_POSEIDON	swephexp.h	141;"	d
+SE_PROSERPINA	swephexp.h	152;"	d
+SE_SATURN	swephexp.h	101;"	d
+SE_SCOTOPIC_FLAG	swephexp.h	370;"	d
+SE_SIDBITS	swephexp.h	200;"	d
+SE_SIDBIT_ECL_T0	swephexp.h	202;"	d
+SE_SIDBIT_SSY_PLANE	swephexp.h	204;"	d
+SE_SIDM_ALDEBARAN_15TAU	swephexp.h	221;"	d
+SE_SIDM_B1950	swephexp.h	227;"	d
+SE_SIDM_BABYL_ETPSC	swephexp.h	220;"	d
+SE_SIDM_BABYL_HUBER	swephexp.h	219;"	d
+SE_SIDM_BABYL_KUGLER1	swephexp.h	216;"	d
+SE_SIDM_BABYL_KUGLER2	swephexp.h	217;"	d
+SE_SIDM_BABYL_KUGLER3	swephexp.h	218;"	d
+SE_SIDM_DELUCE	swephexp.h	209;"	d
+SE_SIDM_DJWHAL_KHUL	swephexp.h	213;"	d
+SE_SIDM_FAGAN_BRADLEY	swephexp.h	207;"	d
+SE_SIDM_GALCENT_0SAG	swephexp.h	224;"	d
+SE_SIDM_HIPPARCHOS	swephexp.h	222;"	d
+SE_SIDM_J1900	swephexp.h	226;"	d
+SE_SIDM_J2000	swephexp.h	225;"	d
+SE_SIDM_JN_BHASIN	swephexp.h	215;"	d
+SE_SIDM_KRISHNAMURTI	swephexp.h	212;"	d
+SE_SIDM_LAHIRI	swephexp.h	208;"	d
+SE_SIDM_RAMAN	swephexp.h	210;"	d
+SE_SIDM_SASSANIAN	swephexp.h	223;"	d
+SE_SIDM_USER	swephexp.h	228;"	d
+SE_SIDM_USHASHASHI	swephexp.h	211;"	d
+SE_SIDM_YUKTESHWAR	swephexp.h	214;"	d
+SE_SPLIT_DEG_KEEP_DEG	swephexp.h	342;"	d
+SE_SPLIT_DEG_KEEP_SIGN	swephexp.h	339;"	d
+SE_SPLIT_DEG_ROUND_DEG	swephexp.h	337;"	d
+SE_SPLIT_DEG_ROUND_MIN	swephexp.h	336;"	d
+SE_SPLIT_DEG_ROUND_SEC	swephexp.h	335;"	d
+SE_SPLIT_DEG_ZODIACAL	swephexp.h	338;"	d
+SE_STARFILE	swephexp.h	304;"	d
+SE_SUN	swephexp.h	95;"	d
+SE_TIDAL_26	sweph.h	128;"	d
+SE_TIDAL_DE200	sweph.h	127;"	d
+SE_TIDAL_DE403	sweph.h	123;"	d
+SE_TIDAL_DE404	sweph.h	124;"	d
+SE_TIDAL_DE405	sweph.h	125;"	d
+SE_TIDAL_DE406	sweph.h	126;"	d
+SE_TIDAL_DEFAULT	sweph.h	130;"	d
+SE_TRUE_NODE	swephexp.h	106;"	d
+SE_TRUE_TO_APP	swephexp.h	290;"	d
+SE_URANUS	swephexp.h	102;"	d
+SE_VARUNA	swephexp.h	122;"	d
+SE_VENUS	swephexp.h	98;"	d
+SE_VERSION	sweph.h	66;"	d
+SE_VERTEX	swephexp.h	160;"	d
+SE_VESTA	swephexp.h	115;"	d
+SE_VULCAN	swephexp.h	150;"	d
+SE_VULKANUS	swephexp.h	140;"	d
+SE_WALDEMATH	swephexp.h	153;"	d
+SE_WHITE_MOON	swephexp.h	151;"	d
+SE_ZEUS	swephexp.h	136;"	d
+SIGALRM	sweodef.h	219;"	d
+SIMULATE_VICTORVB	swephexp.h	367;"	d
+SMSQ	swepcalc.h	362;"	d
+SMSX	swepcalc.h	360;"	d
+SP_HELIACAL	swetest.c	548;"	d	file:
+SP_LUNAR_ECLIPSE	swetest.c	543;"	d	file:
+SP_MERIDIAN_TRANSIT	swetest.c	547;"	d	file:
+SP_MODE_HOCAL	swetest.c	552;"	d	file:
+SP_MODE_HOW	swetest.c	550;"	d	file:
+SP_MODE_LOCAL	swetest.c	551;"	d	file:
+SP_OCCULTATION	swetest.c	545;"	d	file:
+SP_RISE_SET	swetest.c	546;"	d	file:
+SP_SOLAR_ECLIPSE	swetest.c	544;"	d	file:
+SQSQ	swepcalc.h	363;"	d
+SQUA	swepcalc.h	357;"	d
+SSY_PLANE_INCL	sweph.h	287;"	d
+SSY_PLANE_NODE	sweph.h	285;"	d
+SSY_PLANE_NODE_E2000	sweph.h	283;"	d
+STR	sweph.h	421;"	d
+STRONG_ASP_BITS	swepcalc.h	374;"	d
+SUN	swepcalc.h	173;"	d
+SUN_EARTH_MRAT	sweph.h	261;"	d
+SUN_RADIUS	sweph.h	274;"	d
+SWEAstrologyMethods	astrologymodule.c	/^static PyMethodDef SWEAstrologyMethods[] = $/;"	v	file:
+SWELP	swemmoon.c	/^static double SWELP;$/;"	v	file:
+SWEOBJ	Makefile	/^SWEOBJ = swedate.o swehouse.o swejpl.o swemmoon.o swemplan.o swepcalc.o sweph.o\\$/;"	m
+SWIEPH_END	sweph.h	237;"	d
+SWIEPH_START	sweph.h	236;"	d
+SYMANTEC_C	sweodef.h	115;"	d
+Sa	swemmoon.c	/^static double Sa;$/;"	v	file:
+Sgn	swehel.c	/^static int Sgn(double x)$/;"	f	file:
+StartYear	swehel.c	103;"	d	file:
+SunRA	swehel.c	/^static double SunRA(double JDNDaysUT, int32 helflag, char *serr)$/;"	f	file:
+T	swemmoon.c	/^static double T;$/;"	v	file:
+T2	swemmoon.c	/^static double T2;$/;"	v	file:
+T3	swemmoon.c	/^static double T3;$/;"	v	file:
+T4	swemmoon.c	/^static double T4;$/;"	v	file:
+TAB2_END	swephlib.c	1545;"	d	file:
+TAB2_END	swephlib.c	1562;"	d	file:
+TAB2_SIZ	swephlib.c	1543;"	d	file:
+TAB2_SIZ	swephlib.c	1560;"	d	file:
+TAB2_START	swephlib.c	1544;"	d	file:
+TAB2_START	swephlib.c	1561;"	d	file:
+TAB2_STEP	swephlib.c	1546;"	d	file:
+TAB2_STEP	swephlib.c	1563;"	d	file:
+TABEND	swephlib.c	1482;"	d	file:
+TABSIZ	swephlib.c	1483;"	d	file:
+TABSIZ_SPACE	swephlib.c	1485;"	d	file:
+TABSTART	swephlib.c	1481;"	d	file:
+TIMESCALE	swemplan.c	68;"	d	file:
+TJD_INVALID	swephexp.h	366;"	d
+TRACE_CLOSE	sweph.c	1043;"	d	file:
+TRACE_COUNT_MAX	swephlib.h	162;"	d
+TRIN	swepcalc.h	358;"	d
+TRUE	sweodef.h	223;"	d
+TRUE_NODE	swepcalc.h	186;"	d
+TURBO_C	sweodef.h	108;"	d
+TWOPI	sweph.h	137;"	d
+Tanh	swehel.c	/^static double Tanh(double x)$/;"	f	file:
+TempEfromTempS	swehel.c	/^static double TempEfromTempS(double TempS, double HeightEye, double Lapse)$/;"	f	file:
+TempNulDiff	swehel.c	131;"	d	file:
+TimeStepDefault	swehel.c	82;"	d	file:
+TopoAltfromAppAlt	swehel.c	/^static double TopoAltfromAppAlt(double AppAlt, double TempE, double PresE)$/;"	f	file:
+TopoArcVisionis	swehel.c	/^static int32 TopoArcVisionis(double Magn, double *dobs, double AltO, double AziO, double AltM, double AziM, double JDNDaysUT, double AziS, double sunra, double Lat, double HeightEye, double *datm, int32 helflag, double *dret, char *serr)$/;"	f	file:
+UCHAR	sweodef.h	/^typedef unsigned char UCHAR;$/;"	t
+UCHAR	sweodef.h	235;"	d
+UCP	sweodef.h	240;"	d
+UINT2	sweodef.h	/^  typedef unsigned int UINT2;	\/* unsigned 16 bits *\/$/;"	t
+UINT2	sweodef.h	/^  typedef unsigned short UINT2;	\/* unsigned 16 bits *\/$/;"	t
+UINT4	sweodef.h	/^  typedef unsigned int UINT4; $/;"	t
+UINT4	sweodef.h	/^  typedef unsigned long UINT4;$/;"	t
+UNIX_FS	sweodef.h	139;"	d
+UNIX_FS	sweodef.h	144;"	d
+UNIX_FS	sweodef.h	152;"	d
+URANUS	swepcalc.h	181;"	d
+USE_DELTA_T_VR	swehel.c	96;"	d	file:
+VENUS	swepcalc.h	177;"	d
+VERY_SMALL	swehouse.h	74;"	d
+VESTA	swepcalc.h	194;"	d
+Ve	swemmoon.c	/^static double Ve;$/;"	v	file:
+VisLimMagn	swehel.c	/^static double VisLimMagn(double *dobs, double AltO, double AziO, double AltM, double AziM, double JDNDaysUT, double AltS, double AziS, double sunra, double Lat, double HeightEye, double *datm, int32 helflag, int32 *scotopic_flag, char *serr)$/;"	f	file:
+WATCOMC	sweodef.h	122;"	d
+WidthMoon	swehel.c	/^static double WidthMoon(double AltO, double AziO, double AltS, double AziS, double parallax)$/;"	f	file:
+Xext	swehel.c	/^static double Xext(double scaleH, double zend, double Press)$/;"	f	file:
+Xlay	swehel.c	/^static double Xlay(double scaleH, double zend, double Press)$/;"	f	file:
+Y2D	swehel.c	86;"	d	file:
+_HPUX_SOURCE	sweodef.h	149;"	d
+_SWEDLL_H	swedll.h	68;"	d
+_SWEODEF_INCLUDED	sweodef.h	73;"	d
+_SWEPCALC_INCLUDED	swepcalc.h	73;"	d
+_SWEPHEXP_INCLUDED	swephexp.h	78;"	d
+ac	swehouse.h	/^	  double ac;$/;"	m	struct:houses
+ac	swejpl.c	/^  double pc[18], vc[18], ac[18], jc[18];$/;"	m	struct:jpl_save	file:
+ac	swepcalc.h	/^	  centisec ac;$/;"	m	struct:houses
+acosd	swehouse.h	83;"	d
+adjust_for_tidacc	swephlib.c	/^static double adjust_for_tidacc(double ans, double Y)$/;"	f	file:
+afl2planet	swepcalc.c	/^int afl2planet(int afl)$/;"	f
+apl2planet	swepcalc.h	260;"	d
+app_pos_etc_mean	sweph.c	/^static int app_pos_etc_mean(int ipl, int32 iflag, char *serr) $/;"	f	file:
+app_pos_etc_moon	sweph.c	/^static int app_pos_etc_moon(int32 iflag, char *serr)$/;"	f	file:
+app_pos_etc_plan	sweph.c	/^static int app_pos_etc_plan(int ipli, int32 iflag, char *serr)$/;"	f	file:
+app_pos_etc_plan_osc	sweph.c	/^static int app_pos_etc_plan_osc(int ipl, int ipli, int32 iflag, char *serr)$/;"	f	file:
+app_pos_etc_sbar	sweph.c	/^static int app_pos_etc_sbar(int32 iflag, char *serr)$/;"	f	file:
+app_pos_etc_sun	sweph.c	/^static int app_pos_etc_sun(int32 iflag, char *serr)$/;"	f	file:
+app_pos_rest	sweph.c	/^static int app_pos_rest(struct plan_data *pdp, int32 iflag, $/;"	f	file:
+arg_tbl	sweph.h	/^  signed char *arg_tbl;$/;"	m	struct:plantbl
+armc	swetest.c	/^static double x[6], x2[6], xequ[6], xcart[6], xcartq[6], xobl[6], xaz[6], xt[6], hpos, hpos2, hposj, armc, xsv[6];$/;"	v	file:
+asind	swehouse.h	82;"	d
+aspRec	swepcalc.h	/^	struct aspRec { $/;"	s	struct:AspectType
+asp_bit	swepcalc.h	377;"	d
+ast_G	sweph.h	/^  double ast_G;$/;"	m	struct:swe_data
+ast_H	sweph.h	/^  double ast_H;$/;"	m	struct:swe_data
+ast_diam	sweph.h	/^  double ast_diam;$/;"	m	struct:swe_data
+astelem	sweph.h	/^  char astelem[AS_MAXCH * 2];$/;"	m	struct:swe_data
+astnam	sweph.h	/^  char astnam[50];	\/* asteroid name, if asteroid file *\/ $/;"	m	struct:file_data
+astr2tau	swehel.c	125;"	d	file:
+astrology_swe_azalt	astrologymodule.c	/^static PyObject* astrology_swe_azalt(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_azalt_rev	astrologymodule.c	/^static PyObject* astrology_swe_azalt_rev(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_calc	astrologymodule.c	/^static PyObject* astrology_swe_calc(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_calc_ut	astrologymodule.c	/^static PyObject* astrology_swe_calc_ut(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_close	astrologymodule.c	/^static PyObject* astrology_swe_close(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_cotrans	astrologymodule.c	/^static PyObject* astrology_swe_cotrans(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_cotrans_sp	astrologymodule.c	/^static PyObject* astrology_swe_cotrans_sp(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_date_conversion	astrologymodule.c	/^static PyObject* astrology_swe_date_conversion(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_deltat	astrologymodule.c	/^static PyObject* astrology_swe_deltat(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_fixstar	astrologymodule.c	/^static PyObject* astrology_swe_fixstar(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_fixstar_mag	astrologymodule.c	/^static PyObject* astrology_swe_fixstar_mag(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_fixstar_ut	astrologymodule.c	/^static PyObject* astrology_swe_fixstar_ut(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_gauquelin_sector	astrologymodule.c	/^static PyObject* astrology_swe_gauquelin_sector(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_get_ayanamsa	astrologymodule.c	/^static PyObject* astrology_swe_get_ayanamsa(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_get_ayanamsa_name	astrologymodule.c	/^static PyObject* astrology_swe_get_ayanamsa_name(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_get_ayanamsa_ut	astrologymodule.c	/^static PyObject* astrology_swe_get_ayanamsa_ut(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_get_planet_name	astrologymodule.c	/^static PyObject* astrology_swe_get_planet_name(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_heliacal_ut	astrologymodule.c	/^static PyObject* astrology_swe_heliacal_ut(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_house_pos	astrologymodule.c	/^static PyObject* astrology_swe_house_pos(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_houses	astrologymodule.c	/^static PyObject* astrology_swe_houses(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_houses_armc	astrologymodule.c	/^static PyObject* astrology_swe_houses_armc(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_houses_ex	astrologymodule.c	/^static PyObject* astrology_swe_houses_ex(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_jdet_to_utc	astrologymodule.c	/^static PyObject* astrology_swe_jdet_to_utc(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_jdut1_to_utc	astrologymodule.c	/^static PyObject* astrology_swe_jdut1_to_utc(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_julday	astrologymodule.c	/^static PyObject* astrology_swe_julday(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_lun_eclipse_how	astrologymodule.c	/^static PyObject* astrology_swe_lun_eclipse_how(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_lun_eclipse_when	astrologymodule.c	/^static PyObject* astrology_swe_lun_eclipse_when(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_lun_occult_when_glob	astrologymodule.c	/^static PyObject* astrology_swe_lun_occult_when_glob(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_lun_occult_when_loc	astrologymodule.c	/^static PyObject* astrology_swe_lun_occult_when_loc(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_lun_occult_where	astrologymodule.c	/^static PyObject* astrology_swe_lun_occult_where(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_nod_aps	astrologymodule.c	/^static PyObject* astrology_swe_nod_aps(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_nod_aps_ut	astrologymodule.c	/^static PyObject* astrology_swe_nod_aps_ut(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_pheno	astrologymodule.c	/^static PyObject* astrology_swe_pheno(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_pheno_ut	astrologymodule.c	/^static PyObject* astrology_swe_pheno_ut(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_refrac	astrologymodule.c	/^static PyObject* astrology_swe_refrac(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_refrac_extended	astrologymodule.c	/^static PyObject* astrology_swe_refrac_extended(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_revjul	astrologymodule.c	/^static PyObject* astrology_swe_revjul(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_rise_trans	astrologymodule.c	/^static PyObject* astrology_swe_rise_trans(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_set_ephe_path	astrologymodule.c	/^static PyObject* astrology_swe_set_ephe_path(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_set_jpl_file	astrologymodule.c	/^static PyObject* astrology_swe_set_jpl_file(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_set_lapse_rate	astrologymodule.c	/^static PyObject* astrology_swe_set_lapse_rate(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_set_sid_mode	astrologymodule.c	/^static PyObject* astrology_swe_set_sid_mode(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_set_topo	astrologymodule.c	/^static PyObject* astrology_swe_set_topo(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_sidtime	astrologymodule.c	/^static PyObject* astrology_swe_sidtime(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_sidtime0	astrologymodule.c	/^static PyObject* astrology_swe_sidtime0(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_sol_eclipse_how	astrologymodule.c	/^static PyObject* astrology_swe_sol_eclipse_how(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_sol_eclipse_when_glob	astrologymodule.c	/^static PyObject* astrology_swe_sol_eclipse_when_glob(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_sol_eclipse_when_loc	astrologymodule.c	/^static PyObject* astrology_swe_sol_eclipse_when_loc(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_sol_eclipse_where	astrologymodule.c	/^static PyObject* astrology_swe_sol_eclipse_where(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_time_equ	astrologymodule.c	/^static PyObject* astrology_swe_time_equ(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_utc_to_jd	astrologymodule.c	/^static PyObject* astrology_swe_utc_to_jd(PyObject *self, PyObject *args)$/;"	f	file:
+astrology_swe_version	astrologymodule.c	/^static PyObject* astrology_swe_version(PyObject *self, PyObject *args)$/;"	f	file:
+atan2d	swehouse.h	85;"	d
+atand	swehouse.h	84;"	d
+attr	swetest.c	/^static double attr[20], tret[20], geopos[3], datm[4], dobs[6];$/;"	v	file:
+aunit	sweph.h	/^	aunit, $/;"	m	struct:gen_const
+aya_init	sweph.h	/^struct aya_init {double t0, ayan_t0;};$/;"	s
+ayan_t0	sweph.h	/^  double ayan_t0;$/;"	m	struct:sid_data
+ayan_t0	sweph.h	/^struct aya_init {double t0, ayan_t0;};$/;"	m	struct:aya_init
+ayana_is_set	sweph.h	/^  AS_BOOL ayana_is_set;$/;"	m	struct:swe_data
+ayanamsa	sweph.h	/^static const struct aya_init ayanamsa[] = {$/;"	v	typeref:struct:aya_init
+ayanamsa_name	sweph.c	/^static char *ayanamsa_name[] = {$/;"	v	file:
+bit	swepcalc.h	297;"	d
+buf	swejpl.c	/^  double buf[1500];$/;"	m	struct:jpl_save	file:
+calc	swepcalc.c	/^int calc(int  planet,  	\/* planet index as defined in placalc.h,$/;"	f
+calc_astronomical_refr	swecl.c	/^static double calc_astronomical_refr(double inalt,double atpress, double attemp)$/;"	f	file:
+calc_dip	swecl.c	/^static double calc_dip(double geoalt, double atpress, double attemp, double lapse_rate)$/;"	f	file:
+calc_epsilon	sweph.c	/^static void calc_epsilon(double tjd, struct epsilon *e)$/;"	f	file:
+calc_mer_trans	swecl.c	/^static int32 calc_mer_trans($/;"	f	file:
+calc_planet_star	swecl.c	/^static int32 calc_planet_star(double tjd_et, int32 ipl, char *starname, int32 iflag, double *x, char *serr)$/;"	f	file:
+calc_rise_and_set	swehel.c	/^static int32 calc_rise_and_set(double tjd_start, int32 ipl, double *dgeo, double *datm, int32 eventflag, int32 helflag, double *trise, char *serr)$/;"	f	file:
+calc_speed	sweph.c	/^static void calc_speed(double *x0, double *x1, double *x2, double dt)$/;"	f	file:
+calcserv	swepcalc.c	/^int calcserv(int id,	\/* request id, random number to prevent phase err *\/$/;"	f
+call_heliacal_event	swetest.c	/^static int32 call_heliacal_event(double t_ut, int32 ipl, char *star, int32 whicheph, int32 special_mode, double *geopos, double *datm, double *dobs, char *serr)$/;"	f	file:
+call_lunar_eclipse	swetest.c	/^static int32 call_lunar_eclipse(double t_ut, int32 whicheph, int32 special_mode, double *geopos, char *serr)$/;"	f	file:
+call_lunar_occultation	swetest.c	/^static int32 call_lunar_occultation(double t_ut, int32 ipl, char *star, int32 whicheph, int32 special_mode, double *geopos, char *serr)$/;"	f	file:
+call_rise_set	swetest.c	/^static int32 call_rise_set(double t_ut, int32 ipl, char *star, int32 whicheph, int32 special_mode, double *geopos, char *serr)$/;"	f	file:
+call_solar_eclipse	swetest.c	/^static int32 call_solar_eclipse(double t_ut, int32 whicheph, int32 special_mode, double *geopos, char *serr)$/;"	f	file:
+call_swe_fixstar	swehel.c	/^int32 call_swe_fixstar(char *star, double tjd, int32 iflag, double *xx, char *serr)$/;"	f
+call_swe_fixstar_mag	swehel.c	/^int32 call_swe_fixstar_mag(char *star, double *mag, char *serr)$/;"	f
+call_swe_rise_trans	swehel.c	/^int32 call_swe_rise_trans(double tjd, int32 ipl, char *star, int32 helflag, int32 eventtype, double *dgeo, double atpress, double attemp, double *tret, char *serr)$/;"	f
+cc	swemmoon.c	/^static double FAR cc[5][8];$/;"	v	file:
+cc	swemplan.c	/^static double FAR cc[9][24];$/;"	v	file:
+centisec	sweodef.h	/^typedef int32    centisec;       \/* centiseconds used for angles and times *\/$/;"	t
+ceps	sweph.h	/^  double teps, eps, seps, ceps; 	\/* jd, eps, sin(eps), cos(eps) *\/$/;"	m	struct:epsilon
+cg	swemmoon.c	/^static double cg;$/;"	v	file:
+ch_cnam	swejpl.c	/^  char ch_cnam[6*400];$/;"	m	struct:jpl_save	file:
+check_bit	swepcalc.h	298;"	d
+check_t_terms	swemplan.c	/^static int check_t_terms(double t, char *sinp, double *doutp)$/;"	f	file:
+chewm	swemmoon.c	/^static void chewm(short *pt, int nlines, int nangles, int typflg, double *ans )$/;"	f	file:
+clear_bit	swepcalc.h	295;"	d
+clight	sweph.h	/^ double clight, $/;"	m	struct:gen_const
+cls	swenut2000a.h	/^static int32 cls[] = {$/;"	v
+cnut	sweph.h	/^  double snut, cnut;	\/* sine and cosine of nutation in obliquity *\/$/;"	m	struct:nut
+coasc1	swehouse.h	/^	  double coasc1;$/;"	m	struct:houses
+coasc2	swehouse.h	/^	  double coasc2;$/;"	m	struct:houses
+const_lapse_rate	swecl.c	/^static double const_lapse_rate = SE_LAPSE_RATE;  \/* for refraction *\/$/;"	v	file:
+cosd	swehouse.h	80;"	d
+crc32_table	swephlib.c	/^static uint32 crc32_table[256];$/;"	v	file:
+criticalangle	swehel.c	74;"	d	file:
+crossing	swehel.c	/^static double crossing(double A, double B, double C, double D)$/;"	f	file:
+csnorm	swepcalc.h	93;"	d
+cstodeg	swehouse.h	77;"	d
+cstodeg	swepcalc.h	78;"	d
+cusp	swehouse.h	/^	  double cusp[37];$/;"	m	struct:houses
+cusp	swepcalc.h	/^	  centisec cusp[13];$/;"	m	struct:houses
+cut_str_any	swetest.c	/^static int cut_str_any(char *s, char *cutlist, char *cpos[], int nmax)$/;"	f	file:
+d2l	swepcalc.h	88;"	d
+dataValid	swepcalc.h	/^  	AS_BOOL	dataValid;	\/* used as boolean *\/$/;"	m	struct:AspectType
+date_conversion	swepdate.c	/^int date_conversion (int d ,$/;"	f
+datm	swetest.c	/^static double attr[20], tret[20], geopos[3], datm[4], dobs[6];$/;"	v	file:
+day_of_week	swepdate.c	/^int day_of_week(double jd)$/;"	f
+default_heliacal_parameters	swehel.c	/^static void default_heliacal_parameters(double *datm, double *dgeo, double *dobs, int helflag)$/;"	f	file:
+degnorm	swepcalc.h	94;"	d
+degtocs	swehouse.h	76;"	d
+degtocs	swepcalc.h	77;"	d
+deltat	swepcalc.c	/^double deltat (double jd_ad) \/* Astrodienst relative julian date *\/$/;"	f
+deltatjd	swepcalc.h	145;"	d
+denormalize_positions	sweph.c	/^static void denormalize_positions(double *x0, double *x1, double *x2) $/;"	f	file:
+difcs2n	swepcalc.h	90;"	d
+difcsn	swepcalc.h	89;"	d
+difdeg2n	swepcalc.h	92;"	d
+difdegn	swepcalc.h	91;"	d
+diff8360	swepcalc.c	/^double diff8360 (double a, double b) $/;"	f
+diff_mode	swetest.c	/^static int diff_mode = 0;$/;"	v	file:
+direction	swetest.c	/^static int direction = 1;$/;"	v	file:
+direction_flag	swetest.c	/^static AS_BOOL direction_flag = FALSE;$/;"	v	file:
+disccenter	swetest.c	/^static int32 disccenter = 0;$/;"	v	file:
+distance	sweph.h	/^  double distance;$/;"	m	struct:plantbl
+dms	swetest.c	/^static char *dms(double xv, int32 iflg)$/;"	f	file:
+do_fread	sweph.c	/^static int do_fread(void *trg, int size, int count, int corrsize, FILE *fp, int32 fpos, int freord, int fendian, int ifno, char *serr)$/;"	f	file:
+do_km	swejpl.c	/^  short do_km;$/;"	m	struct:jpl_save	file:
+do_print_heliacal	swetest.c	/^static void do_print_heliacal(double *dret, int32 event_type, char *obj_name)$/;"	f	file:
+do_printf	swetest.c	/^static void do_printf(char *info)$/;"	f	file:
+do_reorder	swejpl.c	/^  short do_reorder;$/;"	m	struct:jpl_save	file:
+do_special_event	swetest.c	/^static int do_special_event(double tjd, int32 ipl, char *star, int32 special_event, int32 special_mode, double *geopos, double *datm, double *dobs, char *serr) $/;"	f	file:
+dobs	swetest.c	/^static double attr[20], tret[20], geopos[3], datm[4], dobs[6];$/;"	v	file:
+dot_prod	sweph.h	301;"	d
+dperi	sweph.h	/^  double dperi; $/;"	m	struct:plan_data
+dprot	sweph.h	/^  double dprot;$/;"	m	struct:plan_data
+dqrot	sweph.h	/^  double dqrot; $/;"	m	struct:plan_data
+dseg	sweph.h	/^  double dseg;		\/* segment size (days covered by a polynomial)  *\/$/;"	m	struct:plan_data
+dt	swephlib.c	/^static short FAR dt[TABSIZ_SPACE] = {$/;"	v	file:
+dt2	swephlib.c	/^static short FAR dt2[TAB2_SIZ] = {$/;"	v	file:
+ear404	swemptab.c	/^static struct plantbl FAR ear404 = {$/;"	v	typeref:struct:FAR	file:
+earargs	swemptab.c	/^static signed char FAR earargs[] = {$/;"	v	file:
+eartabb	swemptab.c	/^static double FAR eartabb[] = {$/;"	v	file:
+eartabl	swemptab.c	/^static double FAR eartabl[] = {$/;"	v	file:
+eartabr	swemptab.c	/^static double FAR eartabr[] = {$/;"	v	file:
+ecldat_equ2000	swemmoon.c	/^static void ecldat_equ2000(double tjd, double *xpm) {$/;"	f	file:
+eclipse_how	swecl.c	/^static int32 eclipse_how( double tjd_ut, int32 ipl, char *starname, int32 ifl,$/;"	f	file:
+eclipse_when_loc	swecl.c	/^static int32 eclipse_when_loc(double tjd_start, int32 ifl, double *geopos, double *tret, double *attr, int32 backward, char *serr)$/;"	f	file:
+eclipse_where	swecl.c	/^static int32 eclipse_where( double tjd_ut, int32 ipl, char *starname, int32 ifl, double *geopos, double *dcore, $/;"	f	file:
+eff_arr	sweph.c	/^static const struct meff_ele FAR eff_arr[] = {$/;"	v	typeref:struct:FAR	file:
+eh_au	swejpl.c	/^  double eh_ss[3], eh_au, eh_emrat;$/;"	m	struct:jpl_save	file:
+eh_cval	swejpl.c	/^  double eh_cval[400]; $/;"	m	struct:jpl_save	file:
+eh_denum	swejpl.c	/^  int32 eh_denum, eh_ncon, eh_ipt[39];$/;"	m	struct:jpl_save	file:
+eh_emrat	swejpl.c	/^  double eh_ss[3], eh_au, eh_emrat;$/;"	m	struct:jpl_save	file:
+eh_ipt	swejpl.c	/^  int32 eh_denum, eh_ncon, eh_ipt[39];$/;"	m	struct:jpl_save	file:
+eh_ncon	swejpl.c	/^  int32 eh_denum, eh_ncon, eh_ipt[39];$/;"	m	struct:jpl_save	file:
+eh_ss	swejpl.c	/^  double eh_ss[3], eh_au, eh_emrat;$/;"	m	struct:jpl_save	file:
+ekl	swepcalc.c	/^static double ekl, nut;$/;"	v	file:
+el_ecce	swecl.c	/^static double el_ecce[8][4] = $/;"	v	file:
+el_incl	swecl.c	/^static double el_incl[8][4] = $/;"	v	file:
+el_node	swecl.c	/^static double el_node[8][4] = $/;"	v	file:
+el_peri	swecl.c	/^static double el_peri[8][4] = $/;"	v	file:
+el_sema	swecl.c	/^static double el_sema[8][4] = $/;"	v	file:
+embofs	sweph.c	/^static void embofs(double *xemb, double *xmoon)$/;"	f	file:
+embofs_mosh	swemplan.c	/^static void embofs_mosh(double tjd, double *xemb) $/;"	f	file:
+ephe_path_is_set	sweph.h	/^  AS_BOOL ephe_path_is_set;$/;"	m	struct:swe_data
+ephepath	sweph.h	/^  char ephepath[AS_MAXCH];$/;"	m	struct:swe_data
+eps	sweph.h	/^  double teps, eps, seps, ceps; 	\/* jd, eps, sin(eps), cos(eps) *\/$/;"	m	struct:epsilon
+epsilon	swehel.c	143;"	d	file:
+epsilon	sweph.h	/^struct epsilon {$/;"	s
+equasc	swehouse.h	/^	  double equasc;$/;"	m	struct:houses
+erg2nL	swehel.c	119;"	d	file:
+ext_def	swephexp.h	456;"	d
+f	swemmoon.c	/^static double f;$/;"	v	file:
+fidat	sweph.h	/^  struct file_data fidat[SEI_NEPHFILES];$/;"	m	struct:swe_data	typeref:struct:swe_data::file_data
+file_data	sweph.h	/^struct file_data {$/;"	s
+find_conjunct_sun	swehel.c	/^static int32 find_conjunct_sun(double tjd_start, int32 ipl, int32 helflag, int32 TypeEvent, double *tjd, char *serr)$/;"	f	file:
+find_maximum	swecl.c	/^static int find_maximum(double y00, double y11, double y2, double dx, $/;"	f	file:
+find_zero	swecl.c	/^static int find_zero(double y00, double y11, double y2, double dx, $/;"	f	file:
+fixfp	sweph.h	/^  FILE *fixfp;		\/* fixed stars file pointer *\/$/;"	m	struct:swe_data
+fixstar	swepcalc.c	/^int fixstar(char *star, double jd, double *lon, double *lat)$/;"	f
+fmt	swetest.c	/^static char *fmt = "PLBRS";$/;"	v	file:
+fnam	sweph.h	/^  char fnam[AS_MAXCH];	\/* ephemeris file name *\/$/;"	m	struct:file_data
+fname_force_flg	swephlib.h	/^  static char *fname_force_flg = "force.flg";$/;"	v
+fname_trace_c	swephlib.h	/^  static char *fname_trace_c = "swetrace.c";$/;"	v
+fname_trace_out	swephlib.h	/^  static char *fname_trace_out = "swetrace.txt";$/;"	v
+forward	sweodef.h	264;"	d
+fptr	sweph.h	/^  FILE *fptr;		\/* ephemeris file pointer *\/$/;"	m	struct:file_data
+freqs	swemplan.c	/^static double freqs[] =$/;"	v	file:
+fsizer	swejpl.c	/^static int32 fsizer(char *serr)$/;"	f	file:
+funct2	swehel.c	/^static double funct2(double A, double B, double C, double x)$/;"	f	file:
+fversion	sweph.h	/^  int fversion;		\/* version number of file *\/$/;"	m	struct:file_data
+g	swemmoon.c	/^static double g;$/;"	v	file:
+gap	swetest.c	/^static char *gap = " ";$/;"	v	file:
+gcdat	sweph.h	/^  struct gen_const gcdat;$/;"	m	struct:swe_data	typeref:struct:swe_data::gen_const
+gen_const	sweph.h	/^struct gen_const {$/;"	s
+geoalt	sweph.h	/^  double geolon, geolat, geoalt;$/;"	m	struct:topo_data
+geolat	sweph.h	/^  double geolon, geolat, geoalt;$/;"	m	struct:topo_data
+geolon	sweph.h	/^  double geolon, geolat, geoalt;$/;"	m	struct:topo_data
+geopos	swetest.c	/^static double attr[20], tret[20], geopos[3], datm[4], dobs[6];$/;"	v	file:
+geopos_is_set	sweph.h	/^  AS_BOOL geopos_is_set;$/;"	m	struct:swe_data
+get_acronychal_day	swehel.c	/^static int32 get_acronychal_day(double tjd, double *dgeo, double *datm, double *dobs, char *ObjectName, int32 helflag, int32 TypeEvent, double *thel, char *serr) {$/;"	f	file:
+get_asc_obl	swehel.c	/^static int32 get_asc_obl(double tjd, int32 ipl, char *star, int32 iflag, double *dgeo, AS_BOOL desc_obl, double *daop, char *serr)$/;"	f	file:
+get_asc_obl_acronychal	swehel.c	/^static int32 get_asc_obl_acronychal(double tjd_start, int32 ipl, char *star, int32 helflag, int32 TypeEvent, double *dgeo, double *tjdret, char *serr)$/;"	f	file:
+get_asc_obl_diff	swehel.c	/^static int32 get_asc_obl_diff(double tjd, int32 ipl, char *star, int32 iflag, double *dgeo, AS_BOOL desc_obl, double *dsunpl, char *serr)$/;"	f	file:
+get_asc_obl_with_sun	swehel.c	/^static int32 get_asc_obl_with_sun(double tjd_start, int32 ipl, char *star, int32 helflag, int32 TypeEvent, double *dgeo, double *tjdret, char *serr)$/;"	f	file:
+get_heliacal_day	swehel.c	/^static int32 get_heliacal_day(double tjd, double *dgeo, double *datm, double *dobs, char *ObjectName, int32 helflag, int32 TypeEvent, double *thel, char *serr)$/;"	f	file:
+get_heliacal_details	swehel.c	/^static int32 get_heliacal_details(double tday, double *dgeo, double *datm, double *dobs, char *ObjectName, int32 TypeEvent, int32 helflag, double *dret, char *serr)$/;"	f	file:
+get_new_segment	sweph.c	/^static int get_new_segment(double tjd, int ipli, int ifno, char *serr) $/;"	f	file:
+get_synodic_period	swehel.c	/^static double get_synodic_period(int Planet) $/;"	f	file:
+gregflag	swetest.c	/^static int gregflag = SE_GREG_CAL;$/;"	v	file:
+helgravconst	sweph.h	/^	helgravconst, $/;"	m	struct:gen_const
+heliacal_ut	swehel.c	/^static int32 heliacal_ut(double JDNDaysUTStart, double *dgeo, double *datm, double *dobs, char *ObjectName, int32 TypeEventIn, int32 helflag, double *dret, char *serr_ret)$/;"	f	file:
+heliacal_ut_arc_vis	swehel.c	/^static int32 heliacal_ut_arc_vis(double JDNDaysUTStart, double *dgeo, double *datm, double *dobs, char *ObjectName, int32 TypeEventIn, int32 helflag, double *dret, char *serr_ret)$/;"	f	file:
+heliacal_ut_vis_lim	swehel.c	/^static int32 heliacal_ut_vis_lim(double tjd_start, double *dgeo, double *datm, double *dobs, char *ObjectName, int32 TypeEventIn, int32 helflag, double *dret, char *serr_ret)$/;"	f	file:
+hms	swetest.c	/^static char *hms(double x, int32 iflag)$/;"	f	file:
+hms_from_tjd	swetest.c	/^static char *hms_from_tjd(double x)$/;"	f	file:
+houses	swehouse.h	/^struct houses {$/;"	s
+houses	swepcalc.h	/^struct  houses {$/;"	s
+hpos	swetest.c	/^static double x[6], x2[6], xequ[6], xcart[6], xcartq[6], xobl[6], xaz[6], xt[6], hpos, hpos2, hposj, armc, xsv[6];$/;"	v	file:
+hpos2	swetest.c	/^static double x[6], x2[6], xequ[6], xcart[6], xcartq[6], xobl[6], xaz[6], xt[6], hpos, hpos2, hposj, armc, xsv[6];$/;"	v	file:
+hpos_meth	swetest.c	/^static int hpos_meth = 0;$/;"	v	file:
+hposj	swetest.c	/^static double x[6], x2[6], xequ[6], xcart[6], xcartq[6], xobl[6], xaz[6], xt[6], hpos, hpos2, hposj, armc, xsv[6];$/;"	v	file:
+hs_nam	swetest.c	/^static char *hs_nam[] = {"undef",$/;"	v	file:
+i_saved_planet_name	sweph.h	/^  int i_saved_planet_name;$/;"	m	struct:swe_data
+ibdy	sweph.h	/^  int ibdy;		\/* internal body number *\/$/;"	m	struct:plan_data
+icpl	swenut2000a.h	/^static int16 icpl[] = {$/;"	v
+iephe	sweph.h	/^  int32 iephe;            \/* which ephemeris was used *\/$/;"	m	struct:node_data
+iephe	sweph.h	/^  int32 iephe;            \/* which ephemeris was used *\/$/;"	m	struct:plan_data
+iflag	swetest.c	/^static int32 iflag = 0, iflag2;              \/* external flag: helio, geo... *\/$/;"	v	file:
+iflag2	swetest.c	/^static int32 iflag = 0, iflag2;              \/* external flag: helio, geo... *\/$/;"	v	file:
+iflg	sweph.h	/^  int32 iflg;		\/* contains several bit flags describing the data:	$/;"	m	struct:plan_data
+iflg	sweph.h	/^  int32 iflg; 		\/* byte reorder flag and little\/bigendian flag *\/$/;"	m	struct:file_data
+iflgsave	sweph.h	/^  int32 iflgsave;$/;"	m	struct:save_positions
+inclcof	swephlib.c	/^static double inclcof[] = {$/;"	v	file:
+inclcof	swephlib.c	/^static double inclcof[] = {};$/;"	v	file:
+index	swepcalc.h	/^		int  index; 	\/* number of the found aspect *\/$/;"	m	struct:AspectType::aspRec
+infocmd0	swetest.c	/^static char *infocmd0 = "\\n\\$/;"	v	file:
+infocmd1	swetest.c	/^static char *infocmd1 = "\\n\\$/;"	v	file:
+infocmd2	swetest.c	/^static char *infocmd2 = "\\$/;"	v	file:
+infocmd3	swetest.c	/^static char *infocmd3 = "\\$/;"	v	file:
+infocmd4	swetest.c	/^static char *infocmd4 = "\\$/;"	v	file:
+infocmd5	swetest.c	/^static char *infocmd5 = "\\$/;"	v	file:
+infodate	swetest.c	/^static char *infodate = "\\n\\$/;"	v	file:
+infoexamp	swetest.c	/^static char *infoexamp = "\\n\\$/;"	v	file:
+infoform	swetest.c	/^static char *infoform = "\\n\\$/;"	v	file:
+infoplan	swetest.c	/^static char *infoplan = "\\n\\$/;"	v	file:
+init_crc32	swephlib.c	/^static void init_crc32(void)$/;"	f	file:
+init_dt	swephlib.c	/^static int init_dt(void)$/;"	f	file:
+init_dt_done	swephlib.c	/^static AS_BOOL init_dt_done = FALSE;$/;"	v	file:
+init_leapsec	swedate.c	/^static int init_leapsec(void)$/;"	f	file:
+init_leapseconds_done	swedate.c	/^static AS_BOOL init_leapseconds_done = FALSE;$/;"	v	file:
+initsweastrology	astrologymodule.c	/^PyMODINIT_FUNC initsweastrology(void)$/;"	f
+int16	sweodef.h	/^  typedef int	int16;$/;"	t
+int16	sweodef.h	/^  typedef short	int16;$/;"	t
+int32	sweodef.h	/^  typedef int	int32;$/;"	t
+int32	sweodef.h	/^  typedef long	int32;$/;"	t
+int64	sweodef.h	/^  typedef long long	int64;$/;"	t
+interp	swejpl.c	/^static int interp(double FAR *buf, double t, double intv, int32 ncfin, $/;"	f	file:
+intp_apsides	sweph.c	/^static int intp_apsides(double tjd, int ipl, int32 iflag, char *serr) $/;"	f	file:
+ipl	sweph.h	/^  int ipl;$/;"	m	struct:save_positions
+ipl	sweph.h	/^  int ipl[SEI_FILE_NMAXPLAN];	\/* planet numbers *\/$/;"	m	struct:file_data
+ipl	swetest.c	/^static int ipl = SE_SUN, ipldiff = SE_SUN, nhouses = 12;$/;"	v	file:
+ipl_to_elem	swecl.c	/^static int ipl_to_elem[15] = {2, 0, 0, 1, 3, 4, 5, 6, 7, 0, 0, 0, 0, 0, 2,};$/;"	v	file:
+ipldiff	swetest.c	/^static int ipl = SE_SUN, ipldiff = SE_SUN, nhouses = 12;$/;"	v	file:
+isidmode	swephexp.h	/^ext_def( char *) swe_get_ayanamsa_name(int32 isidmode);$/;"	v
+istep	swetest.c	/^static int32 nstep = 1, istep;$/;"	v	file:
+jc	swejpl.c	/^  double pc[18], vc[18], ac[18], jc[18];$/;"	m	struct:jpl_save	file:
+jday	swetest.c	/^static int jmon, jday, jyear;$/;"	v	file:
+jmon	swetest.c	/^static int jmon, jday, jyear;$/;"	v	file:
+jpl_file_is_open	sweph.h	/^  short jpl_file_is_open;$/;"	m	struct:swe_data
+jpl_save	swejpl.c	/^struct jpl_save {$/;"	s	file:
+jpldenum	sweph.h	/^  short jpldenum;$/;"	m	struct:swe_data
+jplfnam	sweph.h	/^  char jplfnam[AS_MAXCH];$/;"	m	struct:swe_data
+jplfname	swejpl.c	/^  char *jplfname;$/;"	m	struct:jpl_save	file:
+jplfpath	swejpl.c	/^  char *jplfpath;$/;"	m	struct:jpl_save	file:
+jplfptr	swejpl.c	/^  FILE *jplfptr;$/;"	m	struct:jpl_save	file:
+jplplan	sweph.c	/^static int jplplan(double tjd, int ipli, int32 iflag, AS_BOOL do_save,$/;"	f	file:
+js	swejpl.c	/^static struct jpl_save *FAR js;$/;"	v	typeref:struct:FAR	file:
+julday	swepdate.c	/^double julday(int month, int day, int year, double hour, int gregflag) $/;"	f
+juldays	swepdate.c	/^double juldays(int gregflag, ADATE *adp ) $/;"	f
+jup404	swemptab.c	/^static struct plantbl FAR jup404 = {$/;"	v	typeref:struct:FAR	file:
+jupargs	swemptab.c	/^static signed char FAR jupargs[] = {$/;"	v	file:
+juptabb	swemptab.c	/^static double FAR juptabb[] = {$/;"	v	file:
+juptabl	swemptab.c	/^static double FAR juptabl[] = {$/;"	v	file:
+juptabr	swemptab.c	/^static double FAR juptabr[] = {$/;"	v	file:
+jut	swetest.c	/^static double t, te, tut, jut = 0;$/;"	v	file:
+jyear	swetest.c	/^static int jmon, jday, jyear;$/;"	v	file:
+kOZ	swehel.c	/^static double kOZ(double AltS, double sunra, double Lat)$/;"	f	file:
+kR	swehel.c	/^static double kR(double AltS, double HeightEye)$/;"	f	file:
+kW	swehel.c	/^static double kW(double HeightEye, double TempS, double RH)$/;"	f	file:
+ka	swehel.c	/^static double ka(double AltS, double sunra, double Lat, double HeightEye, double TempS, double RH, double VR, char *serr)$/;"	f	file:
+kt	swehel.c	/^static double kt(double AltS, double sunra, double Lat, double HeightEye, double TempS, double RH, double VR, int32 ExtType, char *serr)$/;"	f	file:
+l	swemmoon.c	/^static double l;		\/* Moon's ecliptic longitude *\/$/;"	v	file:
+l1	swemmoon.c	/^static double l1;$/;"	v	file:
+l2	swemmoon.c	/^static double l2;$/;"	v	file:
+l3	swemmoon.c	/^static double l3;$/;"	v	file:
+l4	swemmoon.c	/^static double l4;$/;"	v	file:
+lat_tbl	sweph.h	/^  double *lat_tbl;$/;"	m	struct:plantbl
+leap_seconds	swedate.c	/^static int leap_seconds[NLEAP_SECONDS_SPACE] = {$/;"	v	file:
+letter_to_ipl	swetest.c	/^static int letter_to_ipl(int letter)$/;"	f	file:
+lndx0	sweph.h	/^  int32 lndx0;   	\/* file position of begin of planet's index *\/$/;"	m	struct:plan_data
+lon_tbl	sweph.h	/^  double *lon_tbl;$/;"	m	struct:plantbl
+longreorder	swepcalc.c	/^void longreorder (UCHAR *p, int n) $/;"	f
+lun_eclipse_how	swecl.c	/^static int32 lun_eclipse_how($/;"	f	file:
+lunar_osc_elem	sweph.c	/^static int lunar_osc_elem(double tjd, int ipl, int32 iflag, char *serr) $/;"	f	file:
+m	sweph.c	/^struct meff_ele {double r,m;};$/;"	m	struct:meff_ele	file:
+mag_elem	swecl.c	/^static double mag_elem[NMAG_ELEM][4] = {$/;"	v	file:
+main	swemini.c	/^int main()$/;"	f
+main	swetest.c	/^int main(int argc, char *argv[])$/;"	f
+main_planet	sweph.c	/^static int main_planet(double tjd, int ipli, int32 epheflag, int32 iflag,$/;"	f	file:
+main_planet_bary	sweph.c	/^static int main_planet_bary(double tjd, int ipli, int32 epheflag, int32 iflag, AS_BOOL do_save,$/;"	f	file:
+make_ephemeris_path	swetest.c	/^static int make_ephemeris_path(int32 iflg, char *argv0)$/;"	f	file:
+mar404	swemptab.c	/^static struct plantbl FAR mar404 = {$/;"	v	typeref:struct:FAR	file:
+marargs	swemptab.c	/^static signed char FAR marargs[] = {$/;"	v	file:
+martabb	swemptab.c	/^static double FAR martabb[] = {$/;"	v	file:
+martabl	swemptab.c	/^static double FAR martabl[] = {$/;"	v	file:
+martabr	swemptab.c	/^static double FAR martabr[] = {$/;"	v	file:
+matrix	sweph.h	/^  double matrix[3][3];	$/;"	m	struct:nut
+max_harmonic	sweph.h	/^  char max_harmonic[9];$/;"	m	struct:plantbl
+max_power_of_t	sweph.h	/^  char max_power_of_t;$/;"	m	struct:plantbl
+mc	swehouse.h	/^	  double mc;$/;"	m	struct:houses
+mc	swepcalc.h	/^	  centisec mc;$/;"	m	struct:houses
+mean_elements	swemmoon.c	/^static void mean_elements()$/;"	f	file:
+mean_elements_pl	swemmoon.c	/^void mean_elements_pl() $/;"	f
+meff	sweph.c	/^static double meff(double r)$/;"	f	file:
+meff_ele	sweph.c	/^struct meff_ele {double r,m;};$/;"	s	file:
+mer404	swemptab.c	/^static struct plantbl FAR mer404 = {$/;"	v	typeref:struct:FAR	file:
+merargs	swemptab.c	/^static signed char FAR merargs[] = {$/;"	v	file:
+mertabb	swemptab.c	/^static double FAR mertabb[] = {$/;"	v	file:
+mertabl	swemptab.c	/^static double FAR mertabl[] = {$/;"	v	file:
+mertabr	swemptab.c	/^static double FAR mertabr[] = {$/;"	v	file:
+mods3600	swemmoon.c	/^static double mods3600(double x)$/;"	f	file:
+mods3600	swemplan.c	70;"	d	file:
+module1	setup.py	/^module1 = Extension('sweastrology', sources = ['astrologymodule.c', 'swecl.c', 'swedate.c', 'swehel.c', 'swehouse.c', 'swejpl.c', 'swemmoon.c', 'swemplan.c', 'swepcalc.c', 'swepdate.c', 'sweph.c', 'swephlib.c'])$/;"	v
+moon1	swemmoon.c	/^static void  moon1()$/;"	f	file:
+moon1	swemmoon.c	/^static void moon1()$/;"	f	file:
+moon2	swemmoon.c	/^static void moon2()$/;"	f	file:
+moon3	swemmoon.c	/^static void moon3()$/;"	f	file:
+moon4	swemmoon.c	/^static void moon4()$/;"	f	file:
+moon_event_arc_vis	swehel.c	/^static int32 moon_event_arc_vis(double JDNDaysUTStart, double *dgeo, double *datm, double *dobs, int32 TypeEvent, int32 helflag, double *dret, char *serr)$/;"	f	file:
+moon_event_vis_lim	swehel.c	/^static int32 moon_event_vis_lim(double tjdstart, double *dgeo, double *datm, double *dobs, int32 TypeEvent, int32 helflag, double *dret, char *serr_ret)$/;"	f	file:
+moonpol	swemmoon.c	/^static double moonpol[3];$/;"	v	file:
+my_rise_trans	swehel.c	/^static int32 my_rise_trans(double tjd, int32 ipl, char* starname, int32 eventtype, int32 helflag, double *dgeo, double *datm, double *tret, char *serr)$/;"	f	file:
+mymax	swehel.c	/^static double mymax(double a, double b)$/;"	f	file:
+mymin	swehel.c	/^static double mymin(double a, double b)$/;"	f	file:
+nL2erg	swehel.c	118;"	d	file:
+nacalc	swepcalc.c	/^int nacalc (double	jd_ad,	\/* universal time relative  julian date *\/$/;"	f
+ncoe	sweph.h	/^  int ncoe;		\/* # of coefficients of ephemeris polynomial,$/;"	m	struct:plan_data
+nddat	sweph.h	/^  struct plan_data nddat[SEI_NNODE_ETC];$/;"	m	struct:swe_data	typeref:struct:swe_data::plan_data
+nep404	swemptab.c	/^static struct plantbl FAR nep404 = {$/;"	v	typeref:struct:FAR	file:
+nepargs	swemptab.c	/^static signed char FAR nepargs[] = {$/;"	v	file:
+neptabb	swemptab.c	/^static double FAR neptabb[] = {$/;"	v	file:
+neptabl	swemptab.c	/^static double FAR neptabl[] = {$/;"	v	file:
+neptabr	swemptab.c	/^static double FAR neptabr[] = {$/;"	v	file:
+neval	sweph.h	/^  int neval;		\/* how many coefficients to evaluate. this may$/;"	m	struct:plan_data
+nhouses	swetest.c	/^static int ipl = SE_SUN, ipldiff = SE_SUN, nhouses = 12;$/;"	v	file:
+nls	swenut2000a.h	/^static int16 nls[] = {$/;"	v
+nndx	sweph.h	/^  int32 nndx;		\/* number of index entries on file: computed *\/$/;"	m	struct:plan_data
+node_data	sweph.h	/^struct node_data {$/;"	s
+nodecof	swephlib.c	/^static double nodecof[] = {$/;"	v	file:
+nodecof	swephlib.c	/^static double nodecof[] = {};$/;"	v	file:
+norefrac	swetest.c	/^static int32 norefrac = 0;$/;"	v	file:
+npl	swenut2000a.h	/^static int16 npl[] = {$/;"	v
+npl	sweph.h	/^  short npl;		\/* how many planets in file *\/$/;"	m	struct:file_data
+nstep	swetest.c	/^static int32 nstep = 1, istep;$/;"	v	file:
+nt	swephlib.c	/^static short FAR nt[] = {  $/;"	v	file:
+nut	swepcalc.c	/^static double ekl, nut;$/;"	v	file:
+nut	sweph.h	/^  struct nut nut;$/;"	m	struct:swe_data	typeref:struct:swe_data::nut
+nut	sweph.h	/^struct nut {$/;"	s
+nut2000	sweph.h	/^  struct nut nut2000;$/;"	m	struct:swe_data	typeref:struct:swe_data::nut
+nut_matrix	sweph.c	/^static void nut_matrix(struct nut *nu, struct epsilon *oe) $/;"	f	file:
+nutlo	sweph.h	/^  double nutlo[2];	\/* nutation in longitude and obliquity *\/$/;"	m	struct:nut
+nutv	sweph.h	/^  struct nut nutv;$/;"	m	struct:swe_data	typeref:struct:swe_data::nut
+occult_when_loc	swecl.c	/^static int32 occult_when_loc($/;"	f	file:
+oec	sweph.h	/^  struct epsilon oec;$/;"	m	struct:swe_data	typeref:struct:swe_data::epsilon
+oec2000	sweph.h	/^  struct epsilon oec2000;$/;"	m	struct:swe_data	typeref:struct:swe_data::epsilon
+orb	swepcalc.h	/^		centisec orb;$/;"	m	struct:AspectType::aspRec
+p	swephexp.h	/^ext_def( centisec ) swe_csnorm(centisec p);$/;"	v
+pAcof	swephlib.c	/^static double pAcof[] = {$/;"	v	file:
+pAcof	swephlib.c	/^static double pAcof[] = {};$/;"	v	file:
+pc	swejpl.c	/^  double pc[18], vc[18], ac[18], jc[18];$/;"	m	struct:jpl_save	file:
+peri	sweph.h	/^  double peri;		$/;"	m	struct:plan_data
+perrtx	swepcalc.c	/^static char perrtx[AS_MAXCH];$/;"	v	file:
+phase	swehel.c	107;"	d	file:
+phases	swemplan.c	/^static double phases[] =$/;"	v	file:
+pla_diam	sweph.h	/^static const double pla_diam[NDIAM] = {1392000000.0, \/* Sun *\/$/;"	v
+plac2swe	swepcalc.c	/^static int plac2swe[] = {SE_SUN, SE_MOON, SE_MERCURY, SE_VENUS, SE_MARS, SE_JUPITER, SE_SATURN, SE_URANUS, SE_NEPTUNE, SE_PLUTO, SE_MEAN_NODE, SE_TRUE_NODE, SE_CHIRON, SE_MEAN_APOG, SE_CERES, SE_PALLAS, SE_JUNO, SE_VESTA,};$/;"	v	file:
+placalc_close_files	swepcalc.c	/^void placalc_close_files()$/;"	f
+placalc_get_errtext	swepcalc.c	/^char *placalc_get_errtext()$/;"	f
+placalc_set_ephepath	swepcalc.c	/^char *placalc_set_ephepath(char *path)$/;"	f
+plan_data	sweph.h	/^struct plan_data {$/;"	s
+plan_fict_nam	swemplan.c	/^static char *plan_fict_nam[SE_NFICT_ELEM] =$/;"	v	file:
+plan_oscu_elem	swemplan.c	/^static double plan_oscu_elem[SE_NFICT_ELEM][8] = {$/;"	v	file:
+planet2afl	swepcalc.c	/^int planet2afl(int planet)$/;"	f
+planets	swemplan.c	/^static struct plantbl *planets[] =$/;"	v	typeref:struct:plantbl	file:
+plantbl	sweph.h	/^struct plantbl {$/;"	s
+plaus_iflag	sweph.c	/^static int32 plaus_iflag(int32 iflag)$/;"	f	file:
+pldat	sweph.h	/^  struct plan_data pldat[SEI_NPLANETS];$/;"	m	struct:swe_data	typeref:struct:swe_data::plan_data
+plmass	swecl.c	/^static double plmass[9] = {$/;"	v	file:
+plu404	swemptab.c	/^static struct plantbl FAR plu404 = {$/;"	v	typeref:struct:FAR	file:
+pluargs	swemptab.c	/^static signed char FAR pluargs[] = {$/;"	v	file:
+plutabb	swemptab.c	/^static double FAR plutabb[] = {$/;"	v	file:
+plutabl	swemptab.c	/^static double FAR plutabl[] = {$/;"	v	file:
+plutabr	swemptab.c	/^static double FAR plutabr[] = {$/;"	v	file:
+pnoext2int	sweph.c	/^static const int pnoext2int[] = {SEI_SUN, SEI_MOON, SEI_MERCURY, SEI_VENUS, SEI_MARS, SEI_JUPITER, SEI_SATURN, SEI_URANUS, SEI_NEPTUNE, SEI_PLUTO, 0, 0, 0, 0, SEI_EARTH, SEI_CHIRON, SEI_PHOLUS, SEI_CERES, SEI_PALLAS, SEI_JUNO, SEI_VESTA, };$/;"	v	file:
+pnoint2jpl	sweph.c	/^static const int FAR pnoint2jpl[]   = PNOINT2JPL;$/;"	v	file:
+pnoint2msh	swemplan.c	/^static int pnoint2msh[]   = {2, 2, 0, 1, 3, 4, 5, 6, 7, 8, };$/;"	v	file:
+polasc	swehouse.h	/^	  double polasc;$/;"	m	struct:houses
+ppos2	swepcalc.h	/^        centisec *ppos2;	\/* second set for mutual aspects only; if$/;"	m	struct:AspectType
+print_line	swetest.c	/^static int print_line(int mode)$/;"	f	file:
+prot	sweph.h	/^  double prot;		$/;"	m	struct:plan_data
+psp	swetest.c	/^static char *psp;$/;"	v	file:
+pv	swejpl.c	/^  double pv[78];$/;"	m	struct:jpl_save	file:
+pvsun	swejpl.c	/^  double pvsun[6];$/;"	m	struct:jpl_save	file:
+py_modules	setup.py	/^ py_modules = ["sweastrology"])$/;"	v
+qYallop	swehel.c	/^static double qYallop(double W, double GeoARCVact)$/;"	f	file:
+qrot	sweph.h	/^  double qrot; $/;"	m	struct:plan_data
+r	sweph.c	/^struct meff_ele {double r,m;};$/;"	m	struct:meff_ele	file:
+rad_tbl	sweph.h	/^  double *rad_tbl;$/;"	m	struct:plantbl
+ratme	sweph.h	/^	ratme, $/;"	m	struct:gen_const
+rdi_twilight	swecl.c	/^double rdi_twilight(int32 rsmi)$/;"	f
+read_const	sweph.c	/^static int read_const(int ifno, char *serr) $/;"	f	file:
+read_const_jpl	swejpl.c	/^static int read_const_jpl(double *ss,  char *serr)$/;"	f	file:
+read_elements_file	swemplan.c	/^static int read_elements_file(int32 ipl, double tjd, $/;"	f	file:
+refep	sweph.h	/^  double *refep;	\/* pointer to cheby coeffs of reference ellipse,$/;"	m	struct:plan_data
+rel_geo	swepcalc.c	/^int rel_geo(int planet, double rau)$/;"	f
+reorder	swejpl.c	/^static void reorder(char *x, int size, int number) $/;"	f	file:
+revjul	swepdate.c	/^void revjul (double jd, int gregflag,$/;"	f
+revjuls	swepdate.c	/^void revjuls(double jd, int gregflag, struct adate *adp)$/;"	f
+rmax	sweph.h	/^  double rmax;		\/* normalisation factor of cheby coefficients *\/$/;"	m	struct:plan_data
+rmima	swepcalc.c	/^static double rmima[CALC_N][2] = {	$/;"	v	file:
+rot_back	sweph.c	/^static void rot_back(int ipli)$/;"	f	file:
+round_flag	swetest.c	/^static int32 round_flag = 0;$/;"	v	file:
+roundsec	swepcalc.h	95;"	d
+sastno	swetest.c	/^static char sastno[AS_MAXCH] = "433";$/;"	v	file:
+sat404	swemptab.c	/^static struct plantbl FAR sat404 = {$/;"	v	typeref:struct:FAR	file:
+satargs	swemptab.c	/^static signed char FAR satargs[] = {$/;"	v	file:
+sattabb	swemptab.c	/^static double FAR sattabb[] = {$/;"	v	file:
+sattabl	swemptab.c	/^static double FAR sattabl[] = {$/;"	v	file:
+sattabr	swemptab.c	/^static double FAR sattabr[] = {$/;"	v	file:
+save_positions	sweph.h	/^struct save_positions {$/;"	s
+saved_planet_name	sweph.h	/^  char saved_planet_name[80];$/;"	m	struct:swe_data
+savedat	sweph.h	/^  struct save_positions savedat[SE_NPLANETS+1];$/;"	m	struct:swe_data	typeref:struct:swe_data::save_positions
+scaleHaerosol	swehel.c	123;"	d	file:
+scaleHozone	swehel.c	124;"	d	file:
+scaleHrayleigh	swehel.c	122;"	d	file:
+scaleHwater	swehel.c	121;"	d	file:
+se_pname	swetest.c	/^static char se_pname[AS_MAXCH];$/;"	v	file:
+search_flag	swetest.c	/^static int32 search_flag = 0;$/;"	v	file:
+segp	sweph.h	/^  double *segp;         \/* pointer to unpacked cheby coeffs of segment;$/;"	m	struct:plan_data
+seps	sweph.h	/^  double teps, eps, seps, ceps; 	\/* jd, eps, sin(eps), cos(eps) *\/$/;"	m	struct:epsilon
+serr	swetest.c	/^static char spnam[AS_MAXCH], spnam2[AS_MAXCH], serr[AS_MAXCH];$/;"	v	file:
+serr_save	swetest.c	/^static char serr_save[AS_MAXCH], serr_warn[AS_MAXCH];$/;"	v	file:
+serr_warn	swetest.c	/^static char serr_save[AS_MAXCH], serr_warn[AS_MAXCH];$/;"	v	file:
+set_bit	swepcalc.h	296;"	d
+sg	swemmoon.c	/^static double sg;$/;"	v	file:
+shyp	swetest.c	/^static char shyp[AS_MAXCH] = "1";$/;"	v	file:
+sid_data	sweph.h	/^struct sid_data {$/;"	s
+sid_mode	sweph.h	/^  int32 sid_mode;$/;"	m	struct:sid_data
+sidd	sweph.h	/^  struct sid_data sidd;$/;"	m	struct:swe_data	typeref:struct:swe_data::sid_data
+sidereal_houses_ecl_t0	swehouse.c	/^static int sidereal_houses_ecl_t0(double tjde, $/;"	f	file:
+sidereal_houses_ssypl	swehouse.c	/^static int sidereal_houses_ssypl(double tjde, $/;"	f	file:
+sidereal_houses_trad	swehouse.c	/^static int sidereal_houses_trad(double tjde,$/;"	f	file:
+sidtime	swepcalc.c	/^double  sidtime (double jd_ad, double ecl, double nuta)$/;"	f
+sind	swehouse.h	79;"	d
+sleep	sweodef.h	88;"	d
+snut	sweph.h	/^  double snut, cnut;	\/* sine and cosine of nutation in obliquity *\/$/;"	m	struct:nut
+sout	swetest.c	/^static char sout[AS_MAXCH];$/;"	v	file:
+special_event	swetest.c	/^static int32 special_event = 0;$/;"	v	file:
+special_mode	swetest.c	/^static int32 special_mode = 0;$/;"	v	file:
+spnam	swetest.c	/^static char spnam[AS_MAXCH], spnam2[AS_MAXCH], serr[AS_MAXCH];$/;"	v	file:
+spnam2	swetest.c	/^static char spnam[AS_MAXCH], spnam2[AS_MAXCH], serr[AS_MAXCH];$/;"	v	file:
+square_sum	sweph.h	300;"	d
+square_sum	swetest.c	477;"	d	file:
+ss	swemmoon.c	/^static double FAR ss[5][8]; $/;"	v	file:
+ss	swemplan.c	/^static double FAR ss[9][24];$/;"	v	file:
+sscc	swemmoon.c	/^static void sscc(int k, double arg, int n )$/;"	f	file:
+sscc	swemplan.c	/^static void sscc (int k, double arg, int n)$/;"	f	file:
+star	swetest.c	/^static char star[AS_MAXCH] = "algol", star2[AS_MAXCH];$/;"	v	file:
+star2	swetest.c	/^static char star[AS_MAXCH] = "algol", star2[AS_MAXCH];$/;"	v	file:
+state	swejpl.c	/^static int state(double et, int32 *list, int do_bary, $/;"	f	file:
+staticAirmass	swehel.c	145;"	d	file:
+strcpy_VBsafe	swehel.c	/^static void strcpy_VBsafe(char *sout, char *sin)$/;"	f	file:
+sunradius	sweph.h	/^	sunradius;$/;"	m	struct:gen_const
+swe_azalt	swecl.c	/^void FAR PASCAL_CONV swe_azalt($/;"	f
+swe_azalt_rev	swecl.c	/^void FAR PASCAL_CONV swe_azalt_rev($/;"	f
+swe_calc	sweph.c	/^int32 FAR PASCAL_CONV swe_calc(double tjd, int ipl, int32 iflag, $/;"	f
+swe_calc_ut	sweph.c	/^int32 FAR PASCAL_CONV swe_calc_ut(double tjd_ut, int32 ipl, int32 iflag, $/;"	f
+swe_close	sweph.c	/^void FAR PASCAL_CONV swe_close(void) $/;"	f
+swe_cotrans	swephlib.c	/^void FAR PASCAL_CONV swe_cotrans(double *xpo, double *xpn, double eps)$/;"	f
+swe_cotrans_sp	swephlib.c	/^void FAR PASCAL_CONV swe_cotrans_sp(double *xpo, double *xpn, double eps)$/;"	f
+swe_cs2degstr	swephlib.c	/^char *FAR PASCAL_CONV swe_cs2degstr(CSEC t, char *a)$/;"	f
+swe_cs2lonlatstr	swephlib.c	/^char *FAR PASCAL_CONV swe_cs2lonlatstr(CSEC t, char pchar, char mchar, char *sp)$/;"	f
+swe_cs2timestr	swephlib.c	/^char *FAR PASCAL_CONV swe_cs2timestr(CSEC t, int sep, AS_BOOL suppressZero, char *a)$/;"	f
+swe_csnorm	swephlib.c	/^centisec FAR PASCAL_CONV swe_csnorm(centisec p)$/;"	f
+swe_csroundsec	swephlib.c	/^centisec FAR PASCAL_CONV swe_csroundsec(centisec x)	$/;"	f
+swe_d2l	swephlib.c	/^int32 FAR PASCAL_CONV swe_d2l(double x)		$/;"	f
+swe_data	sweph.h	/^struct swe_data {$/;"	s
+swe_date_conversion	swedate.c	/^int FAR PASCAL_CONV swe_date_conversion(int y,$/;"	f
+swe_day_of_week	swephlib.c	/^int FAR PASCAL_CONV swe_day_of_week(double jd)$/;"	f
+swe_deg_midp	swephlib.c	/^double FAR PASCAL_CONV swe_deg_midp(double x1, double x0)$/;"	f
+swe_degnorm	swephlib.c	/^double FAR PASCAL_CONV swe_degnorm(double x)$/;"	f
+swe_deltat	swephlib.c	/^double FAR PASCAL_CONV swe_deltat(double tjd)$/;"	f
+swe_difcs2n	swephlib.c	/^centisec FAR PASCAL_CONV swe_difcs2n(centisec p1, centisec p2)$/;"	f
+swe_difcsn	swephlib.c	/^centisec FAR PASCAL_CONV swe_difcsn (centisec p1, centisec p2)$/;"	f
+swe_difdeg2n	swephlib.c	/^double FAR PASCAL_CONV swe_difdeg2n(double p1, double p2)$/;"	f
+swe_difdegn	swephlib.c	/^double FAR PASCAL_CONV swe_difdegn (double p1, double p2)$/;"	f
+swe_difrad2n	swephlib.c	/^double FAR PASCAL_CONV swe_difrad2n(double p1, double p2)$/;"	f
+swe_fixstar	sweph.c	/^int32 FAR PASCAL_CONV swe_fixstar(char *star, double tjd, int32 iflag, $/;"	f
+swe_fixstar_mag	sweph.c	/^int32 FAR PASCAL_CONV swe_fixstar_mag(char *star, double *mag, char *serr)$/;"	f
+swe_fixstar_ut	sweph.c	/^int32 FAR PASCAL_CONV swe_fixstar_ut(char *star, double tjd_ut, int32 iflag, $/;"	f
+swe_gauquelin_sector	swecl.c	/^int32 FAR PASCAL_CONV swe_gauquelin_sector(double t_ut, int32 ipl, char *starname, int32 iflag, int32 imeth, double *geopos, double atpress, double attemp, double *dgsect, char *serr) $/;"	f
+swe_get_ayanamsa	sweph.c	/^double FAR PASCAL_CONV swe_get_ayanamsa(double tjd_et)$/;"	f
+swe_get_ayanamsa_name	sweph.c	/^char *FAR PASCAL_CONV swe_get_ayanamsa_name(int32 isidmode) $/;"	f
+swe_get_ayanamsa_ut	sweph.c	/^double FAR PASCAL_CONV swe_get_ayanamsa_ut(double tjd_ut)$/;"	f
+swe_get_planet_name	sweph.c	/^char *FAR PASCAL_CONV swe_get_planet_name(int ipl, char *s) $/;"	f
+swe_get_tid_acc	swephlib.c	/^double FAR PASCAL_CONV swe_get_tid_acc()$/;"	f
+swe_heliacal_angle	swehel.c	/^int32 FAR PASCAL_CONV swe_heliacal_angle(double tjdut, double *dgeo, double *datm, double *dobs, int32 helflag, double mag, double azi_obj, double azi_sun, double azi_moon, double alt_moon, double *dret, char *serr)$/;"	f
+swe_heliacal_pheno_ut	swehel.c	/^int32 FAR PASCAL_CONV swe_heliacal_pheno_ut(double JDNDaysUT, double *dgeo, double *datm, double *dobs, char *ObjectNameIn, int32 TypeEvent, int32 helflag, double *darr, char *serr)$/;"	f
+swe_heliacal_ut	swehel.c	/^int32 FAR PASCAL_CONV swe_heliacal_ut(double JDNDaysUTStart, double *dgeo, double *datm, double *dobs, char *ObjectNameIn, int32 TypeEvent, int32 helflag, double *dret, char *serr_ret)$/;"	f
+swe_house_pos	swehouse.c	/^double FAR PASCAL_CONV swe_house_pos($/;"	f
+swe_houses	swehouse.c	/^int FAR PASCAL_CONV swe_houses(double tjd_ut,$/;"	f
+swe_houses_armc	swehouse.c	/^int FAR PASCAL_CONV swe_houses_armc($/;"	f
+swe_houses_ex	swehouse.c	/^int FAR PASCAL_CONV swe_houses_ex(double tjd_ut,$/;"	f
+swe_jdet_to_utc	swedate.c	/^void FAR PASCAL_CONV swe_jdet_to_utc(double tjd_et, int32 gregflag, int32 *iyear, int32 *imonth, int32 *iday, int32 *ihour, int32 *imin, double *dsec) $/;"	f
+swe_jdut1_to_utc	swedate.c	/^void FAR PASCAL_CONV swe_jdut1_to_utc(double tjd_ut, int32 gregflag, int32 *iyear, int32 *imonth, int32 *iday, int32 *ihour, int32 *imin, double *dsec) $/;"	f
+swe_julday	swedate.c	/^double FAR PASCAL_CONV swe_julday(int year, int month, int day, double hour, int gregflag) $/;"	f
+swe_lun_eclipse_how	swecl.c	/^int32 FAR PASCAL_CONV swe_lun_eclipse_how($/;"	f
+swe_lun_eclipse_when	swecl.c	/^int32 FAR PASCAL_CONV swe_lun_eclipse_when(double tjd_start, int32 ifl, int32 ifltype,$/;"	f
+swe_lun_occult_when_glob	swecl.c	/^int32 FAR PASCAL_CONV swe_lun_occult_when_glob($/;"	f
+swe_lun_occult_when_loc	swecl.c	/^int32 FAR PASCAL_CONV swe_lun_occult_when_loc(double tjd_start, int32 ipl, char *starname, int32 ifl,$/;"	f
+swe_lun_occult_where	swecl.c	/^int32 FAR PASCAL_CONV swe_lun_occult_where($/;"	f
+swe_nod_aps	swecl.c	/^int32 FAR PASCAL_CONV swe_nod_aps(double tjd_et, int32 ipl, int32 iflag, $/;"	f
+swe_nod_aps_ut	swecl.c	/^int32 FAR PASCAL_CONV swe_nod_aps_ut(double tjd_ut, int32 ipl, int32 iflag, $/;"	f
+swe_pheno	swecl.c	/^int32 FAR PASCAL_CONV swe_pheno(double tjd, int32 ipl, int32 iflag, double *attr, char *serr)$/;"	f
+swe_pheno_ut	swecl.c	/^int32 FAR PASCAL_CONV swe_pheno_ut(double tjd_ut, int32 ipl, int32 iflag, double *attr, char *serr)$/;"	f
+swe_rad_midp	swephlib.c	/^double FAR PASCAL_CONV swe_rad_midp(double x1, double x0)$/;"	f
+swe_radnorm	swephlib.c	/^double FAR PASCAL_CONV swe_radnorm(double x)$/;"	f
+swe_refrac	swecl.c	/^double FAR PASCAL_CONV swe_refrac(double inalt, double atpress, double attemp, int32 calc_flag)$/;"	f
+swe_refrac_extended	swecl.c	/^double FAR PASCAL_CONV swe_refrac_extended(double inalt, double geoalt, double atpress, double attemp, double lapse_rate, int32 calc_flag, double *dret)$/;"	f
+swe_revjul	swedate.c	/^void FAR PASCAL_CONV swe_revjul (double jd, int gregflag,$/;"	f
+swe_rise_trans	swecl.c	/^int32 FAR PASCAL_CONV swe_rise_trans($/;"	f
+swe_set_ephe_path	sweph.c	/^void FAR PASCAL_CONV swe_set_ephe_path(char *path) $/;"	f
+swe_set_jpl_file	sweph.c	/^void FAR PASCAL_CONV swe_set_jpl_file(char *fname)$/;"	f
+swe_set_lapse_rate	swecl.c	/^void FAR PASCAL_CONV swe_set_lapse_rate(double lapse_rate) $/;"	f
+swe_set_sid_mode	sweph.c	/^void FAR PASCAL_CONV swe_set_sid_mode(int32 sid_mode, double t0, double ayan_t0)$/;"	f
+swe_set_tid_acc	swephlib.c	/^void FAR PASCAL_CONV swe_set_tid_acc(double t_acc)$/;"	f
+swe_set_topo	sweph.c	/^void FAR PASCAL_CONV swe_set_topo(double geolon, double geolat, double geoalt)$/;"	f
+swe_sidtime	swephlib.c	/^double FAR PASCAL_CONV swe_sidtime(double tjd_ut)$/;"	f
+swe_sidtime0	swephlib.c	/^double FAR PASCAL_CONV swe_sidtime0( double tjd, double eps, double nut )$/;"	f
+swe_sol_eclipse_how	swecl.c	/^int32 FAR PASCAL_CONV swe_sol_eclipse_how($/;"	f
+swe_sol_eclipse_when_glob	swecl.c	/^int32 FAR PASCAL_CONV swe_sol_eclipse_when_glob(double tjd_start, int32 ifl, int32 ifltype,$/;"	f
+swe_sol_eclipse_when_loc	swecl.c	/^int32 FAR PASCAL_CONV swe_sol_eclipse_when_loc(double tjd_start, int32 ifl,$/;"	f
+swe_sol_eclipse_where	swecl.c	/^int32 FAR PASCAL_CONV swe_sol_eclipse_where($/;"	f
+swe_split_deg	swephlib.c	/^void FAR PASCAL_CONV swe_split_deg(double ddeg, int32 roundflag, int32 *ideg, int32 *imin, int32 *isec, double *dsecfr, int32 *isgn)$/;"	f
+swe_time_equ	sweph.c	/^int FAR PASCAL_CONV swe_time_equ(double tjd, double *E, char *serr)$/;"	f
+swe_topo_arcus_visionis	swehel.c	/^int32 FAR PASCAL_CONV swe_topo_arcus_visionis(double tjdut, double *dgeo, double *datm, double *dobs, int32 helflag, double mag, double azi_obj, double alt_obj, double azi_sun, double azi_moon, double alt_moon, double *dret, char *serr)$/;"	f
+swe_utc_to_jd	swedate.c	/^int32 FAR PASCAL_CONV swe_utc_to_jd(int32 iyear, int32 imonth, int32 iday, int32 ihour, int32 imin, double dsec, int32 gregflag, double *dret, char *serr)$/;"	f
+swe_version	sweph.c	/^char *FAR PASCAL_CONV swe_version(char *s)$/;"	f
+swe_vis_limit_mag	swehel.c	/^int32 FAR PASCAL_CONV swe_vis_limit_mag(double tjdut, double *dgeo, double *datm, double *dobs, char *ObjectName, int32 helflag, double *dret, char *serr)$/;"	f
+swecalc	sweph.c	/^static int32 swecalc(double tjd, int ipl, int32 iflag, double *x, char *serr) $/;"	f	file:
+swed	sweph.c	/^struct swe_data FAR swed = {FALSE,	\/* ephe_path_is_set = FALSE *\/$/;"	v	typeref:struct:FAR
+swemoon	sweph.c	/^static int swemoon(double tjd, int32 iflag, AS_BOOL do_save, double *xpret, char *serr)$/;"	f	file:
+sweph	sweph.c	/^static int sweph(double tjd, int ipli, int ifno, int32 iflag, double *xsunb, AS_BOOL do_save, double *xpret, char *serr)$/;"	f	file:
+sweph_denum	sweph.h	/^  int32 sweph_denum;     \/* DE number of JPL ephemeris, which this file$/;"	m	struct:file_data
+sweplan	sweph.c	/^static int sweplan(double tjd, int ipli, int ifno, int32 iflag, AS_BOOL do_save,$/;"	f	file:
+swi_FK4_FK5	swephlib.c	/^void swi_FK4_FK5(double *xp, double tjd)$/;"	f
+swi_FK5_FK4	swephlib.c	/^void swi_FK5_FK4(double *xp, double tjd)$/;"	f
+swi_aberr_light	sweph.c	/^void swi_aberr_light(double *xx, double *xe, int32 iflag) {$/;"	f
+swi_angnorm	swephlib.c	/^double swi_angnorm(double x)$/;"	f
+swi_bias	swephlib.c	/^void swi_bias(double *x, int32 iflag, AS_BOOL backward)$/;"	f
+swi_cartpol	swephlib.c	/^void swi_cartpol(double *x, double *l) $/;"	f
+swi_cartpol_sp	swephlib.c	/^void swi_cartpol_sp(double *x, double *l)$/;"	f
+swi_check_ecliptic	sweph.c	/^void swi_check_ecliptic(double tjd)$/;"	f
+swi_check_nutation	sweph.c	/^void swi_check_nutation(double tjd, int32 iflag)$/;"	f
+swi_close_jpl_file	swejpl.c	/^void swi_close_jpl_file(void)$/;"	f
+swi_coortrf	swephlib.c	/^void swi_coortrf(double *xpo, double *xpn, double eps) $/;"	f
+swi_coortrf2	swephlib.c	/^void swi_coortrf2(double *xpo, double *xpn, double sineps, double coseps) $/;"	f
+swi_crc32	swephlib.c	/^uint32 swi_crc32(unsigned char *buf, int len)$/;"	f
+swi_cross_prod	swephlib.c	/^void swi_cross_prod(double *a, double *b, double *x)$/;"	f
+swi_cutstr	swephlib.c	/^int swi_cutstr(char *s, char *cutlist, char *cpos[], int nmax)$/;"	f
+swi_deflect_light	sweph.c	/^void swi_deflect_light(double *xx, double dt, int32 iflag) $/;"	f
+swi_dot_prod_unit	swephlib.c	/^double swi_dot_prod_unit(double *x, double *y)$/;"	f
+swi_echeb	swephlib.c	/^double swi_echeb(double x, double *coef, int ncf)$/;"	f
+swi_edcheb	swephlib.c	/^double swi_edcheb(double x, double *coef, int ncf)$/;"	f
+swi_epsiln	swephlib.c	/^double swi_epsiln(double J) $/;"	f
+swi_fopen	sweph.c	/^FILE *swi_fopen(int ifno, char *fname, char *ephepath, char *serr)$/;"	f
+swi_force_app_pos_etc	sweph.c	/^void swi_force_app_pos_etc()$/;"	f
+swi_fp_trace_c	swephlib.c	/^FILE *swi_fp_trace_c = NULL;$/;"	v
+swi_fp_trace_out	swephlib.c	/^FILE *swi_fp_trace_out = NULL;$/;"	v
+swi_gen_filename	swephlib.c	/^void swi_gen_filename(double tjd, int ipli, char *fname) $/;"	f
+swi_get_fict_name	swemplan.c	/^char *swi_get_fict_name(int32 ipl, char *snam) $/;"	f
+swi_get_jpl_denum	swejpl.c	/^int32 swi_get_jpl_denum()$/;"	f
+swi_get_observer	sweph.c	/^int swi_get_observer(double tjd, int32 iflag, $/;"	f
+swi_icrs2fk5	swephlib.c	/^void swi_icrs2fk5(double *x, int32 iflag, AS_BOOL backward)$/;"	f
+swi_intp_apsides	swemmoon.c	/^int swi_intp_apsides(double J, double *pol, int ipli)$/;"	f
+swi_kepler	swephlib.c	/^double swi_kepler(double E, double M, double ecce)$/;"	f
+swi_mean_apog	swemmoon.c	/^int swi_mean_apog(double J, double *pol, char *serr)$/;"	f
+swi_mean_lunar_elements	swemmoon.c	/^void swi_mean_lunar_elements(double tjd, $/;"	f
+swi_mean_node	swemmoon.c	/^int swi_mean_node(double J, double *pol, char *serr)$/;"	f
+swi_mod2PI	swephlib.c	/^double swi_mod2PI(double x)$/;"	f
+swi_moshmoon	swemmoon.c	/^int swi_moshmoon(double tjd, AS_BOOL do_save, double *xpmret, char *serr) $/;"	f
+swi_moshmoon2	swemmoon.c	/^int swi_moshmoon2(double J, double *pol)$/;"	f
+swi_moshplan	swemplan.c	/^int swi_moshplan(double tjd, int ipli, AS_BOOL do_save, double *xpret, double *xeret, char *serr) $/;"	f
+swi_moshplan2	swemplan.c	/^int swi_moshplan2 (double J, int iplm, double *pobj)$/;"	f
+swi_nutate	sweph.c	/^void swi_nutate(double *xx, int32 iflag, AS_BOOL backward)$/;"	f
+swi_nutation	swephlib.c	/^int swi_nutation(double J, double *nutlo) $/;"	f
+swi_nutation	swephlib.c	/^int swi_nutation(double J, double *nutlo)$/;"	f
+swi_open_jpl_file	swejpl.c	/^int swi_open_jpl_file(double *ss, char *fname, char *fpath, char *serr)$/;"	f
+swi_open_trace	swephlib.c	/^void swi_open_trace(char *serr)$/;"	f
+swi_osc_el_plan	swemplan.c	/^int swi_osc_el_plan(double tjd, double *xp, int ipl, int ipli, double *xearth, double *xsun, char *serr)$/;"	f
+swi_plan_for_osc_elem	sweph.c	/^int swi_plan_for_osc_elem(int32 iflag, double tjd, double *xx)$/;"	f
+swi_pleph	swejpl.c	/^int swi_pleph(double et, int ntarg, int ncent, double *rrd, char *serr)$/;"	f
+swi_polcart	swephlib.c	/^void swi_polcart(double *l, double *x) $/;"	f
+swi_polcart_sp	swephlib.c	/^void swi_polcart_sp(double *l, double *x)$/;"	f
+swi_precess	swephlib.c	/^int swi_precess(double *R, double J, int direction )$/;"	f
+swi_precess_speed	sweph.c	/^void swi_precess_speed(double *xx, double t, int direction) $/;"	f
+swi_right_trim	swephlib.c	/^char *swi_right_trim(char *s)$/;"	f
+swi_trace_count	swephlib.c	/^int32 swi_trace_count = 0;$/;"	v
+swi_trop_ra2sid_lon	sweph.c	/^int swi_trop_ra2sid_lon(double *xin, double *xout, double *xoutr, int32 iflag, char *serr)$/;"	f
+swi_trop_ra2sid_lon_sosy	sweph.c	/^int swi_trop_ra2sid_lon_sosy(double *xin, double *xout, double *xoutr, int32 iflag, char *serr)$/;"	f
+t	swetest.c	/^static double t, te, tut, jut = 0;$/;"	v	file:
+t0	sweph.h	/^  double t0;$/;"	m	struct:sid_data
+t0	sweph.h	/^struct aya_init {double t0, ayan_t0;};$/;"	m	struct:aya_init
+tand	swehouse.h	81;"	d
+tau2astr	swehel.c	126;"	d	file:
+tcon	swehel.c	/^static double tcon[] =$/;"	v	file:
+te	swetest.c	/^static double t, te, tut, jut = 0;$/;"	v	file:
+telem	sweph.h	/^  double telem;		\/* epoch of elements *\/$/;"	m	struct:plan_data
+teps	sweph.h	/^  double teps, eps, seps, ceps; 	\/* jd, eps, sin(eps), cos(eps) *\/$/;"	m	struct:epsilon
+teval	sweph.h	/^  double teval;		\/* time for which last computation was made *\/$/;"	m	struct:node_data
+teval	sweph.h	/^  double teval;		\/* time for which previous computation was made *\/$/;"	m	struct:plan_data
+teval	sweph.h	/^  double teval;$/;"	m	struct:topo_data
+tfend	sweph.h	/^  double tfend;         \/*      for this particular planet !!!            *\/$/;"	m	struct:plan_data
+tfend	sweph.h	/^  double tfend;         \/*      through this date          *\/$/;"	m	struct:file_data
+tfstart	sweph.h	/^  double tfstart;	\/* file contains ephemeris for tfstart thru tfend *\/$/;"	m	struct:plan_data
+tfstart	sweph.h	/^  double tfstart;       \/* file may be used from this date *\/$/;"	m	struct:file_data
+tid_acc	swephlib.c	/^static double tid_acc = SE_TIDAL_DEFAULT;$/;"	v	file:
+time_limit_invisible	swehel.c	/^static int32 time_limit_invisible(double tjd, double *dgeo, double *datm, double *dobs, char *ObjectName, int32 helflag, int32 direct, double *tret, char *serr)$/;"	f	file:
+time_optimum_visibility	swehel.c	/^static int32 time_optimum_visibility(double tjd, double *dgeo, double *datm, double *dobs, char *ObjectName, int32 helflag, double *tret, char *serr)$/;"	f	file:
+tjd	swetest.c	/^static double tjd = 2415020.5;$/;"	v	file:
+tjd_ut	sweph.h	/^  double tjd_ut;$/;"	m	struct:topo_data
+tnut	sweph.h	/^  double tnut;$/;"	m	struct:nut
+topd	sweph.h	/^  struct topo_data topd;$/;"	m	struct:swe_data	typeref:struct:swe_data::topo_data
+topo_data	sweph.h	/^struct topo_data {$/;"	s
+trace_swe_calc	sweph.c	/^static void trace_swe_calc(int swtch, double tjd, int ipl, int32 iflag, double *xx, char *serr)$/;"	f	file:
+trace_swe_fixstar	sweph.c	/^static void trace_swe_fixstar(int swtch, char *star, double tjd, int32 iflag, double *xx, char *serr)$/;"	f	file:
+trace_swe_get_planet_name	sweph.c	/^static void trace_swe_get_planet_name(int swtch, int ipl, char *s)$/;"	f	file:
+tret	swetest.c	/^static double attr[20], tret[20], geopos[3], datm[4], dobs[6];$/;"	v	file:
+tsave	sweph.h	/^  double tsave;$/;"	m	struct:save_positions
+tseg0	sweph.h	/^  double tseg0, tseg1;	\/* start and end jd of current segment *\/$/;"	m	struct:plan_data
+tseg1	sweph.h	/^  double tseg0, tseg1;	\/* start and end jd of current segment *\/$/;"	m	struct:plan_data
+tut	swetest.c	/^static double t, te, tut, jut = 0;$/;"	v	file:
+uint32	sweodef.h	/^  typedef unsigned int	uint32;$/;"	t
+uint32	sweodef.h	/^  typedef unsigned long	uint32;$/;"	t
+universal_time	swetest.c	/^static AS_BOOL universal_time = FALSE;$/;"	v	file:
+ura404	swemptab.c	/^static struct plantbl FAR ura404 = {$/;"	v	typeref:struct:FAR	file:
+uraargs	swemptab.c	/^static signed char FAR uraargs[] = {$/;"	v	file:
+uratabb	swemptab.c	/^static double FAR uratabb[] = {$/;"	v	file:
+uratabl	swemptab.c	/^static double FAR uratabl[] = {$/;"	v	file:
+uratabr	swemptab.c	/^static double FAR  uratabr[] = {$/;"	v	file:
+vc	swejpl.c	/^  double pc[18], vc[18], ac[18], jc[18];$/;"	m	struct:jpl_save	file:
+ven404	swemptab.c	/^static struct plantbl FAR ven404 = {$/;"	v	typeref:struct:FAR	file:
+venargs	swemptab.c	/^static signed char FAR venargs[] = {$/;"	v	file:
+ventabb	swemptab.c	/^static double FAR ventabb[] = {$/;"	v	file:
+ventabl	swemptab.c	/^static double FAR ventabl[] = {$/;"	v	file:
+ventabr	swemptab.c	/^static double FAR ventabr[] = {$/;"	v	file:
+vertex	swehouse.h	/^	  double vertex;$/;"	m	struct:houses
+whicheph	swetest.c	/^static int32 whicheph = SEFLG_SWIEPH;   $/;"	v	file:
+x	sweph.h	/^  double x[6];		\/* position and speed vectors equatorial J2000 *\/$/;"	m	struct:node_data
+x	sweph.h	/^  double x[6];		\/* position and speed vectors equatorial J2000 *\/$/;"	m	struct:plan_data
+x	swephexp.h	/^ext_def( centisec ) swe_csroundsec(centisec x);$/;"	v
+x	swetest.c	/^static double x[6], x2[6], xequ[6], xcart[6], xcartq[6], xobl[6], xaz[6], xt[6], hpos, hpos2, hposj, armc, xsv[6];$/;"	v	file:
+x2	swetest.c	/^static double x[6], x2[6], xequ[6], xcart[6], xcartq[6], xobl[6], xaz[6], xt[6], hpos, hpos2, hposj, armc, xsv[6];$/;"	v	file:
+x2min	swehel.c	/^static double x2min(double A, double B, double C)$/;"	f	file:
+xaz	swetest.c	/^static double x[6], x2[6], xequ[6], xcart[6], xcartq[6], xobl[6], xaz[6], xt[6], hpos, hpos2, hposj, armc, xsv[6];$/;"	v	file:
+xcart	swetest.c	/^static double x[6], x2[6], xequ[6], xcart[6], xcartq[6], xobl[6], xaz[6], xt[6], hpos, hpos2, hposj, armc, xsv[6];$/;"	v	file:
+xcartq	swetest.c	/^static double x[6], x2[6], xequ[6], xcart[6], xcartq[6], xobl[6], xaz[6], xt[6], hpos, hpos2, hposj, armc, xsv[6];$/;"	v	file:
+xequ	swetest.c	/^static double x[6], x2[6], xequ[6], xcart[6], xcartq[6], xobl[6], xaz[6], xt[6], hpos, hpos2, hposj, armc, xsv[6];$/;"	v	file:
+xflgs	sweph.h	/^  int32 xflgs;		\/* hel., light-time, aberr., prec. flags etc. *\/$/;"	m	struct:node_data
+xflgs	sweph.h	/^  int32 xflgs;		\/* hel., light-time, aberr., prec. flags etc. *\/$/;"	m	struct:plan_data
+xobl	swetest.c	/^static double x[6], x2[6], xequ[6], xcart[6], xcartq[6], xobl[6], xaz[6], xt[6], hpos, hpos2, hposj, armc, xsv[6];$/;"	v	file:
+xobs	sweph.h	/^  double xobs[6];$/;"	m	struct:topo_data
+xreturn	sweph.h	/^  double xreturn[24];   \/* return positions: $/;"	m	struct:node_data
+xreturn	sweph.h	/^  double xreturn[24];   \/* return positions:$/;"	m	struct:plan_data
+xsaves	sweph.h	/^  double xsaves[24];    $/;"	m	struct:save_positions
+xsv	swetest.c	/^static double x[6], x2[6], xequ[6], xcart[6], xcartq[6], xobl[6], xaz[6], xt[6], hpos, hpos2, hposj, armc, xsv[6];$/;"	v	file:
+xt	swetest.c	/^static double x[6], x2[6], xequ[6], xcart[6], xcartq[6], xobl[6], xaz[6], xt[6], hpos, hpos2, hposj, armc, xsv[6];$/;"	v	file:
+z	swemmoon.c	/^static double FAR z[] = {$/;"	v	file:
+z	swemmoon.c	/^static double z[] = {$/;"	v	file:
+zod_nam	swetest.c	/^static char *zod_nam[] = {"ar", "ta", "ge", "cn", "le", "vi", $/;"	v	file:

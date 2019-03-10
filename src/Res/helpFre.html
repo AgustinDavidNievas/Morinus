@@ -1,0 +1,509 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<TITLE>Morinus</TITLE>
+<STYLE TYPE="text/css">
+</STYLE>
+</HEAD>
+<BODY bgcolor="#C0C0C0" text="#000000" link="#0000FF" vlink="#FF0000" alink="#F0F0F0">
+<H1>Morinus</H1>
+<BR>
+<H2>Webpages</H2>
+<UL>
+<LI>http://pymorinus.extra.hu/
+<LI>http://sites.google.com/site/pymorinus/
+</UL>
+
+<P>
+Morinus is an easy to use astrology software under GPLv3 license. It uses the swiss ephemeris so it's very accurate (5000BC - 5000AD). 
+It runs on every Operating System where Python and wxPython are available(Linux, Windows, MacOS).</P>
+
+<H2>Features</H2>
+<UL>
+<LI>Computes a horoscope with high accuracy between 5000BC-5000AD
+<LI>Place database
+<LI>Positions (Speculum)
+<LI>Find time from planetary positions
+<LI>Graphical Ephemeris (Tropical or Sidereal)
+<LI>Misc data (Sidereal time, Obliquity of Ecliptic, ...)
+<LI>12 Housesystems
+<LI>Showing the charts in several ways (Themes)
+<LI>Synastry
+<LI>Aspects
+<LI>Selectable Traditional Aspects
+<LI>MidPoints
+<LI>Rise/Set times
+<LI>Almutens(acc. to the Arabs and Ibn Ezra(Points, Chart, Topical))
+<LI>Selectable individual colors or acc. to dignities
+<LI>Speeds
+<LI>Selectable fixedstars(max. 40 out of 800)
+<LI>Antiscia
+<LI>Zodiacal Parallels
+<LI>30-deg Strip(Horary)
+<LI>Lot of Fortune (several types)
+<LI>Arabic Parts
+<LI>Day/Night orb
+<LI>Syzygy(Prenatal Lunation) (in Misc Table)
+<LI>Mundane Lot of Fortune(in Mundane Positions table)
+<LI>Planetary Hours
+<LI>Topocentric Positions
+<LI>Ayanamsha
+<LI>Square(Medieval) Chart
+<LI>Profections (zodiacal, mundane; Gregorian and time in GMT)
+<LI>Save to bitmap (black and white or color)
+<LI>Transits (date, month)
+<LI>Revolutions
+<LI>Precession and nutation corrected solar revolutions if an ayanamsa is selected
+<LI>Transits of the Sun
+<LI>Secondary Directions (Apparent Solar Time, Mean-Time)
+<LI>Elections
+<LI>Selectable showing of the Fixedstars, Antiscia, Lot of Fortune, Terms, Decans in the chart
+<LI>Primary Directions(mundane, zodiacal)
+<UL>
+<LI>Placidian(semiarc) (or Ptolemy)
+<LI>Placidian(UnderThePole) (zodiacal only, with or without latitude)
+<LI>Regiomontanian
+<LI>Campanian
+</UL>
+<LI>Zodiacal only: Terms, Fixstars, syzygy (Primary Directions)
+<LI>Zodiacal Parallels (Primary Directions)
+<LI>Topocentric Positions (Primary Directions)
+<LI>Secondary Motion of the Moon (Primary Directions)
+<LI>User-point (Primary Directions)
+<LI>User2-point (Primary Directions)
+<LI>Speculum of user-point or user2-point (Primary Directions)
+<LI>Primary Keys(static, dynamic)
+<LI>PDs in chart
+<LI>Second-resolution time-stepping(Primary Directions)
+<LI>Converse Primary Directions can also be timed by regressive Sun in case of True Solar Arc
+<LI>Primary Directions in solar and lunar revolutions
+<LI>Available in english, hungarian, italian, french, russian and spanish
+</UL>
+
+<P>In the options menu you can set the:</P>
+<UL>
+<LI>Appearance
+<LI>Symbols
+<LI>Dignities
+<LI>Minor Dignities(Triplicities, Terms, Decans)
+<LI>Almutens
+<LI>Ayanamsha
+<LI>Colors
+<LI>House Systems
+<LI>Nodes
+<LI>Orbs
+<LI>Primary Directions
+<LI>Primary Keys
+<LI>PDs in chart
+<LI>Lot of Fortune
+<LI>Arabic Parts(editor)
+<LI>Syzygy
+<LI>Fixstars
+<LI>Languages
+</UL>
+
+<P>Horoscopes and options can be saved and reloaded and you can invoke a popup menu by right-clicking on any of the windows except for the window of the radix because it has its own menu-bar. Primary Directions can also be saved to a text file.</P>
+<BR>
+
+<img src="tables.png" alt="popup menu (tables)">
+<img src="tablepd.png" alt="popup menu (pd tables)">
+<img src="charts.png" alt="popup menu (charts)">
+
+
+<H2>About Primary Directions</H2>
+<P>
+Only the enabled options(items, radiobuttons, checkboxes) will be calculated. (e.g. if you want to see only the Terms: select "Zodiacal"-radiobutton then select only the Terms in the Promissors column, press OK and then F12)
+The intermediate housecusps will be calculated acc. to the selected PD-system(e.g. Regiomontanian-housecusps in case of Regiomontanian PDs).
+Currently the PDs to the intermediate housecusps are the same in case of Placidian(underthepole) and Placidian(semiarcus).
+Select Regiomontanian or Campanian PD in the Options/PD-Dialog to have a Regiomontanian-speculum in the Positions-table.
+The selected terms in the Options/Terms dialog is used in the PDs. 
+The Placidian(underthepole) is only an approximation to the Placidian(semiarc). 
+PDs to the Asc, MC are the same in every system(Placidian, Regiomontanian, ...). 
+In mundane PDs the aspects are not calculated on the Ecliptic but in the houses.
+Only the midpoints, mundane aspectual directions other than conjunction and opposition and directions to house cusps are different in case of Regiomontan and Campanian PDs.
+The program can't calculate J-B Morin's aspect correction (Regio-PDs).
+Bianchini assigned different latitudes(calculated from the latitude of the promissor) to the aspects(conjunctio:latitudeofpromissor, sextil:latitudeofpromissor/2, quadrat:0, trigon:-latitudeofpromissor/2, oppositio:-latitudeofpromissor) and he always used the latitude of the significator. 
+If the "Topocentric" is selected in the Appearance I dialog then topocentric positions will be used in the PDs. 
+If "Sec. Motion" is checked then the PDs of the Moon will be adjusted accordingly(real-time Moon). 
+If "User" is checked then the point defined by the ecliptic coordinates will be directed to the selected significators. For example in case of 16Capricorn 25min 46sec: 286 should be entered in the Deg. field of the Longitude. "User" will be shown in the PD-lists. 
+If "User2" is checked then the selected promissors will be directed to the point defined by the ecliptic coordinates. For example in case of 16Capricorn 25min 46sec: 286 should be entered in the Deg. field of the Longitude. "User2" will be shown in the PD-lists. 
+If only User is selected in the Primary Directions dialog then its speculum will be shown in User-Speculum. 
+If only User2 is selected in the Primary Directions dialog then its speculum will be shown in User-Speculum. 
+If both User and User2 are selected in the Primary Directions dialog then User's speculum will be shown in User-Speculum. 
+The ayanamsha only affects the Terms in PDs, so e.g. not the "User" or User2-point. 
+The Asc, MC are preferred to the Desc, IC. This means that if "Moon --> DESC" is not shown then try to select the opposition aspect and the appropriate zodiacal option: "oppositio Moon --> Asc" should be shown. 
+The mundane MidPoints are the ones Makransky calls Rapt Parallels, the zodiacal with latitude MidPoints are calculted acc. to Ruediger Plantiko's algorithm.
+The last three columns(Appearance II) in case of Placidus PDs belong to the Placidus(UnderThePole).
+</P>
+
+<H2>PDs In Chart (Zodiacal)</H2>
+<P>
+<B>Preliminary astronomical remarks</B>
+Speaking of Zodiacal PDs in Chart and Ingresses (transits on the first ones), according to some generous
+mails Martin Gansten sent me, as I understood no real method came us from the ancient masters to draw
+them. Hints only. And as I know, solely in recent times, thanks to computerized procedures, the students had
+the possibility to deal with them. Under the astronomical viewpoint, in the temporal gap PDs express their
+effects (400 minutes after the birth to cover 100 years in the real time), changes in the celestial planetary
+positions (i.e in the signs) are not appreciable: about 25' for Sun and inner planets, very less for the outer
+celestial bodies. Only the Moon is able to move in zodiac up to about 4°. So, the zodiacal positions drawn for
+the planets in these charts are reckoned thanks to certain symbolic or pseudo astronomic criterions.
+Available in its options, Morinus offers three different methods: the first is the most common in use, the
+second coincides with the first unless the starting planetary positions, the third is a wholly new method. To
+avoid confusion in the terminology (the same adjectives could be used for the charts and for the planets
+utilized to cast them) in the options they are labeled "Celestial" instead of "Zodiacal". What follows is the
+technical viewpoint of the writer and to do involves necessarily other persons' opinion.
+</P>
+
+<P>
+<B>First option (from the planets)</B><BR>
+M. Gansten quoted me the basic principle of PD as formulated by Ptolemy: "For a place is similar and the
+same position in the same direction with reference both to the horizon and to the meridian". So, moving the
+celestial sphere, ASC and MC move as usually in zodiac. The planets are kept in their native mundane
+positions "to shares the same proportional relationship to the horizon and meridian which they had at the
+birth" instead, and thanks to the trigonometric formulas that tie OA/OD to the celestial longitude, their
+position in the PDs charts is then reckoned. This is the a first way to satisfy the Ptolemaic indications, but
+being this ecliptic projection "mundo referred" it has a disadvantage. For "simple" geometric, trigonometric
+and astronomical reasons, the formulas involved are valid for points lying on the ecliptic only, i.e. without
+latitude, with the consequence that for small arcs of directions the planets jump suddenly from their native
+positions to others quite far, yielding a technique not Radix compatible.
+</P>
+
+<P>
+<B>Second option (from their ecliptic feet)</B><BR>
+We have a second possibility to satisfy Ptolemy. Keeping the same above method, the native zodiacal
+planetary projections can be used as starting point. In such a way the technique is Radix compatible. Starting
+from the birth, the planets move smoothly from their native positions in zodiac without jumps due to the
+latitude. <BR>
+The two above variants must be accepted as they are, as symbolic techniques dictated by the wishes of the
+tradition. Any effort to frame them in one astronomical context is senseless and fated to fail. We have seen,
+for example, that the first is discontinuous at the Radix. On the other end the second does not respect the
+basic astronomical principle for which two real celestial objects, with latitude, after an equatorial rotation of
+the celestial sphere see their ecliptic feet vary their mutual zodiacal distance.<BR>
+Under an astronomical, conceptual viewpoint, a further problem joins the two previous methods. We
+remember that for both of them, flowing the time, the planetary positions in zodiac are dependent from their
+forced, immutable placing in the local space. This enforcement, necessary to respect the tradition, may
+generate perplexity to astronomical eyes because the zodiacal positions "are what they are", regardless to
+the observing geographical point. In other words, what happens with the two above methods is that for two
+horoscopes cast at the same time for two different points on the Earth, the PDs in Chart positions do not
+coincide. It is like if two persons, born in the same instant, one in Rome the other at New York, had the Sun
+in different positions: the first at 15°Aries, the second at 17°Aries (of course we do not consider here the
+negligible parallax consequences).
+</P>
+
+<P>
+<B>Third option (full pseudo-astronomic)</B><BR>
+So, to satisfy a more plausible astronomical scenery, a third option arose. Starting from the true equatorial
+planetary positions, we detect the PDs pseudo-zodiac (the whole ecliptic, "frozen" in the position it had at the
+birth) and thanks to a true coordinate system transformation (equatorial to ecliptic) we reckon the zodiacal
+positions. Of course, doing so the zodiacal positions of our planets are not related with the mundane, local
+positions any longer. It's interesting to note an unusual detail: the intersection axis between such a pseudozodiac
+and the equatorial plane, rotates on the last one in the time, with the consequence that the Aries-Libra
+Points do not coincide with the Equinoctial Points any more.
+</P>
+
+<P>
+<B>Differences between the three methods</B><BR>
+Compared to the first, the second technique generally does not imply appreciable differences but for the two
+celestial bodies having an high inclination of the orbit (Mercury, with an orbital inclination = 7°, and Pluto, with
+an orbital inclination = 17°). The third technique starts from the Radix positions with a DA=0 and moves the
+planets roughly in the amount of one/few degrees per year. Therefore the differences with the two previous
+methods increase up to several degrees increasing the directional arc. Thanks to the double charts, PDs and
+Radix, and to the possibility to open Morinus in multiple instances, the student will be able to compare easily
+the three methods, appreciate their differences, note their limits/benefits.
+</P>
+
+<P>
+<B>Secondary motion</B><BR>
+The *astronomical* (not mathematical) option for the second motion is available. It was possible to limit this
+option to the Moon only, but we preferred to extend its effects to all the planets as well. An astronomical
+second motion means that the true geocentric astronomical positions are reckoned, without any
+compromise. The secondary motion is not involved the first two methods: for this reason this option is active
+for the third pseudo-astronomic method, only.
+</P>
+
+<P>
+<B>Domification</B><BR>
+Just like the Profections charts, thanks to criterions of calculus oriented towards a global astronomical base,
+for the three methods the position of the cusps is not limited to the four cardinal points but is available for all
+of them (full domification, identical for the three methods).The students accustomed to work only with ASC,
+MC, DES and IC may neglect the others cusps. In these charts the positions in the houses have the ordinary
+problem related with the latitude. This flaw is everywhere in the astrological flat graphics, is unavoidable
+and due to the tridimensional celestial sphere context. The user is informed that casting PD charts with the
+third method, sometimes, changing the arc of direction, smoothly and with continuity, the positions in the
+houses may change. Accepting the pseudo-astronomic premises, this is completely natural. Note these
+terrestrial positions must not be understood as mundane positions related with the diurnal motion the PDs
+come from: they alter little over a period of 100 symbolic years while the true mundane ones change widely
+and quickly in the 400 minutes after the birth.
+</P>
+
+<P>
+<B>User Guide</B><BR>
+Options menu:<BR>
+<UL>
+<LI>Options\PDs in chart\Celestial\-Choose one of the three available methods
+</UL>
+Tables menu:<BR>
+Tables\Primary directions\-Recall the tabled PDs as usually, according to their settings
+Once the tabled PDs are showed, right mouse click on one row. We have three possibilities:<BR>
+<UL>
+<LI>PDs in chart: celestial (accepted from one zodiacal PD row, only)
+<LI>PDs in chart: terrestrial (accepted from one mundane PD row, only)
+<LI>Ingresses (accepted from one zodiacal PD row and valid for the Celestial only: transit for the hit-date over
+the Radix and the PDs)
+</UL>
+The chosen chart will be displayed for the same date in the PD row the user clicked on, but a stepper dialog
+popup permits to set different date/arc/type of direction (Direct or Converse). Take care to click on the "Show"
+radio button. Clicking "OK" the stepper will be closed. For the PDs in charts only (not for the Ingresses), a
+further right mouse click in the window permits to show single graph, comparison graph, speculum and
+square chart.
+</P>
+
+<P>
+[Roberto]
+</P>
+
+
+<H2>PDs In Chart (Mundane)</H2>
+<P>
+<B>Preliminary astronomical remarks</B><BR>
+Generally PDs are given in tabled look. When promissor and significator, or their aspects, are in the same
+mundane position (with a lot of variants, with or without latitude) the current techniques give the related arc of
+direction and, according to the analogical key, the hit date. The question is: it's possible, in such a moment,
+to see the full, mundane astronomical context? In other words: it's possible to cast a chart, of course in
+graphic mode, with the full set of the planets in daily motion, seen as promissors, versus the radix set of the
+planets regarded as significators? Keeping between them the geometrical ratios? The answer is positive.
+So, after the Zodiacal PDs in Chart, the Mundane ones have been added. These charts do not show the
+zodiacal signs. They show the "local space", instead, i.e. the astrological houses. The reference system is
+based on the two main lines of the geographic natal point: ASC-DES and MC-IC. The reference system itself
+is normalized in manner to have the two axes in orthogonal position and all the twelve places 30° wide. The
+planetary placing is according to the mundane positions, different from the positions the planets have in the
+houses in the common zodiacal charts. According to the selected PDs type (Options\Primary direction menu)
+the mundane positions could be reckoned in agreement with five different possibilities: Placidus(semiarc),
+PlacidusUTP, Regiomontanus, Campanus and Topocentric, but we preferred to limit the choice to the type of
+tabled PDs Morinus offers at the moment. To note the pure, full astronomical nature of these charts, the
+same true astronomical properties the standard, zodiacal charts have (see the note on the speculum below).
+According to the terminology used for the Zodiacal charts (labeled "Celestial"), these charts are named
+"Terrestrial". Of course they are cast starting "from the planets", with their latitude, and show in chart the
+tabled, traditional Mundane PDs. Note that the double option available for the "Celestial" (From the planets or
+From their ecliptic feet) is not possible here, because the traditional Zodiacal PDs framework does not permit
+an overall representation correlated with a synthetic (pseudo-astronomical) view.
+</P>
+<P>
+<B>Option for the secondary motion</B><BR>
+This option affects the charts in global mode. In this way the charts are not perfectly compatible with tabled
+PDs but, marking the lunar sec. motion in "Options\Primary directions" menu, the differences will be very,
+very small. Under (about) 25' with the max. arcs (100°) for Sun and inferior planets. For the superior planets
+the difference is very smaller. Terrestrial reckoned without secondary motion would be in full agreement with
+the tabled PDs if the lunar sec. motion in "Options\Primary directions" menu is not chosen. A thin question
+remains: are these charts a good approximation of the traditional mundane PDs or vice versa? The answer
+to the reader :-)
+</P>
+<P>
+<B>Domification</B><BR>
+In Terrestrial double charts (radix and PD), under the astronomical viewpoint only the radix domification has
+a meaning. The reason is the axes ASC-DES and MC-IC are steady in the local space. They are the
+reference system and can't rotate respect to ... themselves. In the tabled PDs, their use as promissors is
+possible applying them the mathematical formulas used for any other celestial object that lies on the
+Celestial Sphere. The movement of the cardinal points in the role of promissors, in the Terrestrial charts
+should be a mathematical trick: we preferred to avoid this non-astronomical feature.
+</P>
+<P>
+<B>User Guide</B><BR>
+Options menu:<BR>
+<UL>
+<LI>Options\PDs in chart\Terrestrial\-Choose if with or without secondary motion
+</UL>
+Tables menu:<BR>
+Tables\Primary directions\-Recall the tabled PDs as usually, according to their settings. Once the tabled PDs are showed, right mouse click on one row and follow the instructions given above for the Zodiacal PDs in chart.<BR>
+</P>
+<P>
+[Roberto]
+</P>
+
+<H2>Note on the Speculum</H2>
+<P>
+For each type of chart, generally we have a partner speculum. For the standard zodiacal charts (radix) each
+parameter in the speculum is a real astronomical parameter. For other charts the speculum may shows
+fictitious parameters. In our opinion this does not authorize to consider one technique better than others
+according to the content of the related speculum because, starting from an astronomical context, the
+astrology bases its analysis appealing to the analogy and symbolism laws, too. Anyway, even if some more
+detail should be important, summarily, for each chart we have: <BR>
+Radix: True astronomical speculum<BR>
+Transits: True astronomical speculum<BR>
+Revolutions: True astronomical speculum<BR>
+Sec. directions: True astronomical speculum<BR>
+Elections: True astronomical speculum<BR>
+Zodiacal Profections: Fictitious speculum. The long. only is moved. Other parameters unchanged <BR>
+Placidian Profections: Fictitious speculum. The mundane parameters are prescribed. Reckoned the longitude <BR>
+Mundane: True astronomical speculum<BR>
+Ter. PDs inCh. with sec.m.: True astronomical speculum<BR>
+Ter. PDs inCh. without s.m.: Fictitious speculum. The mundane parameters have almost the astronomical values<BR>
+Cel.PDs inCh.(Ptolemy): Fictitious speculum. The mundane parameters are prescribed. Reckoned the longitude<BR>
+Cel.PDs inCh.(Pse-Ast): Fictitious speculum. Only the equatorial coordinates have astronomical values<BR>
+</P>
+<P>
+[Roberto]
+
+
+<H2>Almutens</H2>
+<P>
+Currently the almutens are calculated acc. to the arabs and Ibn Ezra.
+There are three types of Almutens:
+<UL>
+<LI>Points(e.g. of the planets, arabic parts)
+<LI>Chart
+<LI>Topical
+</UL>
+</P>
+<P>
+All three almutens are calculated acc. to the Essential settings in the Options/Almutens/Chart and the Accidental settings are also taken into account in case of the Almuten of the Chart. 
+The Almuten of the Chart is calculated according to the planets strength in the five hylegical places(Sun, Moon, Asc, Fortune, Syzygy). "Total Shares" come form calculating the number of the numbers in a column(e.g. 3+2 means two shares because share is rulership and this means two rulerships(one acc. to triplicity and the other is acc.to term)). 
+A lot of astrologers used only the Essential settings in their Almuten of the Chart calculations. The program cannot tell you which planet is the AlmutenOfTheChart because there can be a planet that has only the second highest score but it aspects the ascendant with a partile aspect then this planet should be chosen as almuten of the chart.
+The accidental settings can be easily excluded from the Almuten of the Chart calculations by unchecking "Use".
+Any option can be set to zero and it won't be calculated. As far as I know Ibn Ezra used the accidental settings(except for the Day/Hour rulers). Sun-phases: oriental positions only and only in case of the Mars, Jupiter and Saturn: 18-30 degree from the Sun[Weak], 30-40[Medium], 40-80[Strong], 80-100[Medium], 100-120[Weak]). Robert Zoller uses the Ruler Scores(Day/Hour).
+About the Essential settings: if OneRuler is selected then only one planet gets the score of the tricplicity and in case of daytime the first triplicity ruler will be that planet, in case of a nighttime chart the second one. The day/night orb in the ArabicParts editor will be taken into account if both OneRuler and UseDay/Night orb are selected.
+</P>
+<P>
+Topical Almuten example by Schoener, (Almuten of Substance):
+<UL>
+<LI>Cusp of the second house
+<LI>Sign ruler of the cusp of the second house
+<LI>Planets in the second house
+<LI>Lot of Fortune
+<LI>Sign ruler of the Lot of Fortune
+<LI>Part of Substance
+<LI>Sign ruler of the Part of Substance
+<LI>Jupiter as general significator
+</UL>
+</P>
+<P>
+You can create this(or more) topical almuten in the Options/Almutens/Topicals editor. From these calculated longitudes a table will be created in Tables/Almutens/Topicals. 
+Already existing Topical Almutens cannot be modified. When you select a Topical Almuten in the combobox then its name and rows will be shown in the editor. You can modify the editor(name and rows(AddRow, RemoveRow, RemoveAll)) it won't affect the already added Topical Almuten. The new Topical Almuten will be added to the combobox when you click on "Add".
+Only the seven planets are used in the almuten calculations.
+</P>
+
+<H2>Profections</H2>
+<P>
+After the PDs, the traditional astrology recommended the Profections.
+There are different types of Profections: annual, monthly, daily, the last two in different variants. Their
+traditional look is in tables. The most important are the annual, available in Morinus in tables and charts. The
+program permits to choose between zodiacal and mundane Placidian Profections. In the first case the
+planetary positions are related to the ecliptic only, i.e. in the signs, in the second the ecliptic positions are
+tied to the local horizon.
+The traditional annual Profections in Zodiac move the Radix positions in the amount of one sign per year.
+The "Zodiacal annual profections" selectable in "Options\Profections" menu, are identical (traditional yearly
+30-deg zodiacal profections).
+The annual Placidian Profections were rebuilt in their theory by Giuseppe Bezza (Cielo e Terra School, Italy).
+The native ASC moves clockwise in the sky in the amount of one Placidian house per year. All the
+computations are done, for each astronomical object, according to its pseudo-astronomical parameters.
+Generally the minor cusps are not included in the analysis. Thanks to an oblique rotation of the celestial
+sphere. Morinus is able to cast the profected full domification, too.
+Of course Placidian Profections are not possible for polar regions.
+For all of them, a continuos profected movement is available, making in this way the astrological analysis
+easier. For a full understanding of the technique we suggest to work with double charts, setting the starting
+date and time with the native values. Then increase the profected time with steps of one year till to reach
+twelve, where cycle finishes and a new one begins. Changing the time, look the native ASC position related
+to the external profected domification.
+The monthly Profections are available only tabled. After the annual ones are showed ("Tables\Profections"
+menu) a left mouse click on the *age cell* permits to recall them with two possibilities: 12 or 13 steps.
+</P>
+<P>
+[Roberto]
+</P>
+<P>
+The currently available zodiacal yearly profections are identical to the traditional yearly 30-deg zodiacal profections.
+</P>
+
+
+<H2>General Remarks</H2>
+<P>
+You can always get help by clicking on the question-mark of a dialog and then on an item(text, edit-box).
+The astrological symbols are defined in Morinus.ttf. It contains the symbols(truetype fonts) and can be edited with e.g. Fontforge(Linux) and e.g. Fontographer(Windows). wxPython can't handle ttfs this is why we need to use PIL.
+The file /Res/placedb.dat contains the place-database and the files in the Opt directory contain the saved options.
+The program loads the /Res/Morinus.jpg file. This can be any image so you can change it: rename one of your .jpg to Morinus.jpg and overwrite the original. 
+The .hor, placedb.dat and option-files are ordinary files so e.g. can be sent as email attachments.
+</P>
+<P>
+The fixstars.cat file is not identical to that of AstroDienst, because the duplicated fixstars were removed from it(the nomenclature name counts).
+A line in the fixstars.cat looks like this:
+</P>
+<P>
+<CODE>
+Vega         ,alLyr,ICRS,18,36,56.3364,38,47,01.291,1.3402,28.747,-13.9,0.12893,  0.03, 38, 3238
+</CODE>
+</P>
+<P>
+where Vega is the traditional name and alLyr is the nomenclature name. A lot of fixstars have no traditional name.
+The nomenclature name comes from a greek letter and a constellation: alpha Lyra.
+The program uses the nomenclature name. The fixstars.cat file can be edited: you can reorder the lines or change the traditional name.
+For example, you want to see Vega at the top of the Fixstars dialog: just move(don't copy) the line to the top of the file.
+</P>
+<P>
+Formerly the program added/subtracted the given timezone to/from GMT according to the place being east or west from Greenwich.
+This wasn't true if the place was to the west from Greenwich but it was in the GMT+1(+1:00) timezone(Spain, western France and some parts of Africa).
+This is why GMT+/GMT- was added to the Zone. Now it needs to be given by the user.
+</P>
+<P>
+Online search: (Horoscope/New(or Data)/Place dialog) Morinus uses the GeoNames online database. There is a slider controlling the size of the online-list. The bigger the value the slower the data acquisition will be. In case of only one result (i.e one city) the data will be immediately written in the fields without popping up a list.
+</P>
+<P>
+The traditional aspects: conjunctio, sextil, quadrat, trigon, oppositio. They don't cross signs(e.g. 29Aries and 1Taurus is not a conjunction, 29Sagittarius and 1Taurus is not a trigon because the signs are not of the same elements). Partile aspects are on the same degree(e.g.15deg 59min Capricorn and 16deg 01min Taurus is not a partile(exact) trigon). The "Exact" in the Orbs menu will be ignored. (If the Traditional checkbox is selected)
+</P>
+<P>
+If the topocentric option is selected then the topocentric positions will be shown and used everywhere(Tables, Charts(radix, revolutions, ...), PDs).
+</P>
+<P>
+Mundane Lot of Fortune in mundane Placidian PDs: RA(lof) = OA(asc)+RA(moon)-OA(sun); DECL(lof) = declination of the Moon.
+</P>
+<P>
+The mundane positions table shows the mundane positions of the planets(in the houses). E.g. Saturn is 12.26. This means that it is in the 12th house and at the 26% of the house calculated from the begining of the house.
+</P>
+<P>
+Arabic Parts are calculated as follows: Part = A+(B-C). If "Diurnal" is checked then it means that the formula given is valid only for diurnal charts and should be reversed in case of nocturnal ones: Part = A+(C-B). This will be shown in the Arabic Parts table. Ascendant can be set: e.g. if it is HC6 then the Asc will be HC6 the second housecusp will be the Desc and so on. "!" means the lord of something: e.g. HC6! means the lord of housecusp 6. Only the seven planets are taken into account. Morinus distinguishes between night and day. You can include an orb for this. The civil dusk for instance, where it is still possible to read a newspaper outside, even if the Sun is already "below the earth" ranges up to 6 degrees below the DC. Nobody would call this "night". Same thing with dawn. 
+</P>
+<P>
+Only letters, numbers, hyphen('-') and space (' ') are taken into account in the search field of Options/FixedStars dialog.
+</P>
+<P>
+In case of a Full Moon syzygy you can select in the Appearance I dialog which position to use.
+</P>
+<P>
+The Peregrin color is used for several things: parallel sign in PDs, LoF(if colors are acc. to dignities), Exact Transits.
+</P>
+<P>
+FindTime: Geocentric positions and tropical longitudes(degrees: 0-360) are required. Currently the charts will be casted for London (Asc/MC coming soon). 5000BC-5000AD will be searched if the program finds the Swiss Ephemeris otherwise 3000BC-3000AD.
+Search starts from 1/1/1(january 1, 1st year) if BC is not checked, -1/1/1 if it is checked and finds max. one chart/day.
+Use(minutes, seconds, retr): if not checked  then they won't count: e.g. given planetary position is 239d 7m 49s. E.g. 239 0m 0s or e.g. 239 37m 34s will also be found because the program will check the degree only. 
+If retrograde is unchecked then the planet will be found according to its longitude only, it won't matter if it's retrograde or not.
+Approximation: the given minute will be added to and subtracted from the given planetary longitudes. 
+E.g. the longitude of a planet is 239d 27m 49s and the approximation-minute is 20 then a range will be searched (239d 7m 49s - 239d 47m 49s). The longitude of the planet will be searched in this range. This range will be calculated for every planet.
+In case of J-B Morin's chart the longitude of Mars is 98deg 7min 28sec. If Approximation is 30 and it is used then you can subtract or add e.g. 20minute from/to the longitude of Mars, Morin's chart will still be found. Of course the longitudes of the other planets can also be changed this way because this range is checked for every planet.
+This is useful in case of charts created from older ephemerides where the positions are not that exact.
+Pressing the Cancel-button won't clear the already found chart. Due to problems with wxpython, pressing the Show-button closes the FindTime dialog.
+</P>
+<P>
+In case of a problem, close the program and delete the option-files in the Opt directory then restart the program.
+</P>
+<P>
+In case of netbook computers the vertical resolution is only 600. Currently only the Primary Directions dialog is bigger but if you check the netbook checkbox in Appearance I then a simpler(shorter) PD dialog will be displayed. The Select/Deselect buttons, the Both-button, Campanian-PD, the Fixedstars-button and the MidPoints checkbox won't be shown. If Both was selected before checking netbook then the program will select the first PD-setting(Mundane). If Campanian was selected before checking the netbook then the program will select the first PD-system (Placidus(semiarcus)).
+</P>
+<P>
+The Options menu items (Automatic Save, Save and Reload) are for managing the Options.
+If Automatic Save is checked then the program will immediately save the options-settings after you change them. If you don't check Automatic Save and you changed the options-settings then you have to save them anytime you want by clicking on Save(if you don't save the settings before closing the program they won't be saved).
+The changed options will be saved in the option-files in the Opt directory.
+You can discard all your changed/saved options-settings by clicking on Reload. (e.g. change the color of the Frame of the radix horoscope to red, press Ok and you will see it in red color, now press reload).
+</P>
+<P>
+Select the Language you want then press Ok in the Languages dialog and Save the options. Restart the program. Reload or deleting the option-files restores everything(restart the program to have the default language).
+</P>
+<P>
+Morinus has no installer. Windows programs usually have installers: when the user clicks on the .exe file the installer starts and asks the user where to copy the program(e.g. C:/Program Files...) and creates an icon on the desktop. These programs have uninstallers as well. The data(the path(e.g. C:/Program Files...)) is written into the Windows Registry during the installation.
+Morinus doesn't get installed on your system(Operating System, or winchester!?). After downloading the MorinusWinEng.zip file and unzipping it there will be a MorinusWinEng directory created. Clicking on the Morinus.exe file starts the program, so there is no installer. Deleting the MorinusWinEng directory is like uninstalling. Of course you can also create a link to Morinus.exe and copy it to your desktop, so you will have an icon of Morinus on your desktop.
+So, on Windows I recommend to use the D:\ drive e.g. D:\MorinusWinEng or D:\Astrology\MorinusWinEng.
+</P>
+<P>
+Minimum recommended screen resolution: 1024*768.
+</P>
+
+</BODY>
+</HTML>
