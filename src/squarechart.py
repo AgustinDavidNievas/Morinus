@@ -21,7 +21,7 @@ class SquareChart:
 		self.options = opts
 		self.w, self.h = size
 		self.bw = bw
-		self.buffer = wx.EmptyBitmap(self.w, self.h)
+		self.buffer = wx.Bitmap(self.w, self.h)
 		self.bdc = wx.BufferedDC(None, self.buffer)
 		self.chartsize = min(self.w, self.h)
 		self.maxradius = self.chartsize/2
@@ -286,9 +286,9 @@ class SquareChart:
 
 				lhoffs[i] += lh
 
-		wxImg = wx.EmptyImage(img.size[0], img.size[1])
+		wxImg = wx.Image(img.size[0], img.size[1])
 		wxImg.SetData(img.tobytes())
-		self.buffer = wx.BitmapFromImage(wxImg)
+		self.buffer = wx.Bitmap(wxImg)
 
 		return self.buffer
 

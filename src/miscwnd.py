@@ -172,9 +172,9 @@ class MiscWnd(commonwnd.CommonWnd):
 			draw.text((x+2*self.CELL_WIDTH+offset+w+wsp, y+self.LINE_HEIGHT+(self.LINE_HEIGHT-hsg)/2), self.signs[sign], fill=txtclr, font=self.fntMorinus)
 
 
-		wxImg = wx.EmptyImage(img.size[0], img.size[1])
+		wxImg = wx.Image(img.size[0], img.size[1])
 		wxImg.SetData(img.tobytes())
-		self.buffer = wx.BitmapFromImage(wxImg)
+		self.buffer = wx.Bitmap(wxImg)
 
 
 

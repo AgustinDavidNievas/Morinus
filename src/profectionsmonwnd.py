@@ -155,9 +155,9 @@ class ProfectionsMonWnd(commonwnd.CommonWnd):
 		else:
 			draw.line((x, y, x+self.TABLE_WIDTH, y), fill=tableclr)
 
-		wxImg = wx.EmptyImage(img.size[0], img.size[1])
+		wxImg = wx.Image(img.size[0], img.size[1])
 		wxImg.SetData(img.tobytes())
-		self.buffer = wx.BitmapFromImage(wxImg)
+		self.buffer = wx.Bitmap(wxImg)
 
 
 	def drawline(self, draw, x, y, clr, pcharts, dates, idx):

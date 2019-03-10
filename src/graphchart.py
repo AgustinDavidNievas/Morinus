@@ -27,7 +27,7 @@ class GraphChart:
 		self.options = opts
 		self.bw = bw
 		self.planetaryday = planetaryday
-		self.buffer = wx.EmptyBitmap(self.w, self.h)
+		self.buffer = wx.Bitmap(self.w, self.h)
 		self.bdc = wx.BufferedDC(None, self.buffer)
 		self.chartsize = min(self.w, self.h)
 		self.maxradius = self.chartsize/2
@@ -328,9 +328,9 @@ class GraphChart:
 		self.drawSigns()
 
 		#Convert back from PIL
-		wxImg = wx.EmptyImage(self.img.size[0], self.img.size[1])
+		wxImg = wx.Image(self.img.size[0], self.img.size[1])
 		wxImg.SetData(self.img.tobytes())
-		self.buffer = wx.BitmapFromImage(wxImg)
+		self.buffer = wx.Bitmap(wxImg)
 		self.bdc = wx.BufferedDC(None, self.buffer)
 
 		self.drawAscMC(self.chart.houses.ascmc, self.rBase, self.rASCMC, self.rArrow)
@@ -404,9 +404,9 @@ class GraphChart:
 			elif self.options.showfixstars == options.Options.CANTIS:
 				self.drawAntis(self.chart, self.chart.antiscia.plcontraant, self.chart.antiscia.lofcontraant, self.chart.antiscia.ascmccontraant, self.pshiftantis, self.rAntis)
 
-		wxImg = wx.EmptyImage(self.img.size[0], self.img.size[1])
+		wxImg = wx.Image(self.img.size[0], self.img.size[1])
 		wxImg.SetData(self.img.tobytes())
-		self.buffer = wx.BitmapFromImage(wxImg)
+		self.buffer = wx.Bitmap(wxImg)
 
 		return self.buffer
 

@@ -115,9 +115,9 @@ class MunPosWnd(commonwnd.CommonWnd):
 			draw.rectangle(((x,y),(x+self.TITLE_WIDTH_ARABIAN, y+self.LINE_HEIGHT)), outline=(tableclr), fill=(self.bkgclr))
 			self.drawlinelof(draw, x, y, mtexts.txts['MLoF'], self.chart.munfortune.mfortune, tableclr, 0)
 
-		wxImg = wx.EmptyImage(img.size[0], img.size[1])
+		wxImg = wx.Image(img.size[0], img.size[1])
 		wxImg.SetData(img.tobytes())
-		self.buffer = wx.BitmapFromImage(wxImg)
+		self.buffer = wx.Bitmap(wxImg)
 
 
 	def drawline(self, draw, x, y, clr, idx):

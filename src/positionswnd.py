@@ -231,9 +231,9 @@ class PositionsWnd(wx.ScrolledWindow):
 			for i in range(len(hidx)):
 				self.drawanglesline(draw, x, y+i*self.LINE_HEIGHT, tableclr, common.common.Housenames2[hidx[i]-1], data[i])
 
-		wxImg = wx.EmptyImage(img.size[0], img.size[1])
+		wxImg = wx.Image(img.size[0], img.size[1])
 		wxImg.SetData(img.tobytes())
-		self.buffer = wx.BitmapFromImage(wxImg)
+		self.buffer = wx.Bitmap(wxImg)
 
 
 	def drawanglesline(self, draw, x, y, clr, txt, data, AscMC=False):

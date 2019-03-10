@@ -27,7 +27,7 @@ class GraphChartPDs:
 		self.w, self.h = size
 		self.options = opts
 		self.bw = bw
-		self.buffer = wx.EmptyBitmap(self.w, self.h)
+		self.buffer = wx.Bitmap(self.w, self.h)
 		self.bdc = wx.BufferedDC(None, self.buffer)
 		self.chartsize = min(self.w, self.h)
 		self.maxradius = self.chartsize/2
@@ -126,9 +126,9 @@ class GraphChartPDs:
 		self.drawPlanets(self.chartIngress, self.pshiftIng, self.rPlanetsIng, self.rPosDegIng, self.rPosMinIng, self.rRetrIng)
 
 		#Convert back from PIL
-		wxImg = wx.EmptyImage(self.img.size[0], self.img.size[1])
+		wxImg = wx.Image(self.img.size[0], self.img.size[1])
 		wxImg.SetData(self.img.tobytes())
-		self.buffer = wx.BitmapFromImage(wxImg)
+		self.buffer = wx.Bitmap(wxImg)
 		self.bdc = wx.BufferedDC(None, self.buffer)
 
 		self.drawPlanetLines(self.pshift, self.chartRadix.planets.planets, self.chartRadix.fortune.fortune, self.r0, self.rLine)

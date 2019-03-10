@@ -95,9 +95,9 @@ class CustomerWnd(commonwnd.CommonWnd):
 		else:
 			self.drawregiomontan(draw, x, y, tableclr)
 
-		wxImg = wx.EmptyImage(img.size[0], img.size[1])
+		wxImg = wx.Image(img.size[0], img.size[1])
 		wxImg.SetData(img.tobytes())
-		self.buffer = wx.BitmapFromImage(wxImg)
+		self.buffer = wx.Bitmap(wxImg)
 
 
 	def drawplacidian(self, draw, x, y, clr):

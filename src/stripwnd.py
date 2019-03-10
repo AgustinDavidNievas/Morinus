@@ -159,9 +159,9 @@ class StripWnd(commonwnd.CommonWnd):
 			draw.text((x+pos-w/2+bshift[i], y), txt, fill=clr, font=fnt)
 			draw.line((x+pos, y+self.YOFFS, x+pos+bshift[i], y+self.FONT_SIZE+self.YPLANETS_OFFS), fill=clr)
 
-		wxImg = wx.EmptyImage(img.size[0], img.size[1])
+		wxImg = wx.Image(img.size[0], img.size[1])
 		wxImg.SetData(img.tobytes())
-		self.buffer = wx.BitmapFromImage(wxImg)
+		self.buffer = wx.Bitmap(wxImg)
 
 
 	def arrange(self):

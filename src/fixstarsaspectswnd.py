@@ -271,9 +271,9 @@ class FixStarsAspectsWnd(commonwnd.CommonWnd):
 						yy = BOR+self.TITLE_HEIGHT+self.SPACE+self.chart.fsaspmatrixhcs[i][0]*(self.SQUARE_SIZE+self.SPACE)
 						draw.text((xx+(self.SQUARE_SIZE-w)/2, yy+(self.SQUARE_SIZE-h)/2), txt, fill=clr, font=self.fntAspects)
 
-		wxImg = wx.EmptyImage(img.size[0], img.size[1])
+		wxImg = wx.Image(img.size[0], img.size[1])
 		wxImg.SetData(img.tobytes())
-		self.buffer = wx.BitmapFromImage(wxImg)
+		self.buffer = wx.Bitmap(wxImg)
 
 
 	def drawSquare(self, draw, x, y, tableclr):

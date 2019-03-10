@@ -94,9 +94,9 @@ class ArabicPartsWnd(commonwnd.CommonWnd):
 				y = BOR+self.TITLE_HEIGHT+self.SPACE_TITLEY+(self.LINE_HEIGHT)*(i+1)
 				self.drawline(draw, x, y, self.chart.parts.parts, tableclr, i)
 
-		wxImg = wx.EmptyImage(img.size[0], img.size[1])
+		wxImg = wx.Image(img.size[0], img.size[1])
 		wxImg.SetData(img.tobytes())
-		self.buffer = wx.BitmapFromImage(wxImg)
+		self.buffer = wx.Bitmap(wxImg)
 
 
 	def drawlinelof(self, draw, x, y, name, data, clr):

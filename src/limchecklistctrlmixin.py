@@ -35,7 +35,7 @@ class LimCheckListCtrlMixin:
 		is used to determine the checkboxes state (see wx.CONTROL_*)
 
 		"""
-		bmp = wx.EmptyBitmap(*size)
+		bmp = wx.Bitmap(*size)
 		dc = wx.MemoryDC(bmp)
 		dc.Clear()
 		wx.RendererNative.Get().DrawCheckBox(self, dc, (0, 0, size[0], size[1]), flag)

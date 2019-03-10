@@ -46,7 +46,7 @@ class GraphEphemWnd(wx.Window):
 
 		size = self.GetClientSize()
 		self.w, self.h = size
-		self.buffer = wx.EmptyBitmap(self.w, self.h)
+		self.buffer = wx.Bitmap(self.w, self.h)
 		self.bdc = wx.BufferedDC(None, self.buffer)
 
 		self.tableSize = min(self.w, self.h)
@@ -343,9 +343,9 @@ class GraphEphemWnd(wx.Window):
 				else:
 					draw.text((x-wsym/2,y+yoffs), plsbottom[pl], fill=plsclr, font=self.fntPlanets)	
 
-		wxImg = wx.EmptyImage(img.size[0], img.size[1])
+		wxImg = wx.Image(img.size[0], img.size[1])
 		wxImg.SetData(img.tobytes())
-		self.buffer = wx.BitmapFromImage(wxImg)
+		self.buffer = wx.Bitmap(wxImg)
 		self.Refresh()
 
 

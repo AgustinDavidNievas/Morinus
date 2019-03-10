@@ -503,9 +503,9 @@ class AlmutenChartWnd(commonwnd.CommonWnd):
 				w,h = draw.textsize(txt, fnt)
 				draw.text((x+self.ASMALL_CELL_WIDTH+i*self.ACELL_WIDTH+(self.ACELL_WIDTH-w)/2, y+5*self.LINE_HEIGHT+(self.ELINE_HEIGHT-h)/2), txt, fill=txtclr, font=fnt)
 
-		wxImg = wx.EmptyImage(img.size[0], img.size[1])
+		wxImg = wx.Image(img.size[0], img.size[1])
 		wxImg.SetData(img.tobytes())
-		self.buffer = wx.BitmapFromImage(wxImg)
+		self.buffer = wx.Bitmap(wxImg)
 
 
 	def drawLong(self, draw, x, y, lon, clr):

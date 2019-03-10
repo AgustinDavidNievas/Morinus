@@ -157,9 +157,9 @@ class ProfectionsWnd(commonwnd.CommonWnd):
 		for i in range(self.LINE_NUM):
 			self.drawline(draw, x, y+i*self.LINE_HEIGHT, tableclr, self.pcharts[i], self.age, i)
 
-		wxImg = wx.EmptyImage(img.size[0], img.size[1])
+		wxImg = wx.Image(img.size[0], img.size[1])
 		wxImg.SetData(img.tobytes())
-		self.buffer = wx.BitmapFromImage(wxImg)
+		self.buffer = wx.Bitmap(wxImg)
 
 
 	def drawline(self, draw, x, y, clr, pcharts, age, idx):

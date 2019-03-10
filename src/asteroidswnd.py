@@ -81,9 +81,9 @@ class AsteroidsWnd(commonwnd.CommonWnd):
 		for i in range(len(self.chart.asteroids.asteroids)):
 			self.drawline(draw, x, y+i*self.LINE_HEIGHT, self.chart.asteroids.asteroids[i].name, self.chart.asteroids.asteroids[i].data, tableclr, i)
 
-		wxImg = wx.EmptyImage(img.size[0], img.size[1])
+		wxImg = wx.Image(img.size[0], img.size[1])
 		wxImg.SetData(img.tobytes())
-		self.buffer = wx.BitmapFromImage(wxImg)
+		self.buffer = wx.Bitmap(wxImg)
 
 
 	def drawline(self, draw, x, y, name, data, clr, idx):

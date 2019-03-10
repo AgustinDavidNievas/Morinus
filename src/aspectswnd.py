@@ -315,9 +315,9 @@ class AspectsWnd(commonwnd.CommonWnd):
 					draw.text((x+(self.SQUARE_SIZE+self.SPACE)*i+(self.SQUARE_SIZE-w)/2, y+(self.SQUARE_SIZE+self.SPACE)*kk+self.SQUARE_SIZE-h-self.YOFFSET), txt, fill=clr, font=fnt)
 					kk += 1
 
-		wxImg = wx.EmptyImage(img.size[0], img.size[1])
+		wxImg = wx.Image(img.size[0], img.size[1])
 		wxImg.SetData(img.tobytes())
-		self.buffer = wx.BitmapFromImage(wxImg)
+		self.buffer = wx.Bitmap(wxImg)
 
 
 	def drawSquare(self, draw, x, y, tableclr):

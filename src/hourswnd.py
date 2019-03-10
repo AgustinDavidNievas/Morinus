@@ -108,9 +108,9 @@ class HoursWnd(commonwnd.CommonWnd):
 			for i in range(int(HoursWnd.HOURSPERHALFDAY)):
 				self.drawline(draw, x, y+i*self.LINE_HEIGHT, tableclr, i)
 
-		wxImg = wx.EmptyImage(img.size[0], img.size[1])
+		wxImg = wx.Image(img.size[0], img.size[1])
 		wxImg.SetData(img.tobytes())
-		self.buffer = wx.BitmapFromImage(wxImg)
+		self.buffer = wx.Bitmap(wxImg)
 
 
 	def drawline(self, draw, x, y, clr, idx):

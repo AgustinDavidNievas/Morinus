@@ -463,9 +463,9 @@ class PrimDirsListWnd(wx.ScrolledWindow):
 				self.drawline(draw, x, y + i * self.LINE_HEIGHT, idx, tableclr)
 				idx += 1
 
-		wxImg = wx.EmptyImage(img.size[0], img.size[1])
+		wxImg = wx.Image(img.size[0], img.size[1])
 		wxImg.SetData(img.tobytes())
-		self.buffer = wx.BitmapFromImage(wxImg)
+		self.buffer = wx.Bitmap(wxImg)
 
 
 	def	display(self, currpage, fr, to):

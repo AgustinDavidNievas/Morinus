@@ -98,9 +98,9 @@ class SpeedsWnd(commonwnd.CommonWnd):
 			self.drawline(draw, x, y+ii*self.LINE_HEIGHT, tableclr, i)
 			ii += 1
 
-		wxImg = wx.EmptyImage(img.size[0], img.size[1])
+		wxImg = wx.Image(img.size[0], img.size[1])
 		wxImg.SetData(img.tobytes())
-		self.buffer = wx.BitmapFromImage(wxImg)
+		self.buffer = wx.Bitmap(wxImg)
 
 
 	def drawline(self, draw, x, y, clr, idx):
