@@ -120,7 +120,7 @@ class FindTimeDlg(wx.Dialog):
 	APPROXDEG = 1
 	APPROXMIN = 2
 	APPROXSEC = 3
-	
+
 
 	def __init__(self, parent):
 		wx.Dialog.__init__(self, parent, -1, mtexts.txts['FindTime'], pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
@@ -146,7 +146,7 @@ class FindTimeDlg(wx.Dialog):
 		#Planets
 		splanets =wx.StaticBox(self, label='')
 		splanetssizer = wx.StaticBoxSizer(splanets, wx.VERTICAL)
-		gsizer = wx.GridSizer(7, 5)
+		gsizer = wx.GridSizer(7, gap=wx.Size(0,0))
 
 		label = wx.StaticText(self, -1, mtexts.txts['Sun']+':')
 		gsizer.Add(label, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2)
@@ -397,7 +397,7 @@ class FindTimeDlg(wx.Dialog):
 
 		sangles = wx.StaticBox(self, label='')
 		sanglessizer = wx.StaticBoxSizer(sangles, wx.VERTICAL)
-		gsizer = wx.GridSizer(2, 4)
+		gsizer = wx.GridSizer(2, gap=wx.Size(0,0))
 		self.asctxt = wx.StaticText(self, -1, mtexts.txts['Asc']+':')
 		gsizer.Add(self.asctxt, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2)
 		self.ascdeg = wx.TextCtrl(self, -1, '', validator=intvalidator.IntValidator(0, 359), size=(40,-1))
@@ -467,7 +467,7 @@ class FindTimeDlg(wx.Dialog):
 
 		sforce = wx.StaticBox(self, label='')
 		sforcesizer = wx.StaticBoxSizer(sforce, wx.VERTICAL)
-		gsizer = wx.GridSizer(2, 3)
+		gsizer = wx.GridSizer(2, gap=wx.Size(0,0))
 		self.fyear = wx.TextCtrl(self, -1, '', validator=intvalidator.IntValidator(1, rnge), size=(50,-1))
 		if checker.isExtended():
 			self.fyear.SetHelpText(mtexts.txts['HelpYear'])
@@ -593,7 +593,7 @@ class FindTimeDlg(wx.Dialog):
 		mvsizer.Add(mhsizer, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, 5)
 
 		btnsizer = wx.StdDialogButtonSizer()
-	
+
 		if wx.Platform != '__WXMSW__':
 			btn = wx.ContextHelpButton(self)
 			btnsizer.AddButton(btn)
@@ -1011,10 +1011,3 @@ class FindTimeDlg(wx.Dialog):
 		self.approxdeg.SetValue(str(0))
 		self.approxmin.SetValue(str(0))
 		self.approxsec.SetValue(str(0))
-
-
-
-
-
-
-
