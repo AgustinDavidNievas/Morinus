@@ -1412,7 +1412,7 @@ class GraphChart:
 		#We only shift forward at 360-0
 		shifted = self.doShift(pnum-1, 0, pshift, order, mixed, rPlanet, True)
 
- 		if shifted:
+		if shifted:
 			for i in range(pnum):
 				self.doArrange(pnum, pshift, order, mixed, rPlanet, True)
 
@@ -1771,7 +1771,7 @@ class GraphChart:
 		#We only shift forward at 360-0
 		shifted = self.doShiftAntis(pnum-1, 0, pshift, order, mixed, rPlanet, True)
 
- 		if shifted:
+		if shifted:
 			for i in range(pnum):
 				self.doArrange(pnum, pshift, order, mixed, rPlanet, True)
 		#check if beyond (not overlapping but beyond)

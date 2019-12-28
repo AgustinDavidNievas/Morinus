@@ -21,7 +21,7 @@ class PlaceDB:
 			self.lat = lat
 			self.tz = tz
 			self.alt = alt
-		
+
 
 	FILENAME = os.path.join('Res', 'placedb.dat')
 
@@ -66,9 +66,9 @@ class PlaceDB:
 			f.close()
 
 		except IOError:
-	 		dlg = wx.MessageDialog(self, mtexts.txts['DBFileError'], mtexts.txts['Error'], wx.OK|wx.ICON_EXCLAMATION)
+			dlg = wx.MessageDialog(self, mtexts.txts['DBFileError'], mtexts.txts['Error'], wx.OK|wx.ICON_EXCLAMATION)
 			dlg.ShowModal()
-		
+
 
 	def sort(self):
 		self.placedb = self.qsort(self.placedb)
@@ -99,6 +99,3 @@ class PlaceDB:
 			#else #here can be more checking...
 
 		return valid
-
-
-

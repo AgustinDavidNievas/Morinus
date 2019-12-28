@@ -16,13 +16,13 @@ class SecMotion:
 			arc *= -1
 			direct = False
 		if arc > 180.0:
-			arc = 360.0-arc 
+			arc = 360.0-arc
 			direct = not direct
 
 		if not direct and arc > 0.0:
 			arc *= -1
 
- 		flag = astrology.SEFLG_SWIEPH+astrology.SEFLG_SPEED
+		flag = astrology.SEFLG_SWIEPH+astrology.SEFLG_SPEED
 		if topo:
 			flag += astrology.SEFLG_TOPOCTR
 
@@ -47,9 +47,3 @@ class SecMotion:
 
 		#self.planet contains the new position of the planet(it proceeded on its way during the PD(arc))
 		self.planet = planets.Planet(tjd_ut, pId, flag, lat, ascmc2)
-
-		
-
-
-
-

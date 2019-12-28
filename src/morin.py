@@ -89,7 +89,7 @@ import placidiansapd
 import placidianutppd
 import regiomontanpd
 import campanianpd
-import thread
+import _thread
 import options
 import util
 import mtexts
@@ -102,7 +102,7 @@ import math #solar precession
 import mrclasses
 
 (PDReadyEvent, EVT_PDREADY) = wx.lib.newevent.NewEvent()
-pdlock = thread.allocate_lock()
+pdlock = _thread.allocate_lock()
 
 
 class MFrame(mrclasses.MrTopFrame):
@@ -433,6 +433,7 @@ class MFrame(mrclasses.MrTopFrame):
 		self.pdrangedlg = None
 
 		os.environ['SE_EPHE_PATH'] = ''
+		#TODO pyswisseph no tiene esto, la version de C si, pero hay que portar astrologymodule.c a python3
 		astrology.swe_set_ephe_path(common.common.ephepath)
 
 		self.drawSplash()
@@ -1363,7 +1364,7 @@ class MFrame(mrclasses.MrTopFrame):
 			self.pds = None
 			self.pdready = False
 			self.abort = primdirs.AbortPD()
-			thId = thread.start_new_thread(self.calcPDs, (pdrange, direction, self))
+			thId = _thread.start_new__thread(self.calcPDs, (pdrange, direction, self))
 
 			self.timer = wx.Timer(self)
 			self.Bind(wx.EVT_TIMER, self.OnTimer)
@@ -2807,29 +2808,29 @@ class MFrame(mrclasses.MrTopFrame):
 
 	def calc(self):
 		for planet in self.horoscope.planets.planets:
-			print ''
-			print '%s:' % planet.name
+			print('')
+			print('%s:' % planet.name)
 
 			(d, m, s) = util.decToDeg(planet.data[0])
-			print 'lon: %02d %02d\' %02d"' % (d, m, s)
+			print('lon: %02d %02d\' %02d"' % (d, m, s))
 			(d, m, s) = util.decToDeg(planet.data[1])
-			print 'lat: %02d %02d\' %02d"' % (d, m, s)
+			print('lat: %02d %02d\' %02d"' % (d, m, s))
 			(d, m, s) = util.decToDeg(planet.data[3])
 			if planet.data[3] > 0:
-				print 'speed: %02d %02d\' %02d"' % (d, m, s)
+				print('speed: %02d %02d\' %02d"' % (d, m, s))
 			else:
-				print 'speed: %02d %02d\' %02d"  R' % (d, m, s)
+				print('speed: %02d %02d\' %02d"  R' % (d, m, s))
 
 
-		print ''
-		print 'Houses'
+		print('')
+		print('Houses')
 		for i in range(1, houses.Houses.HOUSE_NUM+1):
 			(d, m, s) = util.decToDeg(self.horoscope.houses.cusps[i])
-			print 'house[%d]: %02d %02d\' %02d"' % (i, d, m, s)
+			print('house[%d]: %02d %02d\' %02d"' % (i, d, m, s))
 
-		print ''
-		print 'Vars'
+		print('')
+		print('Vars')
 		xvars = ('Asc', 'MC', 'ARMC', 'Vertex', 'Equatorial Ascendant', 'Co-Asc', 'Co-Asc2', 'Polar Asc')
 		for i in range(0, 8):
 			(d, m, s) = util.decToDeg(self.horoscope.houses.ascmc[i])
-			print '%s = %02d %02d\' %02d"' % (xvars[i], d, m, s)
+			print('%s = %02d %02d\' %02d"' % (xvars[i], d, m, s))

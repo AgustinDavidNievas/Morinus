@@ -389,13 +389,13 @@ class PlacesDlg(wx.Dialog):
 	def OnSearch(self, event):
 		txt = self.birthplace.GetValue()
 		if txt == '':
- 			dlg = wx.MessageDialog(self, mtexts.txts['PlaceEmpty'], '', wx.OK|wx.ICON_EXCLAMATION)
+			dlg = wx.MessageDialog(self, mtexts.txts['PlaceEmpty'], '', wx.OK|wx.ICON_EXCLAMATION)
 			dlg.ShowModal()
 			dlg.Destroy()
 			return
 
 		if len(txt) < 3:
- 			dlg = wx.MessageDialog(self, mtexts.txts['TooFewChars'], '', wx.OK|wx.ICON_EXCLAMATION)
+			dlg = wx.MessageDialog(self, mtexts.txts['TooFewChars'], '', wx.OK|wx.ICON_EXCLAMATION)
 			dlg.ShowModal()
 			dlg.Destroy()
 			return
@@ -417,7 +417,7 @@ class PlacesDlg(wx.Dialog):
 				pldlg.Destroy()
 
 		else:
- 			dlg = wx.MessageDialog(self, mtexts.txts['NotFound'], '', wx.OK|wx.ICON_EXCLAMATION)
+			dlg = wx.MessageDialog(self, mtexts.txts['NotFound'], '', wx.OK|wx.ICON_EXCLAMATION)
 			dlg.ShowModal()
 
 

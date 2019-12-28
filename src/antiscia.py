@@ -55,7 +55,7 @@ class Antiscia:
 #			raant, declant = util.getRaDecl(ant, lat, self.obl)
 			raant, declant, dist = astrology.swe_cotrans(ant, lat, 1.0, -obl)
 			self.plantiscia.append(Antiscion(Antiscion.ANTISCION, i, ant, lat, raant, declant))
-			
+
 		for i in range(planets.Planets.PLANETS_NUM):
 #			raant, declant = util.getRaDecl(plcants[i][0], plcants[i][1], self.obl)
 			raant, declant, dist = astrology.swe_cotrans(plcants[i][0], plcants[i][1], 1.0, -obl)
@@ -114,22 +114,17 @@ class Antiscia:
 		plstxt = ('Sun', 'Moon', 'Mercury', 'Venus', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto', 'AscNode', 'DescNode')
 		anttxt = ('Antiscia', 'Contraantiscia')
 
-		print ''
-		print 'Antiscia'
+		print('')
+		print('Antiscia')
 		i = 0
 		for ant in self.antiscia:
 			if i < planets.Planets.PLANETS_NUM*2:
-				print '%s %s %f %f %f %f' % (anttxt[ant.typ], plstxt[ant.Id], ant.lon, ant.lat, ant.ra, ant.decl)
+				print('%s %s %f %f %f %f' % (anttxt[ant.typ], plstxt[ant.Id], ant.lon, ant.lat, ant.ra, ant.decl))
 			elif i == Antiscia.LOFANT or i == Antiscia.LOFCANT:
-				print '%s %s %f %f %f %f' % (anttxt[ant.typ], 'LoF', ant.lon, ant.lat, ant.ra, ant.decl)
+				print('%s %s %f %f %f %f' % (anttxt[ant.typ], 'LoF', ant.lon, ant.lat, ant.ra, ant.decl))
 			elif i == Antiscia.ASCANT or i == Antiscia.ASCCANT:
-				print '%s %s %f %f %f %f' % (anttxt[ant.typ], 'Asc', ant.lon, ant.lat, ant.ra, ant.decl)
+				print('%s %s %f %f %f %f' % (anttxt[ant.typ], 'Asc', ant.lon, ant.lat, ant.ra, ant.decl))
 			elif i == Antiscia.MCANT or i == Antiscia.MCCANT:
-				print '%s %s %f %f %f %f' % (anttxt[ant.typ], 'MC', ant.lon, ant.lat, ant.ra, ant.decl)
+				print('%s %s %f %f %f %f' % (anttxt[ant.typ], 'MC', ant.lon, ant.lat, ant.ra, ant.decl))
 
 			i += 1
-
-
-
-
-

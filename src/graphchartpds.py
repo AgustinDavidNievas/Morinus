@@ -146,7 +146,7 @@ class GraphChartPDs:
 		self.bdc.Clear()
 		#self.bdc.BeginDrawing() removed
 
-		self.bdc.SetBrush(wx.Brush(bkgclr))	
+		self.bdc.SetBrush(wx.Brush(bkgclr))
 
 		(cx, cy) = self.center.Get()
 
@@ -294,7 +294,7 @@ class GraphChartPDs:
 			x2 = cx+math.cos(math.pi+dif)*r2
 			y2 = cy+math.sin(math.pi+dif)*r2
 			self.bdc.DrawLine(x1, y1, x2, y2)
-	
+
 
 	def drawAscMC(self, ascmc, r1, r2, rArrow, AscMConly=False):
 		(cx, cy) = self.center.Get()
@@ -336,7 +336,7 @@ class GraphChartPDs:
 
 	def drawArrow(self, ang, r2, clr, rArrow):
 		(cx, cy) = self.center.Get()
-		offs = math.pi/360.0 
+		offs = math.pi/360.0
 
 		xl = cx+math.cos(ang+offs)*r2
 		yl = cy+math.sin(ang+offs)*r2
@@ -348,12 +348,12 @@ class GraphChartPDs:
 		li = ((xl, yl, xr, yr), (xr, yr, xm, ym), (xm, ym, xl, yl))
 		self.bdc.DrawLineList(li)
 
-#		self.bdc.SetBrush(wx.Brush(clr))	
+#		self.bdc.SetBrush(wx.Brush(clr))
 
 #		x = (xl+xr)/2
 #		x = (x+xm)/2
 #		y = (yl+yr)/2
-#		y = (y+ym)/2	
+#		y = (y+ym)/2
 
 #		self.bdc.FloodFill(x, y, clr, wx.FLOOD_BORDER)
 
@@ -372,7 +372,7 @@ class GraphChartPDs:
 			(d, m, s) = util.decToDeg(lon)
 			d = d%chart.Chart.SIGN_DEG
 #			d, m = util.roundDeg(d%chart.Chart.SIGN_DEG, m, s)
-				
+
 			wdeg, hdeg = self.draw.textsize(str(d), self.fntText)
 			wmin, hmin = self.draw.textsize((str(m).zfill(2)), self.fntSmallText)
 			x = cx+math.cos(math.pi+math.radians(self.chart.houses.ascmc[houses.Houses.ASC]-self.chart.houses.ascmc[i]))*self.rPosAscMC
@@ -411,7 +411,7 @@ class GraphChartPDs:
 			(d, m, s) = util.decToDeg(lon)
 			d = d%chart.Chart.SIGN_DEG
 #			d, m = util.roundDeg(d%chart.Chart.SIGN_DEG, m, s)
-				
+
 			wdeg, hdeg = self.draw.textsize(str(d), self.fntText)
 			wmin, hmin = self.draw.textsize((str(m).zfill(2)), self.fntSmallText)
 			x = cx+math.cos(math.pi+math.radians(asc-self.chart.houses.cusps[i]))*self.rPosHouses
@@ -442,7 +442,7 @@ class GraphChartPDs:
 			width = util.normalize(width)
 			halfwidth = math.radians(width/2.0)
 			dif = math.radians(util.normalize(asc-chrt.houses.cusps[i]))
-			
+
 			x = cx+math.cos(math.pi+dif-halfwidth)*rHouseNames
 			y = cy+math.sin(math.pi+dif-halfwidth)*rHouseNames
 			if i == 1 or i == 2:
@@ -455,7 +455,7 @@ class GraphChartPDs:
 				yoffs = self.symbolSize/4
 
 			self.draw.text((x-xoffs,y-yoffs), common.common.Housenames[i-1], fill=clr, font=self.fntText)
-	
+
 
 	def drawPlanets(self, chrt, pshift, rPlanet, rPosDeg, rPosMin, rRetr, reverse=True):
 		(cx, cy) = self.center.Get()
@@ -472,9 +472,9 @@ class GraphChartPDs:
 			else:
 				lon = chrt.fortune.fortune[fortune.Fortune.LON]
 
-			x = cx+math.cos(math.pi+math.radians(self.chartRadix.houses.ascmc[houses.Houses.ASC]-lon-pshift[i]))*rPlanet	
-			y = cy+math.sin(math.pi+math.radians(self.chartRadix.houses.ascmc[houses.Houses.ASC]-lon-pshift[i]))*rPlanet	
-			
+			x = cx+math.cos(math.pi+math.radians(self.chartRadix.houses.ascmc[houses.Houses.ASC]-lon-pshift[i]))*rPlanet
+			y = cy+math.sin(math.pi+math.radians(self.chartRadix.houses.ascmc[houses.Houses.ASC]-lon-pshift[i]))*rPlanet
+
 			clr = (0,0,0)
 			if not self.bw:
 				if self.options.useplanetcolors:
@@ -505,7 +505,7 @@ class GraphChartPDs:
 			(d, m, s) = util.decToDeg(alon)
 			d = d%chart.Chart.SIGN_DEG
 #			d, m = util.roundDeg(d%chart.Chart.SIGN_DEG, m, s)
-				
+
 			degtxt = str(d).zfill(2)+self.deg_symbol
 			wdeg, hdeg = self.draw.textsize(degtxt, self.fntText)
 			x = cx+math.cos(math.pi+math.radians(self.chartRadix.houses.ascmc[houses.Houses.ASC]-lon-pshift[i]))*rPosDeg
@@ -532,7 +532,7 @@ class GraphChartPDs:
 					rfnt = self.fntRetr
 
 				wdeg, hdeg = self.draw.textsize(t, rfnt)
-				x = cx+math.cos(math.pi+math.radians(self.chartRadix.houses.ascmc[houses.Houses.ASC]-chrt.planets.planets[i].data[planets.Planet.LONG]-pshift[i]))*rRetr	
+				x = cx+math.cos(math.pi+math.radians(self.chartRadix.houses.ascmc[houses.Houses.ASC]-chrt.planets.planets[i].data[planets.Planet.LONG]-pshift[i]))*rRetr
 				y = cy+math.sin(math.pi+math.radians(self.chartRadix.houses.ascmc[houses.Houses.ASC]-chrt.planets.planets[i].data[planets.Planet.LONG]-pshift[i]))*rRetr
 				xdeg = x-wdeg/2
 				ydeg = y-hdeg/2
@@ -716,7 +716,7 @@ class GraphChartPDs:
 		#arrange in order, initialize
 		for i in range(pnum):
 			order[i] = pls[i]
-			
+
 		for j in range(pnum):
 			for i in range(pnum-1):
 				if (order[i] > order[i+1]):
@@ -726,7 +726,7 @@ class GraphChartPDs:
 					tmp = mixed[i]
 					mixed[i] = mixed[i+1]
 					mixed[i+1] = tmp
-		
+
 		#doArrange arranges consecutive two planets only(0 and 1, 1 and 2, ...), this is why we need to do it pnum+1 times
 		for i in range(pnum+1):
 			self.doArrange(pnum, pshift, order, mixed, rPlanet)
@@ -735,7 +735,7 @@ class GraphChartPDs:
 		#We only shift forward at 360-0
 		shifted = self.doShift(pnum-1, 0, pshift, order, mixed, rPlanet, True)
 
- 		if shifted:
+		if shifted:
 			for i in range(pnum):
 				self.doArrange(pnum, pshift, order, mixed, rPlanet, True)
 
@@ -752,7 +752,7 @@ class GraphChartPDs:
 
 					for i in range(pnum-1):
 						lon1 = order[i]+pshift[mixed[i]]
-						lon2 = order[i+1]+pshift[mixed[i+1]]	
+						lon2 = order[i+1]+pshift[mixed[i+1]]
 						if lon1 < 180.0 and lon2 < 180.0:
 							if lon1 > lon2:
 								dist = lon1-lon2
@@ -823,5 +823,3 @@ class GraphChartPDs:
 			return True
 
 		return False
-
-

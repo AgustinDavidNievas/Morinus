@@ -6,13 +6,13 @@ import findtime
 import mtexts
 import util
 
-import thread
+import _thread
 import wx.lib.newevent
 
 (FTReadyEvent, EVT_FTREADY) = wx.lib.newevent.NewEvent()
 (FTDataReadyEvent, EVT_FTDATAREADY) = wx.lib.newevent.NewEvent()
 (FTYearEvent, EVT_FTYEAR) = wx.lib.newevent.NewEvent()
-ftlock = thread.allocate_lock()
+ftlock = _thread.allocate_lock()
 
 class AbortFindTime:
 	def __init__(self):
@@ -854,7 +854,7 @@ class FindTimeDlg(wx.Dialog):
 			self.ar = None
 		self.ftready = False
 		self.abort = AbortFindTime()
-		thId = thread.start_new_thread(self.calcCharts, (self.bc, ftdata, ftdatause, ftdataascmc, ftdataapprox, self))
+		thId = _thread.start_new__thread(self.calcCharts, (self.bc, ftdata, ftdatause, ftdataascmc, ftdataapprox, self))
 
 		self.timer = wx.Timer(self)
 		self.Bind(wx.EVT_TIMER, self.OnTimer)
@@ -866,7 +866,7 @@ class FindTimeDlg(wx.Dialog):
 
 		ft.find()
 
-		#maybe there is no need for synchronization since the worker thread is done and it only uses the abort variable but it doesn't matter if it is skipped for a cycle (this is copy/pasted code)
+		#maybe there is no need for synchronization since the worker _thread is done and it only uses the abort variable but it doesn't matter if it is skipped for a cycle (this is copy/pasted code)
 		ftlock.acquire()
 		self.ftready = True
 		ftlock.release()

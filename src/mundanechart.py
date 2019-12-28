@@ -66,7 +66,7 @@ class MundaneChart:
 			pos = 0.55
 			aspascmc = 0.50
 			posascmc = 0.50
-			poshouses = 0.40				
+			poshouses = 0.40
 
 			self.rPos = self.maxradius*pos
 			self.rAspAscMC = self.maxradius*aspascmc
@@ -121,7 +121,7 @@ class MundaneChart:
 			pos = 0.45
 			aspascmc = 0.41
 			posascmc = 0.41
-			poshouses = 0.32				
+			poshouses = 0.32
 
 			self.rPos = self.maxradius*pos
 			self.rAspAscMC = self.maxradius*aspascmc
@@ -200,7 +200,7 @@ class MundaneChart:
 		self.bdc.Clear()
 		#self.bdc.BeginDrawing() removed
 
-		self.bdc.SetBrush(wx.Brush(bkgclr))	
+		self.bdc.SetBrush(wx.Brush(bkgclr))
 
 		(cx, cy) = self.center.Get()
 
@@ -421,7 +421,7 @@ class MundaneChart:
 
 	def drawArrow(self, ang, r2, clr, rArrow):
 		(cx, cy) = self.center.Get()
-		offs = math.pi/360.0 
+		offs = math.pi/360.0
 
 		xl = cx+math.cos(ang+offs)*r2
 		yl = cy+math.sin(ang+offs)*r2
@@ -433,12 +433,12 @@ class MundaneChart:
 		li = ((xl, yl, xr, yr), (xr, yr, xm, ym), (xm, ym, xl, yl))
 		self.bdc.DrawLineList(li)
 
-#		self.bdc.SetBrush(wx.Brush(clr))	
+#		self.bdc.SetBrush(wx.Brush(clr))
 
 #		x = (xl+xr)/2
 #		x = (x+xm)/2
 #		y = (yl+yr)/2
-#		y = (y+ym)/2	
+#		y = (y+ym)/2
 
 #		self.bdc.FloodFill(x, y, clr, wx.FLOOD_BORDER)
 
@@ -495,7 +495,7 @@ class MundaneChart:
 
 			x = cx+math.cos(math.pi+math.radians(-xmp-pshift[i]))*rPlanet
 			y = cy+math.sin(math.pi+math.radians(-xmp-pshift[i]))*rPlanet
-			
+
 			clr = (0,0,0)
 			if not self.bw:
 				if self.options.useplanetcolors:
@@ -525,7 +525,7 @@ class MundaneChart:
 					if chrt.planets.planets[i].data[planets.Planet.SPLON] < 0.0:
 						t = 'R'
 
-					x = cx+math.cos(math.pi+math.radians(-xmp-pshift[i]))*rRetr	
+					x = cx+math.cos(math.pi+math.radians(-xmp-pshift[i]))*rRetr
 					y = cy+math.sin(math.pi+math.radians(-xmp-pshift[i]))*rRetr
 
 					self.draw.text((x-self.symbolSize/8, y-self.symbolSize/8), t, fill=clr, font=self.fntSmallText)
@@ -536,11 +536,11 @@ class MundaneChart:
 					(d, m, s) = util.decToDeg(xmp)
 #					d = d%chart.Chart.SIGN_DEG
 #					d, m = util.roundDeg(d%chart.Chart.SIGN_DEG, m, s)
-				
+
 					wdeg, hdeg = self.draw.textsize(str(d), self.fntText)
 					wmin, hmin = self.draw.textsize((str(m).zfill(2)), self.fntSmallText)
 					x = cx+math.cos(math.pi+math.radians(-xmp-pshift[i]))*self.rPos
-					y = cy+math.sin(math.pi+math.radians(-xmp-pshift[i]))*self.rPos	
+					y = cy+math.sin(math.pi+math.radians(-xmp-pshift[i]))*self.rPos
 					xdeg = x-wdeg/2
 					ydeg = y-hdeg/2
 					self.draw.text((xdeg, ydeg), str(d), fill=clrpos, font=self.fntText)
@@ -643,7 +643,7 @@ class MundaneChart:
 		#arrange in order, initialize
 		for i in range(pnum):
 			order[i] = pls[i]
-			
+
 		for j in range(pnum):
 			for i in range(pnum-1):
 				if (order[i] > order[i+1]):
@@ -653,7 +653,7 @@ class MundaneChart:
 					tmp = mixed[i]
 					mixed[i] = mixed[i+1]
 					mixed[i+1] = tmp
-		
+
 		#doArrange arranges consecutive two planets only(0 and 1, 1 and 2, ...), this is why we need to do it pnum+1 times
 		for i in range(pnum+1):
 			self.doArrange(pnum, pshift, order, mixed, rPlanet)
@@ -662,7 +662,7 @@ class MundaneChart:
 		#We only shift forward at 360-0
 		shifted = self.doShift(pnum-1, 0, pshift, order, mixed, rPlanet, True)
 
- 		if shifted:
+		if shifted:
 			for i in range(pnum):
 				self.doArrange(pnum, pshift, order, mixed, rPlanet, True)
 
@@ -679,7 +679,7 @@ class MundaneChart:
 
 					for i in range(pnum-1):
 						lon1 = order[i]+pshift[mixed[i]]
-						lon2 = order[i+1]+pshift[mixed[i+1]]	
+						lon2 = order[i+1]+pshift[mixed[i+1]]
 						if lon1 < 180.0 and lon2 < 180.0:
 							if lon1 > lon2:
 								dist = lon1-lon2
@@ -750,5 +750,3 @@ class MundaneChart:
 			return True
 
 		return False
-
-

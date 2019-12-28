@@ -60,7 +60,7 @@ class SquareChartWnd(wx.Window):
 				fpath+=u'.bmp'
 			#Check if fpath already exists!?
 			if (os.path.isfile(fpath)):
- 				dlgm = wx.MessageDialog(self, mtexts.txts['FileExists'], mtexts.txts['Message'], wx.YES_NO|wx.YES_DEFAULT|wx.ICON_QUESTION)
+				dlgm = wx.MessageDialog(self, mtexts.txts['FileExists'], mtexts.txts['Message'], wx.YES_NO|wx.YES_DEFAULT|wx.ICON_QUESTION)
 				if (dlgm.ShowModal() == wx.ID_NO):
 					dlgm.Destroy()
 					dlg.Destroy()
@@ -82,8 +82,3 @@ class SquareChartWnd(wx.Window):
 
 	def onSize(self, event):
 		self.drawBkg()
-
-
-
-
-

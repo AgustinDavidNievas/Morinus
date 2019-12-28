@@ -24,7 +24,7 @@ class CommonWnd(wx.ScrolledWindow):
 		self.ID_BlackAndWhite = wx.NewId()
 		self.pmenu.Append(self.ID_SaveAsBitmap, mtexts.txts['SaveAsBmp'], mtexts.txts['SaveTable'])
 		mbw = self.pmenu.Append(self.ID_BlackAndWhite, mtexts.txts['BlackAndWhite'], mtexts.txts['TableBW'], wx.ITEM_CHECK)
-		
+
 		self.Bind(wx.EVT_PAINT, self.OnPaint)
 		self.Bind(wx.EVT_RIGHT_UP, self.onPopupMenu)
 		self.Bind(wx.EVT_MENU, self.onSaveAsBitmap, id=self.ID_SaveAsBitmap)
@@ -53,7 +53,7 @@ class CommonWnd(wx.ScrolledWindow):
 				fpath+=u'.bmp'
 			#Check if fpath already exists!?
 			if (os.path.isfile(fpath)):
- 				dlgm = wx.MessageDialog(self, mtexts.txts['FileExists'], mtexts.txts['Message'], wx.YES_NO|wx.YES_DEFAULT|wx.ICON_QUESTION)
+				dlgm = wx.MessageDialog(self, mtexts.txts['FileExists'], mtexts.txts['Message'], wx.YES_NO|wx.YES_DEFAULT|wx.ICON_QUESTION)
 				if (dlgm.ShowModal() == wx.ID_NO):
 					dlgm.Destroy()
 					dlg.Destroy()
@@ -75,7 +75,3 @@ class CommonWnd(wx.ScrolledWindow):
 
 	def OnPaint(self, event):
 		dc = wx.BufferedPaintDC(self, self.buffer, wx.BUFFER_VIRTUAL_AREA)
-
-
-
-

@@ -11,13 +11,13 @@ import regiomontanpd
 import campanianpd
 import primdirsrevlistframe
 import wx.lib.newevent
-import thread
+import _thread
 import mtexts
 
 import mrclasses
 
 (PDReadyEvent, EVT_PDREADY) = wx.lib.newevent.NewEvent()
-pdlock = thread.allocate_lock()
+pdlock = _thread.allocate_lock()
 
 
 class TransitFrame(mrclasses.MrSecondFrame):
@@ -68,7 +68,7 @@ class TransitFrame(mrclasses.MrSecondFrame):
 
 		self.pmenu.Append(self.ID_SaveAsBitmap, mtexts.txts['SaveAsBmp'], mtexts.txts['SaveChart'])
 		self.mbw = self.pmenu.Append(self.ID_BlackAndWhite, mtexts.txts['BlackAndWhite'], mtexts.txts['ChartBW'], wx.ITEM_CHECK)
-		
+
 		self.SetMinSize((200,200))
 
 		self.Bind(wx.EVT_RIGHT_UP, self.onPopupMenu)
@@ -176,7 +176,7 @@ class TransitFrame(mrclasses.MrSecondFrame):
 		self.pds = None
 		self.pdready = False
 		self.abort = primdirs.AbortPD()
-		thId = thread.start_new_thread(self.calcPDs, (pdrange, direction, self))
+		thId = _thread.start_new__thread(self.calcPDs, (pdrange, direction, self))
 
 		self.timer = wx.Timer(self)
 		self.Bind(wx.EVT_TIMER, self.OnTimer)
@@ -224,7 +224,7 @@ class TransitFrame(mrclasses.MrSecondFrame):
 
 				pdw.Show(True)
 			else:
- 				dlgm = wx.MessageDialog(self, mtexts.txts['NoPDsWithSettings'], mtexts.txts['Information'], wx.OK|wx.ICON_INFORMATION)
+				dlgm = wx.MessageDialog(self, mtexts.txts['NoPDsWithSettings'], mtexts.txts['Information'], wx.OK|wx.ICON_INFORMATION)
 				dlgm.ShowModal()
 				dlgm.Destroy()#
 
@@ -232,12 +232,3 @@ class TransitFrame(mrclasses.MrSecondFrame):
 			del self.pds
 
 		del self.abort
-
-
-
-
-
-
-
-
-
