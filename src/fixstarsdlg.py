@@ -30,7 +30,7 @@ class FixStars:
 
 	def __init__(self, ephepath):
 		self.ephepath = ephepath
-		self.jd = astrology.swe_julday(1950, 1, 1, 0.0, astrology.SE_GREG_CAL)
+		self.jd = astrology.julday(1950, 1, 1, 0.0, astrology.SE_GREG_CAL)
 		self.data = []
 
 		self.fname = os.path.join(self.ephepath, 'fixstars.cat')
@@ -54,7 +54,7 @@ class FixStars:
 					cnt += 1
 
 			for i in range(1, cnt+1):
-				ret, name, dat, serr = astrology.swe_fixstar_ut(str(i), self.jd, 0)
+				ret, name, dat, serr = astrology.fixstar_ut(str(i), self.jd, 0)
 				d, m, s = util.decToDeg(dat[0])
 				sign = d/chart.Chart.SIGN_DEG
 				lon = d%chart.Chart.SIGN_DEG

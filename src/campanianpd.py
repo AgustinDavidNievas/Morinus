@@ -263,7 +263,7 @@ class CampanianPD(regiocampbasepd.RegioCampBasePD):
 		raprom = sm.planet.speculums[primdirs.PrimDirs.REGIOSPECULUM][planets.Planet.RA]
 		declprom = sm.planet.speculums[primdirs.PrimDirs.REGIOSPECULUM][planets.Planet.DECL]
 		if not mundane and self.options.subzodiacal != primdirs.PrimDirs.SZPROMISSOR and self.options.subzodiacal != primdirs.PrimDirs.SZBOTH:
-			raprom, declprom, distprom = astrology.swe_cotrans(lonprom, 0.0, 1.0, -self.chart.obl[0])
+			raprom, declprom, distprom = astrology.cotrans(lonprom, 0.0, 1.0, -self.chart.obl[0])
 
 		plsig = self.chart.planets.planets[sig]
 
@@ -383,9 +383,9 @@ class CampanianPD(regiocampbasepd.RegioCampBasePD):
 
 				#calc real(wahre)ra
 #				raprom, declprom = util.getRaDecl(lonprom, latprom, self.chart.obl[0])
-				raprom, declprom, dist = astrology.swe_cotrans(lonprom, latprom, 1.0, -self.chart.obl[0])
+				raprom, declprom, dist = astrology.cotrans(lonprom, latprom, 1.0, -self.chart.obl[0])
 			else:
-				raprom, declprom, distprom = astrology.swe_cotrans(lonprom, 0.0, 1.0, -self.chart.obl[0])
+				raprom, declprom, distprom = astrology.cotrans(lonprom, 0.0, 1.0, -self.chart.obl[0])
 
 		ID = 0
 		W = 1

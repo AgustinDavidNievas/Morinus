@@ -1,4 +1,5 @@
 #from sweastrology import *
+#TODO hacer que usa la version de python
 from swisseph import *
 
 SE_JUL_CAL = 0

@@ -51,7 +51,7 @@ class CustomerPD:
 		if self.southern:
 			self.lat *= -1
 
-		self.ra, self.decl, dist = astrology.swe_cotrans(self.lon, self.lat, 1.0, -obl)
+		self.ra, self.decl, dist = astrology.cotrans(self.lon, self.lat, 1.0, -obl)
 
 		self.speculums = []
 		self.computePlacidianSpeculum(placelat, ascmc2)

@@ -98,13 +98,13 @@ class Time:
 		calflag = astrology.SE_GREG_CAL
 		if self.cal == Time.JULIAN:
 			calflag = astrology.SE_JUL_CAL
-		self.jd = astrology.swe_julday(self.year, self.month, self.day, self.time, calflag)
+		self.jd = astrology.julday(self.year, self.month, self.day, self.time, calflag)
 
 		if zt == Time.LOCALAPPARENT:#LAT
-			ret, te, serr = astrology.swe_time_equ(self.jd)
+			ret, te, serr = astrology.time_equ(self.jd)
 			self.jd += te #LMT
 			#Back to h,m,s(self.time) from julianday fromat
-			self.year, self.month, self.day, self.time = astrology.swe_revjul(self.jd, calflag)
+			self.year, self.month, self.day, self.time = astrology.revjul(self.jd, calflag)
 			#To GMT
 			t = (place.deglon+place.minlon/60.0)*4.0 #long * 4min
 			if place.east:
@@ -121,9 +121,9 @@ class Time:
 				self.year, self.month, self.day = util.decrDay(self.year, self.month, self.day)
 
 			#GMT in JD (julianday)
-			self.jd = astrology.swe_julday(self.year, self.month, self.day, self.time, calflag)
+			self.jd = astrology.julday(self.year, self.month, self.day, self.time, calflag)
 
-		self.sidTime = astrology.swe_sidtime(self.jd) #GMT
+		self.sidTime = astrology.sidtime(self.jd) #GMT
 
 		self.ph = None
 		if full:
@@ -275,14 +275,14 @@ class Chart:
 		self.proftype = proftype
 		self.nolat = nolat
 
-		d = astrology.swe_deltat(time.jd)
-		rflag, self.obl, serr = astrology.swe_calc(time.jd+d, astrology.SE_ECL_NUT, 0)
+		d = astrology.deltat(time.jd)
+		rflag, self.obl, serr = astrology.calc(time.jd+d, astrology.SE_ECL_NUT, 0)
 		#true obliquity of the ecliptic
 		#mean
 		#nutation in long
 		#nutation in obl
 
-		astrology.swe_set_topo(place.lon, place.lat, place.altitude)
+		astrology.set_topo(place.lon, place.lat, place.altitude)
 
 		self.create()
 
@@ -294,15 +294,15 @@ class Chart:
 		astflag = astrology.SEFLG_SWIEPH
 		self.ayanamsha = 0.0
 		if self.options.ayanamsha != 0:
-			astrology.swe_set_sid_mode(self.options.ayanamsha-1, 0, 0)
-			self.ayanamsha = astrology.swe_get_ayanamsa_ut(self.time.jd)
+			astrology.set_sid_mode(self.options.ayanamsha-1, 0, 0)
+			self.ayanamsha = astrology.get_ayanamsa_ut(self.time.jd)
 
 		if self.options.topocentric:
 			pflag += astrology.SEFLG_TOPOCTR
 
 		self.houses = houses.Houses(self.time.jd, hflag, self.place.lat, self.place.lon, self.options.hsys, self.obl[0], self.options.ayanamsha, self.ayanamsha)
 
-		self.raequasc, declequasc, dist = astrology.swe_cotrans(self.houses.ascmc[houses.Houses.EQUASC], 0.0, 1.0, -self.obl[0])
+		self.raequasc, declequasc, dist = astrology.cotrans(self.houses.ascmc[houses.Houses.EQUASC], 0.0, 1.0, -self.obl[0])
 		self.planets = planets.Planets(self.time.jd, self.options.meannode, pflag, self.place.lat, self.houses.ascmc2, self.raequasc, self.nolat, self.obl[0])
 
 		self.abovehorizonwithorb = self.isAboveHorizonWithOrb()
@@ -343,7 +343,7 @@ class Chart:
 			if self.options.pdcustomer2:
 				self.cpd2 = customerpd.CustomerPD(self.options.pdcustomer2lon[0], self.options.pdcustomer2lon[1], self.options.pdcustomer2lon[2], self.options.pdcustomer2lat[0], self.options.pdcustomer2lat[1], self.options.pdcustomer2lat[2], self.options.pdcustomer2southern, self.place.lat, self.houses.ascmc2, self.obl[0], self.raequasc)
 
-		astrology.swe_close()
+		astrology.close()
 
 		self.calcAspMatrix()
 
