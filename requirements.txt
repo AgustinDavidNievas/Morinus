@@ -1,6 +1,6 @@
 Django==1.11.21
 image==1.5.27
-Pillow==5.4.1
+Pillow==8.1.1
 pkg-resources==0.0.0
 pyswisseph==2.0.0.post2
 pytz==2018.9
