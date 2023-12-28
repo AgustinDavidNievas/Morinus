@@ -50,7 +50,7 @@ class PersonalDataDlg(wx.Dialog):
 		mvsizer = wx.BoxSizer(wx.VERTICAL)
 		#main horizontal sizer
 		mhsizer = wx.BoxSizer(wx.HORIZONTAL)
-
+		#super(PersonalDataDlg, self).__init__() #TODO agregar?
 		# Name&Gender
 		sname =wx.StaticBox(self, label='')
 		namesizer = wx.StaticBoxSizer(sname, wx.VERTICAL)
