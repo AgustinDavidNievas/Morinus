@@ -2777,7 +2777,7 @@ class MFrame(mrclasses.MrTopFrame):
 			self.SetBackgroundColour(bkgclr)
 			self.ClearBackground()
 
-		dc.DrawBitmap(self.buffer, x, y)
+		dc.DrawBitmap(self.buffer, int(x), int(y))
 
 
 	def onPaint(self, event):
@@ -2795,7 +2795,7 @@ class MFrame(mrclasses.MrTopFrame):
 				bkgclr = (255,255,255)
 			self.SetBackgroundColour(bkgclr)
 
-		dc.DrawBitmap(self.buffer, x, y)
+		dc.DrawBitmap(self.buffer, int(x), int(y))
 
 
 	def onSize(self, event):

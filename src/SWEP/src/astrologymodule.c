@@ -2,8 +2,8 @@
 #include "swephexp.h"
 
 
-/**************************** 
- * exports from sweph.c 
+/****************************
+ * exports from sweph.c
  ****************************/
 
 static PyObject* astrology_swe_version(PyObject *self, PyObject *args)
@@ -86,7 +86,7 @@ static PyObject* astrology_swe_fixstar_ut(PyObject *self, PyObject *args)
 
 	return Py_BuildValue("(l)(s)(dddddd)(s)", ret, st, xx[0], xx[1], xx[2], xx[3], xx[4], xx[5], serr);
 }
-/*ext_def(int32) swe_fixstar_ut(char *star, double tjd_ut, int32 iflag, 
+/*ext_def(int32) swe_fixstar_ut(char *star, double tjd_ut, int32 iflag,
 	double *xx, char *serr);*/
 
 static PyObject* astrology_swe_fixstar_mag(PyObject *self, PyObject *args)
@@ -237,8 +237,8 @@ static PyObject* astrology_swe_get_ayanamsa_name(PyObject *self, PyObject *args)
 /*ext_def( char *) swe_get_ayanamsa_name(int32 isidmode);*/
 
 
-/**************************** 
- * exports from swehel.c 
+/****************************
+ * exports from swehel.c
  ****************************/
 
 static PyObject* astrology_swe_heliacal_ut(PyObject *self, PyObject *args)
@@ -258,8 +258,8 @@ static PyObject* astrology_swe_heliacal_ut(PyObject *self, PyObject *args)
 }
 /*ext_def(int32) swe_heliacal_ut(double tjdstart_ut, double *geopos, double *datm, double *dobs, char *ObjectName, int32 TypeEvent, int32 iflag, double *dret, char *serr);*/
 
-/**************************** 
- * exports from swedate.c 
+/****************************
+ * exports from swedate.c
  ****************************/
 
 static PyObject* astrology_swe_date_conversion(PyObject *self, PyObject *args)
@@ -359,8 +359,8 @@ static PyObject* astrology_swe_jdut1_to_utc(PyObject *self, PyObject *args)
 }
 /*ext_def(void) swe_jdut1_to_utc(double tjd_ut, int32 gregflag, int32 *iyear, int32 *imonth, int32 *iday, int32 *ihour, int32 *imin, double *dsec);*/
 
-/**************************** 
- * exports from swehouse.c 
+/****************************
+ * exports from swehouse.c
  ****************************/
 
 static PyObject* astrology_swe_houses(PyObject *self, PyObject *args)
@@ -424,8 +424,8 @@ static PyObject* astrology_swe_house_pos(PyObject *self, PyObject *args)
 }
 /*ext_def(double) swe_house_pos(double armc, double geolat, double eps, int hsys, double *xpin, char *serr);*/
 
-/**************************** 
- * exports from swecl.c 
+/****************************
+ * exports from swecl.c
  ****************************/
 
 static PyObject* astrology_swe_gauquelin_sector(PyObject *self, PyObject *args)
@@ -445,7 +445,7 @@ static PyObject* astrology_swe_gauquelin_sector(PyObject *self, PyObject *args)
 }
 /*ext_def(int32) swe_gauquelin_sector(double t_ut, int32 ipl, char *starname, int32 iflag, int32 imeth, double *geopos, double atpress, double attemp, double *dgsect, char *serr);*/
 
-/* computes geographic location and attributes of solar 
+/* computes geographic location and attributes of solar
  * eclipse at a given tjd */
 static PyObject* astrology_swe_sol_eclipse_where(PyObject *self, PyObject *args)
 {
@@ -620,7 +620,7 @@ static PyObject* astrology_swe_pheno(PyObject *self, PyObject *args)
 	return Py_BuildValue("(l)(dddddddddddddddddddd)(s)", ret, attr[0], attr[1], attr[2], attr[3], attr[4], attr[5], attr[6], attr[7], attr[8], attr[9], attr[10], attr[11], attr[12], attr[13], attr[14], attr[15], attr[16], attr[17], attr[18], attr[19], serr);
 }
 /*ext_def (int32) swe_pheno(double tjd, int32 ipl, int32 iflag, double *attr, char *serr);*/
- 
+
 static PyObject* astrology_swe_pheno_ut(PyObject *self, PyObject *args)
 {
 	double tjd_ut;
@@ -759,8 +759,8 @@ static PyObject* astrology_swe_nod_aps_ut(PyObject *self, PyObject *args)
 }
 /*ext_def (int32) swe_nod_aps_ut(double tjd_ut, int32 ipl, int32 iflag, int32  method, double *xnasc, double *xndsc, double *xperi, double *xaphe, char *serr);*/
 
-/**************************** 
- * exports from swephlib.c 
+/****************************
+ * exports from swephlib.c
  ****************************/
 
 /* delta t */
@@ -863,7 +863,7 @@ ext_def( double ) swe_deg_midp(double x1, double x0);
 
 ext_def( void ) swe_split_deg(double ddeg, int32 roundflag, int32 *ideg, int32 *imin, int32 *isec, double *dsecfr, int32 *isgn);
 */
-/******************************************************* 
+/*******************************************************
  * other functions from swephlib.c;
  * they are not needed for Swiss Ephemeris,
  * but may be useful to former Placalc users.
@@ -899,67 +899,87 @@ ext_def( char *) swe_cs2lonlatstr(CSEC t, char pchar, char mchar, char *s);
 ext_def( char *) swe_cs2degstr(CSEC t, char *a);
 */
 
-static PyMethodDef SWEAstrologyMethods[] = 
+static PyMethodDef SWEAstrologyMethods[] =
 {
-	{"swe_version", (PyCFunction)astrology_swe_version, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_calc", (PyCFunction)astrology_swe_calc, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_calc_ut", (PyCFunction)astrology_swe_calc_ut, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_fixstar", (PyCFunction)astrology_swe_fixstar, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_fixstar_ut", (PyCFunction)astrology_swe_fixstar_ut, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_fixstar_mag", (PyCFunction)astrology_swe_fixstar_mag, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_set_ephe_path", (PyCFunction)astrology_swe_set_ephe_path, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_close", (PyCFunction)astrology_swe_close, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_set_jpl_file", (PyCFunction)astrology_swe_set_jpl_file, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_get_planet_name", (PyCFunction)astrology_swe_get_planet_name, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_set_topo", (PyCFunction)astrology_swe_set_topo, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_set_sid_mode", (PyCFunction)astrology_swe_set_sid_mode, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_get_ayanamsa", (PyCFunction)astrology_swe_get_ayanamsa, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_get_ayanamsa_ut", (PyCFunction)astrology_swe_get_ayanamsa_ut, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_get_ayanamsa_name", (PyCFunction)astrology_swe_get_ayanamsa_name, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_heliacal_ut", (PyCFunction)astrology_swe_heliacal_ut, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_date_conversion", (PyCFunction)astrology_swe_date_conversion, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_julday", (PyCFunction)astrology_swe_julday, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_revjul", (PyCFunction)astrology_swe_revjul, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_utc_to_jd", (PyCFunction)astrology_swe_utc_to_jd, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_jdet_to_utc", (PyCFunction)astrology_swe_jdet_to_utc, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_jdut1_to_utc", (PyCFunction)astrology_swe_jdut1_to_utc, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_houses", (PyCFunction)astrology_swe_houses, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_houses_ex", (PyCFunction)astrology_swe_houses_ex, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_houses_armc", (PyCFunction)astrology_swe_houses_armc, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_house_pos", (PyCFunction)astrology_swe_house_pos, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_gauquelin_sector", (PyCFunction)astrology_swe_gauquelin_sector, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_sol_eclipse_where", (PyCFunction)astrology_swe_sol_eclipse_where, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_lun_occult_where", (PyCFunction)astrology_swe_lun_occult_where, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_sol_eclipse_how", (PyCFunction)astrology_swe_sol_eclipse_how, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_sol_eclipse_when_loc", (PyCFunction)astrology_swe_sol_eclipse_when_loc, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_lun_occult_when_loc", (PyCFunction)astrology_swe_lun_occult_when_loc, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_sol_eclipse_when_glob", (PyCFunction)astrology_swe_sol_eclipse_when_glob, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_lun_occult_when_glob", (PyCFunction)astrology_swe_lun_occult_when_glob, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_lun_eclipse_how", (PyCFunction)astrology_swe_lun_eclipse_how, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_lun_eclipse_when", (PyCFunction)astrology_swe_lun_eclipse_when, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_pheno", (PyCFunction)astrology_swe_pheno, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_pheno_ut", (PyCFunction)astrology_swe_pheno_ut, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_refrac", (PyCFunction)astrology_swe_refrac, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_refrac_extended", (PyCFunction)astrology_swe_refrac_extended, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_set_lapse_rate", (PyCFunction)astrology_swe_set_lapse_rate, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_azalt", (PyCFunction)astrology_swe_azalt, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_azalt_rev", (PyCFunction)astrology_swe_azalt_rev, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_rise_trans", (PyCFunction)astrology_swe_rise_trans, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_nod_aps", (PyCFunction)astrology_swe_nod_aps, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_nod_aps_ut", (PyCFunction)astrology_swe_nod_aps_ut, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_deltat", (PyCFunction)astrology_swe_deltat, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_time_equ", (PyCFunction)astrology_swe_time_equ, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_sidtime0", (PyCFunction)astrology_swe_sidtime0, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_sidtime", (PyCFunction)astrology_swe_sidtime, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_cotrans", (PyCFunction)astrology_swe_cotrans, METH_VARARGS, "SWEPH.\n"}, 
-	{"swe_cotrans_sp", (PyCFunction)astrology_swe_cotrans_sp, METH_VARARGS, "SWEPH.\n"}, 
+	{"swe_version", (PyCFunction)astrology_swe_version, METH_VARARGS, "SWEPH.\n"},
+	{"swe_calc", (PyCFunction)astrology_swe_calc, METH_VARARGS, "SWEPH.\n"},
+	{"swe_calc_ut", (PyCFunction)astrology_swe_calc_ut, METH_VARARGS, "SWEPH.\n"},
+	{"swe_fixstar", (PyCFunction)astrology_swe_fixstar, METH_VARARGS, "SWEPH.\n"},
+	{"swe_fixstar_ut", (PyCFunction)astrology_swe_fixstar_ut, METH_VARARGS, "SWEPH.\n"},
+	{"swe_fixstar_mag", (PyCFunction)astrology_swe_fixstar_mag, METH_VARARGS, "SWEPH.\n"},
+	{"swe_set_ephe_path", (PyCFunction)astrology_swe_set_ephe_path, METH_VARARGS, "SWEPH.\n"},
+	{"swe_close", (PyCFunction)astrology_swe_close, METH_VARARGS, "SWEPH.\n"},
+	{"swe_set_jpl_file", (PyCFunction)astrology_swe_set_jpl_file, METH_VARARGS, "SWEPH.\n"},
+	{"swe_get_planet_name", (PyCFunction)astrology_swe_get_planet_name, METH_VARARGS, "SWEPH.\n"},
+	{"swe_set_topo", (PyCFunction)astrology_swe_set_topo, METH_VARARGS, "SWEPH.\n"},
+	{"swe_set_sid_mode", (PyCFunction)astrology_swe_set_sid_mode, METH_VARARGS, "SWEPH.\n"},
+	{"swe_get_ayanamsa", (PyCFunction)astrology_swe_get_ayanamsa, METH_VARARGS, "SWEPH.\n"},
+	{"swe_get_ayanamsa_ut", (PyCFunction)astrology_swe_get_ayanamsa_ut, METH_VARARGS, "SWEPH.\n"},
+	{"swe_get_ayanamsa_name", (PyCFunction)astrology_swe_get_ayanamsa_name, METH_VARARGS, "SWEPH.\n"},
+	{"swe_heliacal_ut", (PyCFunction)astrology_swe_heliacal_ut, METH_VARARGS, "SWEPH.\n"},
+	{"swe_date_conversion", (PyCFunction)astrology_swe_date_conversion, METH_VARARGS, "SWEPH.\n"},
+	{"swe_julday", (PyCFunction)astrology_swe_julday, METH_VARARGS, "SWEPH.\n"},
+	{"swe_revjul", (PyCFunction)astrology_swe_revjul, METH_VARARGS, "SWEPH.\n"},
+	{"swe_utc_to_jd", (PyCFunction)astrology_swe_utc_to_jd, METH_VARARGS, "SWEPH.\n"},
+	{"swe_jdet_to_utc", (PyCFunction)astrology_swe_jdet_to_utc, METH_VARARGS, "SWEPH.\n"},
+	{"swe_jdut1_to_utc", (PyCFunction)astrology_swe_jdut1_to_utc, METH_VARARGS, "SWEPH.\n"},
+	{"swe_houses", (PyCFunction)astrology_swe_houses, METH_VARARGS, "SWEPH.\n"},
+	{"swe_houses_ex", (PyCFunction)astrology_swe_houses_ex, METH_VARARGS, "SWEPH.\n"},
+	{"swe_houses_armc", (PyCFunction)astrology_swe_houses_armc, METH_VARARGS, "SWEPH.\n"},
+	{"swe_house_pos", (PyCFunction)astrology_swe_house_pos, METH_VARARGS, "SWEPH.\n"},
+	{"swe_gauquelin_sector", (PyCFunction)astrology_swe_gauquelin_sector, METH_VARARGS, "SWEPH.\n"},
+	{"swe_sol_eclipse_where", (PyCFunction)astrology_swe_sol_eclipse_where, METH_VARARGS, "SWEPH.\n"},
+	{"swe_lun_occult_where", (PyCFunction)astrology_swe_lun_occult_where, METH_VARARGS, "SWEPH.\n"},
+	{"swe_sol_eclipse_how", (PyCFunction)astrology_swe_sol_eclipse_how, METH_VARARGS, "SWEPH.\n"},
+	{"swe_sol_eclipse_when_loc", (PyCFunction)astrology_swe_sol_eclipse_when_loc, METH_VARARGS, "SWEPH.\n"},
+	{"swe_lun_occult_when_loc", (PyCFunction)astrology_swe_lun_occult_when_loc, METH_VARARGS, "SWEPH.\n"},
+	{"swe_sol_eclipse_when_glob", (PyCFunction)astrology_swe_sol_eclipse_when_glob, METH_VARARGS, "SWEPH.\n"},
+	{"swe_lun_occult_when_glob", (PyCFunction)astrology_swe_lun_occult_when_glob, METH_VARARGS, "SWEPH.\n"},
+	{"swe_lun_eclipse_how", (PyCFunction)astrology_swe_lun_eclipse_how, METH_VARARGS, "SWEPH.\n"},
+	{"swe_lun_eclipse_when", (PyCFunction)astrology_swe_lun_eclipse_when, METH_VARARGS, "SWEPH.\n"},
+	{"swe_pheno", (PyCFunction)astrology_swe_pheno, METH_VARARGS, "SWEPH.\n"},
+	{"swe_pheno_ut", (PyCFunction)astrology_swe_pheno_ut, METH_VARARGS, "SWEPH.\n"},
+	{"swe_refrac", (PyCFunction)astrology_swe_refrac, METH_VARARGS, "SWEPH.\n"},
+	{"swe_refrac_extended", (PyCFunction)astrology_swe_refrac_extended, METH_VARARGS, "SWEPH.\n"},
+	{"swe_set_lapse_rate", (PyCFunction)astrology_swe_set_lapse_rate, METH_VARARGS, "SWEPH.\n"},
+	{"swe_azalt", (PyCFunction)astrology_swe_azalt, METH_VARARGS, "SWEPH.\n"},
+	{"swe_azalt_rev", (PyCFunction)astrology_swe_azalt_rev, METH_VARARGS, "SWEPH.\n"},
+	{"swe_rise_trans", (PyCFunction)astrology_swe_rise_trans, METH_VARARGS, "SWEPH.\n"},
+	{"swe_nod_aps", (PyCFunction)astrology_swe_nod_aps, METH_VARARGS, "SWEPH.\n"},
+	{"swe_nod_aps_ut", (PyCFunction)astrology_swe_nod_aps_ut, METH_VARARGS, "SWEPH.\n"},
+	{"swe_deltat", (PyCFunction)astrology_swe_deltat, METH_VARARGS, "SWEPH.\n"},
+	{"swe_time_equ", (PyCFunction)astrology_swe_time_equ, METH_VARARGS, "SWEPH.\n"},
+	{"swe_sidtime0", (PyCFunction)astrology_swe_sidtime0, METH_VARARGS, "SWEPH.\n"},
+	{"swe_sidtime", (PyCFunction)astrology_swe_sidtime, METH_VARARGS, "SWEPH.\n"},
+	{"swe_cotrans", (PyCFunction)astrology_swe_cotrans, METH_VARARGS, "SWEPH.\n"},
+	{"swe_cotrans_sp", (PyCFunction)astrology_swe_cotrans_sp, METH_VARARGS, "SWEPH.\n"},
 	{NULL, NULL, 0, NULL}
 };
 
+/*
 PyMODINIT_FUNC initsweastrology(void)
 {
 	Py_InitModule("sweastrology", SWEAstrologyMethods);
 }
+*/
+PyMODINIT_FUNC PyInit_sweastrology(void)
+{
+	PyObject *m;
+	static PyObject *SpamError;
+	
+	m = Py_InitModule(&SWEAstrologyMethods);
+	if (m == NULL){
+			return NULL;
+	}
 
+  SpamError = PyErr_NewException("spam.error", NULL, NULL);
+  Py_XINCREF(SpamError);
+    if (PyModule_AddObject(m, "error", SpamError) < 0) {
+        Py_XDECREF(SpamError);
+        Py_CLEAR(SpamError);
+        Py_DECREF(m);
+        return NULL;
+    }
 
-
+    return m;
+}
