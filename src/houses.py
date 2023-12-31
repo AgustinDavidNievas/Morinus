@@ -45,8 +45,16 @@ class Houses:
 			self.cusps = tuple(cusps)
 		##################
 
-		ascra, ascdecl, dist = astrology.cotrans(self.ascmc[Houses.ASC], 0.0, 1.0, -obl)
-		mcra, mcdecl, dist = astrology.cotrans(self.ascmc[Houses.MC], 0.0, 1.0, -obl)
+		res_asc = astrology.cotrans((self.ascmc[Houses.ASC], 0.0, 1.0), -obl)
+		ascra = res_asc[0]
+		ascdecl = res_asc[1]
+		dist = res_asc[2]
+
+		res_mc = astrology.cotrans((self.ascmc[Houses.MC], 0.0, 1.0), -obl)
+		mcra = res_mc[0]
+		mcdecl = res_mc[1]
+		dist = res_mc[2]
+
 		self.ascmc2 = ((self.ascmc[Houses.ASC], 0.0, ascra, ascdecl), (self.ascmc[Houses.MC], 0.0, mcra, mcdecl))
 
 		#zdAsc=90.0, zdMC=0.0
@@ -165,7 +173,14 @@ class Houses:
 
 		self.ascmc = (util.normalize(self.ascmc[Houses.ASC]+prof.offs), util.normalize(self.ascmc[Houses.MC]+prof.offs), self.ascmc[Houses.ARMC], self.ascmc[Houses.VERTEX], self.ascmc[Houses.EQUASC], self.ascmc[Houses.COASC], self.ascmc[Houses.COASC2], self.ascmc[Houses.POLARASC])
 
-		ascra, ascdecl, dist = astrology.cotrans(self.ascmc[Houses.ASC], 0.0, 1.0, -self.obl)
-		mcra, mcdecl, dist = astrology.cotrans(self.ascmc[Houses.MC], 0.0, 1.0, -self.obl)
+		res_asc = astrology.cotrans((self.ascmc[Houses.ASC], 0.0, 1.0), -self.obl)
+		ascra = res_asc[0]
+		ascdecl = res_asc[1]
+		dist = res_asc[2]
+
+		res_mc = astrology.cotrans((self.ascmc[Houses.MC], 0.0, 1.0), -self.obl)
+		mcra = res_mc[0]
+		mcdecl = res_mc[1]
+		dist = res_mc[2]
 
 		self.ascmc2 = ((self.ascmc[Houses.ASC], 0.0, ascra, ascdecl), (self.ascmc[Houses.MC], 0.0, mcra, mcdecl))
