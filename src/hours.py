@@ -25,10 +25,14 @@ class PlanetaryHours:
 
 		#lon, lat, height, atmpress, celsius
 		#in GMT, searches after jd!
-		ret, risetime, serr = astrology.rise_trans(jd, astrology.SE_SUN, '', astrology.SEFLG_SWIEPH, astrology.SE_CALC_RISE, lon, lat, float(altitude), 0.0, 10.0)
-#		self.logCalc(risetime)#
-		ret, settime, serr = astrology.rise_trans(jd, astrology.SE_SUN, '', astrology.SEFLG_SWIEPH, astrology.SE_CALC_SET, lon, lat, float(altitude), 0.0, 10.0)
-#		self.logCalc(settime)#
+
+		res = astrology.rise_trans(tjdut=jd, body=astrology.SE_SUN, flags=astrology.SEFLG_SWIEPH, rsmi=astrology.SE_CALC_RISE, geopos=[lon, lat, float(altitude)], atpress=0.0, attemp=10.0)
+		ret = res[0]
+		risetime = res[1][0]
+
+		res = astrology.rise_trans(tjdut=jd, body=astrology.SE_SUN, flags=astrology.SEFLG_SWIEPH, rsmi=astrology.SE_CALC_SET, geopos=[lon, lat, float(altitude)], atpress=0.0, attemp=10.0)
+		ret = res[0]
+		settime = res[1][0]
 
 		#swe_rise_trans calculates only forward!!
 		offs = lon*4.0/1440.0
@@ -37,9 +41,14 @@ class PlanetaryHours:
 		if risetime > settime: # daytime
 			self.daytime = True
 #			print 'daytime'#
-			ret, self.risetime, serr = astrology.rise_trans(jd-1.0, astrology.SE_SUN, '', astrology.SEFLG_SWIEPH, astrology.SE_CALC_RISE, lon, lat, float(altitude), 0.0, 10.0)
-#			self.logCalc(risetime)#
-			ret, self.settime, serr = astrology.rise_trans(jd, astrology.SE_SUN, '', astrology.SEFLG_SWIEPH, astrology.SE_CALC_SET, lon, lat, float(altitude), 0.0, 10.0)
+
+			res = astrology.rise_trans(tjdut=jd-1.0, body=astrology.SE_SUN, flags=astrology.SEFLG_SWIEPH, rsmi=astrology.SE_CALC_RISE, geopos=[lon, lat, float(altitude)], atpress=0.0, attemp=10.0)
+			ret = res[0]
+			self.risetime = res[1][0]
+
+			res = astrology.rise_trans(tjdut=jd, body=astrology.SE_SUN, flags=astrology.SEFLG_SWIEPH, rsmi=astrology.SE_CALC_SET, geopos=[lon, lat, float(altitude)], atpress=0.0, attemp=10.0)
+			ret = res[0]
+			self.settime = res[1][0]
 
 			#From GMT to Local
 			self.risetime += offs
@@ -54,10 +63,14 @@ class PlanetaryHours:
 		else:# nighttime
 			self.daytime = False
 #			print 'nightime'#
-			ret, self.risetime, serr = astrology.rise_trans(jd, astrology.SE_SUN, '', astrology.SEFLG_SWIEPH, astrology.SE_CALC_RISE, lon, lat, float(altitude), 0.0, 10.0)
-#			self.logCalc(risetime)#
-			ret, self.settime, serr = astrology.rise_trans(jd-1.0, astrology.SE_SUN, '', astrology.SEFLG_SWIEPH, astrology.SE_CALC_SET, lon, lat, float(altitude), 0.0, 10.0)
-#			self.logCalc(settime)#
+
+			res = astrology.rise_trans(tjdut=jd, body=astrology.SE_SUN, flags=astrology.SEFLG_SWIEPH, rsmi=astrology.SE_CALC_RISE, geopos=[lon, lat, float(altitude)], atpress=0.0, attemp=10.0)
+			ret = res[0]
+			self.risetime = res[1][0]
+
+			res = astrology.rise_trans(tjdut=jd-1.0, body=astrology.SE_SUN, flags=astrology.SEFLG_SWIEPH, rsmi=astrology.SE_CALC_SET, geopos=[lon, lat, float(altitude)], atpress=0.0, attemp=10.0)
+			ret = res[0]
+			self.settime = res[1][0]
 
 			#From GMT to Local
 			self.risetime += offs

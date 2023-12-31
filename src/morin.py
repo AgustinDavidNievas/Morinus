@@ -529,7 +529,9 @@ class MFrame(mrclasses.MrTopFrame):
 		time = chart.Time(fnd[0], fnd[1], fnd[2], h, m, s, bc, chart.Time.GREGORIAN, chart.Time.GREENWICH, True, 0, 0, False, place)
 		#Calc obliquity
 		d = astrology.deltat(time.jd)
-		rflag, obl, serr = astrology.calc(time.jd+d, astrology.SE_ECL_NUT, 0)
+		res = astrology.calc(time.jd+d, astrology.SE_ECL_NUT, 0)
+		rflag = res[1]
+		obl = res[0]
 
 		if arplac[2]:
 			#calc GMTMidnight:

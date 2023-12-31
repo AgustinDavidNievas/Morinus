@@ -25,7 +25,11 @@ class Houses:
 
 		self.obl = obl
 
-		res, self.cusps, self.ascmc = astrology.houses_ex(tjd_ut, flag, geolat, geolon, ord(self.hsys))
+		#res, self.cusps, self.ascmc = astrology.houses_ex(tjd_ut, flag, geolat, geolon, ord(self.hsys))
+		res = astrology.houses_ex(tjdut=tjd_ut, flags=flag, lat=geolat, lon=geolon, hsys=str.encode(self.hsys))
+		self.cusp = res[0]
+		self.ascmc = res[1]
+		#TODO self.ascmc aca retorna 8 items en lugar de 10 como antes, pero aparentemente esos ultimos dos son 0.0, asi que si algo falla, agregar dos ceros float en la tupla de esta respuesta...
 
 		##################
 		if ayanopt != 0 and self.hsys == 'W':
@@ -41,7 +45,7 @@ class Houses:
 			self.cusps = tuple(cusps)
 		##################
 
-		ascra, ascdecl, dist = astrology.cotrans(self.ascmc[Houses.ASC], 0.0, 1.0, -obl)				
+		ascra, ascdecl, dist = astrology.cotrans(self.ascmc[Houses.ASC], 0.0, 1.0, -obl)
 		mcra, mcdecl, dist = astrology.cotrans(self.ascmc[Houses.MC], 0.0, 1.0, -obl)
 		self.ascmc2 = ((self.ascmc[Houses.ASC], 0.0, ascra, ascdecl), (self.ascmc[Houses.MC], 0.0, mcra, mcdecl))
 
@@ -54,7 +58,7 @@ class Houses:
 		self.cuspstmp = [[0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0]]
 		for i in range(Houses.HOUSE_NUM):
 			self.cuspstmp[i][0], self.cuspstmp[i][1], dist = astrology.cotrans(self.cusps[i+1], 0.0, dist, -obl)
-			
+
 		self.cusps2 = ((self.cuspstmp[0][0], self.cuspstmp[0][1]), (self.cuspstmp[1][0], self.cuspstmp[1][1]), (self.cuspstmp[2][0], self.cuspstmp[2][1]), (self.cuspstmp[3][0], self.cuspstmp[3][1]), (self.cuspstmp[4][0], self.cuspstmp[4][1]), (self.cuspstmp[5][0], self.cuspstmp[5][1]), (self.cuspstmp[6][0], self.cuspstmp[6][1]), (self.cuspstmp[7][0], self.cuspstmp[7][1]), (self.cuspstmp[8][0], self.cuspstmp[8][1]), (self.cuspstmp[9][0], self.cuspstmp[9][1]), (self.cuspstmp[10][0], self.cuspstmp[10][1]), (self.cuspstmp[11][0], self.cuspstmp[11][1]))
 
 
@@ -112,7 +116,7 @@ class Houses:
 
 		if useorbs:
 			orb1 = opts.orbiscuspH
-			orb2 = opts.orbiscuspAscMC		
+			orb2 = opts.orbiscuspAscMC
 
 		cusp1 = util.normalize(self.cusps[12]-orb1)
 		cusp2 = util.normalize(self.cusps[1]-orb2)
@@ -124,7 +128,7 @@ class Houses:
 			else:
 				cusp2 += 360.0
 				pos += 360.0
-					
+
 		if cusp1 < pos and cusp2 > pos:
 			if opts.traditionalaspects:
 				pos = lon
@@ -165,11 +169,3 @@ class Houses:
 		mcra, mcdecl, dist = astrology.cotrans(self.ascmc[Houses.MC], 0.0, 1.0, -self.obl)
 
 		self.ascmc2 = ((self.ascmc[Houses.ASC], 0.0, ascra, ascdecl), (self.ascmc[Houses.MC], 0.0, mcra, mcdecl))
-
-
-
-
-
-
-
-

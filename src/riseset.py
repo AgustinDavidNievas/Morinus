@@ -42,28 +42,50 @@ class RiseSet:
 			ar = []
 
 			#Rise
-			ret, JDRise, serr = astrology.rise_trans(self.jd, i, "", astrology.SEFLG_SWIEPH, RiseSet.Angles[RiseSet.RISE], self.lon, self.lat, self.alt, 0.0, 10.0)
-			tyear, tmonth, tday, ttim = astrology.revjul(JDRise, self.calflag)
-			if oyear != tyear or omonth != tmonth or oday != tday:
-				ret, JDRise, serr = astrology.rise_trans(self.jd-1.0, i, "", astrology.SEFLG_SWIEPH, RiseSet.Angles[RiseSet.RISE], self.lon, self.lat, self.alt, 0.0, 10.0)
+			res = astrology.rise_trans(tjdut=self.jd, body=i, flags=astrology.SEFLG_SWIEPH, rsmi=RiseSet.Angles[RiseSet.RISE], geopos=[self.lon, self.lat, self.alt], atpress=0.0, attemp=10.0)
+			ret = res[0]
+			JDRise = res[1][0]
 
+			tyear, tmonth, tday, ttim = astrology.revjul(JDRise, self.calflag)
+			from IPython import embed#TODO borrar
+			embed()
+
+			if oyear != tyear or omonth != tmonth or oday != tday:
+				res = astrology.rise_trans(tjdut=self.jd-1.0, body=i, flags=astrology.SEFLG_SWIEPH, rsmi=RiseSet.Angles[RiseSet.RISE], geopos=[self.lon, self.lat, self.alt], atpress=0.0, attemp=10.0)
+				ret = res[0]
+				JDRise = res[1][0]
 			#MC
-			ret, JDMC, serr = astrology.rise_trans(self.jd, i, "", astrology.SEFLG_SWIEPH, RiseSet.Angles[RiseSet.MC], self.lon, self.lat, self.alt, 0.0, 10.0)
+			res = astrology.rise_trans(tjdut=self.jd, body=i, flags=astrology.SEFLG_SWIEPH, rsmi=RiseSet.Angles[RiseSet.MC], geopos=[self.lon, self.lat, self.alt], atpress=0.0, attemp=10.0)
+			ret = res[0]
+			JDMC = res[1][0]
+
 			tyear, tmonth, tday, ttim = astrology.revjul(JDMC, self.calflag)
 			if oyear != tyear or omonth != tmonth or oday != tday:
-				ret, JDMC, serr = astrology.rise_trans(self.jd-1.0, i, "", astrology.SEFLG_SWIEPH, RiseSet.Angles[RiseSet.MC], self.lon, self.lat, self.alt, 0.0, 10.0)
+				res = astrology.rise_trans(tjdut=self.jd-1.0, body=i, flags=astrology.SEFLG_SWIEPH, rsmi=RiseSet.Angles[RiseSet.MC], geopos=[self.lon, self.lat, self.alt], atpress=0.0, attemp=10.0)
+				ret = res[0]
+				JDMC = res[1][0]
 
 			#Set
-			ret, JDSet, serr = astrology.rise_trans(self.jd, i, "", astrology.SEFLG_SWIEPH, RiseSet.Angles[RiseSet.SET], self.lon, self.lat, self.alt, 0.0, 10.0)
+			res = astrology.rise_trans(tjdut=self.jd, body=i, flags=astrology.SEFLG_SWIEPH, rsmi=RiseSet.Angles[RiseSet.SET], geopos=[self.lon, self.lat, self.alt], atpress=0.0, attemp=10.0)
+			ret = res[0]
+			JDSet = res[1][0]
+
 			tyear, tmonth, tday, ttim = astrology.revjul(JDSet, self.calflag)
 			if oyear != tyear or omonth != tmonth or oday != tday:
-				ret, JDSet, serr = astrology.rise_trans(self.jd-1.0, i, "", astrology.SEFLG_SWIEPH, RiseSet.Angles[RiseSet.SET], self.lon, self.lat, self.alt, 0.0, 10.0)
+				res = astrology.rise_trans(tjdut=self.jd-1.0, body=i, flags=astrology.SEFLG_SWIEPH, rsmi=RiseSet.Angles[RiseSet.SET], geopos=[self.lon, self.lat, self.alt], atpress=0.0, attemp=10.0)
+				ret = res[0]
+				JDSet = res[1][0]
 
 			#IC
-			ret, JDIC, serr = astrology.rise_trans(self.jd, i, "", astrology.SEFLG_SWIEPH, RiseSet.Angles[RiseSet.IC], self.lon, self.lat, self.alt, 0.0, 10.0)
+			res = astrology.rise_trans(tjdut=self.jd, body=i, flags=astrology.SEFLG_SWIEPH, rsmi=RiseSet.Angles[RiseSet.IC], geopos=[self.lon, self.lat, self.alt], atpress=0.0, attemp=10.0)
+			ret = res[0]
+			JDIC = res[1][0]
+
 			tyear, tmonth, tday, ttim = astrology.revjul(JDIC, self.calflag)
 			if oyear != tyear or omonth != tmonth or oday != tday:
-				ret, JDIC, serr = astrology.rise_trans(self.jd-1.0, i, "", astrology.SEFLG_SWIEPH, RiseSet.Angles[RiseSet.IC], self.lon, self.lat, self.alt, 0.0, 10.0)
+				res = astrology.rise_trans(tjdut=self.jd-1.0, body=i, flags=astrology.SEFLG_SWIEPH, rsmi=RiseSet.Angles[RiseSet.IC], geopos=[self.lon, self.lat, self.alt], atpress=0.0, attemp=10.0)
+				ret = res[0]
+				JDIC = res[1][0]
 
 			#From GMT to Local
 #			JDRise += self.offs

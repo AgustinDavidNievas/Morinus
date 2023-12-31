@@ -276,7 +276,10 @@ class Chart:
 		self.nolat = nolat
 
 		d = astrology.deltat(time.jd)
-		rflag, self.obl, serr = astrology.calc(time.jd+d, astrology.SE_ECL_NUT, 0)
+		
+		res = astrology.calc(time.jd+d, astrology.SE_ECL_NUT, 0)
+		rflag = res[1]
+		self.obl = res[0]
 		#true obliquity of the ecliptic
 		#mean
 		#nutation in long
