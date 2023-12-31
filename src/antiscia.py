@@ -53,33 +53,62 @@ class Antiscia:
 			plcants.append((cant, lat))
 
 #			raant, declant = util.getRaDecl(ant, lat, self.obl)
-			raant, declant, dist = astrology.cotrans(ant, lat, 1.0, -obl)
+			r = astrology.cotrans((ant, lat, 1.0), -obl)
+			raant = r[0]
+			declant = r[1]
+			dist = r[2]
+
 			self.plantiscia.append(Antiscion(Antiscion.ANTISCION, i, ant, lat, raant, declant))
 
 		for i in range(planets.Planets.PLANETS_NUM):
 #			raant, declant = util.getRaDecl(plcants[i][0], plcants[i][1], self.obl)
-			raant, declant, dist = astrology.cotrans(plcants[i][0], plcants[i][1], 1.0, -obl)
+			r = astrology.cotrans((plcants[i][0], plcants[i][1], 1.0), -obl)
+			raant = r[0]
+			declant = r[1]
+			dist = r[2]
+
 			self.plcontraant.append(Antiscion(Antiscion.CONTRAANT, i, plcants[i][0], plcants[i][1], raant, declant))
 
 		ant, cant = self.calc(lof[fortune.Fortune.LON])
 #		lat = lof[fortune.Fortune.LAT] #=0.0
-		raant, declant, dist = astrology.cotrans(ant, 0.0, 1.0, -self.obl)
+		r = astrology.cotrans((ant, 0.0, 1.0), -self.obl)
+		raant = r[0]
+		declant = r[1]
+		dist = r[2]
+
 		self.lofant = Antiscion(Antiscion.ANTISCION, Antiscion.LOF, ant, 0.0, raant, declant)
-		raant, declant, dist = astrology.cotrans(cant, 0.0, 1.0, -self.obl)
+
+		r = astrology.cotrans((cant, 0.0, 1.0), -self.obl)
+		raant = r[0]
+		declant = r[1]
+		dist = r[2]
+
 		self.lofcontraant = Antiscion(Antiscion.CONTRAANT, Antiscion.LOF, cant, 0.0, raant, declant)
 
 		antasc, cantasc = self.calc(ascmc[houses.Houses.ASC])
-		raantasc, declantasc, dist = astrology.cotrans(antasc, 0.0, 1.0, -self.obl)
+		r = astrology.cotrans((antasc, 0.0, 1.0), -self.obl)
+		raantasc = r[0]
+		declantasc = r[1]
+		dist = r[2]
 		self.ascmcant.append(Antiscion(Antiscion.ANTISCION, Antiscion.ASC, antasc, 0.0, raantasc, declantasc))
 
 		antmc, cantmc = self.calc(ascmc[houses.Houses.MC])
-		raantmc, declantmc, dist = astrology.cotrans(antmc, 0.0, 1.0, -self.obl)
+		r = astrology.cotrans((antmc, 0.0, 1.0), -self.obl)
+		raantmc = r[0]
+		declantmc = r[1]
+		dist = r[2]
 		self.ascmcant.append(Antiscion(Antiscion.ANTISCION, Antiscion.MC, antmc, 0.0, raantmc, declantmc))
 
-		raantasc, declantasc, dist = astrology.cotrans(cantasc, 0.0, 1.0, -self.obl)
+		r = astrology.cotrans((cantasc, 0.0, 1.0), -self.obl)
+		raantasc = r[0]
+		declantasc = r[1]
+		dist = r[2]
 		self.ascmccontraant.append(Antiscion(Antiscion.CONTRAANT, Antiscion.ASC, cantasc, 0.0, raantasc, declantasc))
 
-		raantmc, declantmc, dist = astrology.cotrans(cantmc, 0.0, 1.0, -self.obl)
+		r = astrology.cotrans((cantmc, 0.0, 1.0), -self.obl)
+		raantmc = r[0]
+		declantmc = r[1]
+		dist = r[2]
 		self.ascmccontraant.append(Antiscion(Antiscion.CONTRAANT, Antiscion.MC, cantmc, 0.0, raantmc, declantmc))
 
 #		self.printants()

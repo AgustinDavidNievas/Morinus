@@ -65,7 +65,10 @@ class Houses:
 
 		self.cuspstmp = [[0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0]]
 		for i in range(Houses.HOUSE_NUM):
-			self.cuspstmp[i][0], self.cuspstmp[i][1], dist = astrology.cotrans(self.cusps[i+1], 0.0, dist, -obl)
+			r = astrology.cotrans((self.cusps[i+1], 0.0, dist), -obl)#TODO error aca, dice que Houses no tiene un atributo cusps ver que onda arriba
+			self.cuspstmp[i][0] = r[0]
+			self.cuspstmp[i][1] = r[1]
+			dist = r[2]
 
 		self.cusps2 = ((self.cuspstmp[0][0], self.cuspstmp[0][1]), (self.cuspstmp[1][0], self.cuspstmp[1][1]), (self.cuspstmp[2][0], self.cuspstmp[2][1]), (self.cuspstmp[3][0], self.cuspstmp[3][1]), (self.cuspstmp[4][0], self.cuspstmp[4][1]), (self.cuspstmp[5][0], self.cuspstmp[5][1]), (self.cuspstmp[6][0], self.cuspstmp[6][1]), (self.cuspstmp[7][0], self.cuspstmp[7][1]), (self.cuspstmp[8][0], self.cuspstmp[8][1]), (self.cuspstmp[9][0], self.cuspstmp[9][1]), (self.cuspstmp[10][0], self.cuspstmp[10][1]), (self.cuspstmp[11][0], self.cuspstmp[11][1]))
 
