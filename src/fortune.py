@@ -18,7 +18,7 @@ class Fortune:
 	def __init__(self, typ, ascmc2, raequasc, pls, obl, placelat, abovehorizon):
 		self.fortune = [0.0, 0.0, 0.0, 0.0]
 
-		self.abovehorizon = abovehorizon	
+		self.abovehorizon = abovehorizon
 
 		if typ == chart.Chart.LFMOONSUN:
 			diff = pls.planets[astrology.SE_MOON].data[planets.Planet.LONG]-pls.planets[astrology.SE_SUN].data[planets.Planet.LONG]
@@ -52,7 +52,10 @@ class Fortune:
 			if self.fortune[Fortune.LON] > 360.0:
 				self.fortune[Fortune.LON] -= 360.0
 
-		self.fortune[Fortune.RA], self.fortune[Fortune.DECL], distprom = astrology.cotrans(self.fortune[Fortune.LON], 0.0, 1.0, -obl)
+		r = astrology.cotrans((self.fortune[Fortune.LON], 0.0, 1.0), -obl)
+		self.fortune[Fortune.RA] = r[0]
+		self.fortune[Fortune.DECL] = r[1]
+		distprom = r[2]
 
 		self.speculum = placspec.PlacidianSpeculum(placelat, ascmc2, self.fortune[Fortune.LON], self.fortune[Fortune.LAT], self.fortune[Fortune.RA], self.fortune[Fortune.DECL])
 		self.speculum2 = regiospec.RegiomontanianSpeculum(placelat, ascmc2, raequasc, self.fortune[Fortune.LON], self.fortune[Fortune.LAT], self.fortune[Fortune.RA], self.fortune[Fortune.DECL])
@@ -126,7 +129,7 @@ class Fortune:
 
 
 	def iterate(self, fort, rao, rdo, robl, rpoh, lon):
-		
+
 		okGa = okGd = True
 
 		pmp = fort.speculum.speculum[placspec.PlacidianSpeculum.PMP]
@@ -191,7 +194,10 @@ class Fortune:
 				longSZ = Fd+360.0
 
 		latSZ = math.degrees(math.asin(math.sin(rdeclN)*math.cos(roblN)-math.cos(rdeclN)*math.sin(rksi)*math.sin(roblN)))
-		raSZ, declSZ, distSZ = astrology.cotrans(longSZ, latSZ, 1.0, -oblN)
+		r = astrology.cotrans((longSZ, latSZ, 1.0), -oblN)
+		raSZ = r[0]
+		declSZ = r[1]
+		distSZ = r[2]
 
 		self.fortune = [longSZ, latSZ, raSZ, declSZ]
 
@@ -268,7 +274,7 @@ class Fortune:
 
 
 	def iterateRegio(self, fort, rwa, rwd, robl, rpoh, lon):
-		
+
 		okGa = okGd = True
 
 		pmp = fort.speculum.speculum[placspec.PlacidianSpeculum.PMP]
@@ -300,8 +306,3 @@ class Fortune:
 				okGd = False
 
 		return okGa, okGd, lon
-
-
-
-
-

@@ -50,7 +50,7 @@ class RegiomontanPD(regiocampbasepd.RegioCampBasePD):
 						wsig += aspect
 						wsig = util.normalize(wsig)
 						med = math.fabs(self.ramc-wsig)
-	
+
 						if med > 180.0:
 							med = 360.0-med
 						icd = math.fabs(self.raic-wsig)
@@ -238,7 +238,10 @@ class RegiomontanPD(regiocampbasepd.RegioCampBasePD):
 		raprom = sm.planet.speculums[primdirs.PrimDirs.REGIOSPECULUM][planets.Planet.RA]
 		declprom = sm.planet.speculums[primdirs.PrimDirs.REGIOSPECULUM][planets.Planet.DECL]
 		if not mundane and self.options.subzodiacal != primdirs.PrimDirs.SZPROMISSOR and self.options.subzodiacal != primdirs.PrimDirs.SZBOTH:
-			raprom, declprom, distprom = astrology.cotrans(lonprom, 0.0, 1.0, -self.chart.obl[0])
+			r = astrology.cotrans((lonprom, 0.0, 1.0), -self.chart.obl[0])
+			raprom = r[0]
+			declprom = r[1]
+			distprom = r[2]
 
 		plsig = self.chart.planets.planets[sig]
 
@@ -346,9 +349,15 @@ class RegiomontanPD(regiocampbasepd.RegioCampBasePD):
 
 				#calc real(wahre)ra
 #				raprom, declprom = util.getRaDecl(lonprom, latprom, self.chart.obl[0])
-				raprom, declprom, dist = astrology.cotrans(lonprom, latprom, 1.0, -self.chart.obl[0])
+				r = astrology.cotrans((lonprom, latprom, 1.0), -self.chart.obl[0])
+				raprom = r[0]
+				declprom = r[1]
+				dist = r[2]
 			else:
-				raprom, declprom, distprom = astrology.cotrans(lonprom, 0.0, 1.0, -self.chart.obl[0])
+				r = astrology.cotrans((lonprom, 0.0, 1.0), -self.chart.obl[0])
+				raprom = r[0]
+				declprom = r[1]
+				distprom = r[2]
 
 		ID = 0
 		W = 1
@@ -378,11 +387,3 @@ class RegiomontanPD(regiocampbasepd.RegioCampBasePD):
 		wprom = util.normalize(wprom)
 
 		return True, wprom-hcps[h][W]
-
-
-
-
-
-
-
-

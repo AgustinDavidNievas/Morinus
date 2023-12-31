@@ -11,7 +11,7 @@ class FixStars:
 	DECL = 5
 
 	def __init__(self, tjd_ut, flag, names, obl):
-		
+
 		self.data = []
 
 		i = 0
@@ -31,7 +31,10 @@ class FixStars:
 			self.data[i][FixStars.NOMNAME] = nomnam
 			self.data[i][FixStars.LON] = dat[0]
 			self.data[i][FixStars.LAT] = dat[1]
-			ra, decl, dist = astrology.cotrans(dat[0], dat[1], 1.0, -obl)
+			r = astrology.cotrans((dat[0], dat[1], 1.0), -obl)
+			ra = r[0]#TODO abajo usa los indices, agregar ceros o modificar abajo en sort?
+			decl = r[1]
+			dist = r[2]
 			self.data[i][FixStars.RA] = ra
 			self.data[i][FixStars.DECL] = decl
 
@@ -43,7 +46,7 @@ class FixStars:
 	def sort(self):
 		num = len(self.data)
 		self.mixed = []
-			
+
 		for i in range(num):
 			self.mixed.append(i)
 
@@ -56,8 +59,3 @@ class FixStars:
 					tmp = self.mixed[j]
 					self.mixed[j] = self.mixed[j+1]
 					self.mixed[j+1] = tmp
-
-
-
-
-

@@ -6,6 +6,15 @@ import util
 
 class Houses:
 	"""Calculates the cusps of the Houses"""
+	hsys = None
+	obl = None
+	cusps = None
+	ascmc = None
+	ascmc2 = None
+	regioMPAsc = None
+	regioMPMC = None
+	cuspstmp = None
+	cusps2 = None
 
 	HOUSE_NUM = 12
 	hsystems = ('P', 'K', 'R', 'C', 'E', 'W', 'X', 'M', 'H', 'T', 'B', 'O')
@@ -27,7 +36,7 @@ class Houses:
 
 		#res, self.cusps, self.ascmc = astrology.houses_ex(tjd_ut, flag, geolat, geolon, ord(self.hsys))
 		res = astrology.houses_ex(tjdut=tjd_ut, flags=flag, lat=geolat, lon=geolon, hsys=str.encode(self.hsys))
-		self.cusp = res[0]
+		self.cusps = res[0]
 		self.ascmc = res[1]
 		#TODO self.ascmc aca retorna 8 items en lugar de 10 como antes, pero aparentemente esos ultimos dos son 0.0, asi que si algo falla, agregar dos ceros float en la tupla de esta respuesta...
 
@@ -38,7 +47,7 @@ class Houses:
 			sign = int(util.normalize(self.ascmc[Houses.ASC]-ayan))/30
 			cusps.append(sign*30.0)
 			for i in range(2, Houses.HOUSE_NUM+1):
-				hc = util.normalize(cusps[i-1]+30.0)
+				hc = util.normalize(cusps[i-1]+30.0)#TODO ver que onda con el i-1, ahora cusps y ascmc vienen con distinta cantidad de elementos, anteriormente eran ceros
 				cusps.append(hc)
 
 			#to tuple (which is a read-only list)
@@ -65,7 +74,7 @@ class Houses:
 
 		self.cuspstmp = [[0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0]]
 		for i in range(Houses.HOUSE_NUM):
-			r = astrology.cotrans((self.cusps[i+1], 0.0, dist), -obl)#TODO error aca, dice que Houses no tiene un atributo cusps ver que onda arriba
+			r = astrology.cotrans((self.cusps[i], 0.0, dist), -obl)
 			self.cuspstmp[i][0] = r[0]
 			self.cuspstmp[i][1] = r[1]
 			dist = r[2]
@@ -88,7 +97,7 @@ class Houses:
 					orb2 = opts.orbiscuspAscMC
 
 			cusp1 = util.normalize(self.cusps[i]-orb1)
-			cusp2 = util.normalize(self.cusps[i+1]-orb2)
+			cusp2 = util.normalize(self.cusps[i+1]-orb2)#TODO sacar el +1?
 
 			pos = lon
 			if cusp1 > 240.0 and cusp2 < 120.0: #Pisces-Aries check
@@ -102,7 +111,7 @@ class Houses:
 				if opts.traditionalaspects:
 					pos = lon
 					cusp1 = self.cusps[i]
-					cusp2 = self.cusps[i+1]
+					cusp2 = self.cusps[i+1]#TODO sacar el +1?
 					if cusp1 > 240.0 and cusp1 < 120.0: #Pisces-Aries check
 						if pos > 240.0:#planet is in the Pisces-part
 							cusp2 += 360.0
@@ -144,7 +153,7 @@ class Houses:
 			if opts.traditionalaspects:
 				pos = lon
 				cusp1 = self.cusps[i]
-				cusp2 = self.cusps[i+1]
+				cusp2 = self.cusps[i+1]#TODO sacar el +1?
 				if cusp1 > 240.0 and cusp1 < 120.0: #Pisces-Aries check
 					if pos > 240.0:#planet is in the Pisces-part
 						cusp2 += 360.0

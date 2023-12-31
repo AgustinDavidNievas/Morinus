@@ -276,7 +276,7 @@ class Chart:
 		self.nolat = nolat
 
 		d = astrology.deltat(time.jd)
-		
+
 		res = astrology.calc(time.jd+d, astrology.SE_ECL_NUT, 0)
 		rflag = res[1]
 		self.obl = res[0]
@@ -305,7 +305,10 @@ class Chart:
 
 		self.houses = houses.Houses(self.time.jd, hflag, self.place.lat, self.place.lon, self.options.hsys, self.obl[0], self.options.ayanamsha, self.ayanamsha)
 
-		self.raequasc, declequasc, dist = astrology.cotrans(self.houses.ascmc[houses.Houses.EQUASC], 0.0, 1.0, -self.obl[0])
+		r = astrology.cotrans((self.houses.ascmc[houses.Houses.EQUASC], 0.0, 1.0), -self.obl[0])
+		self.raequasc = r[0]
+		declequasc = r[1]
+		dist = r[2]
 		self.planets = planets.Planets(self.time.jd, self.options.meannode, pflag, self.place.lat, self.houses.ascmc2, self.raequasc, self.nolat, self.obl[0])
 
 		self.abovehorizonwithorb = self.isAboveHorizonWithOrb()

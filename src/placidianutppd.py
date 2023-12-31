@@ -38,7 +38,10 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 			declprom = plprom.speculums[primdirs.PrimDirs.PLACSPECULUM][planets.Planet.DECL]
 
 			if self.options.subzodiacal != primdirs.PrimDirs.SZPROMISSOR and self.options.subzodiacal != primdirs.PrimDirs.SZBOTH:
-				raprom, declprom, dist = astrology.cotrans(lonprom, 0.0, 1.0, -self.chart.obl[0])
+				r = astrology.cotrans((lonprom, 0.0, 1.0), -self.chart.obl[0])
+				raprom = r[0]
+				declprom = r[1]
+				dist = r[2]
 
 			self.toPlanets(mundane, p, raprom, declprom)
 
@@ -52,7 +55,10 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 
 		if not mundane and self.options.subzodiacal != primdirs.PrimDirs.SZPROMISSOR and self.options.subzodiacal != primdirs.PrimDirs.SZBOTH:
 			#recalc zodiacals
-			raprom, declprom, dist = astrology.cotrans(lonprom, 0.0, 1.0, -self.chart.obl[0])
+			r = astrology.cotrans((lonprom, 0.0, 1.0), -self.chart.obl[0])
+			raprom = r[0]
+			declprom = r[1]
+			dist = r[2]
 
 		self.toPlanets(mundane, primdirs.PrimDir.CUSTOMERPD, raprom, declprom)
 
@@ -73,7 +79,10 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 
 			if not mundane and self.options.subzodiacal != primdirs.PrimDirs.SZPROMISSOR and self.options.subzodiacal != primdirs.PrimDirs.SZBOTH:
 				#recalc zodiacals
-				raprom, declprom, dist = astrology.cotrans(plprom.data[planets.Planet.LONG], 0.0, 1.0, -self.chart.obl[0])
+				r = astrology.cotrans((plprom.data[planets.Planet.LONG], 0.0, 1.0), -self.chart.obl[0])
+				raprom = r[0]
+				declprom = r[1]
+				dist = r[2]
 
 			self.toCustomer2(mundane, p, primdirs.PrimDir.NONE, raprom, declprom, chart.Chart.CONJUNCTIO, 0.0, True)
 
@@ -138,7 +147,10 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 
 			if not mundane and self.options.subzodiacal != primdirs.PrimDirs.SZPROMISSOR and self.options.subzodiacal != primdirs.PrimDirs.SZBOTH:
 				#recalc zodiacals
-				raprom, declprom, dist = astrology.cotrans(lonprom, 0.0, 1.0, -self.chart.obl[0])
+				r = astrology.cotrans((lonprom, 0.0, 1.0), -self.chart.obl[0])
+				raprom = r[0]
+				declprom = r[1]
+				dist = r[2]
 
 			self.toPlanets(mundane, p+offs, raprom, declprom)
 
@@ -204,7 +216,10 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 
 			if not mundane and self.options.subzodiacal != primdirs.PrimDirs.SZPROMISSOR and self.options.subzodiacal != primdirs.PrimDirs.SZBOTH:
 				#recalc zodiacals
-				raprom, declprom, dist = astrology.cotrans(lonprom, 0.0, 1.0, -self.chart.obl[0])
+				r = astrology.cotrans((lonprom, 0.0, 1.0), -self.chart.obl[0])
+				raprom = r[0]
+				declprom = r[1]
+				dist = r[2]
 
 			self.toCustomer2(mundane, p+offs, primdirs.PrimDir.NONE, raprom, declprom, chart.Chart.CONJUNCTIO)
 
@@ -251,9 +266,15 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 						else:
 							latprom = pllat
 
-						raprom, declprom, dist = astrology.cotrans(lonprom, latprom, 1.0, -self.chart.obl[0])
+						r = astrology.cotrans((lonprom, latprom, 1.0), -self.chart.obl[0])
+						raprom = r[0]
+						declprom = r[1]
+						dist = r[2]
 					else:
-						raprom, declprom, dist = astrology.cotrans(lonprom, 0.0, 1.0, -self.chart.obl[0])
+						r = astrology.cotrans((lonprom, 0.0, 1.0), -self.chart.obl[0])
+						raprom = r[0]
+						declprom = r[1]
+						dist = r[2]
 
 					for s in range(len(self.chart.planets.planets)):
 						if not self.options.sigplanets[s]:
@@ -308,9 +329,15 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 						else:
 							latprom = pllat
 
-						raprom, declprom, dist = astrology.cotrans(lonprom, latprom, 1.0, -self.chart.obl[0])
+						r = astrology.cotrans((lonprom, latprom, 1.0), -self.chart.obl[0])
+						raprom = r[0]
+						declprom = r[1]
+						dist = r[2]
 					else:
-						raprom, declprom, dist = astrology.cotrans(lonprom, 0.0, 1.0, -self.chart.obl[0])
+						r = astrology.cotrans((lonprom, 0.0, 1.0), -self.chart.obl[0])
+						raprom = r[0]
+						declprom = r[1]
+						dist = r[2]
 
 					self.toCustomer2(False, p, primdirs.PrimDir.NONE, raprom, declprom, promasp, aspect, True)
 
@@ -363,9 +390,15 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 						else:
 							latprom = pllat
 
-						raprom, declprom, dist = astrology.cotrans(lonprom, latprom, 1.0, -self.chart.obl[0])
+						r = astrology.cotrans((lonprom, latprom, 1.0), -self.chart.obl[0])
+						raprom = r[0]
+						declprom = r[1]
+						dist = r[2]
 					else:
-						raprom, declprom, dist = astrology.cotrans(lonprom, 0.0, 1.0, -self.chart.obl[0])
+						r = astrology.cotrans((lonprom, 0.0, 1.0), -self.chart.obl[0])
+						raprom = r[0]
+						declprom = r[1]
+						dist = r[2]
 
 					for s in range(len(self.chart.planets.planets)):
 						if not self.options.sigplanets[s]:
@@ -426,9 +459,15 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 						else:
 							latprom = pllat
 
-						raprom, declprom, dist = astrology.cotrans(lonprom, latprom, 1.0, -self.chart.obl[0])
+						r = astrology.cotrans((lonprom, latprom, 1.0), -self.chart.obl[0])
+						raprom = r[0]
+						declprom = r[1]
+						dist = r[2]
 					else:
-						raprom, declprom, dist = astrology.cotrans(lonprom, 0.0, 1.0, -self.chart.obl[0])
+						r = astrology.cotrans((lonprom, 0.0, 1.0), -self.chart.obl[0])
+						raprom = r[0]
+						declprom = r[1]
+						dist = r[2]
 
 					self.toCustomer2(False, p+offs, primdirs.PrimDir.NONE, raprom, declprom, promasp, aspect, True)
 
@@ -475,7 +514,10 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 					aspect *= -1
 
 				lon = util.normalize(lonprom+aspect)
-				raprom, declprom, dist = astrology.cotrans(lon, 0.0, 1.0, -self.chart.obl[0])
+				r = astrology.cotrans((lon, 0.0, 1.0), -self.chart.obl[0])
+				raprom = r[0]
+				declprom = r[1]
+				dist = r[2]
 
 				for s in range(len(self.chart.planets.planets)):
 					if not self.options.sigplanets[s]:
@@ -492,14 +534,20 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 		'''Calculates zodiacal Asc to Planets and their aspects'''
 
 		lonprom = self.chart.houses.ascmc2[houses.Houses.ASC][houses.Houses.LON]
-		raprom, declprom, dist = astrology.cotrans(lonprom, 0.0, 1.0, -self.chart.obl[0])
+		r = astrology.cotrans((lonprom, 0.0, 1.0), -self.chart.obl[0])
+		raprom = r[0]
+		declprom = r[1]
+		dist = r[2]
 
 		self.toPlanets(False, primdirs.PrimDir.ASC, raprom, declprom)
 
 
 	def calcZodAsc2ParallelPlanets(self):
 		lonprom = self.chart.houses.ascmc2[houses.Houses.ASC][houses.Houses.LON]
-		raprom, declprom, dist = astrology.cotrans(lonprom, 0.0, 1.0, -self.chart.obl[0])
+		r = astrology.cotrans((lonprom, 0.0, 1.0), -self.chart.obl[0])
+		raprom = r[0]
+		declprom = r[1]
+		dist = r[2]
 
 		self.toZodParallels(primdirs.PrimDir.ASC, raprom, declprom)
 
@@ -508,14 +556,20 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 		'''Calculates zodiacal MC to Planets and their aspects'''
 
 		lonprom = self.chart.houses.ascmc2[houses.Houses.MC][houses.Houses.LON]
-		raprom, declprom, dist = astrology.cotrans(lonprom, 0.0, 1.0, -self.chart.obl[0])
+		r = astrology.cotrans((lonprom, 0.0, 1.0), -self.chart.obl[0])
+		raprom = r[0]
+		declprom = r[1]
+		dist = r[2]
 
 		self.toPlanets(False, primdirs.PrimDir.MC, raprom, declprom)
 
 
 	def calcZodMC2ParallelPlanets(self):
 		lonprom = self.chart.houses.ascmc2[houses.Houses.MC][houses.Houses.LON]
-		raprom, declprom, dist = astrology.cotrans(lonprom, 0.0, 1.0, -self.chart.obl[0])
+		r = astrology.cotrans((lonprom, 0.0, 1.0), -self.chart.obl[0])
+		raprom = r[0]
+		declprom = r[1]
+		dist = r[2]
 
 		self.toZodParallels(primdirs.PrimDir.MC, raprom, declprom)
 
@@ -590,7 +644,10 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 					aspect *= -1
 
 				lon = util.normalize(lonprom+aspect)
-				raprom, declprom, dist = astrology.cotrans(lon, 0.0, 1.0, -self.chart.obl[0])
+				r = astrology.cotrans((lon, 0.0, 1.0), -self.chart.obl[0])
+				raprom = r[0]
+				declprom = r[1]
+				dist = r[2]
 
 				self.toLoF(p, primdirs.PrimDir.NONE, raprom, declprom, psidx)
 
@@ -633,7 +690,10 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 					aspect *= -1
 
 				lon = util.normalize(lonprom+aspect)
-				raprom, declprom, dist = astrology.cotrans(lon, 0.0, 1.0, -self.chart.obl[0])
+				r = astrology.cotrans((lon, 0.0, 1.0), -self.chart.obl[0])
+				raprom = r[0]
+				declprom = r[1]
+				dist = r[2]
 
 				self.toCustomer2(False, p, primdirs.PrimDir.NONE, raprom, declprom, psidx, aspect)
 
@@ -676,7 +736,10 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 					aspect *= -1
 
 				lon = util.normalize(lonprom+aspect)
-				raprom, declprom, dist = astrology.cotrans(lon, 0.0, 1.0, -self.chart.obl[0])
+				r = astrology.cotrans((lon, 0.0, 1.0), -self.chart.obl[0])
+				raprom = r[0]
+				declprom = r[1]
+				dist = r[2]
 
 				self.toSyzygy(p, primdirs.PrimDir.NONE, raprom, declprom, psidx)
 
@@ -742,9 +805,15 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 						else:
 							latprom = pllat
 
-						raprom, declprom, dist = astrology.cotrans(lonprom, latprom, 1.0, -self.chart.obl[0])
+						r = astrology.cotrans((lonprom, latprom, 1.0), -self.chart.obl[0])
+						raprom = r[0]
+						declprom = r[1]
+						dist = r[2]
 					else:
-						raprom, declprom, dist = astrology.cotrans(lonprom, 0.0, 1.0, -self.chart.obl[0])
+						r = astrology.cotrans((lonprom, 0.0, 1.0), -self.chart.obl[0])
+						raprom = r[0]
+						declprom = r[1]
+						dist = r[2]
 
 					if self.abort.abort:
 						return
@@ -795,9 +864,15 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 						else:
 							latprom = pllat
 
-						raprom, declprom, dist = astrology.cotrans(lonprom, latprom, 1.0, -self.chart.obl[0])
+						r = astrology.cotrans((lonprom, latprom, 1.0), -self.chart.obl[0])
+						raprom = r[0]
+						declprom = r[1]
+						dist = r[2]
 					else:
-						raprom, declprom, dist = astrology.cotrans(lonprom, 0.0, 1.0, -self.chart.obl[0])
+						r = astrology.cotrans((lonprom, 0.0, 1.0), -self.chart.obl[0])
+						raprom = r[0]
+						declprom = r[1]
+						dist = r[2]
 
 					if self.abort.abort:
 						return
@@ -813,7 +888,10 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 		declprom = self.chart.cpd.speculums[primdirs.PrimDirs.PLACSPECULUM][customerpd.CustomerPD.DECL]
 
 		if self.options.subzodiacal != primdirs.PrimDirs.SZPROMISSOR and self.options.subzodiacal != primdirs.PrimDirs.SZBOTH:
-			raprom, declprom, dist = astrology.cotrans(lonprom, 0.0, 1.0, -self.chart.obl[0])
+			r = astrology.cotrans((lonprom, 0.0, 1.0), -self.chart.obl[0])
+			raprom = r[0]
+			declprom = r[1]
+			dist = r[2]
 
 		self.toLoF(primdirs.PrimDir.CUSTOMERPD, primdirs.PrimDir.NONE, raprom, declprom, chart.Chart.CONJUNCTIO)
 
@@ -826,7 +904,10 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 		declprom = self.chart.cpd.speculums[primdirs.PrimDirs.PLACSPECULUM][customerpd.CustomerPD.DECL]
 
 		if self.options.subzodiacal != primdirs.PrimDirs.SZPROMISSOR and self.options.subzodiacal != primdirs.PrimDirs.SZBOTH:
-			raprom, declprom, dist = astrology.cotrans(lonprom, 0.0, 1.0, -self.chart.obl[0])
+			r = astrology.cotrans((lonprom, 0.0, 1.0), -self.chart.obl[0])
+			raprom = r[0]
+			declprom = r[1]
+			dist = r[2]
 
 		self.toSyzygy(primdirs.PrimDir.CUSTOMERPD, primdirs.PrimDir.NONE, raprom, declprom, chart.Chart.CONJUNCTIO)
 
@@ -921,9 +1002,15 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 						else:
 							latprom = pllat
 
-						raprom, declprom, dist = astrology.cotrans(lon, latprom, 1.0, -self.chart.obl[0])
+						r = astrology.cotrans((lon, latprom, 1.0), -self.chart.obl[0])
+						raprom = r[0]
+						declprom = r[1]
+						dist = r[2]
 					else:
-						raprom, declprom, dist = astrology.cotrans(lon, 0.0, 1.0, -self.chart.obl[0])
+						r = astrology.cotrans((lon, 0.0, 1.0), -self.chart.obl[0])
+						raprom = r[0]
+						declprom = r[1]
+						dist = r[2]
 
 					if self.abort.abort:
 						return
@@ -1021,9 +1108,15 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 						else:
 							latprom = pllat
 
-						raprom, declprom, dist = astrology.cotrans(lon, latprom, 1.0, -self.chart.obl[0])
+						r = astrology.cotrans((lon, latprom, 1.0), -self.chart.obl[0])
+						raprom = r[0]
+						declprom = r[1]
+						dist = r[2]
 					else:
-						raprom, declprom, dist = astrology.cotrans(lon, 0.0, 1.0, -self.chart.obl[0])
+						r = astrology.cotrans((lon, 0.0, 1.0), -self.chart.obl[0])
+						raprom = r[0]
+						declprom = r[1]
+						dist = r[2]
 
 					if self.abort.abort:
 						return
@@ -1043,7 +1136,10 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 				if self.options.ayanamsha != 0:
 					lonprom += self.chart.ayanamsha
 					lonprom = util.normalize(lonprom)
-				raprom, declprom, dist = astrology.cotrans(lonprom, 0.0, 1.0, -self.chart.obl[0])
+				r = astrology.cotrans((lonprom, 0.0, 1.0), -self.chart.obl[0])
+				raprom = r[0]
+				declprom = r[1]
+				dist = r[2]
 
 				if self.abort.abort:
 					return
@@ -1086,7 +1182,10 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 			declstar = star[fixstars.FixStars.DECL]
 
 			if self.options.subzodiacal != primdirs.PrimDirs.SZPROMISSOR and self.options.subzodiacal != primdirs.PrimDirs.SZBOTH:
-				rastar, declstar, dist = astrology.cotrans(lonstar, 0.0, 1.0, -self.chart.obl[0])
+				r = astrology.cotrans((lonstar, 0.0, 1.0), -self.chart.obl[0])
+				rastar = r[0]
+				declstar = r[1]
+				dist = r[2]
 
 			for s in range(len(self.chart.planets.planets)):
 				if not self.options.sigplanets[s]:
@@ -1116,7 +1215,10 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 			declstar = star[fixstars.FixStars.DECL]
 
 			if self.options.subzodiacal != primdirs.PrimDirs.SZPROMISSOR and self.options.subzodiacal != primdirs.PrimDirs.SZBOTH:
-				rastar, declstar, dist = astrology.cotrans(lonstar, 0.0, 1.0, -self.chart.obl[0])
+				r = astrology.cotrans((lonstar, 0.0, 1.0), -self.chart.obl[0])
+				rastar = r[0]
+				declstar = r[1]
+				dist = r[2]
 
 			self.toCustomer2(False, i+OFFS, primdirs.PrimDir.NONE, rastar, declstar, chart.Chart.CONJUNCTIO)
 
@@ -1163,7 +1265,10 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 					raprom = plprom.speculums[primdirs.PrimDirs.PLACSPECULUM][planets.Planet.RA]
 					declprom = plprom.speculums[primdirs.PrimDirs.PLACSPECULUM][planets.Planet.DECL]
 				else:
-					raprom, declprom, dist = astrology.cotrans(lonprom, 0.0, 1.0, -self.chart.obl[0])
+					r = astrology.cotrans((lonprom, 0.0, 1.0), -self.chart.obl[0])
+					raprom = r[0]
+					declprom = r[1]
+					dist = r[2]
 
 				self.toZodParallels(p, raprom, declprom)
 
@@ -1176,7 +1281,10 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 					raprom = self.chart.cpd.speculums[primdirs.PrimDirs.PLACSPECULUM][customerpd.CustomerPD.RA]
 					declprom = self.chart.cpd.speculums[primdirs.PrimDirs.PLACSPECULUM][customerpd.CustomerPD.DECL]
 				else:
-					raprom, declprom, dist = astrology.cotrans(lonprom, 0.0, 1.0, -self.chart.obl[0])
+					r = astrology.cotrans((lonprom, 0.0, 1.0), -self.chart.obl[0])
+					raprom = r[0]
+					declprom = r[1]
+					dist = r[2]
 
 				self.toZodParallels(primdirs.PrimDir.CUSTOMERPD, raprom, declprom)
 
@@ -1200,7 +1308,10 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 					if points[k][0] == -1.0:
 						continue
 
-					raprom, declprom, dist = astrology.cotrans(points[k][0], 0.0, 1.0, -self.chart.obl[0])
+					r = astrology.cotrans((points[k][0], 0.0, 1.0), -self.chart.obl[0])
+					raprom = r[0]
+					declprom = r[1]
+					dist = r[2]
 
 					for s in range(len(self.chart.planets.planets)):
 						if not self.options.sigplanets[s]:
@@ -1238,9 +1349,15 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 				raprom, adprom = 0.0, 0.0
 				if self.options.subzodiacal == primdirs.PrimDirs.SZPROMISSOR or self.options.subzodiacal == primdirs.PrimDirs.SZBOTH:
 					#This is only conjunction, so bianchini is the same
-					raprom, declprom, dist = astrology.cotrans(lon, pllat, 1.0, -self.chart.obl[0])
+					r = astrology.cotrans((lon, pllat, 1.0), -self.chart.obl[0])
+					raprom = r[0]
+					declprom = r[1]
+					dist = r[2]
 				else:
-					raprom, declprom, dist = astrology.cotrans(lonprom, 0.0, 1.0, -self.chart.obl[0])
+					r = astrology.cotrans((lonprom, 0.0, 1.0), -self.chart.obl[0])
+					raprom = r[0]
+					declprom = r[1]
+					dist = r[2]
 
 				self.toZodParallels(p+offs, raprom, declprom)
 
@@ -1299,7 +1416,10 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 					if points[k][0] == -1.0:
 						continue
 
-					raprom, declprom, dist = astrology.cotrans(points[k][0], 0.0, 1.0, -self.chart.obl[0])
+					r = astrology.cotrans((points[k][0], 0.0, 1.0), -self.chart.obl[0])
+					raprom = r[0]
+					declprom = r[1]
+					dist = r[2]
 
 					for s in range(len(self.chart.planets.planets)):
 						if not self.options.sigplanets[s]:
@@ -1350,7 +1470,10 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 				if points[k][0] == -1.0:
 					continue
 
-				raprom, declprom, dist = astrology.cotrans(points[k][0], 0.0, 1.0, -self.chart.obl[0])
+				r = astrology.cotrans((points[k][0], 0.0, 1.0), -self.chart.obl[0])
+				raprom = r[0]
+				declprom = r[1]
+				dist = r[2]
 
 				self.toLoF(p, primdirs.PrimDir.NONE, raprom, declprom, points[k][1])
 
@@ -1376,7 +1499,10 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 				if points[k][0] == -1.0:
 					continue
 
-				raprom, declprom, dist = astrology.cotrans(points[k][0], 0.0, 1.0, -self.chart.obl[0])
+				r = astrology.cotrans((points[k][0], 0.0, 1.0), -self.chart.obl[0])
+				raprom = r[0]
+				declprom = r[1]
+				dist = r[2]
 
 				self.toSyzygy(p, primdirs.PrimDir.NONE, raprom, declprom, points[k][1])
 
@@ -1408,7 +1534,10 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 				if points[k][0] == -1.0:
 					continue
 
-				raprom, declprom, dist = astrology.cotrans(points[k][0], 0.0, 1.0, -self.chart.obl[0])
+				r = astrology.cotrans((points[k][0], 0.0, 1.0), -self.chart.obl[0])
+				raprom = r[0]
+				declprom = r[1]
+				dist = r[2]
 
 				self.toLoF(p+offs, primdirs.PrimDir.NONE, raprom, declprom, points[k][1])
 
@@ -1423,7 +1552,7 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 		#promissors
 		for mid in mids:
 			if not self.options.promplanets[mid.p1] or not self.options.promplanets[mid.p2]:
-				continue		
+				continue
 
 			if self.abort.abort:
 				return
@@ -1446,7 +1575,10 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 					if lonmid >= 360.0:
 						lonmid -= 360.0
 
-				raprom, declprom, dist = astrology.cotrans(lonmid, mid.lat, 1.0, -self.chart.obl[0])
+				r = astrology.cotrans((lonmid, mid.lat, 1.0), -self.chart.obl[0])
+				raprom = r[0]
+				declprom = r[1]
+				dist = r[2]
 
 				self.toPlanet(False, mid.p1, mid.p2, raprom, declprom, chart.Chart.MIDPOINT, s, chart.Chart.CONJUNCTIO)
 
@@ -1463,7 +1595,7 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 		#promissors
 		for mid in mids:
 			if not self.options.promplanets[mid.p1] or not self.options.promplanets[mid.p2]:
-				continue		
+				continue
 
 			lonmid = mid.m
 
@@ -1476,7 +1608,10 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 				if lonmid >= 360.0:
 					lonmid -= 360.0
 
-			raprom, declprom, dist = astrology.cotrans(lonmid, mid.lat, 1.0, -self.chart.obl[0])
+			r = astrology.cotrans((lonmid, mid.lat, 1.0), -self.chart.obl[0])
+			raprom = r[0]
+			declprom = r[1]
+			dist = r[2]
 
 			self.toLoF(mid.p1, mid.p2, raprom, declprom, chart.Chart.MIDPOINT)
 
@@ -1493,7 +1628,7 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 		#promissors
 		for mid in mids:
 			if not self.options.promplanets[mid.p1] or not self.options.promplanets[mid.p2]:
-				continue		
+				continue
 
 			lonmid = mid.m
 
@@ -1506,7 +1641,10 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 				if lonmid >= 360.0:
 					lonmid -= 360.0
 
-			raprom, declprom, dist = astrology.cotrans(lonmid, mid.lat, 1.0, -self.chart.obl[0])
+			r = astrology.cotrans((lonmid, mid.lat, 1.0), -self.chart.obl[0])
+			raprom = r[0]
+			declprom = r[1]
+			dist = r[2]
 
 			self.toSyzygy(mid.p1, mid.p2, raprom, declprom, chart.Chart.MIDPOINT)
 
@@ -1523,7 +1661,7 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 		#promissors
 		for mid in mids:
 			if not self.options.promplanets[mid.p1] or not self.options.promplanets[mid.p2]:
-				continue		
+				continue
 
 			lonmid = mid.m
 
@@ -1536,7 +1674,10 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 				if lonmid >= 360.0:
 					lonmid -= 360.0
 
-			raprom, declprom, dist = astrology.cotrans(lonmid, mid.lat, 1.0, -self.chart.obl[0])
+			r = astrology.cotrans((lonmid, mid.lat, 1.0), -self.chart.obl[0])
+			raprom = r[0]
+			declprom = r[1]
+			dist = r[2]
 
 			self.toCustomer2(False, mid.p1, mid.p2, raprom, declprom, chart.Chart.MIDPOINT)
 
@@ -1559,7 +1700,10 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 			declstar = star[fixstars.FixStars.DECL]
 
 			if self.options.subzodiacal != primdirs.PrimDirs.SZPROMISSOR and self.options.subzodiacal != primdirs.PrimDirs.SZBOTH:
-				rastar, declstar, dist = astrology.cotrans(lonstar, 0.0, 1.0, -self.chart.obl[0])
+				r = astrology.cotrans((lonstar, 0.0, 1.0), -self.chart.obl[0])
+				rastar = r[0]
+				declstar = r[1]
+				dist = r[2]
 
 			self.toLoF(i+OFFS, primdirs.PrimDir.NONE, rastar, declstar, chart.Chart.CONJUNCTIO)
 
@@ -1582,7 +1726,10 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 			declstar = star[fixstars.FixStars.DECL]
 
 			if self.options.subzodiacal != primdirs.PrimDirs.SZPROMISSOR and self.options.subzodiacal != primdirs.PrimDirs.SZBOTH:
-				rastar, declstar, dist = astrology.cotrans(lonstar, 0.0, 1.0, -self.chart.obl[0])
+				r = astrology.cotrans((lonstar, 0.0, 1.0), -self.chart.obl[0])
+				rastar = r[0]
+				declstar = r[1]
+				dist = r[2]
 
 			self.toSyzygy(i+OFFS, primdirs.PrimDir.NONE, rastar, declstar, chart.Chart.CONJUNCTIO)
 
@@ -1648,7 +1795,7 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 			if self.options.bianchini:
 				val = self.getBianchini(latsig, chart.Chart.Aspects[sigasp])
 				if math.fabs(val) > 1.0:
-					return	
+					return
 				latsig = math.degrees(math.asin(val))
 				latchanged = True
 		else:
@@ -1686,7 +1833,7 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 				aodo = raprom-adprom
 			else:
 				aodo = raprom+adprom
-			
+
 			arc = aodo-aodosig
 			ok = True
 			if idprom == astrology.SE_MOON and idprom2 == primdirs.PrimDir.NONE and self.options.pdsecmotion and calcsecmotion:
@@ -1722,7 +1869,7 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 			aodo = raprom-adprom
 		else:
 			aodo = raprom+adprom
-			
+
 		arc = aodo-aodosig
 		ok = True
 		if calcsecmotion and idprom == astrology.SE_MOON and idprom2 == primdirs.PrimDir.NONE and self.options.pdsecmotion:
@@ -1756,7 +1903,7 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 			aodo = raprom-adprom
 		else:
 			aodo = raprom+adprom
-			
+
 		arc = aodo-aodosig
 		ok = True
 		if calcsecmotion and idprom == astrology.SE_MOON and idprom2 == primdirs.PrimDir.NONE and self.options.pdsecmotion:
@@ -1786,7 +1933,7 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 			aodo = raprom-adprom
 		else:
 			aodo = raprom+adprom
-			
+
 		arc = aodo-aodosig
 		ok = True
 		if calcsecmotion and idprom == astrology.SE_MOON and idprom2 == primdirs.PrimDir.NONE and self.options.pdsecmotion:
@@ -1842,7 +1989,7 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 					aodo = raprom-adprom
 				else:
 					aodo = raprom+adprom
-			
+
 				arc = aodo-aodosig
 				self.create(False, idprom, primdirs.PrimDir.NONE, s, chart.Chart.CONJUNCTIO, points[k][1], arc)
 
@@ -1855,7 +2002,10 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 
 		placelat = self.chart.place.lat
 
-		ra, decl, dist = astrology.cotrans(lon, lat, 1.0, -self.chart.obl[0])
+		r = astrology.cotrans((lon, lat, 1.0), -self.chart.obl[0])
+		ra = r[0]
+		decl = r[1]
+		dist = r[2]
 
 		ok = True
 
@@ -1926,7 +2076,10 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 		declprom = sm.planet.speculums[primdirs.PrimDirs.PLACSPECULUM][planets.Planet.DECL]
 
 		if self.options.subzodiacal != primdirs.PrimDirs.SZPROMISSOR and self.options.subzodiacal != primdirs.PrimDirs.SZBOTH:
-			raprom, declprom, dist = astrology.cotrans(lonprom, 0.0, 1.0, -self.chart.obl[0])
+			r = astrology.cotrans((lonprom, 0.0, 1.0), -self.chart.obl[0])
+			raprom = r[0]
+			declprom = r[1]
+			dist = r[2]
 
 		plsig = self.chart.planets.planets[sig]
 		sigeastern = plsig.eastern
@@ -1966,7 +2119,7 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 			aodo = raprom-adprom
 		else:
 			aodo = raprom+adprom
-			
+
 		arc = aodo-aodosig
 
 		return True, arc
@@ -1989,9 +2142,15 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 				latprom = math.degrees(math.asin(val))
 			else:
 				latprom = pllat
-			raprom, declprom, dist = astrology.cotrans(lon, latprom, 1.0, -self.chart.obl[0])
+			r = astrology.cotrans((lon, latprom, 1.0), -self.chart.obl[0])
+			raprom = r[0]
+			declprom = r[1]
+			dist = r[2]
 		else:
-			raprom, declprom, dist = astrology.cotrans(lon, 0.0, 1.0, -self.chart.obl[0])
+			r = astrology.cotrans((lon, 0.0, 1.0), -self.chart.obl[0])
+			raprom = r[0]
+			declprom = r[1]
+			dist = r[2]
 
 		plsig = self.chart.planets.planets[sig]
 		sigeastern = plsig.eastern
@@ -2016,7 +2175,7 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 			aodo = raprom-adprom
 		else:
 			aodo = raprom+adprom
-		
+
 		arc = aodo-aodosig
 
 		return True, arc
@@ -2048,9 +2207,15 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 			else:
 				latprom = pllat
 
-			raprom, declprom, dist = astrology.cotrans(lon, latprom, 1.0, -self.chart.obl[0])
+			r = astrology.cotrans((lon, latprom, 1.0), -self.chart.obl[0])
+			raprom = r[0]
+			declprom = r[1]
+			dist = r[2]
 		else:
-			raprom, declprom, dist = astrology.cotrans(lon, 0.0, 1.0, -self.chart.obl[0])
+			r = astrology.cotrans((lon, 0.0, 1.0), -self.chart.obl[0])
+			raprom = r[0]
+			declprom = r[1]
+			dist = r[2]
 
 		lonsig = self.chart.fortune.fortune[fortune.Fortune.LON]
 
@@ -2068,7 +2233,7 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 			aodo = raprom-adprom
 		else:
 			aodo = raprom+adprom
-			
+
 		arc = aodo-aodosig
 
 		return True, arc
@@ -2092,9 +2257,15 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 			else:
 				latprom = pllat
 
-			raprom, declprom, dist = astrology.cotrans(lon, latprom, 1.0, -self.chart.obl[0])
+			r = astrology.cotrans((lon, latprom, 1.0), -self.chart.obl[0])
+			raprom = r[0]
+			declprom = r[1]
+			dist = r[2]
 		else:
-			raprom, declprom, dist = astrology.cotrans(lon, 0.0, 1.0, -self.chart.obl[0])
+			r = astrology.cotrans((lon, 0.0, 1.0), -self.chart.obl[0])
+			raprom = r[0]
+			declprom = r[1]
+			dist = r[2]
 
 		lonsig = self.chart.cpd2.speculums[primdirs.PrimDirs.PLACSPECULUM][customerpd.CustomerPD.LONG]
 		latsig = self.chart.cpd2.speculums[primdirs.PrimDirs.PLACSPECULUM][customerpd.CustomerPD.LAT]
@@ -2116,7 +2287,7 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 			aodo = raprom-adprom
 		else:
 			aodo = raprom+adprom
-			
+
 		arc = aodo-aodosig
 
 		return True, arc
@@ -2140,9 +2311,15 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 			else:
 				latprom = pllat
 
-			raprom, declprom, dist = astrology.cotrans(lon, latprom, 1.0, -self.chart.obl[0])
+			r = astrology.cotrans((lon, latprom, 1.0), -self.chart.obl[0])
+			raprom = r[0]
+			declprom = r[1]
+			dist = r[2]
 		else:
-			raprom, declprom, dist = astrology.cotrans(lon, 0.0, 1.0, -self.chart.obl[0])
+			r = astrology.cotrans((lon, 0.0, 1.0), -self.chart.obl[0])
+			raprom = r[0]
+			declprom = r[1]
+			dist = r[2]
 
 		lonsig = self.chart.syzygy.speculum[syzygy.Syzygy.LON]
 
@@ -2160,14 +2337,7 @@ class PlacidianUTPPD(placidiancommonpd.PlacidianCommonPD):
 			aodo = raprom-adprom
 		else:
 			aodo = raprom+adprom
-			
+
 		arc = aodo-aodosig
 
 		return True, arc
-
-
-
-
-
-
-
