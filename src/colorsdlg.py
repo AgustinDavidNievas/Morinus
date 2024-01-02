@@ -244,7 +244,7 @@ class ColorsDlg(wx.Dialog):
 		vsizer = wx.BoxSizer(wx.VERTICAL)
 		vsizer.Add(aspectsizer, 1, wx.GROW|wx.TOP, 5)
 		mhsizer.Add(vsizer, 0, wx.GROW|wx.ALIGN_CENTER_HORIZONTAL|wx.LEFT, 5)
-		mvsizer.Add(mhsizer, 0, wx.GROW|wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5)
+		mvsizer.Add(mhsizer, 0, wx.GROW|wx.EXPAND|wx.ALL, 5)
 
 		#General
 		general = wx.StaticBox(self, label=mtexts.txts["General"])
@@ -339,7 +339,7 @@ class ColorsDlg(wx.Dialog):
 		btnsizer.AddButton(cancelbtn)
 		btnsizer.Realize()
 
-		mvsizer.Add(btnsizer, 0, wx.GROW|wx.ALIGN_CENTER_VERTICAL|wx.ALL, 10)
+		mvsizer.Add(btnsizer, 0, wx.GROW|wx.EXPAND|wx.ALL, 10)
 		self.SetSizer(mvsizer)
 		mvsizer.Fit(self)
 

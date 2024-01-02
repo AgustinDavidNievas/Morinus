@@ -1533,12 +1533,16 @@ class MFrame(mrclasses.MrTopFrame):
 		JD1900 = 2415020.5
 		FBAyanamsa1900 = astrology.get_ayanamsa_ut(JD1900)
 
-		rflag, dat, serr = astrology.calc_ut(JD1900, astrology.SE_ECL_NUT, 0)
+		r = astrology.calc_ut(JD1900, astrology.SE_ECL_NUT, 0)
+		rflag = r[1]
+		dat = r[0]
 		NutLon1900 = dat[2]
 		SVP1900 = 360.0-FBAyanamsa1900-NutLon1900
 
 		#calc natalprecfrom1900
-		rflag, dat, serr = astrology.calc_ut(self.horoscope.time.jd, astrology.SE_ECL_NUT, 0)
+		r2 = astrology.calc_ut(self.horoscope.time.jd, astrology.SE_ECL_NUT, 0)
+		rflag = r2[1]
+		dat = r2[0]
 		NutLonNatal = dat[2]
 		SVPNatal = 360.0-self.horoscope.ayanamsha-NutLonNatal
 		NatalChartPrecessionFrom1900 = SVPNatal-SVP1900
@@ -1551,11 +1555,15 @@ class MFrame(mrclasses.MrTopFrame):
 		#Keep recalculating transiting Sun position using new jdSol until
 		#DiffAngle is small enough.
 		while (DiffAngle > 0.00001):
-			rflag, dat, serr = astrology.calc_ut(jdSol, astrology.SE_SUN, pflag)
+			r = astrology.calc_ut(jdSol, astrology.SE_SUN, pflag)
+			rflag = r[1]
+			dat = r[0]
 			TranSunLon = dat[0]
 			TranSunVel = dat[3]
 
-			rflag, dat, serr = astrology.calc_ut(jdSol, astrology.SE_ECL_NUT, 0)
+			r = astrology.calc_ut(jdSol, astrology.SE_ECL_NUT, 0)
+			flag = r[1]
+			dat = r[0]
 			FBAyanamsaReturn = astrology.get_ayanamsa_ut(jdSol)
 			NutLonReturn = dat[2]
 			SVPReturn = 360.0-FBAyanamsaReturn-NutLonReturn

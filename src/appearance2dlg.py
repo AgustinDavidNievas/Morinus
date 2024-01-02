@@ -108,7 +108,7 @@ class Appearance2Dlg(wx.Dialog):
 
 		mhsizer.Add(regiomontansizer, 1, wx.GROW|wx.RIGHT, 5)
 
-		mvsizer.Add(mhsizer, 0, wx.GROW|wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5)
+		mvsizer.Add(mhsizer, 0, wx.GROW|wx.EXPAND|wx.ALL, 5)
 
 		#RA
 		ra = wx.StaticBox(self, label=mtexts.txts["Rectascension"])
@@ -134,7 +134,7 @@ class Appearance2Dlg(wx.Dialog):
 		btnsizer.AddButton(btn)
 		btnsizer.Realize()
 
-		mvsizer.Add(btnsizer, 0, wx.GROW|wx.ALIGN_CENTER_VERTICAL|wx.ALL, 10)
+		mvsizer.Add(btnsizer, 0, wx.GROW|wx.EXPAND|wx.ALL, 10)
 
 		self.SetSizer(mvsizer)
 		mvsizer.Fit(self)

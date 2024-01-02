@@ -18,11 +18,11 @@ class FixStars:
 		def __init__(self, name, nomname):
 			self.name = name
 			self.nomname = nomname
-		
+
 
 	def __init__(self, ephepath):
 		self.ephepath = ephepath
-		self.jd = astrology.julday(1950, 1, 1, 0.0, astrology.SE_GREG_CAL)	
+		self.jd = astrology.julday(1950, 1, 1, 0.0, astrology.SE_GREG_CAL)
 		self.data = []
 
 		self.fname = os.path.join(self.ephepath, 'fixstars.cat')
@@ -38,7 +38,7 @@ class FixStars:
 				snam = nam.split(DELIMITER)
 				nam = snam[0].strip()
 				nomnam = snam[1].strip()
-				
+
 			self.data.append(FixStars.FixStar(nam, nomnam))
 
 		return True #!?
@@ -83,7 +83,7 @@ class FixStarListCtrl(wx.ListCtrl, limchecklistctrlmixin.LimCheckListCtrlMixin):
 			for i in range(len(sels)):
 				if sels[i]:
 					self.CheckItem(i)
-					
+
 		wx.EndBusyCursor()
 
 
@@ -218,12 +218,8 @@ class FixStarsPDDlg(wx.Dialog):
 
 	def getSelections(self):
 		sels = []
-		keys = self.li.fixstardata.iterkeys()
+		keys = self.li.fixstardata.keys()
 		for k in keys:
 			sels.append(self.li.IsChecked(k-1))
 
 		return sels[:]
-
-
-
-

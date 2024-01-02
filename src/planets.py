@@ -56,8 +56,12 @@ class Planet:
 		self.speculums = None
 
 		if (ecl == None):
-			rflag, self.data, serr = astrology.calc_ut(tjd_ut, pId, flag)
-			rflag, self.dataEqu, serr = astrology.calc_ut(tjd_ut, pId, flag+astrology.SEFLG_EQUATORIAL)
+			r = astrology.calc_ut(tjd_ut, pId, flag)
+			rflag = r[1]
+			self.data = r[0]
+			r2 = astrology.calc_ut(tjd_ut, pId, flag+astrology.SEFLG_EQUATORIAL)
+			rflag = r2[1]
+			self.dataEqu = r2[0]
 
 			# data[0] : longitude
 			# data[1] : latitude

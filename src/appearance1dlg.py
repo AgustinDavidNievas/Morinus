@@ -167,7 +167,7 @@ class Appearance1Dlg(wx.Dialog):
 
 		vsizerbig.Add(tradfssizer, 0, wx.GROW|wx.RIGHT, 5)
 
-		mhsizer.Add(vsizerbig, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.LEFT, 5)
+		mhsizer.Add(vsizerbig, 0, wx.ALIGN_CENTER_VERTICAL|wx.LEFT, 5)
 
 		self.Bind(wx.EVT_CHECKBOX, self.onUranus, self.uranusckb)
 		self.Bind(wx.EVT_CHECKBOX, self.onNeptune, self.neptuneckb)
@@ -184,8 +184,8 @@ class Appearance1Dlg(wx.Dialog):
 		colorsizer.Add(self.colorrb, 0, wx.ALIGN_LEFT|wx.LEFT|wx.TOP, 2)
 
 		vsizer.Add(colorsizer, 0, wx.GROW|wx.RIGHT, 5)
-		mhsizer.Add(vsizer, 0, wx.GROW|wx.ALIGN_CENTER_HORIZONTAL|wx.LEFT, 5)
-		mvsizer.Add(mhsizer, 0, wx.GROW|wx.ALIGN_CENTER_VERTICAL|wx.ALL, 0)
+		mhsizer.Add(vsizer, 0, wx.GROW|wx.EXPAND|wx.LEFT, 5)
+		mvsizer.Add(mhsizer, 0, wx.GROW|wx.EXPAND|wx.ALL, 0)
 
 		#Themes
 		themes = wx.StaticBox(self, label=mtexts.txts["Themes"])
@@ -245,7 +245,7 @@ class Appearance1Dlg(wx.Dialog):
 		btnsizer.AddButton(btn)
 		btnsizer.Realize()
 
-		mvsizer.Add(btnsizer, 0, wx.GROW|wx.ALIGN_CENTER_VERTICAL|wx.ALL, 10)
+		mvsizer.Add(btnsizer, 0, wx.GROW|wx.EXPAND|wx.ALL, 10)
 
 		self.SetSizer(mvsizer)
 		mvsizer.Fit(self)
@@ -340,7 +340,7 @@ class Appearance1Dlg(wx.Dialog):
 
 		self.themecb.SetStringSelection(mtexts.themeList[opts.theme])
 		self.ascmcsizeslider.SetValue(opts.ascmcsize)
-		self.sizeslider.SetValue(opts.tablesize*100)
+		self.sizeslider.SetValue(int(opts.tablesize*100))
 		self.planetarydayhour.SetValue(opts.planetarydayhour)
 		self.housesystem.SetValue(opts.housesystem)
 

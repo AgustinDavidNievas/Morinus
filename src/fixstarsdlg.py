@@ -124,7 +124,7 @@ class FixStarListCtrl(wx.ListCtrl, limchecklistctrlmixin.LimCheckListCtrlMixin):
 		nset = set()
 		items = self.fixstardata.iteritems()
 		for k, v in items:
-			for nomname in names.iterkeys():
+			for nomname in names:
 				if v[1] == nomname and nomname not in nset:
 					if len(nset) >= FixStarListCtrl.MAX_SEL_NUM:
 						break

@@ -7,8 +7,12 @@ class Asteroid:
 	def __init__(self, tjd_ut, aId, flag):
 		self.aId = aId
 
-		rflag, dat, serr = astrology.calc_ut(tjd_ut, aId, flag)
-		rflag, datEqu, serr = astrology.calc_ut(tjd_ut, aId, flag+astrology.SEFLG_EQUATORIAL)
+		r = astrology.calc_ut(tjd_ut, aId, flag)
+		rflag = r[1]
+		dat = r[0]
+		r2 = astrology.calc_ut(tjd_ut, aId, flag+astrology.SEFLG_EQUATORIAL)
+		rflag = r2[1]
+		datEqu = r2[0]
 		self.data = (dat[0], dat[1], datEqu[0], datEqu[1])
 
 		self.name = astrology.get_planet_name(aId)

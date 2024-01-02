@@ -15,7 +15,7 @@ class FixStars:
 		self.data = []
 
 		i = 0
-		for k in names.iterkeys():
+		for k in names:
 			self.data.append(['', '', 0.0, 0.0, 0.0, 0.0])
 			ret, name, dat, serr = astrology.fixstar_ut(','+k, tjd_ut, flag)
 

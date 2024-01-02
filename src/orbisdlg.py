@@ -412,7 +412,7 @@ class OrbisDlg(wx.Dialog):
 			options.exact = float(self.exact.GetValue())
 			changed = True
 
-		for k in self.fixstars.iterkeys():
+		for k in self.fixstars:
 			if self.fixstars[k] != options.fixstars[k]:
 				options.fixstars[k] = self.fixstars[k]
 				changed = True
