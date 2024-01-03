@@ -31,7 +31,7 @@ class GraphChart2:
 		self.bdc = wx.BufferedDC(None, self.buffer)
 		self.chartsize = min(self.w, self.h)
 		self.maxradius = self.chartsize/2
-		self.center = wx.Point(self.w/2, self.h/2)
+		self.center = wx.Point(int(self.w/2), int(self.h/2))
 
 		baseoffset = 0.0
 		val = 0
@@ -288,7 +288,7 @@ class GraphChart2:
 		#Convert to PIL (truetype-font is not supported in wxPython)
 		wxImag = self.buffer.ConvertToImage()
 		self.img = Image.new('RGB', (wxImag.GetWidth(), wxImag.GetHeight()))
-		self.img.frombytes(buffer(wxImag.GetData()))
+		self.img.frombytes(memoryview(wxImag.GetData()))
 		self.draw = ImageDraw.Draw(self.img)
 
 		if self.options.houses:
@@ -334,7 +334,7 @@ class GraphChart2:
 		#Convert to PIL (truetype-font is not supported in wxPython)
 		wxImag = self.buffer.ConvertToImage()
 		self.img = Image.new('RGB', (wxImag.GetWidth(), wxImag.GetHeight()))
-		self.img.frombytes(buffer(wxImag.GetData()))
+		self.img.frombytes(memoryview(wxImag.GetData()))
 		self.draw = ImageDraw.Draw(self.img)
 
 		self.drawPlanets(self.chart, self.pshift, self.rPlanet, self.rRetr)
@@ -592,7 +592,7 @@ class GraphChart2:
 			y1 = cy+math.sin(math.pi+dif)*r1
 			x2 = cx+math.cos(math.pi+dif)*r2
 			y2 = cy+math.sin(math.pi+dif)*r2
-			self.bdc.DrawLine(x1, y1, x2, y2)
+			self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 
 
 	def drawAscMC(self, ascmc, r1, r2, rArrow):
@@ -629,7 +629,7 @@ class GraphChart2:
 			y1 = cy+math.sin(ang)*r1
 			x2 = cx+math.cos(ang)*r2comma
 			y2 = cy+math.sin(ang)*r2comma
-			self.bdc.DrawLine(x1, y1, x2, y2)
+			self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 
 			if i == 0 or i == 2:
 				self.drawArrow(ang, r2, clr, rArrow)
@@ -646,7 +646,7 @@ class GraphChart2:
 		xm = cx+math.cos(ang)*rArrow
 		ym = cy+math.sin(ang)*rArrow
 
-		li = ((xl, yl, xr, yr), (xr, yr, xm, ym), (xm, ym, xl, yl))
+		li = ((int(xl), int(yl), int(xr), int(yr)), (int(xr), int(yr), int(xm), int(ym)), (int(xm), int(ym), int(xl), int(yl)))
 		self.bdc.DrawLineList(li)
 
 #		self.bdc.SetBrush(wx.Brush(clr))
@@ -907,7 +907,7 @@ class GraphChart2:
 			x2 = cx+math.cos(i)*r2
 			y2 = cy+math.sin(i)*r2
 
-			self.bdc.DrawLine(x1, y1, x2, y2)
+			self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 			i -= deg
 
 
@@ -933,7 +933,7 @@ class GraphChart2:
 				x2 = cx+math.cos(math.pi+shift-math.radians(deg))*self.rDecans
 				y2 = cy+math.sin(math.pi+shift-math.radians(deg))*self.rDecans
 
-				self.bdc.DrawLine(x1, y1, x2, y2)
+				self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 
 			sign += signdeg
 
@@ -984,7 +984,7 @@ class GraphChart2:
 			x2 = cx+math.cos(i)*self.rDecans
 			y2 = cy+math.sin(i)*self.rDecans
 
-			self.bdc.DrawLine(x1, y1, x2, y2)
+			self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 			i -= deg
 
 
@@ -1042,7 +1042,7 @@ class GraphChart2:
 		y1 = cy+math.sin(math.pi+math.radians(self.chart.houses.ascmc[houses.Houses.ASC]-lon))*r1
 		x2 = cx+math.cos(math.pi+math.radians(self.chart.houses.ascmc[houses.Houses.ASC]-lon-pshift[planet]))*r2
 		y2 = cy+math.sin(math.pi+math.radians(self.chart.houses.ascmc[houses.Houses.ASC]-lon-pshift[planet]))*r2
-		self.bdc.DrawLine(x1, y1, x2, y2)
+		self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 
 
 	def drawFixstars(self, showfss):
@@ -1099,7 +1099,7 @@ class GraphChart2:
 			y1 = cy+math.sin(math.pi+math.radians(self.chart.houses.ascmc[houses.Houses.ASC]-self.chart.fixstars.data[showfss[i]][fixstars.FixStars.LON]))*self.r30
 			x2 = cx+math.cos(math.pi+math.radians(self.chart.houses.ascmc[houses.Houses.ASC]-self.chart.fixstars.data[showfss[i]][fixstars.FixStars.LON]-self.fsshift[i]))*self.rOuterLine
 			y2 = cy+math.sin(math.pi+math.radians(self.chart.houses.ascmc[houses.Houses.ASC]-self.chart.fixstars.data[showfss[i]][fixstars.FixStars.LON]-self.fsshift[i]))*self.rOuterLine
-			self.bdc.DrawLine(x1, y1, x2, y2)
+			self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 
 
 	def drawAntisLines(self, plnts, lof, ascmc, pshift, r1, r2):
@@ -1135,7 +1135,7 @@ class GraphChart2:
 			y1 = cy+math.sin(math.pi+math.radians(self.chart.houses.ascmc[houses.Houses.ASC]-ayanoffs-lon))*r1
 			x2 = cx+math.cos(math.pi+math.radians(self.chart.houses.ascmc[houses.Houses.ASC]-ayanoffs-lon-pshift[i]))*r2
 			y2 = cy+math.sin(math.pi+math.radians(self.chart.houses.ascmc[houses.Houses.ASC]-ayanoffs-lon-pshift[i]))*r2
-			self.bdc.DrawLine(x1, y1, x2, y2)
+			self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 
 
 	def drawAntis(self, chrt, plnts, lof, ascmc, pshift, r):

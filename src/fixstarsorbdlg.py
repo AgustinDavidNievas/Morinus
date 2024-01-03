@@ -43,7 +43,7 @@ class FixStarsOrbDlg(wx.Dialog):
 		orbssizer = wx.StaticBoxSizer(sorbs, wx.HORIZONTAL)
 		self.fsnames = self.fixstars.keys()
 		self.fscb = wx.ComboBox(self, -1, self.fsnames[0], size=(100, -1), choices=self.fsnames, style=wx.CB_DROPDOWN|wx.CB_READONLY)
-		orbssizer.Add(self.fscb, 1, wx.GROW|wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5)
+		orbssizer.Add(self.fscb, 1, wx.GROW|wx.EXPAND_VERTICAL|wx.ALL, 5)
 		self.fsorbstxt = wx.TextCtrl(self, -1, '', validator=floatvalidator.FloatValidator(0.0, 6.0), size=(50, -1))
 		self.fsorbstxt.SetValue(str(self.fixstars[self.fsnames[0]]))
 		orbssizer.Add(self.fsorbstxt, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5)
@@ -54,7 +54,7 @@ class FixStarsOrbDlg(wx.Dialog):
 		allorbssizer = wx.StaticBoxSizer(sallorbs, wx.HORIZONTAL)
 		ID_All = wx.NewId()
 		self.btnAll = wx.Button(self, ID_All, mtexts.txts['All'])
-		allorbssizer.Add(self.btnAll, 1, wx.GROW|wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5)
+		allorbssizer.Add(self.btnAll, 1, wx.GROW|wx.EXPAND_VERTICAL|wx.ALL, 5)
 		self.maxval = 6.0
 		self.fsorbtxt = wx.TextCtrl(self, -1, '', validator=floatvalidator.FloatValidator(0.0, self.maxval), size=(50, -1))
 		self.fsorbtxt.SetValue(str(chart.Chart.def_fixstarsorb))

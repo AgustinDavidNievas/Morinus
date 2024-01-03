@@ -94,7 +94,7 @@ class ColorsDlg(wx.Dialog):
 
 		digsizer.Add(gsizer, 0, wx.ALIGN_LEFT|wx.LEFT|wx.TOP, 2)
 		vsizer.Add(digsizer, 0, wx.GROW|wx.TOP, 5)
-		mhsizer.Add(vsizer, 0, wx.GROW|wx.ALIGN_CENTER_HORIZONTAL|wx.LEFT, 0)
+		mhsizer.Add(vsizer, 0, wx.GROW|wx.EXPAND|wx.LEFT, 0)
 
 		#Individuals
 		planetsbox = wx.StaticBox(self, label=mtexts.txts["Individual"])
@@ -178,7 +178,7 @@ class ColorsDlg(wx.Dialog):
 		planetssizer.Add(gsizer, 0, wx.ALIGN_LEFT|wx.LEFT|wx.TOP, 5)
 		vsizer = wx.BoxSizer(wx.VERTICAL)
 		vsizer.Add(planetssizer, 1, wx.GROW|wx.TOP, 5)
-		mhsizer.Add(vsizer, 0, wx.GROW|wx.ALIGN_CENTER_HORIZONTAL|wx.LEFT, 5)
+		mhsizer.Add(vsizer, 0, wx.GROW|wx.EXPAND|wx.LEFT, 5)
 
 		#Aspects
 		aspects = wx.StaticBox(self, label=mtexts.txts["Aspects"])
@@ -243,7 +243,7 @@ class ColorsDlg(wx.Dialog):
 		aspectsizer.Add(gsizer, 0, wx.ALIGN_LEFT|wx.LEFT|wx.TOP, 5)
 		vsizer = wx.BoxSizer(wx.VERTICAL)
 		vsizer.Add(aspectsizer, 1, wx.GROW|wx.TOP, 5)
-		mhsizer.Add(vsizer, 0, wx.GROW|wx.ALIGN_CENTER_HORIZONTAL|wx.LEFT, 5)
+		mhsizer.Add(vsizer, 0, wx.GROW|wx.EXPAND|wx.LEFT, 5)
 		mvsizer.Add(mhsizer, 0, wx.GROW|wx.EXPAND|wx.ALL, 5)
 
 		#General
@@ -254,7 +254,7 @@ class ColorsDlg(wx.Dialog):
 		label = wx.StaticText(self, -1, mtexts.txts['Background']+':')
 		hsizer.Add(label, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2)
 		self.btnBackground = buttons.GenButton(self, ID_BTN_Background, '', size=(60, -1))
-		hsizer.Add(self.btnBackground, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, 2)
+		hsizer.Add(self.btnBackground, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2)
 
 		horsizer.Add(hsizer, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2)
 
@@ -263,7 +263,7 @@ class ColorsDlg(wx.Dialog):
 		label = wx.StaticText(self, -1, mtexts.txts['Table']+':')
 		hsizer.Add(label, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2)
 		self.btnTable = buttons.GenButton(self, ID_BTN_Table, '', size=(60, -1))
-		hsizer.Add(self.btnTable, 0, wx.ALIGN_RIGHT|wx.ALL, 2)
+		hsizer.Add(self.btnTable, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2)
 
 		horsizer.Add(hsizer, 0, wx.ALIGN_CENTER_VERTICAL|wx.LEFT, 10)
 
@@ -272,18 +272,18 @@ class ColorsDlg(wx.Dialog):
 		label = wx.StaticText(self, -1, mtexts.txts['Texts']+':')
 		hsizer.Add(label, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2)
 		self.btnTexts = buttons.GenButton(self, ID_BTN_Texts, '', size=(60, -1))
-		hsizer.Add(self.btnTexts, 0, wx.ALIGN_RIGHT|wx.ALL, 2)
+		hsizer.Add(self.btnTexts, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2)
 
 		horsizer.Add(hsizer, 0, wx.ALIGN_CENTER_VERTICAL|wx.LEFT, 10)
 
 		hsizer = wx.BoxSizer(wx.HORIZONTAL)
 		self.useplanetcolorsckb = wx.CheckBox(self, -1, mtexts.txts['UseIndividual'])
 		self.Bind(wx.EVT_CHECKBOX, self.onUsePlanetColors, id=self.useplanetcolorsckb.GetId())
-		hsizer.Add(self.useplanetcolorsckb, 0, wx.ALIGN_RIGHT|wx.ALL, 2)
+		hsizer.Add(self.useplanetcolorsckb, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2)
 
 		horsizer.Add(hsizer, 0, wx.ALIGN_CENTER_VERTICAL|wx.LEFT, 10)
 
-		mvsizer.Add(horsizer, 0, wx.GROW|wx.ALIGN_CENTER_VERTICAL|wx.LEFT|wx.RIGHT|wx.BOTTOM, 5)
+		mvsizer.Add(horsizer, 0, wx.GROW|wx.EXPAND|wx.LEFT|wx.RIGHT|wx.BOTTOM, 5)
 
 		self.arBtn = [self.btnFrame, self.btnSigns, self.btnAscMC, self.btnHouses, self.btnHouseNumbers, self.btnPositions, self.btnDomicil, self.btnExal, self.btnPeregrin, self.btnCasus, self.btnExil, self.btnSun, self.btnMoon, self.btnMercury, self.btnVenus, self.btnMars, self.btnJupiter, self.btnSaturn, self.btnUranus, self.btnNeptune, self.btnPluto, self.btnNodes, self.btnLoF, self.btnConjunctio, self.btnSemisextil, self.btnSemiquadrat, self.btnSextil, self.btnQuintile, self.btnQuadrat, self.btnTrigon, self.btnSesquiquadrat, self.btnBiquintile, self.btnQuinqunx, self.btnOppositio, self.btnBackground, self.btnTable, self.btnTexts]
 

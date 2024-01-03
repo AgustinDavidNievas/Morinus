@@ -138,7 +138,7 @@ class PDsInChartStepperDlg(wx.Dialog):
 		vsizer.Add(self.second, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.LEFT, 0)
 		fgsizer.Add(vsizer, 0, wx.ALIGN_LEFT|wx.ALL, 5)
 
-		datesizer.Add(fgsizer, 0, wx.GROW|wx.ALIGN_CENTER|wx.ALL, 5)###
+		datesizer.Add(fgsizer, 0, wx.GROW|wx.EXPAND|wx.ALL, 5)###
 
 		#DA
 		self.sda = wx.StaticBox(self, label='')

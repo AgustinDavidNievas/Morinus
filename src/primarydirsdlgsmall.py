@@ -301,7 +301,7 @@ class PrimDirsDlgSmall(wx.Dialog):
 		btn.SetHelpText(mtexts.txts['HelpCancel'])
 
 		btnsizer.Realize()
-		mvsizer.Add(btnsizer, 0, wx.GROW|wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5)
+		mvsizer.Add(btnsizer, 0, wx.GROW|wx.EXPAND_VERTICAL|wx.ALL, 5)
 
 		self.SetSizer(mvsizer)
 		mvsizer.Fit(self)

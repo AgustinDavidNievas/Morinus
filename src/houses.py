@@ -36,8 +36,8 @@ class Houses:
 
 		#res, self.cusps, self.ascmc = astrology.houses_ex(tjd_ut, flag, geolat, geolon, ord(self.hsys))
 		res = astrology.houses_ex(tjdut=tjd_ut, flags=flag, lat=geolat, lon=geolon, hsys=str.encode(self.hsys))
-		self.cusps = res[0]
-		self.ascmc = res[1]
+		self.cusps = (0.0,) + res[0] #TODO debugguear todo lugar donde impacta para sacar esta chanchada
+		self.ascmc = res[1] + (0.0, 0.0) #TODO debugguear todo lugar donde impacta para sacar esta chanchada
 		#TODO self.ascmc aca retorna 8 items en lugar de 10 como antes, pero aparentemente esos ultimos dos son 0.0, asi que si algo falla, agregar dos ceros float en la tupla de esta respuesta...
 
 		##################

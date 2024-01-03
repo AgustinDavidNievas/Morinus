@@ -390,7 +390,7 @@ class FindTimeDlg(wx.Dialog):
 
 		vsizer.Add(susesizer, 1, wx.GROW)
 
-		mhsizer.Add(vsizer, 0, wx.GROW|wx.ALIGN_CENTER_HORIZONTAL, 0)
+		mhsizer.Add(vsizer, 0, wx.GROW|wx.EXPAND, 0)
 
 		#Angles
 		vvvsizer = wx.BoxSizer(wx.VERTICAL)
@@ -583,12 +583,12 @@ class FindTimeDlg(wx.Dialog):
 		self.btnShow.Enable(False)
 
 		hbtnsizer = wx.BoxSizer(wx.HORIZONTAL)
-		hbtnsizer.Add(self.btnStart, 1, wx.GROW|wx.ALIGN_CENTER_HORIZONTAL, 5)
-		hbtnsizer.Add(self.btnShow, 1, wx.GROW|wx.ALIGN_CENTER_HORIZONTAL, 5)
+		hbtnsizer.Add(self.btnStart, 1, wx.GROW|wx.EXPAND, 5)
+		hbtnsizer.Add(self.btnShow, 1, wx.GROW|wx.EXPAND, 5)
 
-		vvvsizer.Add(hbtnsizer, 0, wx.GROW|wx.ALIGN_CENTER_HORIZONTAL, 5)
+		vvvsizer.Add(hbtnsizer, 0, wx.GROW|wx.EXPAND, 5)
 
-		mhsizer.Add(vvvsizer, 0, wx.GROW|wx.ALIGN_CENTER_HORIZONTAL, 0)
+		mhsizer.Add(vvvsizer, 0, wx.GROW|wx.EXPAND, 0)
 
 		mvsizer.Add(mhsizer, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, 5)
 
@@ -603,7 +603,7 @@ class FindTimeDlg(wx.Dialog):
 		btnsizer.AddButton(btnOk)
 		btnsizer.Realize()
 
-		mvsizer.Add(btnsizer, 0, wx.GROW|wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, 10)
+		mvsizer.Add(btnsizer, 0, wx.GROW|wx.EXPAND|wx.ALL, 10)
 
 		self.SetSizer(mvsizer)
 		mvsizer.Fit(self)

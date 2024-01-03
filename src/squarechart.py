@@ -25,7 +25,7 @@ class SquareChart:
 		self.bdc = wx.BufferedDC(None, self.buffer)
 		self.chartsize = min(self.w, self.h)
 		self.maxradius = self.chartsize/2
-		self.center = wx.Point(self.w/2, self.h/2)
+		self.center = wx.Point(int(self.w/2), int(self.h/2))
 
 		self.symbolSize = self.maxradius/16
 		self.smallSize = self.maxradius/18
@@ -92,43 +92,43 @@ class SquareChart:
 		y1 = cy-radius
 		x2 = cx-radius
 		y2 = cy
-		self.bdc.DrawLine(x1, y1, x2, y2)
+		self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 		x1 = cx-radius
 		y1 = cy
 		x2 = cx
 		y2 = cy+radius
-		self.bdc.DrawLine(x1, y1, x2, y2)
+		self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 		x1 = cx
 		y1 = cy+radius
 		x2 = cx+radius
 		y2 = cy
-		self.bdc.DrawLine(x1, y1, x2, y2)
+		self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 		x1 = cx+radius
 		y1 = cy
 		x2 = cx
 		y2 = cy-radius
-		self.bdc.DrawLine(x1, y1, x2, y2)
+		self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 
 		x1 = cx-radius
 		y1 = cy-radius
 		x2 = cx-radius/2
 		y2 = cy-radius/2
-		self.bdc.DrawLine(x1, y1, x2, y2)
+		self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 		x1 = cx-radius
 		y1 = cy+radius
 		x2 = cx-radius/2
 		y2 = cy+radius/2
-		self.bdc.DrawLine(x1, y1, x2, y2)
+		self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 		x1 = cx+radius
 		y1 = cy+radius
 		x2 = cx+radius/2
 		y2 = cy+radius/2
-		self.bdc.DrawLine(x1, y1, x2, y2)
+		self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 		x1 = cx+radius
 		y1 = cy-radius
 		x2 = cx+radius/2
 		y2 = cy-radius/2
-		self.bdc.DrawLine(x1, y1, x2, y2)
+		self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 		
 		x = cx-radius/2
 		y = cy-radius/2
@@ -139,7 +139,7 @@ class SquareChart:
 
 		wxImag = self.buffer.ConvertToImage()
 		img = Image.new('RGB', (wxImag.GetWidth(), wxImag.GetHeight()))
-		img.frombytes(buffer(wxImag.GetData()))
+		img.frombytes(memoryview(wxImag.GetData()))
 		draw = ImageDraw.Draw(img)
 
 		datetxt = str(self.chart.time.origyear)+'.'+common.common.months[self.chart.time.origmonth-1]+'.'+str(self.chart.time.origday).zfill(2)

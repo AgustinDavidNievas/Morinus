@@ -31,7 +31,7 @@ class GraphChartPDs:
 		self.bdc = wx.BufferedDC(None, self.buffer)
 		self.chartsize = min(self.w, self.h)
 		self.maxradius = self.chartsize/2
-		self.center = wx.Point(self.w/2, self.h/2)
+		self.center = wx.Point(int(self.w/2), int(self.h/2))
 
 		self.arrowlen = 0.04
 		self.symbolSize = self.maxradius/16
@@ -110,7 +110,7 @@ class GraphChartPDs:
 		#Convert to PIL (truetype-font is not supported in wxPython)
 		wxImag = self.buffer.ConvertToImage()
 		self.img = Image.new('RGB', (wxImag.GetWidth(), wxImag.GetHeight()))
-		self.img.frombytes(buffer(wxImag.GetData()))
+		self.img.frombytes(memoryview(wxImag.GetData()))
 		self.draw = ImageDraw.Draw(self.img)
 
 		if self.options.houses:
@@ -293,7 +293,7 @@ class GraphChartPDs:
 			y1 = cy+math.sin(math.pi+dif)*r1
 			x2 = cx+math.cos(math.pi+dif)*r2
 			y2 = cy+math.sin(math.pi+dif)*r2
-			self.bdc.DrawLine(x1, y1, x2, y2)
+			self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 
 
 	def drawAscMC(self, ascmc, r1, r2, rArrow, AscMConly=False):
@@ -328,7 +328,7 @@ class GraphChartPDs:
 			y1 = cy+math.sin(ang)*r1
 			x2 = cx+math.cos(ang)*r2
 			y2 = cy+math.sin(ang)*r2
-			self.bdc.DrawLine(x1, y1, x2, y2)
+			self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 
 			if i == 0 or i == 2:
 				self.drawArrow(ang, r2, clr, rArrow)
@@ -345,7 +345,7 @@ class GraphChartPDs:
 		xm = cx+math.cos(ang)*rArrow
 		ym = cy+math.sin(ang)*rArrow
 
-		li = ((xl, yl, xr, yr), (xr, yr, xm, ym), (xm, ym, xl, yl))
+		li = ((int(xl), int(yl), int(xr), int(yr)), (int(xr), int(yr), int(xm), int(ym)), (int(xm), int(ym), int(xl), int(yl)))
 		self.bdc.DrawLineList(li)
 
 #		self.bdc.SetBrush(wx.Brush(clr))
@@ -549,7 +549,7 @@ class GraphChartPDs:
 			x2 = cx+math.cos(i)*r2
 			y2 = cy+math.sin(i)*r2
 
-			self.bdc.DrawLine(x1, y1, x2, y2)
+			self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 			i -= deg
 
 
@@ -575,7 +575,7 @@ class GraphChartPDs:
 				x2 = cx+math.cos(math.pi+shift-math.radians(deg))*self.rDecans
 				y2 = cy+math.sin(math.pi+shift-math.radians(deg))*self.rDecans
 
-				self.bdc.DrawLine(x1, y1, x2, y2)
+				self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 
 			sign += signdeg
 
@@ -626,7 +626,7 @@ class GraphChartPDs:
 			x2 = cx+math.cos(i)*self.rDecans
 			y2 = cy+math.sin(i)*self.rDecans
 
-			self.bdc.DrawLine(x1, y1, x2, y2)
+			self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 			i -= deg
 
 
@@ -684,7 +684,7 @@ class GraphChartPDs:
 		y1 = cy+math.sin(math.pi+math.radians(self.chartRadix.houses.ascmc[houses.Houses.ASC]-lon))*r1
 		x2 = cx+math.cos(math.pi+math.radians(self.chartRadix.houses.ascmc[houses.Houses.ASC]-lon-pshift[planet]))*r2
 		y2 = cy+math.sin(math.pi+math.radians(self.chartRadix.houses.ascmc[houses.Houses.ASC]-lon-pshift[planet]))*r2
-		self.bdc.DrawLine(x1, y1, x2, y2)
+		self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 
 
 	def arrange(self, plnts, frtn, rPlanet):

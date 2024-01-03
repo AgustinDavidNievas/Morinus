@@ -17,9 +17,12 @@ class FixStars:
 		i = 0
 		for k in names:
 			self.data.append(['', '', 0.0, 0.0, 0.0, 0.0])
-			ret, name, dat, serr = astrology.fixstar_ut(','+k, tjd_ut, flag)
+			r = astrology.fixstar_ut(','+k, tjd_ut, flag)
+			ret = r[2]
+			name = r[1]
+			dat = r[0]
 
-			nam = name[0].strip()
+			nam = name.strip()
 			nomnam = ''
 			DELIMITER = ','
 			if nam.find(DELIMITER) != -1:

@@ -98,13 +98,13 @@ class GraphEphemWnd(wx.Window):
 		y1 = self.BORDER
 		x2 = x1
 		y2 = self.h-self.BORDER
-		self.bdc.DrawLine(x1, y1, x2, y2)
+		self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 
 		x1 = self.BORDER
 		y1 = self.h-4*self.BORDER
 		x2 = self.w-self.BORDER
 		y2 = self.h-4*self.BORDER
-		self.bdc.DrawLine(x1, y1, x2, y2)
+		self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 
 		pen = wx.Pen(tableclr, 1, wx.USER_DASH)
 		pen.SetDashes([6, 3])
@@ -120,7 +120,7 @@ class GraphEphemWnd(wx.Window):
 		for i in range(13):
 			x1 += self.monthSize
 			x2 += self.monthSize
-			self.bdc.DrawLine(x1, y1, x2, y2)
+			self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 
 		x1 = 2*self.BORDER+self.signSymbolSize+self.spaceSize
 		y1 = self.h-4*self.BORDER
@@ -129,7 +129,7 @@ class GraphEphemWnd(wx.Window):
 		for i in range(chart.Chart.SIGN_NUM+1):
 			y1 -= self.signSize
 			y2 -= self.signSize
-			self.bdc.DrawLine(x1, y1, x2, y2)
+			self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 
 		plsnum = 7
 		if self.options.transcendental[chart.Chart.TRANSURANUS]:
@@ -266,7 +266,7 @@ class GraphEphemWnd(wx.Window):
 
 		wxImag = self.buffer.ConvertToImage()
 		img = Image.new('RGB', (wxImag.GetWidth(), wxImag.GetHeight()))
-		img.frombytes(buffer(wxImag.GetData()))
+		img.frombytes(memoryview(wxImag.GetData()))
 		draw = ImageDraw.Draw(img)
 
 		#signs

@@ -33,7 +33,7 @@ class MundaneChart:
 		self.bdc = wx.BufferedDC(None, self.buffer)
 		self.chartsize = min(self.w, self.h)
 		self.maxradius = self.chartsize/2
-		self.center = wx.Point(self.w/2, self.h/2)
+		self.center = wx.Point(int(self.w/2), int(self.h/2))
 
 		self.arrowlen = 0.04
 		self.deg01510len = 0.01
@@ -151,7 +151,7 @@ class MundaneChart:
 		#Convert to PIL (truetype-font is not supported in wxPython)
 		wxImag = self.buffer.ConvertToImage()
 		self.img = Image.new('RGB', (wxImag.GetWidth(), wxImag.GetHeight()))
-		self.img.frombytes(buffer(wxImag.GetData()))
+		self.img.frombytes(memoryview(wxImag.GetData()))
 		self.draw = ImageDraw.Draw(self.img)
 
 		self.drawHouseNames(self.rHouse)
@@ -175,7 +175,7 @@ class MundaneChart:
 		#Convert to PIL (truetype-font is not supported in wxPython)
 		wxImag = self.buffer.ConvertToImage()
 		self.img = Image.new('RGB', (wxImag.GetWidth(), wxImag.GetHeight()))
-		self.img.frombytes(buffer(wxImag.GetData()))
+		self.img.frombytes(memoryview(wxImag.GetData()))
 		self.draw = ImageDraw.Draw(self.img)
 
 		self.drawPlanets(self.chart, self.pshift, self.rPlanet, self.rRetr)
@@ -374,7 +374,7 @@ class MundaneChart:
 			y1 = cy+math.sin(offs)*r1
 			x2 = cx+math.cos(offs)*r2
 			y2 = cy+math.sin(offs)*r2
-			self.bdc.DrawLine(x1, y1, x2, y2)
+			self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 			offs -= MundaneChart.DEG30
 
 		#30-degs
@@ -412,7 +412,7 @@ class MundaneChart:
 			y1 = cy+math.sin(offs)*r1
 			x2 = cx+math.cos(offs)*r2
 			y2 = cy+math.sin(offs)*r2
-			self.bdc.DrawLine(x1, y1, x2, y2)
+			self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 			offs -= 3*MundaneChart.DEG30
 
 			if i == 2 or i == 3:
@@ -430,7 +430,7 @@ class MundaneChart:
 		xm = cx+math.cos(ang)*rArrow
 		ym = cy+math.sin(ang)*rArrow
 
-		li = ((xl, yl, xr, yr), (xr, yr, xm, ym), (xm, ym, xl, yl))
+		li = ((int(xl), int(yl), int(xr), int(yr)), (int(xr), int(yr), int(xm), int(ym)), (int(xm), int(ym), int(xl), int(yl)))
 		self.bdc.DrawLineList(li)
 
 #		self.bdc.SetBrush(wx.Brush(clr))
@@ -556,7 +556,7 @@ class MundaneChart:
 			x2 = cx+math.cos(i)*r2
 			y2 = cy+math.sin(i)*r2
 
-			self.bdc.DrawLine(x1, y1, x2, y2)
+			self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 			i -= deg
 
 
@@ -601,7 +601,7 @@ class MundaneChart:
 		y1 = cy+math.sin(math.pi+math.radians(-xmp))*r1
 		x2 = cx+math.cos(math.pi+math.radians(-xmp-pshift[planet]))*r2
 		y2 = cy+math.sin(math.pi+math.radians(-xmp-pshift[planet]))*r2
-		self.bdc.DrawLine(x1, y1, x2, y2)
+		self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 
 
 	def arrange(self, plnts, frtn, rPlanet):

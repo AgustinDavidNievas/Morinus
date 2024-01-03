@@ -59,7 +59,7 @@ class SecondaryDirsDlg(wx.Dialog):
 		dirsizer.Add(vsizer, 0, wx.ALIGN_LEFT|wx.ALL, 5)
 
 		mhsizer.Add(dirsizer, 1, wx.GROW|wx.ALIGN_LEFT|wx.LEFT, 5)
-		mvsizer.Add(mhsizer, 1, wx.GROW|wx.ALIGN_CENTER|wx.TOP|wx.LEFT|wx.RIGHT, 5)
+		mvsizer.Add(mhsizer, 1, wx.GROW|wx.EXPAND|wx.TOP|wx.LEFT|wx.RIGHT, 5)
 
 		#Time
 		stime =wx.StaticBox(self, label='')
@@ -71,7 +71,7 @@ class SecondaryDirsDlg(wx.Dialog):
 		vsizer.Add(self.meantimerb, 0, wx.ALIGN_LEFT|wx.TOP, 2)
 		timesizer.Add(vsizer, 0, wx.ALIGN_LEFT|wx.ALL, 5)
 
-		mvsizer.Add(timesizer, 0, wx.GROW|wx.ALIGN_CENTER|wx.LEFT|wx.RIGHT|wx.BOTTOM, 5)
+		mvsizer.Add(timesizer, 0, wx.GROW|wx.EXPAND|wx.LEFT|wx.RIGHT|wx.BOTTOM, 5)
 
 		btnsizer = wx.StdDialogButtonSizer()
 

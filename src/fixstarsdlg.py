@@ -54,18 +54,21 @@ class FixStars:
 					cnt += 1
 
 			for i in range(1, cnt+1):
-				ret, name, dat, serr = astrology.fixstar_ut(str(i), self.jd, 0)
+				r = astrology.fixstar_ut(str(i), self.jd, 0)
+				ret = r[2]
+				name = r[1]
+				dat = r[0]
 				d, m, s = util.decToDeg(dat[0])
 				sign = d/chart.Chart.SIGN_DEG
 				lon = d%chart.Chart.SIGN_DEG
-				lontxt = str(lon)+FixStars.signtxts[sign]+' '+(str(m)).zfill(2)+"' "+(str(s)).zfill(2)+'"'
+				lontxt = str(lon)+FixStars.signtxts[int(sign)]+' '+(str(m)).zfill(2)+"' "+(str(s)).zfill(2)+'"'
 				d, m, s = util.decToDeg(dat[1])
 				si = ''
 				if dat[1] < 0.0:
 					si = '-'
 				lattxt = si+str(d)+' '+(str(m)).zfill(2)+"' "+(str(s)).zfill(2)+'"'
 
-				nam = name[0].strip()
+				nam = name.strip()
 				nomnam = ''
 				DELIMITER = ','
 				if nam.find(DELIMITER) != -1:
@@ -122,7 +125,7 @@ class FixStarListCtrl(wx.ListCtrl, limchecklistctrlmixin.LimCheckListCtrlMixin):
 		self.Populate()
 
 		nset = set()
-		items = self.fixstardata.iteritems()
+		items = self.fixstardata.items()
 		for k, v in items:
 			for nomname in names:
 				if v[1] == nomname and nomname not in nset:
@@ -147,7 +150,7 @@ class FixStarListCtrl(wx.ListCtrl, limchecklistctrlmixin.LimCheckListCtrlMixin):
 		cnt = 0
 		for key, data in items:
 			cnt += 1
-			index = self.InsertStringItem(sys.maxint, data[0])
+			index = self.InsertStringItem(sys.maxsize, data[0])
 			self.SetStringItem(index, FixStarListCtrl.NUM, str(cnt)+'.')
 			self.SetStringItem(index, FixStarListCtrl.NAME, data[0])
 			self.SetStringItem(index, FixStarListCtrl.NOMNAME, data[1])
@@ -175,7 +178,7 @@ class FixStarListCtrl(wx.ListCtrl, limchecklistctrlmixin.LimCheckListCtrlMixin):
 
 	def OnDeselectAll(self):
 		self.initchecking = True
-		items = self.fixstardata.iteritems()
+		items = self.fixstardata.items()
 		for k, v in items:
 			if self.IsChecked(k-1):
 				self.CheckItem(k-1, False)
@@ -356,7 +359,7 @@ class FixStarsDlg(wx.Dialog):
 		changed = False
 
 		self.selnames = []
-		items = self.li.fixstardata.iteritems()
+		items = self.li.fixstardata.items()
 		for k, v in items:
 			if self.li.IsChecked(k-1):
 				self.selnames.append(v[1])

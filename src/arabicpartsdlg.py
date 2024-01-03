@@ -45,7 +45,7 @@ class PartsListCtrl(wx.ListCtrl):
 
 		items = self.partsdata.items()
 		for key, data in items:
-			index = self.InsertStringItem(sys.maxint, data[0])
+			index = self.InsertStringItem(sys.maxsize, data[0])
 			self.SetStringItem(index, PartsListCtrl.NAME, data[0])
 			self.SetStringItem(index, PartsListCtrl.FORMULA, data[1])
 			self.SetStringItem(index, PartsListCtrl.DIURNAL, data[2])

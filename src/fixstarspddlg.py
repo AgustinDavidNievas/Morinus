@@ -30,8 +30,11 @@ class FixStars:
 
 	def read(self, names):
 		for n in names:
-			ret, name, dat, serr = astrology.fixstar_ut(','+n, self.jd, 0)
-			nam = name[0].strip()
+			r = astrology.fixstar_ut(','+n, self.jd, 0)
+			ret = r[2]
+			name = r[1]
+			dat = r[0]
+			nam = name.strip()
 			nomnam = ''
 			DELIMITER = ','
 			if nam.find(DELIMITER) != -1:
@@ -78,7 +81,7 @@ class FixStarListCtrl(wx.ListCtrl, limchecklistctrlmixin.LimCheckListCtrlMixin):
 		self.load(names)
 		self.Populate()
 
-		items = self.fixstardata.iteritems()
+		items = self.fixstardata.items()
 		for k, v in items:
 			for i in range(len(sels)):
 				if sels[i]:
@@ -96,7 +99,7 @@ class FixStarListCtrl(wx.ListCtrl, limchecklistctrlmixin.LimCheckListCtrlMixin):
 		cnt = 0
 		for key, data in items:
 			cnt += 1
-			index = self.InsertStringItem(sys.maxint, data[0])
+			index = self.InsertStringItem(sys.maxsize, data[0])
 			self.SetStringItem(index, FixStarListCtrl.NUM, str(cnt)+'.')
 			self.SetStringItem(index, FixStarListCtrl.NAME, data[0])
 			self.SetStringItem(index, FixStarListCtrl.NOMNAME, data[1])
@@ -116,14 +119,14 @@ class FixStarListCtrl(wx.ListCtrl, limchecklistctrlmixin.LimCheckListCtrlMixin):
 
 
 	def OnDeselectAll(self):
-		items = self.fixstardata.iteritems()
+		items = self.fixstardata.items()
 		for k, v in items:
 			if self.IsChecked(k-1):
 				self.CheckItem(k-1, False)
 
 
 	def OnSelectAll(self):
-		items = self.fixstardata.iteritems()
+		items = self.fixstardata.items()
 		for k, v in items:
 			if not self.IsChecked(k-1):
 				self.CheckItem(k-1, True)

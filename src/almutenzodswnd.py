@@ -222,7 +222,7 @@ class AlmutenZodsWnd(commonwnd.CommonWnd):
 				draw.text((x+self.SMALL_CELL_WIDTH+self.LONGITUDE_CELL_WIDTH+i*self.CELL_WIDTH+(self.CELL_WIDTH-w)/2, y+11*self.LINE_HEIGHT+j*self.LINE_HEIGHT+(self.LINE_HEIGHT-h)/2), txt, fill=txtclr, font=self.fntText)
 
 				if i == 0:
-					hlon = self.chart.houses.cusps[j+1]
+					hlon = self.chart.houses.cusps[j]
 					if self.options.ayanamsha != 0 and self.options.hsys != 'W':
 						hlon -= self.chart.ayanamsha
 						hlon = util.normalize(hlon)

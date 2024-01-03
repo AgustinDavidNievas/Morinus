@@ -46,7 +46,7 @@ class PlaceListCtrl(wx.ListCtrl):
 
 		items = self.placedata.items()
 		for key, data in items:
-			index = self.InsertStringItem(sys.maxint, data[0])
+			index = self.InsertStringItem(sys.maxsize, data[0])
 			self.SetStringItem(index, PlaceListCtrl.PLACE, data[0])
 			self.SetStringItem(index, PlaceListCtrl.COUNTRY, data[1])
 			self.SetStringItem(index, PlaceListCtrl.LON, data[2])
