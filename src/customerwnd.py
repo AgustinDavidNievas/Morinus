@@ -55,7 +55,7 @@ class CustomerWnd(commonwnd.CommonWnd):
 		self.SetVirtualSize((self.WIDTH, self.HEIGHT))
 
 		self.fntMorinus = ImageFont.truetype(common.common.symbols, self.FONT_SIZE)
-		self.fntSymbol = ImageFont.truetype(common.common.symbols, 3*self.FONT_SIZE/2)
+		self.fntSymbol = ImageFont.truetype(common.common.symbols, int(3*self.FONT_SIZE/2))
 		self.fntText = ImageFont.truetype(common.common.abc, self.FONT_SIZE)
 		self.clrs = (self.options.clrdomicil, self.options.clrexal, self.options.clrperegrin, self.options.clrcasus, self.options.clrexil)	
 		self.signs = common.common.Signs1
@@ -82,7 +82,7 @@ class CustomerWnd(commonwnd.CommonWnd):
 		if self.bw:
 			tableclr = (0,0,0)
 
-		img = Image.new('RGB', (self.WIDTH, self.HEIGHT), self.bkgclr)
+		img = Image.new('RGB', (int(self.WIDTH), int(self.HEIGHT)), self.bkgclr)
 		draw = ImageDraw.Draw(img)
 
 		BOR = CustomerWnd.BORDER
@@ -133,12 +133,12 @@ class CustomerWnd(commonwnd.CommonWnd):
 				sign = d/chart.Chart.SIGN_DEG
 				pos = d%chart.Chart.SIGN_DEG
 				wsp,hsp = draw.textsize(' ', self.fntText)
-				wsg,hsg = draw.textsize(self.signs[sign], self.fntMorinus)
+				wsg,hsg = draw.textsize(self.signs[int(sign)], self.fntMorinus)
 				txt = (str(pos)).rjust(2)+self.deg_symbol+(str(m)).zfill(2)+"'"+(str(s)).zfill(2)+'"'
 				w,h = draw.textsize(txt, self.fntText)
 				offs = (self.CELL_WIDTH-w-wsp-wsg)/2
 				draw.text((x+self.CELL_WIDTH+offs, y+self.LINE_HEIGHT*j+(self.LINE_HEIGHT-h)/2), txt, fill=clrtxt, font=self.fntText)
-				draw.text((x+self.CELL_WIDTH+offs+w+wsp, y+self.LINE_HEIGHT*j+(self.LINE_HEIGHT-hsg)/2), self.signs[sign], fill=clrtxt, font=self.fntMorinus)
+				draw.text((x+self.CELL_WIDTH+offs+w+wsp, y+self.LINE_HEIGHT*j+(self.LINE_HEIGHT-hsg)/2), self.signs[int(sign)], fill=clrtxt, font=self.fntMorinus)
 			elif i == customerpd.CustomerPD.LAT or i == customerpd.CustomerPD.DECL or i == customerpd.CustomerPD.ADLAT:
 				sign = ''
 				if data < 0.0:
@@ -225,12 +225,12 @@ class CustomerWnd(commonwnd.CommonWnd):
 				sign = d/chart.Chart.SIGN_DEG
 				pos = d%chart.Chart.SIGN_DEG
 				wsp,hsp = draw.textsize(' ', self.fntText)
-				wsg,hsg = draw.textsize(self.signs[sign], self.fntMorinus)
+				wsg,hsg = draw.textsize(self.signs[int(sign)], self.fntMorinus)
 				txt = (str(pos)).rjust(2)+self.deg_symbol+(str(m)).zfill(2)+"'"+(str(s)).zfill(2)+'"'
 				w,h = draw.textsize(txt, self.fntText)
 				offs = (self.CELL_WIDTH-w-wsp-wsg)/2
 				draw.text((x+self.CELL_WIDTH+offs, y+self.LINE_HEIGHT*j+(self.LINE_HEIGHT-h)/2), txt, fill=clrtxt, font=self.fntText)
-				draw.text((x+self.CELL_WIDTH+offs+w+wsp, y+self.LINE_HEIGHT*j+(self.LINE_HEIGHT-hsg)/2), self.signs[sign], fill=clrtxt, font=self.fntMorinus)
+				draw.text((x+self.CELL_WIDTH+offs+w+wsp, y+self.LINE_HEIGHT*j+(self.LINE_HEIGHT-hsg)/2), self.signs[int(sign)], fill=clrtxt, font=self.fntMorinus)
 			elif i == customerpd.CustomerPD.LAT or i == customerpd.CustomerPD.DECL or i == customerpd.CustomerPD.Q:
 				sign = ''
 				if data < 0.0:

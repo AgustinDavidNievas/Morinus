@@ -82,15 +82,15 @@ class GraphChartPDs:
 		#Fonts
 		self.smallsymbolSize = 2*self.symbolSize/3
 
-		self.fntMorinus = ImageFont.truetype(common.common.symbols, self.symbolSize)
-		self.fntSmallMorinus = ImageFont.truetype(common.common.symbols, self.smallsymbolSize)
-		self.fntMorinusSigns = ImageFont.truetype(common.common.symbols, self.signSize)
-		self.fntText = ImageFont.truetype(common.common.abc, self.symbolSize/2)
-		self.fntSmallText = ImageFont.truetype(common.common.abc, self.symbolSize/4)
+		self.fntMorinus = ImageFont.truetype(common.common.symbols, int(self.symbolSize))
+		self.fntSmallMorinus = ImageFont.truetype(common.common.symbols, int(self.smallsymbolSize))
+		self.fntMorinusSigns = ImageFont.truetype(common.common.symbols, int(self.signSize))
+		self.fntText = ImageFont.truetype(common.common.abc, int(self.symbolSize/2))
+		self.fntSmallText = ImageFont.truetype(common.common.abc, int(self.symbolSize/4))
 		self.fntSmallText2 = ImageFont.truetype(common.common.abc, self.symbolSize/3)
-		self.fntBigText = ImageFont.truetype(common.common.abc, self.symbolSize/4*3)
-		self.fntMorinus2 = ImageFont.truetype(common.common.symbols, self.symbolSize/4*3)
-		self.fntRetr = ImageFont.truetype(common.common.symbols, self.symbolSize/2)
+		self.fntBigText = ImageFont.truetype(common.common.abc, int(self.symbolSize/4*3))
+		self.fntMorinus2 = ImageFont.truetype(common.common.symbols, int(self.symbolSize/4*3))
+		self.fntRetr = ImageFont.truetype(common.common.symbols, int(self.symbolSize/2))
 		self.deg_symbol = u'\u00b0'
 
 #		self.hsystem = {'P':mtexts.txts['HSPlacidus'], 'K':mtexts.txts['HSKoch'], 'R':mtexts.txts['HSRegiomontanus'], 'C':mtexts.txts['HSCampanus'], 'E':mtexts.txts['HSEqual'], 'W':mtexts.txts['HSWholeSign'], 'X':mtexts.txts['HSAxial'], 'M':mtexts.txts['HSMorinus'], 'H':mtexts.txts['HSHorizontal'], 'T':mtexts.txts['HSPagePolich'], 'B':mtexts.txts['HSAlcabitus'], 'O':mtexts.txts['HSPorphyrius']}

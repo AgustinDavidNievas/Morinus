@@ -249,15 +249,15 @@ class GraphChart:
 
 		self.smallsymbolSize = 2*self.symbolSize/3
 
-		self.fntMorinus = ImageFont.truetype(common.common.symbols, self.symbolSize)
-		self.fntSmallMorinus = ImageFont.truetype(common.common.symbols, self.smallsymbolSize)
-		self.fntMorinusSigns = ImageFont.truetype(common.common.symbols, self.signSize)
-		self.fntAspects = ImageFont.truetype(common.common.symbols, self.symbolSize/2)
-		self.fntText = ImageFont.truetype(common.common.abc, self.symbolSize/2)
-		self.fntAntisText = ImageFont.truetype(common.common.abc, self.symbolSize)
-		self.fntSmallText = ImageFont.truetype(common.common.abc, self.symbolSize/4)
-		self.fntBigText = ImageFont.truetype(common.common.abc, self.symbolSize/4*3)
-		self.fntMorinus2 = ImageFont.truetype(common.common.symbols, self.symbolSize/4*3)
+		self.fntMorinus = ImageFont.truetype(common.common.symbols, int(self.symbolSize))
+		self.fntSmallMorinus = ImageFont.truetype(common.common.symbols, int(self.smallsymbolSize))
+		self.fntMorinusSigns = ImageFont.truetype(common.common.symbols, int(self.signSize))
+		self.fntAspects = ImageFont.truetype(common.common.symbols, int(self.symbolSize/2))
+		self.fntText = ImageFont.truetype(common.common.abc, int(self.symbolSize/2))
+		self.fntAntisText = ImageFont.truetype(common.common.abc, int(self.symbolSize))
+		self.fntSmallText = ImageFont.truetype(common.common.abc, int(self.symbolSize/4))
+		self.fntBigText = ImageFont.truetype(common.common.abc, int(self.symbolSize/4*3))
+		self.fntMorinus2 = ImageFont.truetype(common.common.symbols, int(self.symbolSize/4*3))
 		self.deg_symbol = u'\u00b0'
 
 		self.arsigndiff = (0, -1, -1, 2, -1, 3, 4, -1, -1, -1, 6)
@@ -1467,7 +1467,7 @@ class GraphChart:
 
 		w1, h1 = 0.0, 0.0
 		if mixed[p1] < planets.Planets.PLANETS_NUM:
-			#TODO bajar la version de Pillow a 9.5 para que sea compatible con getsize?
+			#TODO se baja momentaneamente la version de Pillow a 9.5 para que sea compatible con getsize, getbbox lo reemplaza pero cambia lo que retorna, ver que onda mas adelante
 			w1, h1 = self.fntMorinus.getsize(common.common.Planets[mixed[p1]])
 		else:
 			w1, h1 = self.fntMorinus.getsize(common.common.fortune)

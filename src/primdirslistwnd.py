@@ -100,7 +100,7 @@ class PrimDirsListWnd(wx.ScrolledWindow):
 		self.SetVirtualSize((self.WIDTH, self.HEIGHT))
 
 		self.fntMorinus = ImageFont.truetype(common.common.symbols, self.FONT_SIZE)
-		self.fntSymbol = ImageFont.truetype(common.common.symbols, 3*self.FONT_SIZE/2)
+		self.fntSymbol = ImageFont.truetype(common.common.symbols, int(3*self.FONT_SIZE/2))
 		self.fntAspects = ImageFont.truetype(common.common.symbols, 3*self.FONT_SIZE/4)
 		self.fntText = ImageFont.truetype(common.common.abc, self.FONT_SIZE)
 		self.clrs = (self.options.clrdomicil, self.options.clrexal, self.options.clrperegrin, self.options.clrcasus, self.options.clrexil)
@@ -406,7 +406,7 @@ class PrimDirsListWnd(wx.ScrolledWindow):
 		if self.bw:
 			tableclr = (0, 0, 0)
 
-		img = Image.new('RGB', (self.WIDTH, self.HEIGHT), self.bkgclr)
+		img = Image.new('RGB', (int(self.WIDTH), int(self.HEIGHT)), self.bkgclr)
 		draw = ImageDraw.Draw(img)
 
 		#Title

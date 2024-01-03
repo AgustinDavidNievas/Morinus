@@ -68,7 +68,7 @@ class AlmutenZodsWnd(commonwnd.CommonWnd):
 		if self.bw:
 			tableclr = (0,0,0)
 
-		img = Image.new('RGB', (self.WIDTH, self.HEIGHT), self.bkgclr)
+		img = Image.new('RGB', (int(self.WIDTH), int(self.HEIGHT)), self.bkgclr)
 		draw = ImageDraw.Draw(img)
 
 		BOR = commonwnd.CommonWnd.BORDER
@@ -341,12 +341,12 @@ class AlmutenZodsWnd(commonwnd.CommonWnd):
 		sign = d/chart.Chart.SIGN_DEG
 		pos = d%chart.Chart.SIGN_DEG
 		wsp,hsp = draw.textsize(' ', self.fntText)
-		wsg,hsg = draw.textsize(self.signs[sign], self.fntMorinus)
+		wsg,hsg = draw.textsize(self.signs[int(sign)], self.fntMorinus)
 		txt = (str(pos)).rjust(2)+self.deg_symbol+(str(m)).zfill(2)+"'"+(str(s)).zfill(2)+'"'
 		w,h = draw.textsize(txt, self.fntText)
 		offset = (self.LONGITUDE_CELL_WIDTH-(w+wsp+wsg))/2
 		draw.text((x+offset, y+(self.LINE_HEIGHT-h)/2), txt, fill=clr, font=self.fntText)
-		draw.text((x+offset+w+wsp, y+(self.LINE_HEIGHT-hsg)/2), self.signs[sign], fill=clr, font=self.fntMorinus)
+		draw.text((x+offset+w+wsp, y+(self.LINE_HEIGHT-hsg)/2), self.signs[int(sign)], fill=clr, font=self.fntMorinus)
 
 
 

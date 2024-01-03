@@ -131,13 +131,13 @@ class MundaneChart:
 
 		self.smallsymbolSize = 2*self.symbolSize/3
 
-		self.fntMorinus = ImageFont.truetype(common.common.symbols, self.symbolSize)
-		self.fntSmallMorinus = ImageFont.truetype(common.common.symbols, self.smallsymbolSize)
-		self.fntAspects = ImageFont.truetype(common.common.symbols, self.symbolSize/2)
-		self.fntText = ImageFont.truetype(common.common.abc, self.symbolSize/2)
-		self.fntSmallText = ImageFont.truetype(common.common.abc, self.symbolSize/4)
-		self.fntBigText = ImageFont.truetype(common.common.abc, self.symbolSize)
-		self.fntMorinus2 = ImageFont.truetype(common.common.symbols, self.symbolSize/4*3)
+		self.fntMorinus = ImageFont.truetype(common.common.symbols, int(self.symbolSize))
+		self.fntSmallMorinus = ImageFont.truetype(common.common.symbols, int(self.smallsymbolSize))
+		self.fntAspects = ImageFont.truetype(common.common.symbols, int(self.symbolSize/2))
+		self.fntText = ImageFont.truetype(common.common.abc, int(self.symbolSize/2))
+		self.fntSmallText = ImageFont.truetype(common.common.abc, int(self.symbolSize/4))
+		self.fntBigText = ImageFont.truetype(common.common.abc, int(self.symbolSize))
+		self.fntMorinus2 = ImageFont.truetype(common.common.symbols, int(self.symbolSize/4*3))
 		self.deg_symbol = u'\u00b0'
 
 

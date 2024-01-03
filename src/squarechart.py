@@ -30,7 +30,7 @@ class SquareChart:
 		self.symbolSize = self.maxradius/16
 		self.smallSize = self.maxradius/18
 		self.fontSize = self.symbolSize
-		self.fntMorinus = ImageFont.truetype(common.common.symbols, self.symbolSize)
+		self.fntMorinus = ImageFont.truetype(common.common.symbols, int(self.symbolSize))
 		self.fntMorinusSmall = ImageFont.truetype(common.common.symbols, self.smallSize)
 		self.fntText = ImageFont.truetype(common.common.abc, self.fontSize)
 		self.fntTextSmall = ImageFont.truetype(common.common.abc, 3*self.fontSize/4)
@@ -211,7 +211,7 @@ class SquareChart:
 
 			txt = (str(pos)).rjust(2)+self.deg_symbol
 			draw.text((ar[i][0][0], ar[i][0][1]), txt, fill=posclr, font=self.fntTextSmall)
-			draw.text((ar[i][1][0], ar[i][1][1]), self.signs[sign], fill=signsclr, font=self.fntMorinusSmall)
+			draw.text((ar[i][1][0], ar[i][1][1]), self.signs[int(sign)], fill=signsclr, font=self.fntMorinusSmall)
 			txt = (str(m)).zfill(2)+"'"
 			draw.text((ar[i][2][0], ar[i][2][1]), txt, fill=posclr, font=self.fntTextSmaller)
 
@@ -278,10 +278,10 @@ class SquareChart:
 				txtdeg = (str(pos)).zfill(2)+self.deg_symbol
 				txtmin = (str(m)).zfill(2)+"'"
 				wdeg,hdeg = draw.textsize(txtdeg, self.fntTextSmall)
-				wsg,hsg = draw.textsize(self.signs[sign], self.fntMorinusSmall)
+				wsg,hsg = draw.textsize(self.signs[int(sign)], self.fntMorinusSmall)
 				wmin,hmin = draw.textsize(txtmin, self.fntTextSmaller)
 				draw.text((x+wpl+wr+wsp, y+lhoffs[i]), txtdeg, fill=clrpl, font=self.fntTextSmall)
-				draw.text((x+wpl+wr+wsp+wdeg, y+lhoffs[i]), self.signs[sign], fill=clrpl, font=self.fntMorinusSmall)
+				draw.text((x+wpl+wr+wsp+wdeg, y+lhoffs[i]), self.signs[int(sign)], fill=clrpl, font=self.fntMorinusSmall)
 				draw.text((x+wpl+wr+wsp+wdeg+wsp+wsg, y+lhoffs[i]), txtmin, fill=clrpl, font=self.fntTextSmaller)
 
 				lhoffs[i] += lh

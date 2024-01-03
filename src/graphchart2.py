@@ -250,17 +250,17 @@ class GraphChart2:
 
 		self.smallsymbolSize = 2*self.symbolSize/3
 
-		self.fntMorinus = ImageFont.truetype(common.common.symbols, self.symbolSize)
-		self.fntSmallMorinus = ImageFont.truetype(common.common.symbols, self.smallsymbolSize)
-		self.fntMorinusSigns = ImageFont.truetype(common.common.symbols, self.signSize)
-		self.fntText = ImageFont.truetype(common.common.abc, self.symbolSize/2)
-		self.fntAntisText = ImageFont.truetype(common.common.abc, self.symbolSize)
-		self.fntSmallText = ImageFont.truetype(common.common.abc, self.symbolSize/2)
-		self.fntRetr = ImageFont.truetype(common.common.symbols, self.symbolSize/2)
+		self.fntMorinus = ImageFont.truetype(common.common.symbols, int(self.symbolSize))
+		self.fntSmallMorinus = ImageFont.truetype(common.common.symbols, int(self.smallsymbolSize))
+		self.fntMorinusSigns = ImageFont.truetype(common.common.symbols, int(self.signSize))
+		self.fntText = ImageFont.truetype(common.common.abc, int(self.symbolSize/2))
+		self.fntAntisText = ImageFont.truetype(common.common.abc, int(self.symbolSize))
+		self.fntSmallText = ImageFont.truetype(common.common.abc, int(self.symbolSize/2))
+		self.fntRetr = ImageFont.truetype(common.common.symbols, int(self.symbolSize/2))
 		self.fntSmallText2 = ImageFont.truetype(common.common.abc, self.symbolSize/3)
-		self.fntSmallTextOuter = ImageFont.truetype(common.common.abc, self.symbolSize/4)
-		self.fntBigText = ImageFont.truetype(common.common.abc, self.symbolSize/4*3)
-		self.fntMorinus2 = ImageFont.truetype(common.common.symbols, self.symbolSize/4*3)
+		self.fntSmallTextOuter = ImageFont.truetype(common.common.abc, int(self.symbolSize/4))
+		self.fntBigText = ImageFont.truetype(common.common.abc, int(self.symbolSize/4*3))
+		self.fntMorinus2 = ImageFont.truetype(common.common.symbols, int(self.symbolSize/4*3))
 		self.deg_symbol = u'\u00b0'
 
 		self.arsigndiff = (0, -1, -1, 2, -1, 3, 4, -1, -1, -1, 6)

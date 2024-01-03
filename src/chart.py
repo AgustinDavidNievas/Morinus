@@ -788,8 +788,8 @@ class Chart:
 			if oppsign >= Chart.SIGN_NUM:
 				oppsign -= Chart.SIGN_NUM
 
-			isexil = self.options.dignities[pid][0][oppsign]
-			iscasus = self.options.dignities[pid][1][oppsign]
+			isexil = self.options.dignities[pid][0][int(oppsign)]
+			iscasus = self.options.dignities[pid][1][int(oppsign)]
 
 			if isdom:
 				val = Chart.DOMICIL
