@@ -53,33 +53,62 @@ class Antiscia:
 			plcants.append((cant, lat))
 
 #			raant, declant = util.getRaDecl(ant, lat, self.obl)
-			raant, declant, dist = astrology.swe_cotrans(ant, lat, 1.0, -obl)
+			r = astrology.cotrans((ant, lat, 1.0), -obl)
+			raant = r[0]
+			declant = r[1]
+			dist = r[2]
+
 			self.plantiscia.append(Antiscion(Antiscion.ANTISCION, i, ant, lat, raant, declant))
-			
+
 		for i in range(planets.Planets.PLANETS_NUM):
 #			raant, declant = util.getRaDecl(plcants[i][0], plcants[i][1], self.obl)
-			raant, declant, dist = astrology.swe_cotrans(plcants[i][0], plcants[i][1], 1.0, -obl)
+			r = astrology.cotrans((plcants[i][0], plcants[i][1], 1.0), -obl)
+			raant = r[0]
+			declant = r[1]
+			dist = r[2]
+
 			self.plcontraant.append(Antiscion(Antiscion.CONTRAANT, i, plcants[i][0], plcants[i][1], raant, declant))
 
 		ant, cant = self.calc(lof[fortune.Fortune.LON])
 #		lat = lof[fortune.Fortune.LAT] #=0.0
-		raant, declant, dist = astrology.swe_cotrans(ant, 0.0, 1.0, -self.obl)
+		r = astrology.cotrans((ant, 0.0, 1.0), -self.obl)
+		raant = r[0]
+		declant = r[1]
+		dist = r[2]
+
 		self.lofant = Antiscion(Antiscion.ANTISCION, Antiscion.LOF, ant, 0.0, raant, declant)
-		raant, declant, dist = astrology.swe_cotrans(cant, 0.0, 1.0, -self.obl)
+
+		r = astrology.cotrans((cant, 0.0, 1.0), -self.obl)
+		raant = r[0]
+		declant = r[1]
+		dist = r[2]
+
 		self.lofcontraant = Antiscion(Antiscion.CONTRAANT, Antiscion.LOF, cant, 0.0, raant, declant)
 
 		antasc, cantasc = self.calc(ascmc[houses.Houses.ASC])
-		raantasc, declantasc, dist = astrology.swe_cotrans(antasc, 0.0, 1.0, -self.obl)
+		r = astrology.cotrans((antasc, 0.0, 1.0), -self.obl)
+		raantasc = r[0]
+		declantasc = r[1]
+		dist = r[2]
 		self.ascmcant.append(Antiscion(Antiscion.ANTISCION, Antiscion.ASC, antasc, 0.0, raantasc, declantasc))
 
 		antmc, cantmc = self.calc(ascmc[houses.Houses.MC])
-		raantmc, declantmc, dist = astrology.swe_cotrans(antmc, 0.0, 1.0, -self.obl)
+		r = astrology.cotrans((antmc, 0.0, 1.0), -self.obl)
+		raantmc = r[0]
+		declantmc = r[1]
+		dist = r[2]
 		self.ascmcant.append(Antiscion(Antiscion.ANTISCION, Antiscion.MC, antmc, 0.0, raantmc, declantmc))
 
-		raantasc, declantasc, dist = astrology.swe_cotrans(cantasc, 0.0, 1.0, -self.obl)
+		r = astrology.cotrans((cantasc, 0.0, 1.0), -self.obl)
+		raantasc = r[0]
+		declantasc = r[1]
+		dist = r[2]
 		self.ascmccontraant.append(Antiscion(Antiscion.CONTRAANT, Antiscion.ASC, cantasc, 0.0, raantasc, declantasc))
 
-		raantmc, declantmc, dist = astrology.swe_cotrans(cantmc, 0.0, 1.0, -self.obl)
+		r = astrology.cotrans((cantmc, 0.0, 1.0), -self.obl)
+		raantmc = r[0]
+		declantmc = r[1]
+		dist = r[2]
 		self.ascmccontraant.append(Antiscion(Antiscion.CONTRAANT, Antiscion.MC, cantmc, 0.0, raantmc, declantmc))
 
 #		self.printants()
@@ -114,22 +143,17 @@ class Antiscia:
 		plstxt = ('Sun', 'Moon', 'Mercury', 'Venus', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto', 'AscNode', 'DescNode')
 		anttxt = ('Antiscia', 'Contraantiscia')
 
-		print ''
-		print 'Antiscia'
+		print('')
+		print('Antiscia')
 		i = 0
 		for ant in self.antiscia:
 			if i < planets.Planets.PLANETS_NUM*2:
-				print '%s %s %f %f %f %f' % (anttxt[ant.typ], plstxt[ant.Id], ant.lon, ant.lat, ant.ra, ant.decl)
+				print('%s %s %f %f %f %f' % (anttxt[ant.typ], plstxt[ant.Id], ant.lon, ant.lat, ant.ra, ant.decl))
 			elif i == Antiscia.LOFANT or i == Antiscia.LOFCANT:
-				print '%s %s %f %f %f %f' % (anttxt[ant.typ], 'LoF', ant.lon, ant.lat, ant.ra, ant.decl)
+				print('%s %s %f %f %f %f' % (anttxt[ant.typ], 'LoF', ant.lon, ant.lat, ant.ra, ant.decl))
 			elif i == Antiscia.ASCANT or i == Antiscia.ASCCANT:
-				print '%s %s %f %f %f %f' % (anttxt[ant.typ], 'Asc', ant.lon, ant.lat, ant.ra, ant.decl)
+				print('%s %s %f %f %f %f' % (anttxt[ant.typ], 'Asc', ant.lon, ant.lat, ant.ra, ant.decl))
 			elif i == Antiscia.MCANT or i == Antiscia.MCCANT:
-				print '%s %s %f %f %f %f' % (anttxt[ant.typ], 'MC', ant.lon, ant.lat, ant.ra, ant.decl)
+				print('%s %s %f %f %f %f' % (anttxt[ant.typ], 'MC', ant.lon, ant.lat, ant.ra, ant.decl))
 
 			i += 1
-
-
-
-
-

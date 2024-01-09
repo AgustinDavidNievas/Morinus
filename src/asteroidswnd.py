@@ -57,7 +57,7 @@ class AsteroidsWnd(commonwnd.CommonWnd):
 		if self.bw:
 			tableclr = (0,0,0)
 
-		img = Image.new('RGB', (self.WIDTH, self.HEIGHT), self.bkgclr)
+		img = Image.new('RGB', (int(self.WIDTH), int(self.HEIGHT)), self.bkgclr)
 		draw = ImageDraw.Draw(img)
 
 		BOR = commonwnd.CommonWnd.BORDER
@@ -117,7 +117,7 @@ class AsteroidsWnd(commonwnd.CommonWnd):
 				sign = d/chart.Chart.SIGN_DEG
 				pos = d%chart.Chart.SIGN_DEG
 				wsp,hsp = draw.textsize(' ', self.fntText)
-				txtsign = self.signs[sign]
+				txtsign = self.signs[int(sign)]
 				wsg,hsg = draw.textsize(txtsign, self.fntMorinus)
 				txt = (str(pos)).rjust(2)+self.deg_symbol+(str(m)).zfill(2)+"'"+(str(s)).zfill(2)+'"'
 				w,h = draw.textsize(txt, self.fntText)

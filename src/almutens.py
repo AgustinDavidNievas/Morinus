@@ -26,7 +26,7 @@ class Essentials:
 		self.degwinner = [[[-1,0],[-1,0],[-1,0]], [[-1,0],[-1,0],[-1,0]], [[-1,0],[-1,0],[-1,0]], [[-1,0],[-1,0],[-1,0]], [[-1,0],[-1,0],[-1,0]]] #[pid,score] #Max three planets
 		self.degwinner2 = [[[-1,0],[-1, 0], [-1, 0]], [[-1,0],[-1,0],[-1,0]], [[-1,0],[-1,0],[-1,0]], [[-1,0],[-1,0],[-1,0]], [[-1,0],[-1,0],[-1,0]]] #[pid,score] #Max three planets
 		self.degwinnermc = [[-1,0],[-1,0],[-1,0]]
-		self.degwinnerhcs = [[[-1,0],[-1,0],[-1,0]], [[-1,0],[-1,0],[-1,0]], [[-1,0],[-1,0],[-1,0]], [[-1,0],[-1,0],[-1,0]], [[-1,0],[-1,0],[-1,0]], [[-1,0],[-1,0],[-1,0]], [[-1,0],[-1,0],[-1,0]], [[-1,0],[-1,0],[-1,0]], [[-1,0],[-1,0],[-1,0]], [[-1,0],[-1,0],[-1,0]], [[-1,0],[-1,0],[-1,0]], [[-1,0],[-1,0],[-1,0]]] 
+		self.degwinnerhcs = [[[-1,0],[-1,0],[-1,0]], [[-1,0],[-1,0],[-1,0]], [[-1,0],[-1,0],[-1,0]], [[-1,0],[-1,0],[-1,0]], [[-1,0],[-1,0],[-1,0]], [[-1,0],[-1,0],[-1,0]], [[-1,0],[-1,0],[-1,0]], [[-1,0],[-1,0],[-1,0]], [[-1,0],[-1,0],[-1,0]], [[-1,0],[-1,0],[-1,0]], [[-1,0],[-1,0],[-1,0]], [[-1,0],[-1,0],[-1,0]]]
 
 		self.doms = [4, 3, 2, 1, 0, 2, 3, 4, 5, 6, 6, 5]
 		self.exals = [0, 1, -1, 5, -1, 2, 6, -1, -1, 4, -1, 3]
@@ -38,7 +38,7 @@ class Essentials:
 		daytime = chrt.planets.planets[astrology.SE_SUN].abovehorizon
 		if chrt.options.usedaynightorb:
 			daytime = chrt.fortune.abovehorizon
-		
+
 		numcoll = len(collections)
 		for i in range(astrology.SE_SATURN+1):
 			score = [0, 0, 0, 0, 0]
@@ -137,7 +137,7 @@ class Essentials:
 			score = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 			scoretxt = ['', '', '', '', '', '', '', '', '', '', '', '']
 			for j in range(houses.Houses.HOUSE_NUM):
-				lon = self.chart.houses.cusps[j+1]
+				lon = self.chart.houses.cusps[j+1]#TODO eventualmente sacar el +1, ya que antes venia con un 0 de más al principio, pero hay muchos lugares para debugguear u_u
 				if chrt.options.ayanamsha != 0 and chrt.options.hsys != 'W':
 					lon = util.normalize(lon-chrt.ayanamsha)
 
@@ -208,7 +208,7 @@ class Essentials:
 
 				if tripl != -1 and tripl == i:
 					sc = self.chart.options.dignityscores[2]
-					score += sc 
+					score += sc
 					add = '+'
 					if scoretxt == '':
 						add = ''
@@ -278,11 +278,11 @@ class Accidentals:
 				lon2 = sunlon-orb
 				if self.inorbsinister(lon1, lon2, pllon, asp):
 					if j == 0 or j == num-1:
-						self.inphases[i-astrology.SE_MARS] += chrt.options.sunphases[2]	
+						self.inphases[i-astrology.SE_MARS] += chrt.options.sunphases[2]
 					elif j == 1 or j == num-2:
-						self.inphases[i-astrology.SE_MARS] += chrt.options.sunphases[1]	
+						self.inphases[i-astrology.SE_MARS] += chrt.options.sunphases[1]
 					elif j == 2:
-						self.inphases[i-astrology.SE_MARS] += chrt.options.sunphases[0]	
+						self.inphases[i-astrology.SE_MARS] += chrt.options.sunphases[0]
 
 		ar = (1, 4, 2, 5, 3, 6, 0)
 		self.dayruler[ar[chrt.time.ph.weekday]] += chrt.options.dayhourscores[0]
@@ -294,7 +294,7 @@ class Accidentals:
 			self.scores[i] += self.hourruler[i]
 
 		for i in range(astrology.SE_MARS, astrology.SE_SATURN+1):
-			self.scores[i] += self.inphases[i-astrology.SE_MARS]	
+			self.scores[i] += self.inphases[i-astrology.SE_MARS]
 
 
 	def inorbsinister(self, val1, val2, pos, asp):
@@ -316,7 +316,7 @@ class Accidentals:
 		if val1 > asppoint and val2 < asppoint:
 			return True
 
-		return False 
+		return False
 
 
 class Topicals:
@@ -459,7 +459,7 @@ class Topicals:
 				if housenum == val:
 					lons.append(pllon)
 		elif typ == Topicals.HOUSECUSP:
-			ok, lon = self.getLonSub(chrt, chrt.houses.cusps[val+1], rul, daytime)
+			ok, lon = self.getLonSub(chrt, chrt.houses.cusps[val+1], rul, daytime)#TODO revisar en todos los lugares que haya un houses.cusps que onda con los +1 en el indice
 			if ok:
 				lons.append(lon)
 		elif typ == Topicals.ARABICPART:
@@ -492,7 +492,7 @@ class Topicals:
 	def getLonSub(self, chrt, lon, rul, daytime):
 		ok = True
 		if rul == Topicals.SELF:
-			pass 
+			pass
 		elif rul == Topicals.SIGN:
 			sign = int(lon/chart.Chart.SIGN_DEG)
 			lon = chrt.planets.planets[self.doms[sign]].data[planets.Planet.LONG]
@@ -601,7 +601,7 @@ class Topicals:
 
 				if tripl != -1 and tripl == i:
 					sc = self.chart.options.dignityscores[2]
-					score += sc 
+					score += sc
 					add = '+'
 					if scoretxt == '':
 						add = ''
@@ -658,7 +658,7 @@ class Almutens:
 			self.scores[i] += self.accidentals.hourruler[i]
 
 		for i in range(astrology.SE_MARS, astrology.SE_SATURN+1):
-			self.scores[i] += self.accidentals.inphases[i-astrology.SE_MARS]	
+			self.scores[i] += self.accidentals.inphases[i-astrology.SE_MARS]
 
 		self.maxscore = [-1,-1, False]
 		for i in range(astrology.SE_SATURN+1):
@@ -672,9 +672,3 @@ class Almutens:
 		self.topicals = None
 		if chrt.options.topicals != None:
 			self.topicals = Topicals(chrt)
-
-
-
-
-
-

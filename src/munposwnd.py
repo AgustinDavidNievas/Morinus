@@ -82,7 +82,7 @@ class MunPosWnd(commonwnd.CommonWnd):
 		if self.bw:
 			tableclr = (0,0,0)
 
-		img = Image.new('RGB', (self.WIDTH, self.HEIGHT), self.bkgclr)
+		img = Image.new('RGB', (int(self.WIDTH), int(self.HEIGHT)), self.bkgclr)
 		draw = ImageDraw.Draw(img)
 
 		BOR = commonwnd.CommonWnd.BORDER
@@ -145,7 +145,11 @@ class MunPosWnd(commonwnd.CommonWnd):
 				w,h = draw.textsize(txt, self.fntMorinus)
 				draw.text((x+summa+(offs[i]-w)/2, y+(self.LINE_HEIGHT-h)/2), txt, fill=tclr, font=self.fntMorinus)
 			elif i != 0:
-				ret, serr = astrology.swe_house_pos(self.chart.houses.ascmc[1], self.chart.place.lat, self.chart.obl[0], ord(self.chart.houses.hsys), self.chart.planets.planets[idx].data[planets.Planet.LONG], self.chart.planets.planets[idx].data[planets.Planet.LAT])
+				ret = astrology.house_pos(armc=self.chart.houses.ascmc[1],
+										  geolat=self.chart.place.lat, 
+										  eps=self.chart.obl[0], 
+										  hsys=self.chart.houses.hsys.encode(), 
+										  objcoord=[self.chart.planets.planets[idx].data[planets.Planet.LONG],self.chart.planets.planets[idx].data[planets.Planet.LAT]])
 #				ret = int(ret*100.0)/100.0
 				txt = str(ret)
 				w,h = draw.textsize(txt, self.fntText)
@@ -185,7 +189,7 @@ class MunPosWnd(commonwnd.CommonWnd):
 				sign = d/chart.Chart.SIGN_DEG
 				pos = d%chart.Chart.SIGN_DEG
 				wsp,hsp = draw.textsize(' ', self.fntText)
-				txtsign = self.signs[sign]
+				txtsign = self.signs[int(sign)]
 				wsg,hsg = draw.textsize(txtsign, self.fntMorinus)
 				txt = (str(pos)).rjust(2)+self.deg_symbol+(str(m)).zfill(2)+"'"+(str(s)).zfill(2)+'"'
 				w,h = draw.textsize(txt, self.fntText)

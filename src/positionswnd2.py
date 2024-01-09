@@ -19,7 +19,7 @@ class PositionsWnd2(wx.Window):
 
 		self.parent = parent
 		self.chart = chrt
-		self.options = options		
+		self.options = options
 		self.mainfr = mainfr
 		self.bw = self.options.bw
 
@@ -66,7 +66,7 @@ class PositionsWnd2(wx.Window):
 
 		self.TABLE_HEIGHT = ((self.TITLE_HEIGHT)+(self.LINE_NUM)*(self.LINE_HEIGHT)+self.SPACE_TITLEY+self.SPACE_ASCPLANETSY+self.SPACE_PLANETSHCSY)
 		self.TABLE_WIDTH = (self.SMALL_CELL_WIDTH+self.COLUMN_NUM*(self.CELL_WIDTH))
-	
+
 		self.RETRYOFFS = 3*self.FONT_SIZE/5
 
 		self.WIDTH = (BOR+self.TABLE_WIDTH+BOR)
@@ -77,10 +77,10 @@ class PositionsWnd2(wx.Window):
 		self.SetVirtualSize((self.WIDTH, self.HEIGHT))
 
 		self.fntMorinus = ImageFont.truetype(common.common.symbols, self.FONT_SIZE)
-		self.fntSymbol = ImageFont.truetype(common.common.symbols, 3*self.FONT_SIZE/2)
+		self.fntSymbol = ImageFont.truetype(common.common.symbols, int(3*self.FONT_SIZE/2))
 		self.fntText = ImageFont.truetype(common.common.abc, self.FONT_SIZE)
-		self.fntRText = ImageFont.truetype(common.common.abc, self.FONT_SIZE*3/4)
-		self.clrs = (self.options.clrdomicil, self.options.clrexal, self.options.clrperegrin, self.options.clrcasus, self.options.clrexil)	
+		self.fntRText = ImageFont.truetype(common.common.abc, int(self.FONT_SIZE*3/4))
+		self.clrs = (self.options.clrdomicil, self.options.clrexal, self.options.clrperegrin, self.options.clrcasus, self.options.clrexil)
 		self.signs = common.common.Signs1
 		if not self.options.signs:
 			self.signs = common.common.Signs2
@@ -111,7 +111,7 @@ class PositionsWnd2(wx.Window):
 				fpath+=u'.bmp'
 			#Check if fpath already exists!?
 			if (os.path.isfile(fpath)):
- 				dlgm = wx.MessageDialog(self, mtexts.txts['FileExists'], mtexts.txts['Message'], wx.YES_NO|wx.YES_DEFAULT|wx.ICON_QUESTION)
+				dlgm = wx.MessageDialog(self, mtexts.txts['FileExists'], mtexts.txts['Message'], wx.YES_NO|wx.YES_DEFAULT|wx.ICON_QUESTION)
 				if (dlgm.ShowModal() == wx.ID_NO):
 					dlgm.Destroy()
 					dlg.Destroy()
@@ -147,7 +147,7 @@ class PositionsWnd2(wx.Window):
 		if self.bw:
 			tableclr = (0,0,0)
 
-		img = Image.new('RGB', (self.WIDTH, self.HEIGHT), self.bkgclr)
+		img = Image.new('RGB', (int(self.WIDTH), int(self.HEIGHT)), self.bkgclr)
 		draw = ImageDraw.Draw(img)
 
 		BOR = PositionsWnd2.BORDER
@@ -181,7 +181,7 @@ class PositionsWnd2(wx.Window):
 
 		data = ((lons[0], self.chart.houses.ascmc2[houses.Houses.ASC][houses.Houses.LAT], self.chart.houses.ascmc2[houses.Houses.ASC][houses.Houses.RA], self.chart.houses.ascmc2[houses.Houses.ASC][houses.Houses.DECL]), (lons[1], self.chart.houses.ascmc2[houses.Houses.MC][houses.Houses.LAT], self.chart.houses.ascmc2[houses.Houses.MC][houses.Houses.RA], self.chart.houses.ascmc2[houses.Houses.MC][houses.Houses.DECL]))
 		for i in range(len(txts)):
-			self.drawanglesline(draw, x, y+i*self.LINE_HEIGHT, tableclr, txts[i], data[i], True)
+			self.drawanglesline(draw, x, y+i*self.LINE_HEIGHT, tableclr, txts[int(i)], data[int(i)], True)
 
 		#Planets
 		y = y+len(txts)*self.LINE_HEIGHT+self.SPACE_ASCPLANETSY
@@ -218,11 +218,11 @@ class PositionsWnd2(wx.Window):
 					lons[i] -= self.chart.ayanamsha
 					lons[i] = util.normalize(lons[i])
 			data = (
-				(lons[0], 0.0, self.chart.houses.cusps2[hidx[0]-1][0], self.chart.houses.cusps2[hidx[0]-1][1]), 
-				(lons[1], 0.0, self.chart.houses.cusps2[hidx[1]-1][0], self.chart.houses.cusps2[hidx[1]-1][1]), 
-				(lons[2], 0.0, self.chart.houses.cusps2[hidx[2]-1][0], self.chart.houses.cusps2[hidx[2]-1][1]), 
-				(lons[3], 0.0, self.chart.houses.cusps2[hidx[3]-1][0], self.chart.houses.cusps2[hidx[3]-1][1]), 
-				(lons[4], 0.0, self.chart.houses.cusps2[hidx[4]-1][0], self.chart.houses.cusps2[hidx[4]-1][1]), 
+				(lons[0], 0.0, self.chart.houses.cusps2[hidx[0]-1][0], self.chart.houses.cusps2[hidx[0]-1][1]),
+				(lons[1], 0.0, self.chart.houses.cusps2[hidx[1]-1][0], self.chart.houses.cusps2[hidx[1]-1][1]),
+				(lons[2], 0.0, self.chart.houses.cusps2[hidx[2]-1][0], self.chart.houses.cusps2[hidx[2]-1][1]),
+				(lons[3], 0.0, self.chart.houses.cusps2[hidx[3]-1][0], self.chart.houses.cusps2[hidx[3]-1][1]),
+				(lons[4], 0.0, self.chart.houses.cusps2[hidx[4]-1][0], self.chart.houses.cusps2[hidx[4]-1][1]),
 				(lons[5], 0.0, self.chart.houses.cusps2[hidx[5]-1][0], self.chart.houses.cusps2[hidx[5]-1][1]))
 			y = y+realnum*self.LINE_HEIGHT+self.SPACE_PLANETSHCSY
 			draw.line((x, y, x+self.TABLE_WIDTH, y), fill=tableclr)
@@ -279,18 +279,18 @@ class PositionsWnd2(wx.Window):
 				sign = d/chart.Chart.SIGN_DEG
 				pos = d%chart.Chart.SIGN_DEG
 				wsp,hsp = draw.textsize(' ', self.fntText)
-				wsg,hsg = draw.textsize(self.signs[sign], self.fntMorinus)
+				wsg,hsg = draw.textsize(self.signs[int(sign)], self.fntMorinus)
 				txt = (str(pos)).rjust(2)+self.deg_symbol+(str(m)).zfill(2)+"'"+(str(s)).zfill(2)+'"'
 				w,h = draw.textsize(txt, self.fntText)
 				offset = (offs[i]-(w+wsp+wsg))/2
 				draw.text((x+self.SMALL_CELL_WIDTH+summa+offset, y+(self.LINE_HEIGHT-h)/2), txt, fill=txtclr, font=self.fntText)
-				draw.text((x+self.SMALL_CELL_WIDTH+summa+offset+w+wsp, y+(self.LINE_HEIGHT-hsg)/2), self.signs[sign], fill=txtclr, font=self.fntMorinus)
+				draw.text((x+self.SMALL_CELL_WIDTH+summa+offset+w+wsp, y+(self.LINE_HEIGHT-hsg)/2), self.signs[int(sign)], fill=txtclr, font=self.fntMorinus)
 			elif i == planets.Planet.LAT or i == planets.Planet.DECL:
 				sign = ''
 				if data[i] < 0.0:
 					sign = '-'
 				txt = sign+(str(d)).rjust(2)+self.deg_symbol+(str(m)).zfill(2)+"'"+(str(s)).zfill(2)+'"'
-				w,h = draw.textsize(txt, self.fntText)				
+				w,h = draw.textsize(txt, self.fntText)
 				offset = (offs[i]-w)/2
 				draw.text((x+self.SMALL_CELL_WIDTH+summa+offset, y+(self.LINE_HEIGHT-h)/2), txt, fill=txtclr, font=self.fntText)
 			elif i == planets.Planet.RA:
@@ -300,7 +300,7 @@ class PositionsWnd2(wx.Window):
 					txt = (str(d)).rjust(2)+':'+(str(m)).zfill(2)+":"+(str(s)).zfill(2)
 				else:
 					txt = (str(d)).rjust(3)+self.deg_symbol+(str(m)).zfill(2)+"'"+(str(s)).zfill(2)+'"'
-				w,h = draw.textsize(txt, self.fntText)				
+				w,h = draw.textsize(txt, self.fntText)
 				offset = (offs[i]-w)/2
 				draw.text((x+self.SMALL_CELL_WIDTH+summa+offset, y+(self.LINE_HEIGHT-h)/2), txt, fill=txtclr, font=self.fntText)
 
@@ -363,12 +363,12 @@ class PositionsWnd2(wx.Window):
 				sign = d/chart.Chart.SIGN_DEG
 				pos = d%chart.Chart.SIGN_DEG
 				wsp,hsp = draw.textsize(' ', self.fntText)
-				wsg,hsg = draw.textsize(self.signs[sign], self.fntMorinus)
+				wsg,hsg = draw.textsize(self.signs[int(sign)], self.fntMorinus)
 				txt = (str(pos)).rjust(2)+self.deg_symbol+(str(m)).zfill(2)+"'"+(str(s)).zfill(2)+'"'
 				w,h = draw.textsize(txt, self.fntText)
 				offset = (offs[i]-(w+wsp+wsg))/2
 				draw.text((x+self.SMALL_CELL_WIDTH+summa+offset, y+(self.LINE_HEIGHT-h)/2), txt, fill=clrpl, font=self.fntText)
-				draw.text((x+self.SMALL_CELL_WIDTH+summa+offset+w+wsp, y+(self.LINE_HEIGHT-hsg)/2), self.signs[sign], fill=clrpl, font=self.fntMorinus)
+				draw.text((x+self.SMALL_CELL_WIDTH+summa+offset+w+wsp, y+(self.LINE_HEIGHT-hsg)/2), self.signs[int(sign)], fill=clrpl, font=self.fntMorinus)
 			elif i == planets.Planet.LAT or i == planets.Planet.DECL or i == planets.Planet.ADLAT:
 				sign = ''
 				if data[i] < 0.0:
@@ -377,7 +377,7 @@ class PositionsWnd2(wx.Window):
 					d, m, s = 0, 0, 0
 					sign = ''
 				txt = sign+(str(d)).rjust(2)+self.deg_symbol+(str(m)).zfill(2)+"'"+(str(s)).zfill(2)+'"'
-				w,h = draw.textsize(txt, self.fntText)				
+				w,h = draw.textsize(txt, self.fntText)
 				offset = (offs[i]-w)/2
 				draw.text((x+self.SMALL_CELL_WIDTH+summa+offset, y+(self.LINE_HEIGHT-h)/2), txt, fill=clrpl, font=self.fntText)
 			elif i == planets.Planet.RA or i == planets.Planet.PMP or i == planets.Planet.ADPH or i == planets.Planet.POH:
@@ -388,7 +388,7 @@ class PositionsWnd2(wx.Window):
 						txt = (str(d)).rjust(2)+':'+(str(m)).zfill(2)+":"+(str(s)).zfill(2)
 					else:
 						txt = (str(d)).rjust(3)+self.deg_symbol+(str(m)).zfill(2)+"'"+(str(s)).zfill(2)+'"'
-				w,h = draw.textsize(txt, self.fntText)				
+				w,h = draw.textsize(txt, self.fntText)
 				offset = (offs[i]-w)/2
 				draw.text((x+self.SMALL_CELL_WIDTH+summa+offset, y+(self.LINE_HEIGHT-h)/2), txt, fill=clrpl, font=self.fntText)
 			elif i == planets.Planet.SA or i == planets.Planet.MD or i == planets.Planet.HD or i == planets.Planet.TH or i == planets.Planet.HOD or i == planets.Planet.AODO:
@@ -473,12 +473,12 @@ class PositionsWnd2(wx.Window):
 				sign = d/chart.Chart.SIGN_DEG
 				pos = d%chart.Chart.SIGN_DEG
 				wsp,hsp = draw.textsize(' ', self.fntText)
-				wsg,hsg = draw.textsize(self.signs[sign], self.fntMorinus)
+				wsg,hsg = draw.textsize(self.signs[int(sign)], self.fntMorinus)
 				txt = (str(pos)).rjust(2)+self.deg_symbol+(str(m)).zfill(2)+"'"+(str(s)).zfill(2)+'"'
 				w,h = draw.textsize(txt, self.fntText)
 				offset = (offs[i]-(w+wsp+wsg))/2
 				draw.text((x+self.SMALL_CELL_WIDTH+summa+offset, y+(self.LINE_HEIGHT-h)/2), txt, fill=clrpl, font=self.fntText)
-				draw.text((x+self.SMALL_CELL_WIDTH+summa+offset+w+wsp, y+(self.LINE_HEIGHT-hsg)/2), self.signs[sign], fill=clrpl, font=self.fntMorinus)
+				draw.text((x+self.SMALL_CELL_WIDTH+summa+offset+w+wsp, y+(self.LINE_HEIGHT-hsg)/2), self.signs[int(sign)], fill=clrpl, font=self.fntMorinus)
 			elif i == planets.Planet.LAT or i == planets.Planet.DECL or i == planets.Planet.Q:
 				sign = ''
 				if data[i] < 0.0:
@@ -487,7 +487,7 @@ class PositionsWnd2(wx.Window):
 					d, m, s = 0, 0, 0
 					sign = ''
 				txt = sign+(str(d)).rjust(2)+self.deg_symbol+(str(m)).zfill(2)+"'"+(str(s)).zfill(2)+'"'
-				w,h = draw.textsize(txt, self.fntText)				
+				w,h = draw.textsize(txt, self.fntText)
 				offset = (offs[i]-w)/2
 				draw.text((x+self.SMALL_CELL_WIDTH+summa+offset, y+(self.LINE_HEIGHT-h)/2), txt, fill=clrpl, font=self.fntText)
 			elif i == planets.Planet.RA or i == planets.Planet.ZD or i == planets.Planet.POLE or i == planets.Planet.W or i == planets.Planet.CMP or i == planets.Planet.RMP:
@@ -504,7 +504,7 @@ class PositionsWnd2(wx.Window):
 						txt = (str(d)).rjust(2)+':'+(str(m)).zfill(2)+":"+(str(s)).zfill(2)
 					else:
 						txt = (str(d)).rjust(3)+self.deg_symbol+(str(m)).zfill(2)+"'"+(str(s)).zfill(2)+'"'
-				w,h = draw.textsize(txt, self.fntText)				
+				w,h = draw.textsize(txt, self.fntText)
 				offset = (offs[i]-w)/2
 				draw.text((x+self.SMALL_CELL_WIDTH+summa+offset, y+(self.LINE_HEIGHT-h)/2), txt, fill=clrpl, font=self.fntText)
 			elif i == planets.Planet.RMD or i == planets.Planet.RHD:
@@ -525,8 +525,3 @@ class PositionsWnd2(wx.Window):
 
 			j += 1
 			summa += offs[i]
-
-
-
-
-

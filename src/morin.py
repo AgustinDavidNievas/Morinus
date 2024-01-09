@@ -89,7 +89,7 @@ import placidiansapd
 import placidianutppd
 import regiomontanpd
 import campanianpd
-import thread
+import _thread
 import options
 import util
 import mtexts
@@ -102,7 +102,7 @@ import math #solar precession
 import mrclasses
 
 (PDReadyEvent, EVT_PDREADY) = wx.lib.newevent.NewEvent()
-pdlock = thread.allocate_lock()
+pdlock = _thread.allocate_lock()
 
 
 class MFrame(mrclasses.MrTopFrame):
@@ -433,7 +433,8 @@ class MFrame(mrclasses.MrTopFrame):
 		self.pdrangedlg = None
 
 		os.environ['SE_EPHE_PATH'] = ''
-		astrology.swe_set_ephe_path(common.common.ephepath)
+		#TODO pyswisseph no tiene esto, la version de C si, pero hay que portar astrologymodule.c a python3
+		astrology.set_ephe_path(common.common.ephepath)
 
 		self.drawSplash()
 
@@ -527,8 +528,10 @@ class MFrame(mrclasses.MrTopFrame):
 		h, m, s = util.decToDeg(fnd[3])
 		time = chart.Time(fnd[0], fnd[1], fnd[2], h, m, s, bc, chart.Time.GREGORIAN, chart.Time.GREENWICH, True, 0, 0, False, place)
 		#Calc obliquity
-		d = astrology.swe_deltat(time.jd)
-		rflag, obl, serr = astrology.swe_calc(time.jd+d, astrology.SE_ECL_NUT, 0)
+		d = astrology.deltat(time.jd)
+		res = astrology.calc(time.jd+d, astrology.SE_ECL_NUT, 0)
+		rflag = res[1]
+		obl = res[0]
 
 		if arplac[2]:
 			#calc GMTMidnight:
@@ -1363,7 +1366,7 @@ class MFrame(mrclasses.MrTopFrame):
 			self.pds = None
 			self.pdready = False
 			self.abort = primdirs.AbortPD()
-			thId = thread.start_new_thread(self.calcPDs, (pdrange, direction, self))
+			thId = _thread.start_new_thread(self.calcPDs, (pdrange, direction, self))
 
 			self.timer = wx.Timer(self)
 			self.Bind(wx.EVT_TIMER, self.OnTimer)
@@ -1528,14 +1531,18 @@ class MFrame(mrclasses.MrTopFrame):
 		#The algorithm of the Janus astrological program
 		jdSol = time.jd
 		JD1900 = 2415020.5
-		FBAyanamsa1900 = astrology.swe_get_ayanamsa_ut(JD1900)
+		FBAyanamsa1900 = astrology.get_ayanamsa_ut(JD1900)
 
-		rflag, dat, serr = astrology.swe_calc_ut(JD1900, astrology.SE_ECL_NUT, 0)
+		r = astrology.calc_ut(JD1900, astrology.SE_ECL_NUT, 0)
+		rflag = r[1]
+		dat = r[0]
 		NutLon1900 = dat[2]
 		SVP1900 = 360.0-FBAyanamsa1900-NutLon1900
 
 		#calc natalprecfrom1900
-		rflag, dat, serr = astrology.swe_calc_ut(self.horoscope.time.jd, astrology.SE_ECL_NUT, 0)
+		r2 = astrology.calc_ut(self.horoscope.time.jd, astrology.SE_ECL_NUT, 0)
+		rflag = r2[1]
+		dat = r2[0]
 		NutLonNatal = dat[2]
 		SVPNatal = 360.0-self.horoscope.ayanamsha-NutLonNatal
 		NatalChartPrecessionFrom1900 = SVPNatal-SVP1900
@@ -1548,12 +1555,16 @@ class MFrame(mrclasses.MrTopFrame):
 		#Keep recalculating transiting Sun position using new jdSol until
 		#DiffAngle is small enough.
 		while (DiffAngle > 0.00001):
-			rflag, dat, serr = astrology.swe_calc_ut(jdSol, astrology.SE_SUN, pflag)
+			r = astrology.calc_ut(jdSol, astrology.SE_SUN, pflag)
+			rflag = r[1]
+			dat = r[0]
 			TranSunLon = dat[0]
 			TranSunVel = dat[3]
 
-			rflag, dat, serr = astrology.swe_calc_ut(jdSol, astrology.SE_ECL_NUT, 0)
-			FBAyanamsaReturn = astrology.swe_get_ayanamsa_ut(jdSol)
+			r = astrology.calc_ut(jdSol, astrology.SE_ECL_NUT, 0)
+			flag = r[1]
+			dat = r[0]
+			FBAyanamsaReturn = astrology.get_ayanamsa_ut(jdSol)
 			NutLonReturn = dat[2]
 			SVPReturn = 360.0-FBAyanamsaReturn-NutLonReturn
 
@@ -1571,7 +1582,7 @@ class MFrame(mrclasses.MrTopFrame):
 
 			jdSol = jdSol+CorrectionJD
 
-			fromjdtime = astrology.swe_revjul(jdSol, astrology.SE_GREG_CAL)
+			fromjdtime = astrology.revjul(jdSol, astrology.SE_GREG_CAL)
 
 		h, mi, s = util.decToDeg(fromjdtime[3])
 		return fromjdtime[0], fromjdtime[1], fromjdtime[2], h, mi, s
@@ -2584,7 +2595,7 @@ class MFrame(mrclasses.MrTopFrame):
 		info.Name = mtexts.txts['Morinus']
 		info.Version = '6.2'
 		info.Copyright = mtexts.txts['FreeSoft']
-		info.Description = mtexts.txts['Description']+str(astrology.swe_version())
+		info.Description = mtexts.txts['Description']+str(astrology.version())
 		info.WebSite = ('http://sites.google.com/site/pymorinus/',\
 					   'http://sites.google.com/site/pymorinus/')
 		info.Developers = [u'Robert Nagy (Hungary); robert.pluto@gmail.com (programming and astrology)\nPhilippe Epaud(France); philipeau@free.fr (french translation)\nMargherita Fiorello (Italy); margherita.fiorello@gmail.com (astrology, italian translation)\nMartin Gansten (Sweden); http://www.martingansten.com/ (astrology)\nJaime Chica Londoño(Colombia); aulavirtual@astrochart.org (spanish translation)\nRoberto Luporini (Italy); roberto.luporini@tiscali.it (Astrological astronomy)\nPetr Radek (Czech Rep.); petr_radek@raz-dva.cz (astrology)\nEndre Csaba Simon (Finland); secsaba@gmail.com (programming and astrology)\nDenis Steinhoff (Israel); denis@steindan.com (astrology, russian translation)\nVáclav Jan Špirhanzl (Czech Rep.); vjs.morinus@gmail.com (MacOS version)']
@@ -2776,7 +2787,7 @@ class MFrame(mrclasses.MrTopFrame):
 			self.SetBackgroundColour(bkgclr)
 			self.ClearBackground()
 
-		dc.DrawBitmap(self.buffer, x, y)
+		dc.DrawBitmap(self.buffer, int(x), int(y))
 
 
 	def onPaint(self, event):
@@ -2794,7 +2805,7 @@ class MFrame(mrclasses.MrTopFrame):
 				bkgclr = (255,255,255)
 			self.SetBackgroundColour(bkgclr)
 
-		dc.DrawBitmap(self.buffer, x, y)
+		dc.DrawBitmap(self.buffer, int(x), int(y))
 
 
 	def onSize(self, event):
@@ -2807,29 +2818,29 @@ class MFrame(mrclasses.MrTopFrame):
 
 	def calc(self):
 		for planet in self.horoscope.planets.planets:
-			print ''
-			print '%s:' % planet.name
+			print('')
+			print('%s:' % planet.name)
 
 			(d, m, s) = util.decToDeg(planet.data[0])
-			print 'lon: %02d %02d\' %02d"' % (d, m, s)
+			print('lon: %02d %02d\' %02d"' % (d, m, s))
 			(d, m, s) = util.decToDeg(planet.data[1])
-			print 'lat: %02d %02d\' %02d"' % (d, m, s)
+			print('lat: %02d %02d\' %02d"' % (d, m, s))
 			(d, m, s) = util.decToDeg(planet.data[3])
 			if planet.data[3] > 0:
-				print 'speed: %02d %02d\' %02d"' % (d, m, s)
+				print('speed: %02d %02d\' %02d"' % (d, m, s))
 			else:
-				print 'speed: %02d %02d\' %02d"  R' % (d, m, s)
+				print('speed: %02d %02d\' %02d"  R' % (d, m, s))
 
 
-		print ''
-		print 'Houses'
+		print('')
+		print('Houses')
 		for i in range(1, houses.Houses.HOUSE_NUM+1):
 			(d, m, s) = util.decToDeg(self.horoscope.houses.cusps[i])
-			print 'house[%d]: %02d %02d\' %02d"' % (i, d, m, s)
+			print('house[%d]: %02d %02d\' %02d"' % (i, d, m, s))
 
-		print ''
-		print 'Vars'
+		print('')
+		print('Vars')
 		xvars = ('Asc', 'MC', 'ARMC', 'Vertex', 'Equatorial Ascendant', 'Co-Asc', 'Co-Asc2', 'Polar Asc')
 		for i in range(0, 8):
 			(d, m, s) = util.decToDeg(self.horoscope.houses.ascmc[i])
-			print '%s = %02d %02d\' %02d"' % (xvars[i], d, m, s)
+			print('%s = %02d %02d\' %02d"' % (xvars[i], d, m, s))

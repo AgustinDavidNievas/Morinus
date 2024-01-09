@@ -67,7 +67,7 @@ class MiscWnd(commonwnd.CommonWnd):
 		if self.bw:
 			txtclr = (0,0,0)
 
-		img = Image.new('RGB', (self.WIDTH, self.HEIGHT), self.bkgclr)
+		img = Image.new('RGB', (int(self.WIDTH), int(self.HEIGHT)), self.bkgclr)
 		draw = ImageDraw.Draw(img)
 
 		BOR = commonwnd.CommonWnd.BORDER
@@ -116,7 +116,7 @@ class MiscWnd(commonwnd.CommonWnd):
 				sign = d/chart.Chart.SIGN_DEG
 				pos = d%chart.Chart.SIGN_DEG
 				wsp,hsp = draw.textsize(' ', self.fntText)
-				txtsign = self.signs[sign]
+				txtsign = self.signs[int(sign)]
 				wsg,hsg = draw.textsize(txtsign, self.fntMorinus)
 				txt = (str(pos)).rjust(2)+self.deg_symbol+(str(m)).zfill(2)+"'"+(str(s)).zfill(2)+'"'
 				w,h = draw.textsize(txt, self.fntText)
@@ -164,12 +164,12 @@ class MiscWnd(commonwnd.CommonWnd):
 			sign = d/chart.Chart.SIGN_DEG
 			pos = d%chart.Chart.SIGN_DEG
 			wsp,hsp = draw.textsize(' ', self.fntText)
-			wsg,hsg = draw.textsize(self.signs[sign], self.fntMorinus)
+			wsg,hsg = draw.textsize(self.signs[int(sign)], self.fntMorinus)
 			txt = (str(pos)).rjust(2)+self.deg_symbol+(str(m)).zfill(2)+"'"+(str(s)).zfill(2)+'"'
 			w,h = draw.textsize(txt, self.fntText)
 			offset = (self.CELL_WIDTH-(w+wsp+wsg))/2
 			draw.text((x+2*self.CELL_WIDTH+offset, y+self.LINE_HEIGHT+(self.LINE_HEIGHT-h)/2), txt, fill=txtclr, font=self.fntText)
-			draw.text((x+2*self.CELL_WIDTH+offset+w+wsp, y+self.LINE_HEIGHT+(self.LINE_HEIGHT-hsg)/2), self.signs[sign], fill=txtclr, font=self.fntMorinus)
+			draw.text((x+2*self.CELL_WIDTH+offset+w+wsp, y+self.LINE_HEIGHT+(self.LINE_HEIGHT-hsg)/2), self.signs[int(sign)], fill=txtclr, font=self.fntMorinus)
 
 
 		wxImg = wx.Image(img.size[0], img.size[1])

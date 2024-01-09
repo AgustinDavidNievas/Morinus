@@ -18,11 +18,11 @@ class FixStars:
 		def __init__(self, name, nomname):
 			self.name = name
 			self.nomname = nomname
-		
+
 
 	def __init__(self, ephepath):
 		self.ephepath = ephepath
-		self.jd = astrology.swe_julday(1950, 1, 1, 0.0, astrology.SE_GREG_CAL)	
+		self.jd = astrology.julday(1950, 1, 1, 0.0, astrology.SE_GREG_CAL)
 		self.data = []
 
 		self.fname = os.path.join(self.ephepath, 'fixstars.cat')
@@ -30,15 +30,18 @@ class FixStars:
 
 	def read(self, names):
 		for n in names:
-			ret, name, dat, serr = astrology.swe_fixstar_ut(','+n, self.jd, 0)
-			nam = name[0].strip()
+			r = astrology.fixstar_ut(','+n, self.jd, 0)
+			ret = r[2]
+			name = r[1]
+			dat = r[0]
+			nam = name.strip()
 			nomnam = ''
 			DELIMITER = ','
 			if nam.find(DELIMITER) != -1:
 				snam = nam.split(DELIMITER)
 				nam = snam[0].strip()
 				nomnam = snam[1].strip()
-				
+
 			self.data.append(FixStars.FixStar(nam, nomnam))
 
 		return True #!?
@@ -78,12 +81,12 @@ class FixStarListCtrl(wx.ListCtrl, limchecklistctrlmixin.LimCheckListCtrlMixin):
 		self.load(names)
 		self.Populate()
 
-		items = self.fixstardata.iteritems()
+		items = self.fixstardata.items()
 		for k, v in items:
 			for i in range(len(sels)):
 				if sels[i]:
 					self.CheckItem(i)
-					
+
 		wx.EndBusyCursor()
 
 
@@ -96,7 +99,7 @@ class FixStarListCtrl(wx.ListCtrl, limchecklistctrlmixin.LimCheckListCtrlMixin):
 		cnt = 0
 		for key, data in items:
 			cnt += 1
-			index = self.InsertStringItem(sys.maxint, data[0])
+			index = self.InsertStringItem(sys.maxsize, data[0])
 			self.SetStringItem(index, FixStarListCtrl.NUM, str(cnt)+'.')
 			self.SetStringItem(index, FixStarListCtrl.NAME, data[0])
 			self.SetStringItem(index, FixStarListCtrl.NOMNAME, data[1])
@@ -116,14 +119,14 @@ class FixStarListCtrl(wx.ListCtrl, limchecklistctrlmixin.LimCheckListCtrlMixin):
 
 
 	def OnDeselectAll(self):
-		items = self.fixstardata.iteritems()
+		items = self.fixstardata.items()
 		for k, v in items:
 			if self.IsChecked(k-1):
 				self.CheckItem(k-1, False)
 
 
 	def OnSelectAll(self):
-		items = self.fixstardata.iteritems()
+		items = self.fixstardata.items()
 		for k, v in items:
 			if not self.IsChecked(k-1):
 				self.CheckItem(k-1, True)
@@ -218,12 +221,8 @@ class FixStarsPDDlg(wx.Dialog):
 
 	def getSelections(self):
 		sels = []
-		keys = self.li.fixstardata.iterkeys()
+		keys = self.li.fixstardata.keys()
 		for k in keys:
 			sels.append(self.li.IsChecked(k-1))
 
 		return sels[:]
-
-
-
-

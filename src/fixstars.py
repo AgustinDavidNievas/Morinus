@@ -11,15 +11,18 @@ class FixStars:
 	DECL = 5
 
 	def __init__(self, tjd_ut, flag, names, obl):
-		
+
 		self.data = []
 
 		i = 0
-		for k in names.iterkeys():
+		for k in names:
 			self.data.append(['', '', 0.0, 0.0, 0.0, 0.0])
-			ret, name, dat, serr = astrology.swe_fixstar_ut(','+k, tjd_ut, flag)
+			r = astrology.fixstar_ut(','+k, tjd_ut, flag)
+			ret = r[2]
+			name = r[1]
+			dat = r[0]
 
-			nam = name[0].strip()
+			nam = name.strip()
 			nomnam = ''
 			DELIMITER = ','
 			if nam.find(DELIMITER) != -1:
@@ -31,7 +34,10 @@ class FixStars:
 			self.data[i][FixStars.NOMNAME] = nomnam
 			self.data[i][FixStars.LON] = dat[0]
 			self.data[i][FixStars.LAT] = dat[1]
-			ra, decl, dist = astrology.swe_cotrans(dat[0], dat[1], 1.0, -obl)
+			r = astrology.cotrans((dat[0], dat[1], 1.0), -obl)
+			ra = r[0]#TODO abajo usa los indices, agregar ceros o modificar abajo en sort?
+			decl = r[1]
+			dist = r[2]
 			self.data[i][FixStars.RA] = ra
 			self.data[i][FixStars.DECL] = decl
 
@@ -43,7 +49,7 @@ class FixStars:
 	def sort(self):
 		num = len(self.data)
 		self.mixed = []
-			
+
 		for i in range(num):
 			self.mixed.append(i)
 
@@ -56,8 +62,3 @@ class FixStars:
 					tmp = self.mixed[j]
 					self.mixed[j] = self.mixed[j+1]
 					self.mixed[j+1] = tmp
-
-
-
-
-

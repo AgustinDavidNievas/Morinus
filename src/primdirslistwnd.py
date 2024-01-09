@@ -56,7 +56,7 @@ class PrimDirsListWnd(wx.ScrolledWindow):
 			self.pmenu.Append(self.ID_PDsInChartInZod, mtexts.txts['PDsInChartInZod'], mtexts.txts['PDsInChartInZod'])
 			self.pmenu.Append(self.ID_PDsInChartInMun, mtexts.txts['PDsInChartInMun'], mtexts.txts['PDsInChartInMun'])
 			self.pmenu.Append(self.ID_PDsInChartIngress, mtexts.txts['PDsInChartIngress'], mtexts.txts['PDsInChartIngress'])
-		
+
 		self.Bind(wx.EVT_PAINT, self.OnPaint)
 		self.Bind(wx.EVT_RIGHT_UP, self.onPopupMenu)
 		self.Bind(wx.EVT_MENU, self.onSaveAsBitmap, id=self.ID_SaveAsBitmap)
@@ -93,15 +93,15 @@ class PrimDirsListWnd(wx.ScrolledWindow):
 		self.SPACE_BETWEEN_TABLESX = 4
 		self.TITLE_CELL_WIDTH = (2*self.TABLE_WIDTH+self.SPACE_BETWEEN_TABLESX+1)
 		self.SECOND_TABLE_OFFSX = (self.TABLE_WIDTH+self.SPACE_BETWEEN_TABLESX)
-	
+
 		self.WIDTH = (PrimDirsListWnd.BORDER+self.TITLE_CELL_WIDTH+PrimDirsListWnd.BORDER)
 		self.HEIGHT = (PrimDirsListWnd.BORDER+self.TABLE_HEIGHT+PrimDirsListWnd.BORDER)
 
 		self.SetVirtualSize((self.WIDTH, self.HEIGHT))
 
 		self.fntMorinus = ImageFont.truetype(common.common.symbols, self.FONT_SIZE)
-		self.fntSymbol = ImageFont.truetype(common.common.symbols, 3*self.FONT_SIZE/2)
-		self.fntAspects = ImageFont.truetype(common.common.symbols, 3*self.FONT_SIZE/4)
+		self.fntSymbol = ImageFont.truetype(common.common.symbols, int(3*self.FONT_SIZE/2))
+		self.fntAspects = ImageFont.truetype(common.common.symbols, int(3*self.FONT_SIZE/4))
 		self.fntText = ImageFont.truetype(common.common.abc, self.FONT_SIZE)
 		self.clrs = (self.options.clrdomicil, self.options.clrexal, self.options.clrperegrin, self.options.clrcasus, self.options.clrexil)
 
@@ -131,8 +131,7 @@ class PrimDirsListWnd(wx.ScrolledWindow):
 				fpath += u'.bmp'
 			#Check if fpath already exists!?
 			if (os.path.isfile(fpath)):
- 				dlgm = wx.MessageDialog(self, mtexts.txts['FileExists'], mtexts.txts['Message'],
-					 wx.YES_NO|wx.YES_DEFAULT|wx.ICON_QUESTION)
+				dlgm = wx.MessageDialog(self, mtexts.txts['FileExists'], mtexts.txts['Message'],wx.YES_NO|wx.YES_DEFAULT|wx.ICON_QUESTION)
 				if (dlgm.ShowModal() == wx.ID_NO):
 					dlgm.Destroy()
 					dlg.Destroy()
@@ -149,7 +148,7 @@ class PrimDirsListWnd(wx.ScrolledWindow):
 		if self.options.langid != 0:
 			dlg = wx.MessageDialog(self, mtexts.txts['SwitchToEnglish'], mtexts.txts['Message'], wx.OK)
 			dlg.ShowModal()
-			return		
+			return
 
 		name = self.chart.name+mtexts.txts['PD']
 		dlg = wx.FileDialog(self, mtexts.txts['SaveAsText'], '', name, mtexts.txts['TXTFiles'], wx.FD_SAVE)
@@ -165,13 +164,12 @@ class PrimDirsListWnd(wx.ScrolledWindow):
 				fpath += u'.txt'
 			#Check if fpath already exists!?
 			if os.path.isfile(fpath):
- 				dlg = wx.MessageDialog(self, mtexts.txts['FileExists'], mtexts.txts['Message'],
-					 wx.YES_NO|wx.YES_DEFAULT|wx.ICON_QUESTION)
+				dlg = wx.MessageDialog(self, mtexts.txts['FileExists'], mtexts.txts['Message'],wx.YES_NO|wx.YES_DEFAULT|wx.ICON_QUESTION)
 				if dlg.ShowModal() == wx.ID_NO:
 					return
 
 			self.mainfr.fpathimgs = dpath
-			self.pds.print2file(fpath)		
+			self.pds.print2file(fpath)
 
 
 	def onBlackAndWhite(self, event):
@@ -185,13 +183,13 @@ class PrimDirsListWnd(wx.ScrolledWindow):
 		valid, pdnum = self.getPDNum(event)
 
 		if valid and self.pds.pds[pdnum].mundane:
- 			dlg = wx.MessageDialog(self, mtexts.txts['NotAvailableWithPDSettings'], mtexts.txts['Message'], wx.OK|wx.ICON_EXCLAMATION)
+			dlg = wx.MessageDialog(self, mtexts.txts['NotAvailableWithPDSettings'], mtexts.txts['Message'], wx.OK|wx.ICON_EXCLAMATION)
 			dlg.ShowModal()
 			return
 
 		valid, y, m, d, ho, mi, se, t, pdtypetxt, pdkeytxt, direct, da, pdchart = self.calc(event, False)
 		if not valid:
- 			dlg = wx.MessageDialog(self, mtexts.txts['PDClickError'], mtexts.txts['Message'], wx.OK|wx.ICON_EXCLAMATION)
+			dlg = wx.MessageDialog(self, mtexts.txts['PDClickError'], mtexts.txts['Message'], wx.OK|wx.ICON_EXCLAMATION)
 			dlg.ShowModal()
 			return
 
@@ -212,13 +210,13 @@ class PrimDirsListWnd(wx.ScrolledWindow):
 		valid, pdnum = self.getPDNum(event)
 
 		if valid and not self.pds.pds[pdnum].mundane:# and "From the planets" in Options (Disable the Terrestrial-menuitem instead)
- 			dlg = wx.MessageDialog(self, mtexts.txts['NotAvailableWithPDSettings'], mtexts.txts['Message'], wx.OK|wx.ICON_EXCLAMATION)
+			dlg = wx.MessageDialog(self, mtexts.txts['NotAvailableWithPDSettings'], mtexts.txts['Message'], wx.OK|wx.ICON_EXCLAMATION)
 			dlg.ShowModal()
 			return
 
 		valid, y, m, d, ho, mi, se, t, pdtypetxt, pdkeytxt, direct, da, pdchart = self.calc(event, True)
 		if not valid:
- 			dlg = wx.MessageDialog(self, mtexts.txts['PDClickError'], mtexts.txts['Message'], wx.OK|wx.ICON_EXCLAMATION)
+			dlg = wx.MessageDialog(self, mtexts.txts['PDClickError'], mtexts.txts['Message'], wx.OK|wx.ICON_EXCLAMATION)
 			dlg.ShowModal()
 			return
 
@@ -239,13 +237,13 @@ class PrimDirsListWnd(wx.ScrolledWindow):
 		valid, pdnum = self.getPDNum(event)
 
 		if valid and self.pds.pds[pdnum].mundane:
- 			dlg = wx.MessageDialog(self, mtexts.txts['NotAvailableWithPDSettings'], mtexts.txts['Message'], wx.OK|wx.ICON_EXCLAMATION)
+			dlg = wx.MessageDialog(self, mtexts.txts['NotAvailableWithPDSettings'], mtexts.txts['Message'], wx.OK|wx.ICON_EXCLAMATION)
 			dlg.ShowModal()
 			return
 
 		valid, y, m, d, ho, mi, se, t, pdtypetxt, pdkeytxt, direct, da, pdchart = self.calc(event, False)
 		if not valid:
- 			dlg = wx.MessageDialog(self, mtexts.txts['PDClickError'], mtexts.txts['Message'], wx.OK|wx.ICON_EXCLAMATION)
+			dlg = wx.MessageDialog(self, mtexts.txts['PDClickError'], mtexts.txts['Message'], wx.OK|wx.ICON_EXCLAMATION)
 			dlg.ShowModal()
 			return
 
@@ -273,7 +271,7 @@ class PrimDirsListWnd(wx.ScrolledWindow):
 		valid, pdnum = self.getPDNum(event)
 
 		if valid:
-			y, m, d, t = astrology.swe_revjul(self.pds.pds[pdnum].time, 1)
+			y, m, d, t = astrology.revjul(self.pds.pds[pdnum].time, 1)
 			ho, mi, se = util.decToDeg(t)
 
 			da = self.pds.pds[pdnum].arc
@@ -319,7 +317,7 @@ class PrimDirsListWnd(wx.ScrolledWindow):
 						pdchart.fortune.calcMundaneProfPos(pdchart.houses.ascmc2, pdchartpls.fortune, self.chart.place.lat, self.chart.obl[0])
 					else:
 						pdchart.fortune.calcRegioPDsInChartsPos(pdchart.houses.ascmc2, pdchartpls.fortune, self.chart.place.lat, self.chart.obl[0])
-	
+
 				else: # Full Astronomical Procedure
 					pdchart = chart.Chart(self.chart.name, self.chart.male, tim, self.chart.place, chart.Chart.PDINCHART, '', self.options, False)#, proftype, nolat)
 
@@ -329,22 +327,28 @@ class PrimDirsListWnd(wx.ScrolledWindow):
 					if self.options.pdinchartsecmotion:
 						pdpls = pdchart.planets.planets
 
-					raequasc, declequasc, dist = astrology.swe_cotrans(pdchart.houses.ascmc[houses.Houses.EQUASC],
-													0.0, 1.0, -self.chart.obl[0])
+					r = astrology.cotrans((pdchart.houses.ascmc[houses.Houses.EQUASC],
+													0.0, 1.0), -self.chart.obl[0])
+					raequasc = r[0]
+					declequasc = r[1]
+					dist = r[2]
 					pdchart.planets.calcFullAstronomicalProc(da,
 															self.chart.obl[0],
 															pdpls,
 															pdchart.place.lat,
 															pdchart.houses.ascmc2, raequasc) #planets
-					pdchart.fortune.calcFullAstronomicalProc(pdchartpls.fortune, da, self.chart.obl[0]) 
+					pdchart.fortune.calcFullAstronomicalProc(pdchartpls.fortune, da, self.chart.obl[0])
 
 			else:
 				if self.options.pdinchartterrsecmotion:
 					pdchart = chart.Chart(self.chart.name, self.chart.male, tim, self.chart.place, chart.Chart.PDINCHART, '', self.options, False)#, proftype, nolat)
 				else:
 					pdchart = chart.Chart(self.chart.name, self.chart.male, self.chart.time, self.chart.place, chart.Chart.PDINCHART, '', self.options, False)#, proftype, nolat)
-					raequasc, declequasc, dist = astrology.swe_cotrans(pdchart.houses.ascmc[houses.Houses.EQUASC],
-																		0.0, 1.0, -self.chart.obl[0])
+					r = astrology.cotrans((pdchart.houses.ascmc[houses.Houses.EQUASC],
+																		0.0, 1.0), -self.chart.obl[0])
+					raequasc = r[0]
+					declequasc = r[1]
+					dist = r[2]
 					pdchart.planets.calcMundaneWithoutSM(da, self.chart.obl[0], pdchart.place.lat, pdchart.houses.ascmc2, raequasc)
 
 				pdchart.fortune.recalcForMundaneChart(self.chart.fortune.fortune[fortune.Fortune.LON], self.chart.fortune.fortune[fortune.Fortune.LAT], self.chart.fortune.fortune[fortune.Fortune.RA], self.chart.fortune.fortune[fortune.Fortune.DECL], pdchart.houses.ascmc2, pdchart.raequasc, pdchart.obl[0], pdchart.place.lat)
@@ -402,7 +406,7 @@ class PrimDirsListWnd(wx.ScrolledWindow):
 		if self.bw:
 			tableclr = (0, 0, 0)
 
-		img = Image.new('RGB', (self.WIDTH, self.HEIGHT), self.bkgclr)
+		img = Image.new('RGB', (int(self.WIDTH), int(self.HEIGHT)), self.bkgclr)
 		draw = ImageDraw.Draw(img)
 
 		#Title
@@ -497,7 +501,7 @@ class PrimDirsListWnd(wx.ScrolledWindow):
 				mtxt = mtexts.txts['M']
 				if not self.pds.pds[idx].mundane:
 					mtxt = mtexts.txts['Z']
-				
+
 				w, h = draw.textsize(mtxt, self.fntText)
 				draw.text((x+summa+(offs[i]-w)/2, y+(self.LINE_HEIGHT-h)/2), mtxt, fill=txtclr, font=self.fntText)
 			elif i == 2:#Prom
@@ -561,13 +565,13 @@ class PrimDirsListWnd(wx.ScrolledWindow):
 					elif self.pds.pds[idx].prom == primdirs.PrimDir.ANTISCIONASC or\
 					     self.pds.pds[idx].prom == primdirs.PrimDir.CONTRAANTASC:
 						promtxt = mtexts.txts['Asc']
-						promfnt = self.fntText				
+						promfnt = self.fntText
 						if not self.bw:
 							tclr = txtclr
 					elif self.pds.pds[idx].prom == primdirs.PrimDir.ANTISCIONMC or\
 					     self.pds.pds[idx].prom == primdirs.PrimDir.CONTRAANTMC:
 						promtxt = mtexts.txts['MC']
-						promfnt = self.fntText				
+						promfnt = self.fntText
 						if not self.bw:
 							tclr = txtclr
 					else:
@@ -687,7 +691,7 @@ class PrimDirsListWnd(wx.ScrolledWindow):
 					promasptxt = ''
 					if self.pds.pds[idx].promasp != chart.Chart.CONJUNCTIO:
 						promasptxt += common.common.Aspects[self.pds.pds[idx].promasp]
-	
+
 					wp, hp = draw.textsize(promtxt, self.fntMorinus)
 					wa, ha = draw.textsize(promasptxt, self.fntAspects)
 					wsp, hsp = draw.textsize(' ', self.fntText)
@@ -718,7 +722,7 @@ class PrimDirsListWnd(wx.ScrolledWindow):
 				dirtxt = mtexts.txts['D']
 				if not self.pds.pds[idx].direct:
 					dirtxt = mtexts.txts['C']
-				
+
 				w, h = draw.textsize(dirtxt, self.fntText)
 				wsp, hsp = draw.textsize(' ', self.fntText)
 				warr, harr = draw.textsize('-', self.fntSymbol)
@@ -858,7 +862,7 @@ class PrimDirsListWnd(wx.ScrolledWindow):
 				offset = (offs[i]-w)/2
 				draw.text((x+summa+offset, y+(self.LINE_HEIGHT-h)/2), arctxt, fill=txtclr, font=self.fntText)
 			elif i == 6:#Date
-				year, month, day, h = astrology.swe_revjul(self.pds.pds[idx].time, 1)
+				year, month, day, h = astrology.revjul(self.pds.pds[idx].time, 1)
 #				ho, mi, se = util.decToDeg(h)
 #				year, month, day, extraday = util.revConvDate(self.pds.pds[idx].time)
 				txt = (str(year)).rjust(4)+'.'+(str(month)).zfill(2)+'.'+(str(day)).zfill(2)

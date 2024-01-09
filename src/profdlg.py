@@ -85,7 +85,7 @@ class ProfDlg(wx.Dialog):
 		vsizer.Add(self.day, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.LEFT, 0)
 		fgsizer.Add(vsizer, 0, wx.ALIGN_LEFT|wx.ALL, 5)
 
-		datesizer.Add(fgsizer, 0, wx.GROW|wx.ALIGN_CENTER|wx.ALL, 5)###
+		datesizer.Add(fgsizer, 0, wx.GROW|wx.EXPAND|wx.ALL, 5)###
 
 		#time
 		self.stime = wx.StaticBox(self, label='')
@@ -119,7 +119,7 @@ class ProfDlg(wx.Dialog):
 		vsizer.Add(self.second, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.LEFT, 0)
 		fgsizer.Add(vsizer, 0, wx.ALIGN_LEFT|wx.ALL, 5)
 
-		timesizer.Add(fgsizer, 0, wx.GROW|wx.ALIGN_CENTER|wx.ALL, 5)###
+		timesizer.Add(fgsizer, 0, wx.GROW|wx.EXPAND|wx.ALL, 5)###
 
 		mvsizer.Add(datesizer, 0, wx.GROW|wx.ALIGN_LEFT|wx.LEFT|wx.RIGHT, 5)
 		mvsizer.Add(timesizer, 0, wx.GROW|wx.ALIGN_LEFT|wx.LEFT|wx.RIGHT, 5)

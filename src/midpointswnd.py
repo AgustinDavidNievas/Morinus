@@ -91,7 +91,7 @@ class MidPointsWnd(commonwnd.CommonWnd):
 		if self.bw:
 			txtclr = (0,0,0)
 
-		img = Image.new('RGB', (self.WIDTH, self.HEIGHT), self.bkgclr)
+		img = Image.new('RGB', (int(self.WIDTH), int(self.HEIGHT)), self.bkgclr)
 		draw = ImageDraw.Draw(img)
 
 		txt = mtexts.txts['Longitude']
@@ -163,13 +163,13 @@ class MidPointsWnd(commonwnd.CommonWnd):
 				sign = int(lon/chart.Chart.SIGN_DEG)
 				pos = int(lon%chart.Chart.SIGN_DEG)
 				wsp,hsp = draw.textsize(' ', self.fntText)
-				wsg,hsg = draw.textsize(self.signs[sign], self.fntMorinus)
+				wsg,hsg = draw.textsize(self.signs[int(sign)], self.fntMorinus)
 				txt = (str(pos)).rjust(2)+self.deg_symbol+(str(m)).zfill(2)+"'"+(str(s)).zfill(2)+'"'
 				w,h = draw.textsize(txt, self.fntText)
 				offs = (self.CELL_WIDTH-(w+wsp+wsg))/2
 				draw.text((self.ar[i][0]+self.SMALL_CELL_WIDTH+offs, self.ar[i][1]+self.LINE_HEIGHT*ln+(self.LINE_HEIGHT-hsp)/2), txt, fill=txtclr, font=self.fntText)
 				draw.text((self.ar[i][0]+self.SMALL_CELL_WIDTH+offs+w, self.ar[i][1]+self.LINE_HEIGHT*ln+(self.LINE_HEIGHT-hsp)/2), ' ', fill=txtclr, font=self.fntText)
-				draw.text((self.ar[i][0]+self.SMALL_CELL_WIDTH+offs+w+wsp, self.ar[i][1]+self.LINE_HEIGHT*ln+(self.LINE_HEIGHT-hsp)/2), self.signs[sign], fill=txtclr, font=self.fntMorinus)
+				draw.text((self.ar[i][0]+self.SMALL_CELL_WIDTH+offs+w+wsp, self.ar[i][1]+self.LINE_HEIGHT*ln+(self.LINE_HEIGHT-hsp)/2), self.signs[int(sign)], fill=txtclr, font=self.fntMorinus)
 
 				x = self.ar[i][0]
 				y = self.ar[i][1]+self.LINE_HEIGHT*ln

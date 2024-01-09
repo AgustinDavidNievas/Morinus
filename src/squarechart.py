@@ -25,16 +25,16 @@ class SquareChart:
 		self.bdc = wx.BufferedDC(None, self.buffer)
 		self.chartsize = min(self.w, self.h)
 		self.maxradius = self.chartsize/2
-		self.center = wx.Point(self.w/2, self.h/2)
+		self.center = wx.Point(int(self.w/2), int(self.h/2))
 
 		self.symbolSize = self.maxradius/16
 		self.smallSize = self.maxradius/18
 		self.fontSize = self.symbolSize
-		self.fntMorinus = ImageFont.truetype(common.common.symbols, self.symbolSize)
-		self.fntMorinusSmall = ImageFont.truetype(common.common.symbols, self.smallSize)
-		self.fntText = ImageFont.truetype(common.common.abc, self.fontSize)
-		self.fntTextSmall = ImageFont.truetype(common.common.abc, 3*self.fontSize/4)
-		self.fntTextSmaller = ImageFont.truetype(common.common.abc, self.fontSize/2)
+		self.fntMorinus = ImageFont.truetype(common.common.symbols, int(self.symbolSize))
+		self.fntMorinusSmall = ImageFont.truetype(common.common.symbols, int(self.smallSize))
+		self.fntText = ImageFont.truetype(common.common.abc, int(self.fontSize))
+		self.fntTextSmall = ImageFont.truetype(common.common.abc, int(3*self.fontSize/4))
+		self.fntTextSmaller = ImageFont.truetype(common.common.abc, int(self.fontSize/2))
 		self.signs = common.common.Signs1
 		if not self.options.signs:
 			self.signs = common.common.Signs2
@@ -78,7 +78,7 @@ class SquareChart:
 		x = cx-radius
 		y = cy-radius
 		w = h = 2*radius+w
-		self.bdc.DrawRectangle(x, y, w, h)
+		self.bdc.DrawRectangle(int(x), int(y), int(w), int(h))
 
 		w = 3
 		if self.chartsize <= SquareChart.SMALL_SIZE:
@@ -92,54 +92,54 @@ class SquareChart:
 		y1 = cy-radius
 		x2 = cx-radius
 		y2 = cy
-		self.bdc.DrawLine(x1, y1, x2, y2)
+		self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 		x1 = cx-radius
 		y1 = cy
 		x2 = cx
 		y2 = cy+radius
-		self.bdc.DrawLine(x1, y1, x2, y2)
+		self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 		x1 = cx
 		y1 = cy+radius
 		x2 = cx+radius
 		y2 = cy
-		self.bdc.DrawLine(x1, y1, x2, y2)
+		self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 		x1 = cx+radius
 		y1 = cy
 		x2 = cx
 		y2 = cy-radius
-		self.bdc.DrawLine(x1, y1, x2, y2)
+		self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 
 		x1 = cx-radius
 		y1 = cy-radius
 		x2 = cx-radius/2
 		y2 = cy-radius/2
-		self.bdc.DrawLine(x1, y1, x2, y2)
+		self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 		x1 = cx-radius
 		y1 = cy+radius
 		x2 = cx-radius/2
 		y2 = cy+radius/2
-		self.bdc.DrawLine(x1, y1, x2, y2)
+		self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 		x1 = cx+radius
 		y1 = cy+radius
 		x2 = cx+radius/2
 		y2 = cy+radius/2
-		self.bdc.DrawLine(x1, y1, x2, y2)
+		self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 		x1 = cx+radius
 		y1 = cy-radius
 		x2 = cx+radius/2
 		y2 = cy-radius/2
-		self.bdc.DrawLine(x1, y1, x2, y2)
+		self.bdc.DrawLine(int(x1), int(y1), int(x2), int(y2))
 		
 		x = cx-radius/2
 		y = cy-radius/2
 		w = h = radius+1
-		self.bdc.DrawRectangle(x, y, w, h)
+		self.bdc.DrawRectangle(int(x), int(y), int(w), int(h))
 
 		#self.bdc.EndDrawing() removed
 
 		wxImag = self.buffer.ConvertToImage()
 		img = Image.new('RGB', (wxImag.GetWidth(), wxImag.GetHeight()))
-		img.frombytes(buffer(wxImag.GetData()))
+		img.frombytes(memoryview(wxImag.GetData()))
 		draw = ImageDraw.Draw(img)
 
 		datetxt = str(self.chart.time.origyear)+'.'+common.common.months[self.chart.time.origmonth-1]+'.'+str(self.chart.time.origday).zfill(2)
@@ -211,7 +211,7 @@ class SquareChart:
 
 			txt = (str(pos)).rjust(2)+self.deg_symbol
 			draw.text((ar[i][0][0], ar[i][0][1]), txt, fill=posclr, font=self.fntTextSmall)
-			draw.text((ar[i][1][0], ar[i][1][1]), self.signs[sign], fill=signsclr, font=self.fntMorinusSmall)
+			draw.text((ar[i][1][0], ar[i][1][1]), self.signs[int(sign)], fill=signsclr, font=self.fntMorinusSmall)
 			txt = (str(m)).zfill(2)+"'"
 			draw.text((ar[i][2][0], ar[i][2][1]), txt, fill=posclr, font=self.fntTextSmaller)
 
@@ -278,10 +278,10 @@ class SquareChart:
 				txtdeg = (str(pos)).zfill(2)+self.deg_symbol
 				txtmin = (str(m)).zfill(2)+"'"
 				wdeg,hdeg = draw.textsize(txtdeg, self.fntTextSmall)
-				wsg,hsg = draw.textsize(self.signs[sign], self.fntMorinusSmall)
+				wsg,hsg = draw.textsize(self.signs[int(sign)], self.fntMorinusSmall)
 				wmin,hmin = draw.textsize(txtmin, self.fntTextSmaller)
 				draw.text((x+wpl+wr+wsp, y+lhoffs[i]), txtdeg, fill=clrpl, font=self.fntTextSmall)
-				draw.text((x+wpl+wr+wsp+wdeg, y+lhoffs[i]), self.signs[sign], fill=clrpl, font=self.fntMorinusSmall)
+				draw.text((x+wpl+wr+wsp+wdeg, y+lhoffs[i]), self.signs[int(sign)], fill=clrpl, font=self.fntMorinusSmall)
 				draw.text((x+wpl+wr+wsp+wdeg+wsp+wsg, y+lhoffs[i]), txtmin, fill=clrpl, font=self.fntTextSmaller)
 
 				lhoffs[i] += lh

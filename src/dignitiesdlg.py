@@ -61,7 +61,7 @@ class DignitiesDlg(wx.Dialog):
 		self.plutorb = wx.RadioButton(self, self.ID_Pluto, mtexts.txts['Pluto'])
 		splanetssizer.Add(self.plutorb, 0, wx.ALIGN_LEFT|wx.ALL, 2)
 
-		mhsizer.Add(splanetssizer, 0, wx.GROW|wx.ALIGN_CENTER_HORIZONTAL|wx.LEFT, 5)
+		mhsizer.Add(splanetssizer, 0, wx.GROW|wx.EXPAND|wx.LEFT, 5)
 
 		#Domicile
 		sdomicile =wx.StaticBox(self, label='')
@@ -82,9 +82,9 @@ class DignitiesDlg(wx.Dialog):
 			self.arsigns.append(ckb)
 			ssignssizer.Add(ckb, 0, wx.ALIGN_LEFT|wx.ALL, 2)
 
-		mhsizer.Add(ssignssizer, 0, wx.GROW|wx.ALIGN_CENTER_HORIZONTAL|wx.LEFT, 5)
+		mhsizer.Add(ssignssizer, 0, wx.GROW|wx.EXPAND|wx.LEFT, 5)
 
-		mvsizer.Add(mhsizer, 0, wx.GROW|wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, 5)
+		mvsizer.Add(mhsizer, 0, wx.GROW|wx.EXPAND|wx.ALL, 5)
 
 		btnsizer = wx.StdDialogButtonSizer()
 
@@ -96,7 +96,7 @@ class DignitiesDlg(wx.Dialog):
 		btnsizer.AddButton(btn)
 		btnsizer.Realize()
 
-		mvsizer.Add(btnsizer, 0, wx.GROW|wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, 10)
+		mvsizer.Add(btnsizer, 0, wx.GROW|wx.EXPAND|wx.ALL, 10)
 
 		self.SetSizer(mvsizer)
 		mvsizer.Fit(self)
@@ -132,7 +132,7 @@ class DignitiesDlg(wx.Dialog):
 
 	def onBtn(self, event):
 		rid = event.GetId()-self.baseid
-		
+
 		if rid == self.plid:
 			return
 
@@ -149,7 +149,7 @@ class DignitiesDlg(wx.Dialog):
 
 	def onDomicile(self, event):
 		rid = event.GetId()-self.dombaseid
-		
+
 		if rid == self.domid:
 			return
 
@@ -168,7 +168,7 @@ class DignitiesDlg(wx.Dialog):
 		#Save currently selected
 		for i in range(chart.Chart.SIGN_NUM):
 			self.dignities[self.plid][self.domid][i] = self.arsigns[i].GetValue()
-		
+
 		self.Close()
 		self.SetReturnCode(wx.ID_OK)
 
@@ -185,5 +185,3 @@ class DignitiesDlg(wx.Dialog):
 						changed = True
 
 		return changed
-
-

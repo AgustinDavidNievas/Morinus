@@ -10,13 +10,13 @@ import intvalidator
 import rangechecker
 import mtexts
 import util
-import thread
+import _thread
 import wx.lib.newevent
 import mrclasses
 
 
 (PDReadyEvent, EVT_PDREADY) = wx.lib.newevent.NewEvent()
-pdlock = thread.allocate_lock()
+pdlock = _thread.allocate_lock()
 
 
 class PrimDirsListFrame(mrclasses.MrSecondFrame):
@@ -271,7 +271,7 @@ class PrimDirsListFrame(mrclasses.MrSecondFrame):
 		self.hour.SetValue(str(h))
 		self.minute.SetValue(str(mi).zfill(2))
 		self.sec.SetValue(str(s).zfill(2))
-		
+
 
 	def onDecr(self, evt):
 		# Not available for near-bc time
@@ -325,7 +325,7 @@ class PrimDirsListFrame(mrclasses.MrSecondFrame):
 		self.pds = None
 		self.pdready = False
 		self.abort = primdirs.AbortPD()
-		thId = thread.start_new_thread(self.calcPDs, (self.pdrange, self.direction, self))
+		thId = _thread.start_new_thread(self.calcPDs, (self.pdrange, self.direction, self))
 
 		self.timer = wx.Timer(self)
 		self.Bind(wx.EVT_TIMER, self.OnTimer)

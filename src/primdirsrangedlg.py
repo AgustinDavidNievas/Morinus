@@ -81,7 +81,7 @@ class PrimDirsRangeDlg(wx.Dialog):
 
 		btnsizer.Realize()
 
-		mvsizer.Add(btnsizer, 0, wx.GROW|wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, 10)
+		mvsizer.Add(btnsizer, 0, wx.GROW|wx.EXPAND|wx.ALL, 10)
 		self.SetSizer(mvsizer)
 		mvsizer.Fit(self)
 

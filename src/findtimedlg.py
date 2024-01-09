@@ -6,13 +6,13 @@ import findtime
 import mtexts
 import util
 
-import thread
+import _thread
 import wx.lib.newevent
 
 (FTReadyEvent, EVT_FTREADY) = wx.lib.newevent.NewEvent()
 (FTDataReadyEvent, EVT_FTDATAREADY) = wx.lib.newevent.NewEvent()
 (FTYearEvent, EVT_FTYEAR) = wx.lib.newevent.NewEvent()
-ftlock = thread.allocate_lock()
+ftlock = _thread.allocate_lock()
 
 class AbortFindTime:
 	def __init__(self):
@@ -390,7 +390,7 @@ class FindTimeDlg(wx.Dialog):
 
 		vsizer.Add(susesizer, 1, wx.GROW)
 
-		mhsizer.Add(vsizer, 0, wx.GROW|wx.ALIGN_CENTER_HORIZONTAL, 0)
+		mhsizer.Add(vsizer, 0, wx.GROW|wx.EXPAND, 0)
 
 		#Angles
 		vvvsizer = wx.BoxSizer(wx.VERTICAL)
@@ -583,12 +583,12 @@ class FindTimeDlg(wx.Dialog):
 		self.btnShow.Enable(False)
 
 		hbtnsizer = wx.BoxSizer(wx.HORIZONTAL)
-		hbtnsizer.Add(self.btnStart, 1, wx.GROW|wx.ALIGN_CENTER_HORIZONTAL, 5)
-		hbtnsizer.Add(self.btnShow, 1, wx.GROW|wx.ALIGN_CENTER_HORIZONTAL, 5)
+		hbtnsizer.Add(self.btnStart, 1, wx.GROW|wx.EXPAND, 5)
+		hbtnsizer.Add(self.btnShow, 1, wx.GROW|wx.EXPAND, 5)
 
-		vvvsizer.Add(hbtnsizer, 0, wx.GROW|wx.ALIGN_CENTER_HORIZONTAL, 5)
+		vvvsizer.Add(hbtnsizer, 0, wx.GROW|wx.EXPAND, 5)
 
-		mhsizer.Add(vvvsizer, 0, wx.GROW|wx.ALIGN_CENTER_HORIZONTAL, 0)
+		mhsizer.Add(vvvsizer, 0, wx.GROW|wx.EXPAND, 0)
 
 		mvsizer.Add(mhsizer, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, 5)
 
@@ -603,7 +603,7 @@ class FindTimeDlg(wx.Dialog):
 		btnsizer.AddButton(btnOk)
 		btnsizer.Realize()
 
-		mvsizer.Add(btnsizer, 0, wx.GROW|wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, 10)
+		mvsizer.Add(btnsizer, 0, wx.GROW|wx.EXPAND|wx.ALL, 10)
 
 		self.SetSizer(mvsizer)
 		mvsizer.Fit(self)
@@ -854,7 +854,7 @@ class FindTimeDlg(wx.Dialog):
 			self.ar = None
 		self.ftready = False
 		self.abort = AbortFindTime()
-		thId = thread.start_new_thread(self.calcCharts, (self.bc, ftdata, ftdatause, ftdataascmc, ftdataapprox, self))
+		thId = _thread.start_new_thread(self.calcCharts, (self.bc, ftdata, ftdatause, ftdataascmc, ftdataapprox, self))
 
 		self.timer = wx.Timer(self)
 		self.Bind(wx.EVT_TIMER, self.OnTimer)
@@ -866,7 +866,7 @@ class FindTimeDlg(wx.Dialog):
 
 		ft.find()
 
-		#maybe there is no need for synchronization since the worker thread is done and it only uses the abort variable but it doesn't matter if it is skipped for a cycle (this is copy/pasted code)
+		#maybe there is no need for synchronization since the worker _thread is done and it only uses the abort variable but it doesn't matter if it is skipped for a cycle (this is copy/pasted code)
 		ftlock.acquire()
 		self.ftready = True
 		ftlock.release()

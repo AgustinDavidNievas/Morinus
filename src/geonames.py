@@ -1,6 +1,5 @@
 import json
 import urllib
-import urllib2
 
 #Csaba's code
 
@@ -19,10 +18,10 @@ class Geonames:
 		url = url % urllib.urlencode(params)
 
 		try:
-			page = urllib2.urlopen(url)
+			page = urllib.urlopen(url)
 			doc = json.loads(page.read())
 			values = doc.get(key, None)
-		except Exception, e:
+		except Exception as e:
 			values = None
 #			print(e)
 
@@ -77,10 +76,7 @@ class Geonames:
 			gmt_offset = self.get_gmt_offset(longitude, latitude)
 			elevation = self.get_elevation(longitude, latitude)
 
-			self.li.append((placename.encode("utf-8"), float(longitude), float(latitude), 
+			self.li.append((placename.encode("utf-8"), float(longitude), float(latitude),
 				country_code.encode("utf-8"), country_name.encode("utf-8"), elevation, gmt_offset))
 
 		return True
-
-
-

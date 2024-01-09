@@ -46,7 +46,7 @@ class RevolutionsDlg(wx.Dialog):
 		typesizer = wx.StaticBoxSizer(stype, wx.VERTICAL)
 		self.typecb = wx.ComboBox(self, -1, mtexts.revtypeList[0], size=(100, -1), choices=mtexts.revtypeList, style=wx.CB_DROPDOWN|wx.CB_READONLY)
 		typesizer.Add(self.typecb, 0, wx.ALIGN_CENTER|wx.TOP, 20)
-		mhsizer.Add(typesizer, 0, wx.GROW|wx.ALIGN_CENTER)
+		mhsizer.Add(typesizer, 0, wx.GROW|wx.EXPAND)
 
 		#Time
 		rnge = 3000
@@ -90,7 +90,7 @@ class RevolutionsDlg(wx.Dialog):
 		fgsizer.Add(vsizer, 0, wx.ALIGN_LEFT|wx.ALL, 5)
 
 		vsubsizer.Add(fgsizer, 0, wx.ALIGN_CENTER_HORIZONTAL)
-		timesizer.Add(vsubsizer, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5)
+		timesizer.Add(vsubsizer, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, 5)
 
 		mhsizer.Add(timesizer, 0, wx.ALIGN_LEFT|wx.LEFT, 5)
 		mvsizer.Add(mhsizer, 0, wx.ALIGN_LEFT|wx.LEFT|wx.RIGHT, 5)

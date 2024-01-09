@@ -263,7 +263,10 @@ class CampanianPD(regiocampbasepd.RegioCampBasePD):
 		raprom = sm.planet.speculums[primdirs.PrimDirs.REGIOSPECULUM][planets.Planet.RA]
 		declprom = sm.planet.speculums[primdirs.PrimDirs.REGIOSPECULUM][planets.Planet.DECL]
 		if not mundane and self.options.subzodiacal != primdirs.PrimDirs.SZPROMISSOR and self.options.subzodiacal != primdirs.PrimDirs.SZBOTH:
-			raprom, declprom, distprom = astrology.swe_cotrans(lonprom, 0.0, 1.0, -self.chart.obl[0])
+			r = astrology.cotrans((lonprom, 0.0, 1.0), -self.chart.obl[0])
+			raprom = r[0]
+			declprom = r[1]
+			distprom = r[2]
 
 		plsig = self.chart.planets.planets[sig]
 
@@ -362,7 +365,7 @@ class CampanianPD(regiocampbasepd.RegioCampBasePD):
 
 	def calcHArcWithSM(self, mundane, idprom, h, hcps, arc, aspect, asp=0.0):
 		sm = secmotion.SecMotion(self.chart.time, self.chart.place, idprom, arc, self.chart.place.lat, self.chart.houses.ascmc2, self.options.topocentric)
-			
+
 		lonprom = sm.planet.speculums[primdirs.PrimDirs.REGIOSPECULUM][planets.Planet.LONG]
 		pllat = sm.planet.speculums[primdirs.PrimDirs.REGIOSPECULUM][planets.Planet.LAT]
 		raprom = sm.planet.speculums[primdirs.PrimDirs.REGIOSPECULUM][planets.Planet.RA]
@@ -383,9 +386,15 @@ class CampanianPD(regiocampbasepd.RegioCampBasePD):
 
 				#calc real(wahre)ra
 #				raprom, declprom = util.getRaDecl(lonprom, latprom, self.chart.obl[0])
-				raprom, declprom, dist = astrology.swe_cotrans(lonprom, latprom, 1.0, -self.chart.obl[0])
+				r = astrology.cotrans((lonprom, latprom, 1.0), -self.chart.obl[0])
+				raprom = r[0]
+				declprom = r[1]
+				dist = r[2]
 			else:
-				raprom, declprom, distprom = astrology.swe_cotrans(lonprom, 0.0, 1.0, -self.chart.obl[0])
+				r = astrology.cotrans((lonprom, 0.0, 1.0), -self.chart.obl[0])
+				raprom = r[0]
+				declprom = r[1]
+				distprom = r[2]
 
 		ID = 0
 		W = 1
@@ -414,12 +423,3 @@ class CampanianPD(regiocampbasepd.RegioCampBasePD):
 		wprom = util.normalize(wprom)
 
 		return True, wprom-hcps[h][W]
-
-
-
-
-
-
-
-
-

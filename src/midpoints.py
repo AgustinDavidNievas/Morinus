@@ -21,11 +21,11 @@ class MidPoints:
 
 		self.countMidPoints()
 		self.countMidPointsWithLatitude()
-	
+
 #		self.printMidPoints(self.midslat)
 
 
-	def countMidPoints(self):	
+	def countMidPoints(self):
 		for i in range(planets.Planets.PLANETS_NUM-2):#Nodes are excluded
 			for j in range(i+1, planets.Planets.PLANETS_NUM):
 				p1 = self.pls.planets[i].data[planets.Planet.LONG]
@@ -112,7 +112,4 @@ class MidPoints:
 		for x in mids:
 			d,m,s = util.decToDeg(x.m)
 			dl,ml,sl = util.decToDeg(x.lat)
-			print "%s-%s: %d %d'%d\"  %d %d'%d\"" % (pls[x.p1], pls[x.p2], d,m,s, dl, ml, sl)
-
-
-
+			print("%s-%s: %d %d'%d\"  %d %d'%d\"" % (pls[x.p1], pls[x.p2], d,m,s, dl, ml, sl))

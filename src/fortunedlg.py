@@ -61,7 +61,7 @@ class FortuneDlg(wx.Dialog):
 #		vsizer.Add(self.mmprb, 0, wx.ALIGN_LEFT|wx.TOP, 2)
 		fortunesizer.Add(vsizer, 0, wx.ALIGN_LEFT|wx.ALL, 5)
 
-		mvsizer.Add(fortunesizer, 0, wx.GROW|wx.ALIGN_CENTER|wx.LEFT|wx.RIGHT|wx.BOTTOM, 5)
+		mvsizer.Add(fortunesizer, 0, wx.GROW|wx.EXPAND|wx.LEFT|wx.RIGHT|wx.BOTTOM, 5)
 
 		btnsizer = wx.StdDialogButtonSizer()
 

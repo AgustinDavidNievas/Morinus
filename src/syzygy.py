@@ -68,7 +68,10 @@ class Syzygy:
 						sun = planets.Planet(self.time.jd, astrology.SE_SUN, self.flags)
 						self.lon = sun.data[planets.Planet.LONG]
 
-		ra, decl, dist = astrology.swe_cotrans(self.lon, 0.0, 1.0, -chrt.obl[0])
+		r = astrology.cotrans((self.lon, 0.0, 1.0), -chrt.obl[0])
+		ra = r[0]
+		decl = r[1]
+		dist = r[2]
 		self.speculum = [self.lon, 0.0, ra, decl]
 
 		#the other syzygy (i.e. if the syzygy was conjunction then calculate the opposition and vice versa)
@@ -102,7 +105,10 @@ class Syzygy:
 						sun2 = planets.Planet(self.time2.jd, astrology.SE_SUN, self.flags)
 						self.lon2 = sun2.data[planets.Planet.LONG]
 
-			ra2, decl2, dist2 = astrology.swe_cotrans(self.lon2, 0.0, 1.0, -chrt.obl[0])
+			r = astrology.cotrans((self.lon2, 0.0, 1.0), -chrt.obl[0])
+			ra2 = r[0]
+			decl2 = r[1]
+			dist2 = r[2]
 			self.speculum2 = [self.lon2, 0.0, ra2, decl2]
 
 			#for topical almutens
@@ -174,11 +180,11 @@ class Syzygy:
 
 	def getDateHour(self, tim, place, newmoonorig):
 		while True:
-			h, m, s = util.decToDeg(tim.time) 
+			h, m, s = util.decToDeg(tim.time)
 			y, mo, d = tim.year, tim.month, tim.day
 			h -= 1
 			if h < 0:
-				h = 23	
+				h = 23
 				y, mo, d = util.decrDay(y, mo, d)
 				if y == 0:
 					y = 1
@@ -206,17 +212,17 @@ class Syzygy:
 
 
 	def getDateMinute(self, tim, place, newmoonorig):
-		h, m, s = util.decToDeg(tim.time) 
+		h, m, s = util.decToDeg(tim.time)
 		y, mo, d = tim.year, tim.month, tim.day
 		h += 1
 		if h > 23:
-			h = 0	
+			h = 0
 			y, mo, d = util.incrDay(y, mo, d)
 
 		tim = chart.Time(y, mo, d, h, m, s, False, tim.cal, chart.Time.GREENWICH, True, 0, 0, False, place, False)
 
 		while True:
-			h, m, s = util.decToDeg(tim.time) 
+			h, m, s = util.decToDeg(tim.time)
 			y, mo, d = tim.year, tim.month, tim.day
 			y, mo, d, h, m = util.subtractMins(y, mo, d, h, m, 1)
 			if y == 0:
@@ -245,14 +251,14 @@ class Syzygy:
 
 
 	def getDateSecond(self, tim, place, newmoonorig):
-		h, m, s = util.decToDeg(tim.time) 
+		h, m, s = util.decToDeg(tim.time)
 		y, mo, d = tim.year, tim.month, tim.day
 		y, mo, d, h, m = util.addMins(y, mo, d, h, m, 1)
 
 		tim = chart.Time(y, mo, d, h, m, s, False, tim.cal, chart.Time.GREENWICH, True, 0, 0, False, place, False)
 
 		while True:
-			h, m, s = util.decToDeg(tim.time) 
+			h, m, s = util.decToDeg(tim.time)
 			y, mo, d = tim.year, tim.month, tim.day
 			y, mo, d, h, m, s = util.subtractSecs(y, mo, d, h, m, s, 1)
 			if y == 0:
@@ -278,7 +284,3 @@ class Syzygy:
 				return True, tim, ready
 
 		return False, tim
-
-
-
-

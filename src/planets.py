@@ -23,7 +23,7 @@ class Planet:
 	HOD = 9
 	PMP = 10
 	ADPH = 11
-	POH = 12 
+	POH = 12
 	AODO = 13
 
 	#Regiomontanian/Campanian
@@ -54,22 +54,19 @@ class Planet:
 		self.pId = pId
 
 		self.speculums = None
+		self.data = None
+		self.dataEqu = None
 
 		if (ecl == None):
-			rflag, self.data, serr = astrology.swe_calc_ut(tjd_ut, pId, flag)
-			rflag, self.dataEqu, serr = astrology.swe_calc_ut(tjd_ut, pId, flag+astrology.SEFLG_EQUATORIAL)
+			r = astrology.calc_ut(tjd_ut, pId, flag)
+			rflag = r[1]
+			self.data = r[0]
 
-			# data[0] : longitude
-			# data[1] : latitude
-			# data[2] : distance
-			# data[3] : speed in long
-			# data[4] : speed in lat
-			# data[5] : speed in dist
+			r2 = astrology.calc_ut(tjd_ut, pId, flag+astrology.SEFLG_EQUATORIAL)
+			rflag = r2[1]
+			self.dataEqu = r2[0]
 
-			# if rflag < 0:
-			#	print 'Error: %s' % serr
-
-			self.name = astrology.swe_get_planet_name(pId)
+			self.name = astrology.get_planet_name(pId)
 		else:
 			self.data = tuple(ecl)
 			self.dataEqu = tuple(equ)
@@ -77,7 +74,10 @@ class Planet:
 
 		if nolat:
 			self.data = (self.data[Planet.LONG], 0.0, self.data[Planet.DIST], self.data[Planet.SPLON], self.data[Planet.SPLAT], self.data[Planet.SPDIST])
-			ra, decl, dist = astrology.swe_cotrans(self.data[Planet.LONG], 0.0, 1.0, -obl)
+			r = astrology.cotrans((self.data[Planet.LONG], 0.0, 1.0), -obl)
+			ra = r[0]
+			decl = r[1]
+			dist = r[2]
 			self.dataEqu = (ra, decl, self.dataEqu[Planet.DISTEQU], self.dataEqu[Planet.SPRAEQU], self.dataEqu[Planet.SPDECLEQU], self.dataEqu[Planet.SPDISTEQU])
 
 		if lat != None:
@@ -117,7 +117,7 @@ class Planet:
 			#if QuadrantII:		pmp = 90.0+90.0*MD/SA
 			#if QuadrantIII:	pmp = 270.0-90.0*MD/SA
 			#if QuadrantIV:		pmp = 270.0+90.0*MD/SA
-		
+
 		#A.D.(fi or poleheight) = MD*AD(FI)/SA
 		#Poleheight(fi): tg(fi) = sin(AD(fi))/tg(delta)
 		#A.O. D.O.:
@@ -170,14 +170,14 @@ class Planet:
 		if hdasc < 0.0:
 			hdasc *= -1
 		if hdasc > 180.0:
-			hdasc = 360.0-hdasc 
+			hdasc = 360.0-hdasc
 
 		dohd = self.dataEqu[Planet.RAEQU]+adlat
 		hddesc = dohd-dodesc
 		if hddesc < 0.0:
 			hddesc *= -1
 		if hddesc > 180.0:
-			hddesc = 360.0-hddesc 
+			hddesc = 360.0-hddesc
 
 		self.hd = hdasc
 		if hddesc < hdasc:
@@ -304,7 +304,7 @@ class Planet:
 				#CMP=90+zd
 		#RMP
 		#W-RA(EquatorialAsc) [normalize]
-			
+
 		ramc = ascmc2[houses.Houses.MC][houses.Houses.RA]
 		raic = ramc+180.0
 		if raic > 360.0:
@@ -508,7 +508,7 @@ class Planet:
 
 
 	def iterate(self, pl, rao, rdo, robl, rpoh, lon):
-		
+
 		okGa = okGd = True
 
 		if pl.speculums[0][Planet.PMP] < 90.0 or (pl.speculums[0][Planet.PMP] >= 270.0 and pl.speculums[0][Planet.PMP] < 360.0):
@@ -577,7 +577,7 @@ class Planet:
 			if longSZ <= 0.0:
 #				print 'longSz<=0'
 				longSZ = Fd+360.0
-				
+
 		longSZ = util.normalize(longSZ)##
 #		print 'longSz=%f' % longSZ
 
@@ -586,7 +586,10 @@ class Planet:
 		rdeclN = math.radians(declN)
 
 		latSZ = math.degrees(math.asin(math.sin(rdeclN)*math.cos(roblN)-math.cos(rdeclN)*math.sin(rksi)*math.sin(roblN)))
-		raSZ, declSZ, distSZ = astrology.swe_cotrans(longSZ, latSZ, 1.0, -oblN)
+		r = astrology.cotrans((longSZ, latSZ, 1.0), -oblN)
+		raSZ = r[0]
+		declSZ = r[1]
+		distSZ = r[2]
 
 		self.data = (longSZ, latSZ, self.data[Planet.DIST], self.data[Planet.SPLON], self.data[Planet.SPLAT], self.data[Planet.SPDIST])
 		self.dataEqu = (raSZ, declSZ, self.dataEqu[Planet.DISTEQU], self.dataEqu[Planet.SPRAEQU], self.dataEqu[Planet.SPDECLEQU], self.dataEqu[Planet.SPDISTEQU])
@@ -679,7 +682,7 @@ class Planet:
 
 
 	def iterateRegio(self, pl, rwa, rwd, robl, rpoh, lon):
-		
+
 		okGa = okGd = True
 
 		if pl.speculums[0][Planet.PMP] < 90.0 or (pl.speculums[0][Planet.PMP] >= 270.0 and pl.speculums[0][Planet.PMP] < 360.0):
@@ -721,7 +724,10 @@ class Planet:
 
 		ra = util.normalize(ra)
 
-		lon, lat, dist = astrology.swe_cotrans(ra, decl, 1.0, obl)
+		r = astrology.cotrans((ra, decl, 1.0), obl)
+		lon = r[0]
+		lat = r[1]
+		dist = r[2]
 
 		self.data = (lon, lat, self.data[Planet.DIST], self.data[Planet.SPLON], self.data[Planet.SPLAT], self.data[Planet.SPDIST])
 		self.dataEqu = (ra, decl, self.dataEqu[Planet.DISTEQU], self.dataEqu[Planet.SPRAEQU], self.dataEqu[Planet.SPDECLEQU], self.dataEqu[Planet.SPDISTEQU])
@@ -736,13 +742,13 @@ class Planet:
 class Planets:
 	"""Calculates the positions of the planets"""
 
-#	HELIOCENTRIC = 
-#	ECLIPTIC = 
+#	HELIOCENTRIC =
+#	ECLIPTIC =
 #	EQUATORIAL =
-#	XYZ = 
-#	TOPOCENTRIC = 
-#	SIDEREAL = 
-	
+#	XYZ =
+#	TOPOCENTRIC =
+#	SIDEREAL =
+
 	PLANETS_NUM = 12
 
 	def __init__(self, tjd_ut, meannode, flag, lat, ascmc2, raequasc, nolat = False, obl = 0.0):
@@ -750,7 +756,7 @@ class Planets:
 		self.planets = []
 
 		self.create(self.planets, tjd_ut, meannode, flag, lat, ascmc2, raequasc, nolat, obl)
-		
+
 
 	def create(self, pls, tjd_ut, meannode, flag, lat, ascmc2, raequasc, nolat, obl):
 		for i in range(astrology.SE_SUN, astrology.SE_PLUTO+1):
@@ -810,7 +816,3 @@ class Planets:
 	def calcMundaneWithoutSM(self, da, obl, placelat, ascmc2, raequasc):
 		for pl in range(Planets.PLANETS_NUM):
 			self.planets[pl].calcMundaneWithoutSM(da, obl, placelat, ascmc2, raequasc)
-
-
-
-

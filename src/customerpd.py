@@ -51,7 +51,10 @@ class CustomerPD:
 		if self.southern:
 			self.lat *= -1
 
-		self.ra, self.decl, dist = astrology.swe_cotrans(self.lon, self.lat, 1.0, -obl)
+		r = astrology.cotrans((self.lon, self.lat, 1.0), -obl)
+		self.ra = r[0]
+		self.decl = r[1]
+		dist = r[2]
 
 		self.speculums = []
 		self.computePlacidianSpeculum(placelat, ascmc2)
@@ -88,7 +91,7 @@ class CustomerPD:
 			#if QuadrantII:		pmp = 90.0+90.0*MD/SA
 			#if QuadrantIII:	pmp = 270.0-90.0*MD/SA
 			#if QuadrantIV:		pmp = 270.0+90.0*MD/SA
-		
+
 		#A.D.(fi or poleheight) = MD*AD(FI)/SA
 		#Poleheight(fi): tg(fi) = sin(AD(fi))/tg(delta)
 		#A.O. D.O.:
@@ -141,14 +144,14 @@ class CustomerPD:
 		if hdasc < 0.0:
 			hdasc *= -1
 		if hdasc > 180.0:
-			hdasc = 360.0-hdasc 
+			hdasc = 360.0-hdasc
 
 		dohd = self.ra+adlat
 		hddesc = dohd-dodesc
 		if hddesc < 0.0:
 			hddesc *= -1
 		if hddesc > 180.0:
-			hddesc = 360.0-hddesc 
+			hddesc = 360.0-hddesc
 
 		self.hd = hdasc
 		if hddesc < hdasc:
@@ -273,7 +276,7 @@ class CustomerPD:
 				#CMP=270-zd
 			#else:
 				#CMP=90+zd
-			
+
 
 		md = self.speculums[0][CustomerPD.MD]
 
@@ -359,5 +362,3 @@ class CustomerPD:
 			zd = A+F
 
 		return zd
-
-

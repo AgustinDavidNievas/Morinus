@@ -58,7 +58,7 @@ class HoursWnd(commonwnd.CommonWnd):
 		if self.bw:
 			tableclr = (0,0,0)
 
-		img = Image.new('RGB', (self.WIDTH, self.HEIGHT), self.bkgclr)
+		img = Image.new('RGB', (int(self.WIDTH), int(self.HEIGHT)), self.bkgclr)
 		draw = ImageDraw.Draw(img)
 
 		BOR = commonwnd.CommonWnd.BORDER
@@ -74,7 +74,7 @@ class HoursWnd(commonwnd.CommonWnd):
 			lon *= -1
 		offs = lon*4.0/1440.0
 		jdlocal = self.chart.time.jd+offs
-		jy, jm, jd, jh = astrology.swe_revjul(jdlocal, 1)
+		jy, jm, jd, jh = astrology.revjul(jdlocal, 1)
 		hh, mm, ss = util.decToDeg(jh)
 
 		txt = mtexts.txts['LocalBirthTime']+': '+str(hh)+':'+str(mm).zfill(2)+':'+str(ss).zfill(2)

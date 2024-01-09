@@ -63,7 +63,7 @@ class SyzygyDlg(wx.Dialog):
 		btnsizer.AddButton(btn)
 		btnsizer.Realize()
 
-		mvsizer.Add(btnsizer, 0, wx.GROW|wx.ALIGN_CENTER_VERTICAL|wx.ALL, 10)
+		mvsizer.Add(btnsizer, 0, wx.GROW|wx.EXPAND|wx.ALL, 10)
 
 		self.SetSizer(mvsizer)
 		mvsizer.Fit(self)

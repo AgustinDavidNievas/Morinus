@@ -138,7 +138,7 @@ class PDsInChartStepperDlg(wx.Dialog):
 		vsizer.Add(self.second, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.LEFT, 0)
 		fgsizer.Add(vsizer, 0, wx.ALIGN_LEFT|wx.ALL, 5)
 
-		datesizer.Add(fgsizer, 0, wx.GROW|wx.ALIGN_CENTER|wx.ALL, 5)###
+		datesizer.Add(fgsizer, 0, wx.GROW|wx.EXPAND|wx.ALL, 5)###
 
 		#DA
 		self.sda = wx.StaticBox(self, label='')
@@ -193,7 +193,7 @@ class PDsInChartStepperDlg(wx.Dialog):
 		if wx.Platform != '__WXMSW__':
 			btn = wx.ContextHelpButton(self)
 			btnsizer.AddButton(btn)
-        
+
 		btnOk = wx.Button(self, wx.ID_OK, mtexts.txts['Ok'])
 		btnOk.SetHelpText(mtexts.txts['HelpOk'])
 		btnOk.SetDefault()
@@ -259,13 +259,13 @@ class PDsInChartStepperDlg(wx.Dialog):
 		if (self.Validate() and self.sdate.Validate()):
 			if util.checkDate(int(self.year.GetValue()), int(self.month.GetValue()), int(self.day.GetValue())):
 				arc = 0.0
-				date = 2000.5				
+				date = 2000.5
 
 				direct = self.positiverb.GetValue()
 				if (self.arcrb.GetValue()):
 					arc = float(self.da.GetValue())
 					jd, age = self.calcTime(arc, direct)
-					y, m, d, h = astrology.swe_revjul(jd, 1)
+					y, m, d, h = astrology.revjul(jd, 1)
 					ho, mi, se = util.decToDeg(h)
 					self.year.SetValue(str(y))
 					self.month.SetValue(str(m))
@@ -285,10 +285,10 @@ class PDsInChartStepperDlg(wx.Dialog):
 					calflag = astrology.SE_GREG_CAL
 					if self.chart.time.cal == chart.Time.JULIAN:
 						calflag = astrology.SE_JUL_CAL
-					jd = astrology.swe_julday(y, m, d, t, calflag)
+					jd = astrology.julday(y, m, d, t, calflag)
 					if self.chart.time.jd >= jd:
 						dlgm = wx.MessageDialog(None, mtexts.txts['TimeSmallerThanBirthTime'], mtexts.txts['Error'], wx.OK|wx.ICON_EXCLAMATION)
-						dlgm.ShowModal()		
+						dlgm.ShowModal()
 						dlgm.Destroy()
 						return False
 
@@ -340,7 +340,7 @@ class PDsInChartStepperDlg(wx.Dialog):
 							pdchart.fortune.calcMundaneProfPos(pdchart.houses.ascmc2, pdchartpls.fortune, self.chart.place.lat, self.chart.obl[0])
 						else:
 							pdchart.fortune.calcRegioPDsInChartsPos(pdchart.houses.ascmc2, pdchartpls.fortune, self.chart.place.lat, self.chart.obl[0])
-	
+
 					else:#Full Astronomical Procedure
 						pdchart = chart.Chart(self.chart.name, self.chart.male, tim, self.chart.place, chart.Chart.PDINCHART, '', self.options, False)#, proftype, nolat)
 
@@ -350,7 +350,10 @@ class PDsInChartStepperDlg(wx.Dialog):
 						if self.options.pdinchartsecmotion:
 							pdpls = pdchart.planets.planets
 
-						raequasc, declequasc, dist = astrology.swe_cotrans(pdchart.houses.ascmc[houses.Houses.EQUASC], 0.0, 1.0, -self.chart.obl[0])
+						r = astrology.cotrans((pdchart.houses.ascmc[houses.Houses.EQUASC], 0.0, 1.0), -self.chart.obl[0])
+						raequasc = r[0]
+						declequasc = r[1]
+						dist = r[2]
 						pdchart.planets.calcFullAstronomicalProc(da, self.chart.obl[0], pdpls, pdchart.place.lat, pdchart.houses.ascmc2, raequasc) #planets
 						pdchart.fortune.calcFullAstronomicalProc(pdchartpls.fortune, da, self.chart.obl[0])
 				else:
@@ -358,7 +361,10 @@ class PDsInChartStepperDlg(wx.Dialog):
 						pdchart = chart.Chart(self.chart.name, self.chart.male, tim, self.chart.place, chart.Chart.PDINCHART, '', self.options, False)#, proftype, nolat)
 					else:
 						pdchart = chart.Chart(self.chart.name, self.chart.male, self.chart.time, self.chart.place, chart.Chart.PDINCHART, '', self.options, False)#, proftype, nolat)
-						raequasc, declequasc, dist = astrology.swe_cotrans(pdchart.houses.ascmc[houses.Houses.EQUASC], 0.0, 1.0, -self.chart.obl[0])
+						r = astrology.cotrans((pdchart.houses.ascmc[houses.Houses.EQUASC], 0.0, 1.0), -self.chart.obl[0])
+						raequasc = r[0]
+						declequasc = r[1]
+						dist = r[2]
 						pdchart.planets.calcMundaneWithoutSM(da, self.chart.obl[0], pdchart.place.lat, pdchart.houses.ascmc2, raequasc)
 
 					pdchart.fortune.recalcForMundaneChart(self.chart.fortune.fortune[fortune.Fortune.LON], self.chart.fortune.fortune[fortune.Fortune.LAT], self.chart.fortune.fortune[fortune.Fortune.RA], self.chart.fortune.fortune[fortune.Fortune.DECL], pdchart.houses.ascmc2, pdchart.raequasc, pdchart.obl[0], pdchart.place.lat)
@@ -373,7 +379,7 @@ class PDsInChartStepperDlg(wx.Dialog):
 				self.parent.change(pdchart, y, m, d, ho, mi, se, mtexts.typeListDirs[self.options.primarydir], keytxt, txtdir, math.fabs(da))
 			else:
 				dlgm = wx.MessageDialog(None, mtexts.txts['InvalidDate']+' ('+self.year.GetValue()+'.'+self.month.GetValue()+'.'+self.day.GetValue()+'.)', mtexts.txts['Error'], wx.OK|wx.ICON_EXCLAMATION)
-				dlgm.ShowModal()		
+				dlgm.ShowModal()
 				dlgm.Destroy()
 
 
@@ -392,7 +398,7 @@ class PDsInChartStepperDlg(wx.Dialog):
 				ti = self.calcBirthSolarArc(arc)
 		else:
 			if self.options.pdkeys == primdirs.PrimDirs.CUSTOMER:
-				val = (self.options.pdkeydeg+self.options.pdkeymin/60.0+self.options.pdkeysec/3600.0) 
+				val = (self.options.pdkeydeg+self.options.pdkeymin/60.0+self.options.pdkeysec/3600.0)
 				if val != 0.0:
 					coeff = 1.0/val
 					ti = arc*coeff
@@ -426,7 +432,7 @@ class PDsInChartStepperDlg(wx.Dialog):
 			y, m, d = util.incrDay(y, m, d)
 			ti = chart.Time(y, m, d, 0, 0, 0, False, self.chart.time.cal, chart.Time.GREENWICH, True, 0, 0, False, self.chart.place, False)
 			sun = planets.Planet(ti.jd, astrology.SE_SUN, astrology.SEFLG_SWIEPH)
-			
+
 			pos = sun.dataEqu[planets.Planet.RAEQU]
 			if self.options.pdkeyd == primdirs.PrimDirs.TRUESOLARECLIPTICALARC:
 				pos = sun.data[planets.Planet.LONG]
@@ -498,7 +504,7 @@ class PDsInChartStepperDlg(wx.Dialog):
 			y, m, d = util.decrDay(y, m, d)
 			ti = chart.Time(y, m, d, 0, 0, 0, False, self.chart.time.cal, chart.Time.GREENWICH, True, 0, 0, False, self.chart.place, False)
 			sun = planets.Planet(ti.jd, astrology.SE_SUN, astrology.SEFLG_SWIEPH)
-			
+
 			pos = sun.dataEqu[planets.Planet.RAEQU]
 			if self.options.pdkeyd == primdirs.PrimDirs.TRUESOLARECLIPTICALARC:
 				pos = sun.data[planets.Planet.LONG]
@@ -583,7 +589,7 @@ class PDsInChartStepperDlg(wx.Dialog):
 				arc = self.calcBirthSolarArcRev(ti)
 		else:
 			if self.options.pdkeys == primdirs.PrimDirs.CUSTOMER:
-				val = (self.options.pdkeydeg+self.options.pdkeymin/60.0+self.options.pdkeysec/3600.0) 
+				val = (self.options.pdkeydeg+self.options.pdkeymin/60.0+self.options.pdkeysec/3600.0)
 				if val != 0.0:
 					coeff = 1.0/val
 					if coeff != 0.0:
@@ -597,7 +603,7 @@ class PDsInChartStepperDlg(wx.Dialog):
 			arc *= -1
 			direct = False
 		if arc > 180.0:
-			arc = 360.0-arc 
+			arc = 360.0-arc
 			direct = not direct
 
 		return arc
@@ -665,9 +671,3 @@ class PDsInChartStepperDlg(wx.Dialog):
 			coeff = 1.0/diff
 
 		return ti/coeff
-
-
-
-
-
-

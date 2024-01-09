@@ -11,7 +11,7 @@ class LanguagesDlg(wx.Dialog):
 
 		self.langcb = wx.ComboBox(self, -1, mtexts.langtexts[0], size=(100, -1), choices=mtexts.langtexts, style=wx.CB_DROPDOWN|wx.CB_READONLY)
 		self.langcb.SetStringSelection(mtexts.langtexts[langid])
-		mvsizer.Add(self.langcb, 0, wx.GROW|wx.ALIGN_CENTER|wx.ALL, 20)
+		mvsizer.Add(self.langcb, 0, wx.GROW|wx.EXPAND|wx.ALL, 20)
 
 		btnsizer = wx.StdDialogButtonSizer()
 

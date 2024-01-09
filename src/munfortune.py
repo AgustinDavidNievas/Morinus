@@ -32,15 +32,13 @@ class MundaneFortune:
 		raMLoF = aoasc+ramoon-aosun
 		raMLoF = util.normalize(raMLoF)
 		declMLoF = pls.planets[astrology.SE_MOON].dataEqu[planets.Planet.DECLEQU]
-		lonMLoF, latMLoF, dist = astrology.swe_cotrans(raMLoF, declMLoF, 1.0, obl)
+		r = astrology.cotrans((raMLoF, declMLoF, 1.0), obl)
+		lonMLoF = r[0]
+		latMLoF = r[1]
+		dist = r[2]
 
 		self.mfortune = (lonMLoF, latMLoF, raMLoF, declMLoF)
 
 		self.speculum = placspec.PlacidianSpeculum(placelat, ascmc2, lonMLoF, latMLoF, raMLoF, declMLoF)
 
 		self.valid = self.mLoFvalid and self.speculum.valid
-
-
-
-
-

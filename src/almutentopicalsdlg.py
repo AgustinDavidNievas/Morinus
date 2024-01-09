@@ -43,7 +43,7 @@ class RowsListCtrl(wx.ListCtrl):
 
 		items = self.rowsdata.items()
 		for key, data in items:
-			index = self.InsertStringItem(sys.maxint, data[0])
+			index = self.InsertStringItem(sys.maxsize, data[0])
 			self.SetStringItem(index, RowsListCtrl.TYPE, data[0])
 			self.SetStringItem(index, RowsListCtrl.VALUE, data[1])
 			self.SetStringItem(index, RowsListCtrl.RULERSHIP, data[2])
@@ -222,7 +222,7 @@ class RowsListCtrl(wx.ListCtrl):
 	def fill(self, rows, opts):
 		if rows != None:
 			self.load(rows, opts)
-			
+
 			self.Populate(True)
 
 
@@ -231,19 +231,23 @@ class AlmutenTopicalsDlg(wx.Dialog):
 	MAX_TOPICAL_NUM = 20
 
 	def __init__(self, parent, opts):
-
+		super(AlmutenTopicalsDlg, self).__init__()
         # Instead of calling wx.Dialog.__init__ we precreate the dialog
         # so we can set an extra style that must be set before
         # creation, and then we create the GUI object using the Create
         # method.
-		pre = wx.Dialog()
-		pre.SetExtraStyle(wx.DIALOG_EX_CONTEXTHELP)
-		pre.Create(parent, -1, mtexts.txts['TopicalAlmutens'], pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
-
+		wx.Dialog.__init__(self)
+		self = wx.Dialog()
+		self.SetExtraStyle(wx.DIALOG_EX_CONTEXTHELP)
+		self.Create(parent, -1, mtexts.txts['TopicalAlmutens'], pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
+		#pre = wx.Dialog()
+		#pre.SetExtraStyle(wx.DIALOG_EX_CONTEXTHELP)
+		#pre.Create(parent, -1, mtexts.txts['TopicalAlmutens'], pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
+		#TODO cambiar los pre de arriba por self?
         # This next step is the most important, it turns this Python
         # object into the real wrapper of the dialog (instead of pre)
         # as far as the wxPython extension is concerned.
-		self.PostCreate(pre)
+		#self.PostCreate(pre)
 
 		self.tpcls = None
 		if opts.topicals != None:
@@ -263,7 +267,7 @@ class AlmutenTopicalsDlg(wx.Dialog):
 			num = len(self.tpcls)
 			for i in range(num):
 				self.namestxt.append(self.tpcls[i][0])
-		self.namescb = wx.ComboBox(self, -1, '', size=(230, -1), choices='', style=wx.CB_DROPDOWN|wx.CB_READONLY)
+		self.namescb = wx.ComboBox(self, -1, '', size=(230, -1), choices='', style=wx.CB_DROPDOWN|wx.CB_READONLY)#TODO ver que onda con esto, se llega desde almutens/topical
 		hsizer.Add(self.namescb, 0, wx.ALL, 5)
 		hsubsizer = wx.BoxSizer(wx.HORIZONTAL)
 		ID_Add = wx.NewId()
@@ -445,7 +449,7 @@ class AlmutenTopicalsDlg(wx.Dialog):
 			dlgm.ShowModal()
 			dlgm.Destroy()#
 			return
-		
+
 		rows = self.li.getRows(self.aplist)
 		num = len(rows)
 		if num > 0:
@@ -476,7 +480,7 @@ class AlmutenTopicalsDlg(wx.Dialog):
 			val = dlg.ShowModal()
 			if val == wx.ID_YES:
 				if num > 1:
-					idx = self.namescb.GetCurrentSelection()	
+					idx = self.namescb.GetCurrentSelection()
 					name = self.namestxt[idx]
 
 					ar = []
@@ -607,8 +611,3 @@ class AlmutenTopicalsDlg(wx.Dialog):
 			opts.topicals = copy.deepcopy(self.tpcls)
 
 		return changed
-
-
-
-
-

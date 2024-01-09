@@ -46,7 +46,7 @@ class PlaceListCtrl(wx.ListCtrl):
 
 		items = self.placedata.items()
 		for key, data in items:
-			index = self.InsertStringItem(sys.maxint, data[0])
+			index = self.InsertStringItem(sys.maxsize, data[0])
 			self.SetStringItem(index, PlaceListCtrl.PLACE, data[0])
 			self.SetStringItem(index, PlaceListCtrl.LON, data[1])
 			self.SetStringItem(index, PlaceListCtrl.LAT, data[2])
@@ -323,7 +323,7 @@ class PlacesDlg(wx.Dialog):
 		hhhsubsizer.Add(self.alt, 0, wx.ALIGN_CENTER|wx.ALL, 5)
 		label = wx.StaticText(self, -1, 'm')
 		hhhsubsizer.Add(label, 0, wx.ALIGN_CENTER|wx.TOP, 2)
-		altsizer.Add(hhhsubsizer, 0, wx.GROW|wx.ALIGN_CENTER|wx.TOP, 20)
+		altsizer.Add(hhhsubsizer, 0, wx.GROW|wx.EXPAND|wx.TOP, 20)
 
 		hhsubsizer.Add(altsizer, 0, wx.GROW|wx.ALIGN_LEFT|wx.RIGHT, 5)
 		vsubsizer.Add(hhsubsizer, 0, wx.GROW|wx.ALIGN_LEFT)
@@ -389,13 +389,13 @@ class PlacesDlg(wx.Dialog):
 	def OnSearch(self, event):
 		txt = self.birthplace.GetValue()
 		if txt == '':
- 			dlg = wx.MessageDialog(self, mtexts.txts['PlaceEmpty'], '', wx.OK|wx.ICON_EXCLAMATION)
+			dlg = wx.MessageDialog(self, mtexts.txts['PlaceEmpty'], '', wx.OK|wx.ICON_EXCLAMATION)
 			dlg.ShowModal()
 			dlg.Destroy()
 			return
 
 		if len(txt) < 3:
- 			dlg = wx.MessageDialog(self, mtexts.txts['TooFewChars'], '', wx.OK|wx.ICON_EXCLAMATION)
+			dlg = wx.MessageDialog(self, mtexts.txts['TooFewChars'], '', wx.OK|wx.ICON_EXCLAMATION)
 			dlg.ShowModal()
 			dlg.Destroy()
 			return
@@ -417,7 +417,7 @@ class PlacesDlg(wx.Dialog):
 				pldlg.Destroy()
 
 		else:
- 			dlg = wx.MessageDialog(self, mtexts.txts['NotFound'], '', wx.OK|wx.ICON_EXCLAMATION)
+			dlg = wx.MessageDialog(self, mtexts.txts['NotFound'], '', wx.OK|wx.ICON_EXCLAMATION)
 			dlg.ShowModal()
 
 

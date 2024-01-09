@@ -25,7 +25,8 @@ def ExceptionHook(exctype, value, trace):
         msg = 'An unexpected error has occurred:\n {0:>s}'.format(ftrace)
         wx.MessageBox(msg, app.GetAppName(),
                       style=wx.ICON_ERROR|wx.OK)
-        app.Exit()
+        #app.Exit()
+        app.OnExit()
     else:
         sys.stderr.write(ftrace)
 
@@ -41,4 +42,3 @@ class MrApp(wx.App):
 	def OnInit(self):
 		sys.excepthook = ExceptionHook
 		return True
-	

@@ -17,7 +17,7 @@ class AlmutenChartWnd(commonwnd.CommonWnd):
 
 	def __init__(self, parent, chrt, options, mainfr, id = -1, size = wx.DefaultSize):
 		commonwnd.CommonWnd.__init__(self, parent, chrt, options, id, size)
-		
+
 		self.mainfr = mainfr
 
 		self.FONT_SIZE = int(21*self.options.tablesize) #Change fontsize to change the size of the table!
@@ -70,9 +70,9 @@ class AlmutenChartWnd(commonwnd.CommonWnd):
 
 		self.fntMorinus = ImageFont.truetype(common.common.symbols, self.FONT_SIZE)
 		self.fntText = ImageFont.truetype(common.common.abc, self.FONT_SIZE)
-		self.fntLargeText = ImageFont.truetype(common.common.abc, 5*self.FONT_SIZE/4)
-		self.fntBigText = ImageFont.truetype(common.common.abc, 3*self.FONT_SIZE/2)
-		self.clrs = (self.options.clrdomicil, self.options.clrexal, self.options.clrperegrin, self.options.clrcasus, self.options.clrexil)	
+		self.fntLargeText = ImageFont.truetype(common.common.abc, int(5*self.FONT_SIZE/4))
+		self.fntBigText = ImageFont.truetype(common.common.abc, int(3*self.FONT_SIZE/2))
+		self.clrs = (self.options.clrdomicil, self.options.clrexal, self.options.clrperegrin, self.options.clrcasus, self.options.clrexil)
 		self.signs = common.common.Signs1
 		if not self.options.signs:
 			self.signs = common.common.Signs2
@@ -97,7 +97,7 @@ class AlmutenChartWnd(commonwnd.CommonWnd):
 		if self.bw:
 			tableclr = (0,0,0)
 
-		img = Image.new('RGB', (self.WIDTH, self.HEIGHT), self.bkgclr)
+		img = Image.new('RGB', (int(self.WIDTH), int(self.HEIGHT)), self.bkgclr)
 		draw = ImageDraw.Draw(img)
 
 		BOR = commonwnd.CommonWnd.BORDER
@@ -260,7 +260,7 @@ class AlmutenChartWnd(commonwnd.CommonWnd):
 					mwidth += wpl+wsp+w
 				else:
 					break
-			
+
 			for j in range(subnum):
 				if aux[j][0] != -1:
 					clr = (0, 0, 0)
@@ -518,12 +518,9 @@ class AlmutenChartWnd(commonwnd.CommonWnd):
 		sign = d/chart.Chart.SIGN_DEG
 		pos = d%chart.Chart.SIGN_DEG
 		wsp,hsp = draw.textsize(' ', self.fntText)
-		wsg,hsg = draw.textsize(self.signs[sign], self.fntMorinus)
+		wsg,hsg = draw.textsize(self.signs[int(sign)], self.fntMorinus)
 		txt = (str(pos)).rjust(2)+self.deg_symbol+(str(m)).zfill(2)+"'"+(str(s)).zfill(2)+'"'
 		w,h = draw.textsize(txt, self.fntText)
 		offset = (self.ELONGITUDE_CELL_WIDTH-(w+wsp+wsg))/2
 		draw.text((x+offset, y+(self.LINE_HEIGHT-h)/2), txt, fill=clr, font=self.fntText)
-		draw.text((x+offset+w+wsp, y+(self.LINE_HEIGHT-hsg)/2), self.signs[sign], fill=clr, font=self.fntMorinus)
-
-
-
+		draw.text((x+offset+w+wsp, y+(self.LINE_HEIGHT-hsg)/2), self.signs[int(sign)], fill=clr, font=self.fntMorinus)

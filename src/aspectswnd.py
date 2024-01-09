@@ -56,7 +56,7 @@ class AspectsWnd(commonwnd.CommonWnd):
 		self.SetVirtualSize((self.WIDTH, self.HEIGHT))
 
 		self.fntMorinus = ImageFont.truetype(common.common.symbols, 4*self.FONT_SIZE/5)
-		self.fntSymbol = ImageFont.truetype(common.common.symbols, 3*self.FONT_SIZE/2)
+		self.fntSymbol = ImageFont.truetype(common.common.symbols, int(3*self.FONT_SIZE/2))
 		self.fntAspects = ImageFont.truetype(common.common.symbols, self.FONT_SIZE/2)
 		self.fntText = ImageFont.truetype(common.common.abc, 2*self.FONT_SIZE/3)
 		self.fntText2 = ImageFont.truetype(common.common.abc, self.FONT_SIZE/3)
@@ -84,7 +84,7 @@ class AspectsWnd(commonwnd.CommonWnd):
 		if self.bw:
 			tableclr = (0,0,0)
 
-		img = Image.new('RGB', (self.WIDTH, self.HEIGHT), self.bkgclr)
+		img = Image.new('RGB', (int(self.WIDTH), int(self.HEIGHT)), self.bkgclr)
 		draw = ImageDraw.Draw(img)
 
 		BOR = commonwnd.CommonWnd.BORDER
