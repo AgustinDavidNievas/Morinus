@@ -19,7 +19,7 @@ class Revolutions:
 
 
 	def compute(self, typ, by, bm, bd, chrt):
-		if typ == Revolutions.SOLAR:
+		if typ == Revolutions.SOLAR:#TODO en la solar y en la lunar hay una diferencia de 4 minutos en relacion con como daba antes
 			year = by
 			if bm > chrt.time.month or (bm == chrt.time.month and bd > chrt.time.day):
 				year+= 1

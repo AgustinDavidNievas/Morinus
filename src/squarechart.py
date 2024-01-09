@@ -31,10 +31,10 @@ class SquareChart:
 		self.smallSize = self.maxradius/18
 		self.fontSize = self.symbolSize
 		self.fntMorinus = ImageFont.truetype(common.common.symbols, int(self.symbolSize))
-		self.fntMorinusSmall = ImageFont.truetype(common.common.symbols, self.smallSize)
-		self.fntText = ImageFont.truetype(common.common.abc, self.fontSize)
-		self.fntTextSmall = ImageFont.truetype(common.common.abc, 3*self.fontSize/4)
-		self.fntTextSmaller = ImageFont.truetype(common.common.abc, self.fontSize/2)
+		self.fntMorinusSmall = ImageFont.truetype(common.common.symbols, int(self.smallSize))
+		self.fntText = ImageFont.truetype(common.common.abc, int(self.fontSize))
+		self.fntTextSmall = ImageFont.truetype(common.common.abc, int(3*self.fontSize/4))
+		self.fntTextSmaller = ImageFont.truetype(common.common.abc, int(self.fontSize/2))
 		self.signs = common.common.Signs1
 		if not self.options.signs:
 			self.signs = common.common.Signs2
@@ -78,7 +78,7 @@ class SquareChart:
 		x = cx-radius
 		y = cy-radius
 		w = h = 2*radius+w
-		self.bdc.DrawRectangle(x, y, w, h)
+		self.bdc.DrawRectangle(int(x), int(y), int(w), int(h))
 
 		w = 3
 		if self.chartsize <= SquareChart.SMALL_SIZE:
@@ -133,7 +133,7 @@ class SquareChart:
 		x = cx-radius/2
 		y = cy-radius/2
 		w = h = radius+1
-		self.bdc.DrawRectangle(x, y, w, h)
+		self.bdc.DrawRectangle(int(x), int(y), int(w), int(h))
 
 		#self.bdc.EndDrawing() removed
 
