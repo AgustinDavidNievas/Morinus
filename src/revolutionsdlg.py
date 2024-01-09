@@ -90,7 +90,7 @@ class RevolutionsDlg(wx.Dialog):
 		fgsizer.Add(vsizer, 0, wx.ALIGN_LEFT|wx.ALL, 5)
 
 		vsubsizer.Add(fgsizer, 0, wx.ALIGN_CENTER_HORIZONTAL)
-		timesizer.Add(vsubsizer, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5)
+		timesizer.Add(vsubsizer, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, 5)
 
 		mhsizer.Add(timesizer, 0, wx.ALIGN_LEFT|wx.LEFT, 5)
 		mvsizer.Add(mhsizer, 0, wx.ALIGN_LEFT|wx.LEFT|wx.RIGHT, 5)

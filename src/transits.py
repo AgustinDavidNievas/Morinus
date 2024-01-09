@@ -50,6 +50,7 @@ class Transits:
 	def month(self, year, month, chrt, planet = -1, pos = None):
 		self.flags = astrology.SEFLG_SPEED+astrology.SEFLG_SWIEPH
 		if chrt.options.topocentric:
+			astrology.set_topo(chrt.place.lon, chrt.place.lat, chrt.place.altitude)
 			self.flags += astrology.SEFLG_TOPOCTR
 
 		lastday = 1
@@ -89,6 +90,7 @@ class Transits:
 		if self.flags == Transits.NONE:
 			self.flags = astrology.SEFLG_SPEED+astrology.SEFLG_SWIEPH
 			if chrt.options.topocentric:
+				astrology.set_topo(chrt.place.lon, chrt.place.lat, chrt.place.altitude)
 				self.flags += astrology.SEFLG_TOPOCTR
 
 		time1 = chart.Time(year, month, day, 0, 0, 0, False, chrt.time.cal, chart.Time.GREENWICH, True, 0, 0, False, chrt.place, False)

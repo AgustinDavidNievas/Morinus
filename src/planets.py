@@ -54,24 +54,17 @@ class Planet:
 		self.pId = pId
 
 		self.speculums = None
+		self.data = None
+		self.dataEqu = None
 
 		if (ecl == None):
 			r = astrology.calc_ut(tjd_ut, pId, flag)
 			rflag = r[1]
 			self.data = r[0]
+
 			r2 = astrology.calc_ut(tjd_ut, pId, flag+astrology.SEFLG_EQUATORIAL)
 			rflag = r2[1]
 			self.dataEqu = r2[0]
-
-			# data[0] : longitude
-			# data[1] : latitude
-			# data[2] : distance
-			# data[3] : speed in long
-			# data[4] : speed in lat
-			# data[5] : speed in dist
-
-			# if rflag < 0:
-			#	print 'Error: %s' % serr
 
 			self.name = astrology.get_planet_name(pId)
 		else:
