@@ -176,7 +176,7 @@ class TransitFrame(mrclasses.MrSecondFrame):
 		self.pds = None
 		self.pdready = False
 		self.abort = primdirs.AbortPD()
-		thId = _thread.start_new__thread(self.calcPDs, (pdrange, direction, self))
+		thId = _thread.start_new_thread(self.calcPDs, (pdrange, direction, self))
 
 		self.timer = wx.Timer(self)
 		self.Bind(wx.EVT_TIMER, self.OnTimer)

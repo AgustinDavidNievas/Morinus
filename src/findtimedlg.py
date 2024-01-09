@@ -854,7 +854,7 @@ class FindTimeDlg(wx.Dialog):
 			self.ar = None
 		self.ftready = False
 		self.abort = AbortFindTime()
-		thId = _thread.start_new__thread(self.calcCharts, (self.bc, ftdata, ftdatause, ftdataascmc, ftdataapprox, self))
+		thId = _thread.start_new_thread(self.calcCharts, (self.bc, ftdata, ftdatause, ftdataascmc, ftdataapprox, self))
 
 		self.timer = wx.Timer(self)
 		self.Bind(wx.EVT_TIMER, self.OnTimer)

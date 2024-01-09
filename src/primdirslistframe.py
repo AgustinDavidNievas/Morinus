@@ -325,7 +325,7 @@ class PrimDirsListFrame(mrclasses.MrSecondFrame):
 		self.pds = None
 		self.pdready = False
 		self.abort = primdirs.AbortPD()
-		thId = _thread.start_new__thread(self.calcPDs, (self.pdrange, self.direction, self))
+		thId = _thread.start_new_thread(self.calcPDs, (self.pdrange, self.direction, self))
 
 		self.timer = wx.Timer(self)
 		self.Bind(wx.EVT_TIMER, self.OnTimer)

@@ -66,10 +66,10 @@ class FixStarsAspectsWnd(commonwnd.CommonWnd):
 
 		self.SetVirtualSize((self.WIDTH, self.HEIGHT))
 
-		self.fntMorinus = ImageFont.truetype(common.common.symbols, 4*self.FONT_SIZE/5)
+		self.fntMorinus = ImageFont.truetype(common.common.symbols, int(4*self.FONT_SIZE/5))
 		self.fntSymbol = ImageFont.truetype(common.common.symbols, int(3*self.FONT_SIZE/2))
-		self.fntAspects = ImageFont.truetype(common.common.symbols, 3*self.FONT_SIZE/4)
-		self.fntText = ImageFont.truetype(common.common.abc, 3*self.FONT_SIZE/5)
+		self.fntAspects = ImageFont.truetype(common.common.symbols, int(3*self.FONT_SIZE/4))
+		self.fntText = ImageFont.truetype(common.common.abc, int(3*self.FONT_SIZE/5))
 		self.clrs = (self.options.clrdomicil, self.options.clrexal, self.options.clrperegrin, self.options.clrcasus, self.options.clrexil)
 		self.arsigndiff = (0, -1, -1, 2, -1, 3, 4, -1, -1, -1, 6)
 		self.hidx = (1, 2, 3, 10, 11, 12)

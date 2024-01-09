@@ -66,9 +66,9 @@ class GraphEphemWnd(wx.Window):
 		self.txtSymbolSize = min(self.signSize, self.monthSize)/3
 		self.signSymbolSize = self.txtSymbolSize
 
-		self.fntPlanets = ImageFont.truetype(common.common.symbols, self.planetSymbolSize)
-		self.fntSigns = ImageFont.truetype(common.common.symbols, self.signSymbolSize)
-		self.fntTxt = ImageFont.truetype(common.common.abc, self.txtSymbolSize)
+		self.fntPlanets = ImageFont.truetype(common.common.symbols, int(self.planetSymbolSize))
+		self.fntSigns = ImageFont.truetype(common.common.symbols, int(self.signSymbolSize))
+		self.fntTxt = ImageFont.truetype(common.common.abc, int(self.txtSymbolSize))
 
 		tableclr = (0,0,0)
 		txtclr = (0,0,0)
@@ -177,11 +177,11 @@ class GraphEphemWnd(wx.Window):
 						w = 1
 					pen = wx.Pen(plsclr, w)
 					self.bdc.SetPen(pen)
-					self.bdc.DrawPoint(x, y)
+					self.bdc.DrawPoint(int(x), int(y))
 
 					signtransition = ((prevy > self.h-4*self.BORDER-2*self.signSize and y < yOrig2+self.signSize) or (y > self.h-4*self.BORDER-2*self.signSize and prevy < yOrig2+self.signSize))
 					if i != 0 and not signtransition:
-						self.bdc.DrawLine(prevx, prevy, x, y)
+						self.bdc.DrawLine(int(prevx), int(prevy), int(x), int(y))
 
 					if i != 0 and signtransition:
 						if (prevy > self.h-4*self.BORDER-2*self.signSize and y < yOrig2+self.signSize):
@@ -222,7 +222,7 @@ class GraphEphemWnd(wx.Window):
 					plsclr = self.options.clrindividual[pl]
 				pen = wx.Pen(plsclr, 1)
 				self.bdc.SetPen(pen)
-				self.bdc.DrawLine(x1, y+bshift[j], x2, y)
+				self.bdc.DrawLine(int(x1), int(y+bshift[j]), int(x2), int(y))
 
 				j += 1
 
@@ -239,9 +239,9 @@ class GraphEphemWnd(wx.Window):
 				pen = wx.Pen(plsclr, 1)
 				self.bdc.SetPen(pen)
 				if len(plstop) > 1:
-					self.bdc.DrawLine(x, y1, x+bshifttop[pl], y2)
+					self.bdc.DrawLine(int(x), int(y1), int(x+bshifttop[pl]), int(y2))
 				else:
-					self.bdc.DrawLine(x, y1, x, y2)
+					self.bdc.DrawLine(int(x), int(y1), int(x), int(y2))
 
 
 		#bottom
@@ -258,9 +258,9 @@ class GraphEphemWnd(wx.Window):
 				self.bdc.SetPen(pen)
 
 				if len(plsbottom) > 1:
-					self.bdc.DrawLine(x+bshiftbottom[pl], y1, x, y2)
+					self.bdc.DrawLine(int(x+bshiftbottom[pl]), int(y1), int(x), int(y2))
 				else:
-					self.bdc.DrawLine(x, y1, x, y2)
+					self.bdc.DrawLine(int(x), int(y1), int(x), int(y2))
 
 		#self.bdc.EndDrawing() removed
 

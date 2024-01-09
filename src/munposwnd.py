@@ -145,7 +145,11 @@ class MunPosWnd(commonwnd.CommonWnd):
 				w,h = draw.textsize(txt, self.fntMorinus)
 				draw.text((x+summa+(offs[i]-w)/2, y+(self.LINE_HEIGHT-h)/2), txt, fill=tclr, font=self.fntMorinus)
 			elif i != 0:
-				ret, serr = astrology.house_pos(self.chart.houses.ascmc[1], self.chart.place.lat, self.chart.obl[0], ord(self.chart.houses.hsys), self.chart.planets.planets[idx].data[planets.Planet.LONG], self.chart.planets.planets[idx].data[planets.Planet.LAT])
+				ret = astrology.house_pos(armc=self.chart.houses.ascmc[1],
+										  geolat=self.chart.place.lat, 
+										  eps=self.chart.obl[0], 
+										  hsys=self.chart.houses.hsys.encode(), 
+										  objcoord=[self.chart.planets.planets[idx].data[planets.Planet.LONG],self.chart.planets.planets[idx].data[planets.Planet.LAT]])
 #				ret = int(ret*100.0)/100.0
 				txt = str(ret)
 				w,h = draw.textsize(txt, self.fntText)
