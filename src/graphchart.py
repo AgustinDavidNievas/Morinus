@@ -430,8 +430,8 @@ class GraphChart:
 				clr = (0,0,0)
 			pen = wx.Pen(clr, 1)
 			self.bdc.SetPen(pen)
-			self.bdc.DrawCircle(cx, cy, self.rOuterMax)
-			self.bdc.DrawCircle(cx, cy, self.rOuterHouse)
+			self.bdc.DrawCircle(cx, cy, int(self.rOuterMax))
+			self.bdc.DrawCircle(cx, cy, int(self.rOuterHouse))
 
 		#r30 circle
 		if self.chart2 != None or (self.planetaryday and self.options.showfixstars != options.Options.NONE): #If planetaryday is True => radix chart
@@ -447,12 +447,12 @@ class GraphChart:
 
 			pen = wx.Pen(clr, w)
 			self.bdc.SetPen(pen)
-			self.bdc.DrawCircle(cx, cy, self.r30)
+			self.bdc.DrawCircle(cx, cy, int(self.r30))
 
 			#Outer 10, 5, 1-circle
 			pen = wx.Pen(clr, 1)
 			self.bdc.SetPen(pen)
-			self.bdc.DrawCircle(cx, cy, self.rOuter10)
+			self.bdc.DrawCircle(cx, cy, int(self.rOuter10))
 
 		#r10 Circle
 		clr = self.options.clrframe
@@ -470,7 +470,7 @@ class GraphChart:
 		if self.options.showterms or self.options.showdecans:
 			pen = wx.Pen(clr, 1)
 			self.bdc.SetPen(pen)
-			self.bdc.DrawCircle(cx, cy, self.r0)
+			self.bdc.DrawCircle(cx, cy, int(self.r0))
 
 			#Decans Circle
 			if self.options.showterms:
@@ -479,7 +479,7 @@ class GraphChart:
 					clr = (0,0,0)
 				pen = wx.Pen(clr, 1)
 				self.bdc.SetPen(pen)
-				self.bdc.DrawCircle(cx, cy, self.rDecans)
+				self.bdc.DrawCircle(cx, cy, int(self.rDecans))
 
 		w = 3
 		if self.chartsize <= GraphChart.SMALL_SIZE:
