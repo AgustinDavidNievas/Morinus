@@ -1,5 +1,4 @@
 #from sweastrology import *
-#TODO hacer que astrology.c compile para python 3 o modificar todas las llamadas a los metodos de astrology para que funcionen con swisseph
 from swisseph import *
 
 SE_JUL_CAL = 0
