@@ -263,7 +263,7 @@ class Chart:
 	#Profections
 	YEAR, MONTH, DAY = range(0, 3)
 
-	def __init__(self, name, male, time, place, htype, notes, options, full = True, proftype = 0, nolat=False):
+	def __init__(self, name, male, time, place, htype, notes, options, full = True, proftype = 0, nolat=False, precession=False):
 		self.name = name
 		self.male = male
 		self.time = time
@@ -274,6 +274,7 @@ class Chart:
 		self.full = full
 		self.proftype = proftype
 		self.nolat = nolat
+		self.precession = precession
 
 		d = astrology.deltat(time.jd)
 

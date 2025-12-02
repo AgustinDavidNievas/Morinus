@@ -1508,13 +1508,14 @@ class MFrame(mrclasses.MrTopFrame):
 						plus = False
 					time = chart.Time(t1, t2, t3, t4, t5, t6, False, self.horoscope.time.cal, chart.Time.GREENWICH, plus, 0, 0, False, place, False)
 
+					revolution = None
 					revtype = chart.Chart.REVOLUTION
 					if self.revdlg.typecb.GetCurrentSelection() == 0:
 						revtype = chart.Chart.SOLAR
+						revolution = chart.Chart(self.horoscope.name, self.horoscope.male, time, place, revtype, '', self.options, False)
 					elif self.revdlg.typecb.GetCurrentSelection() == 1:
 						revtype = chart.Chart.LUNAR
-
-					revolution = chart.Chart(self.horoscope.name, self.horoscope.male, time, place, revtype, '', self.options, False)
+						revolution = chart.Chart(self.horoscope.name, self.horoscope.male, time, place, revtype, '', self.options, False, 0, False, True)#TODO hacer que el último parametro venga de un checkbox de la interfaz
 
 					rw = transitframe.TransitFrame(self, self.title.replace(mtexts.typeList[self.horoscope.htype], mtexts.typeList[revtype]+' ('+str(time.year)+'.'+common.common.months[time.month-1]+'.'+str(time.day)+' '+str(time.hour)+':'+str(time.minute).zfill(2)+':'+str(time.second).zfill(2)+'('+mtexts.txts['GMT']+'))'), revolution, self.horoscope, self.options)
 					rw.Show(True)
@@ -1523,7 +1524,7 @@ class MFrame(mrclasses.MrTopFrame):
 			else:
 				dlgm = wx.MessageDialog(self, mtexts.txts['CouldnotComputeRevolution'], mtexts.txts['Error'], wx.OK|wx.ICON_EXCLAMATION)
 				dlgm.ShowModal()
-				dlgm.Destroy()#
+				dlgm.Destroy()
 
 
 	def calcPrecNutCorrectedSolar(self, revs):

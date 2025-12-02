@@ -49,6 +49,26 @@ class Transits:
 
 	def month(self, year, month, chrt, planet = -1, pos = None):
 		self.flags = astrology.SEFLG_SPEED+astrology.SEFLG_SWIEPH
+		
+		# PRECESSION-CORRECTED TRANSITS
+		# -----------------------------------------
+		restore_sidmode = False
+		if hasattr(chrt, "precession") and chrt.precession:
+			restore_sidmode = True
+
+			xx, rf = astrology.calc(chrt.time.jd + astrology.deltat(chrt.time.jd),astrology.SE_ECL_NUT, 0)
+			nut_long = xx[2]
+
+			astrology.set_sid_mode(
+				astrology.SIDM_USER,
+				chrt.time.jd,
+				nut_long
+			)
+
+			# 3) Forzar cálculos sidéreos con SEFLG_SIDEREAL
+			self.flags |= astrology.SEFLG_SIDEREAL
+		# -----------------------------------------
+
 		if chrt.options.topocentric:
 			astrology.set_topo(chrt.place.lon, chrt.place.lat, chrt.place.altitude)
 			self.flags += astrology.SEFLG_TOPOCTR
@@ -82,6 +102,9 @@ class Transits:
 			self.cycleplanet(time1, chrt, time2, planet, pos)
 
 		self.order(cnt)
+		
+		if restore_sidmode:
+			astrology.set_sid_mode(0, 0, 0)
 
 #		self.printTransits(self.transits)
 
